@@ -1,0 +1,8 @@
+services:
+  uploadfig:
+    build:
+      context: ./
+      dockerfile: Dockerfile.uploadfig
+    volumes:
+      - ./:/app
+    working_dir: /app

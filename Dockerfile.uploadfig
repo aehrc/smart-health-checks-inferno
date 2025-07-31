@@ -1,0 +1,14 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0
+
+RUN dotnet tool install uploadfig --global
+
+RUN echo '#!/bin/bash\nexport PATH="$PATH:/root/.dotnet/tools"\nexec "$@"' > /entrypoint.sh && \
+    chmod +x /entrypoint.sh
+
+WORKDIR /app
+
+RUN dotnet tool list --global
+
+RUN /entrypoint.sh UploadFIG --version
+
+ENTRYPOINT ["/entrypoint.sh"]
