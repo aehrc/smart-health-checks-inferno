@@ -1,0 +1,118 @@
+---
+:name: SHCQuestionnaireResponse
+:class_name: ShcquestionnaireresponseSequence
+:version: v0.3.0-draft
+:reformatted_version: v030_draft
+:resource: QuestionnaireResponse
+:profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+:profile_name: Smart Health Checks Questionnaire Response
+:profile_version: 0.3.0
+:title: Questionnaire Response
+:short_description: Verify support for the server capabilities required by the Smart
+  Health Checks Questionnaire Response.
+:interactions:
+- :code: read
+  :expectation: SHALL
+- :code: search-type
+  :expectation: SHALL
+- :code: create
+  :expectation: SHALL
+- :code: update
+  :expectation: SHALL
+:operations: []
+:searches: []
+:search_definitions: {}
+:include_params: []
+:revincludes: []
+:required_concepts: []
+:must_supports:
+  :extensions:
+  - :id: QuestionnaireResponse.questionnaire.extension:questionnaireDisplay
+    :url: http://hl7.org/fhir/StructureDefinition/display|5.2.0
+  :slices: []
+  :elements:
+  - :path: id
+  - :path: text
+  - :path: identifier
+  - :path: questionnaire
+  - :path: status
+  - :path: subject
+    :types:
+    - Reference
+  - :path: encounter
+    :types:
+    - Reference
+  - :path: authored
+  - :path: author
+    :types:
+    - Reference
+  - :path: item
+  - :path: item.linkId
+  - :path: item.text
+  - :path: item.answer
+  - :path: item.answer.value[x]
+    :types:
+    - Reference
+  - :path: item.answer.item
+  - :path: item.item
+:mandatory_elements:
+- QuestionnaireResponse.id
+- QuestionnaireResponse.extension.url
+- QuestionnaireResponse.extension.value[x]
+- QuestionnaireResponse.questionnaire
+- QuestionnaireResponse.status
+- QuestionnaireResponse.subject
+- QuestionnaireResponse.authored
+- QuestionnaireResponse.author
+- QuestionnaireResponse.item.linkId
+:bindings:
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/questionnaire-answers-status
+  :path: status
+:references:
+- :path: QuestionnaireResponse.extension.value[x]
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Device
+  - http://hl7.org/fhir/StructureDefinition/Organization
+- :path: QuestionnaireResponse.basedOn
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/CarePlan
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+- :path: QuestionnaireResponse.partOf
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Observation
+  - http://hl7.org/fhir/StructureDefinition/Procedure
+- :path: QuestionnaireResponse.subject
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Resource
+- :path: QuestionnaireResponse.encounter
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Encounter
+- :path: QuestionnaireResponse.author
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Device
+  - http://hl7.org/fhir/StructureDefinition/Practitioner
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/Patient
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Organization
+- :path: QuestionnaireResponse.source
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Patient
+  - http://hl7.org/fhir/StructureDefinition/Practitioner
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+:tests:
+- :id: smart_health_checks_v030_draft_questionnaire_response_read_test
+  :file_name: questionnaire_response_read_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_validation_test
+  :file_name: questionnaire_response_validation_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_must_support_test
+  :file_name: questionnaire_response_must_support_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_reference_resolution_test
+  :file_name: questionnaire_response_reference_resolution_test.rb
+:id: smart_health_checks_v030_draft_questionnaire_response
+:file_name: questionnaire_response_group.rb
+:delayed_references: []
+:ig_id: csiro.fhir.au.smartforms
