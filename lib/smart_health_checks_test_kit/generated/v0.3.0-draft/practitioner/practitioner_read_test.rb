@@ -10,6 +10,12 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct Practitioner resource from Practitioner read interaction'
       description 'A server SHALL support the Practitioner read interaction.'
 
+      input :practitioner_ids,
+            title: 'Practitioner IDs',
+            description: 'Comma separated list of practitioner IDs that in sum contain all MUST SUPPORT elements',
+            default: '',
+            optional: true
+
       id :smart_health_checks_v030_draft_practitioner_read_test
 
       def resource_type
