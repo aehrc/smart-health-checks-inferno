@@ -11,6 +11,7 @@
   "suite": {
     "title": "Smart Health Checks",
     "extra_json_paths": ["search-params.json"],
+    "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
     "outer_groups": [],
     "links": [
       {
@@ -28,30 +29,18 @@
     ]
   },
   "configs": {
-    "generators": {
-      "all": {
-        "default_fhir_server": "",
-        "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
-        "skip_resources": {
-          "_description": "",
-          "resources": ["Medication", "DiagnosticReport"]
-        },
-        "skip_profiles": {},
-        "profiles_to_exclude": []
-      },
-      "read": {
-        "test_ids_inputs": {}
-      },
-      "search": {
-        "method_to_search": {},
-        "first_search_parameter_by": {
-          "profile": {},
-          "resource": {}
-        }
-      }
+    "generic": {
+      "expectation": ["SHALL", "SHOULD", "MAY"],
+      "search_params_to_ignore": ["_count", "_sort", "_include"]
     },
-    "extractors": {
-      "search": {}
+    "profiles": {},
+    "resources": {
+      "Medication": {
+        "skip": true
+      },
+      "DiagnosticReport": {
+        "skip": true
+      }
     }
   }
 }
