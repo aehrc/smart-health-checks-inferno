@@ -22,8 +22,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 85354-9
+      - '75367002'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: &1 []
   :revincludes: &2 []
   :required_concepts: []
@@ -233,8 +264,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 8302-2
+      - '50373000'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -407,8 +469,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 29463-7
+      - '27113001'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -581,8 +674,37 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values: []
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -716,8 +838,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 9843-4
+      - '363812007'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -894,8 +1047,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 8867-4
+      - '364075005'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -1065,8 +1249,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 8884-9
+      - '364074009'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -1204,8 +1419,39 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 8280-0
+      - '276361009'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -1378,8 +1624,38 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - '1747861000168109'
+      :type: CodeableConcept
+      :contains_multiple: false
   :include_params: *1
   :revincludes: *2
   :required_concepts: []
@@ -1501,8 +1777,23 @@
   - :code: patch
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - patient
+      :full_paths:
+      - AllergyIntolerance.patient
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
   :include_params: []
   :revincludes: []
   :required_concepts:
@@ -1603,8 +1894,43 @@
   - :code: patch
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - category
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - category
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Condition.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :category:
+      :paths:
+      - category
+      :full_paths:
+      - Condition.category
+      :comparators: {}
+      :values: []
+      :type: CodeableConcept
+      :contains_multiple: true
   :include_params: []
   :revincludes: []
   :required_concepts:
@@ -1833,8 +2159,46 @@
   - :code: create
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - status
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - status
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - patient
+      :full_paths:
+      - Immunization.patient
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :status:
+      :paths:
+      - status
+      :full_paths:
+      - Immunization.status
+      :comparators: {}
+      :values:
+      - completed
+      - entered-in-error
+      - not-done
+      :type: code
+      :contains_multiple: false
   :include_params: []
   :revincludes: []
   :required_concepts: []
@@ -1980,8 +2344,51 @@
   - :code: patch
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - status
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - status
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - MedicationStatement.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :status:
+      :paths:
+      - status
+      :full_paths:
+      - MedicationStatement.status
+      :comparators: {}
+      :values:
+      - active
+      - completed
+      - entered-in-error
+      - intended
+      - stopped
+      - on-hold
+      - unknown
+      - not-taken
+      :type: code
+      :contains_multiple: false
   :include_params:
   - MedicationStatement:medication
   :revincludes: []
@@ -2285,8 +2692,57 @@
   - :code: update
     :expectation: SHALL
   :operations: []
-  :searches: []
-  :search_definitions: {}
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - questionnaire
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - status
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - QuestionnaireResponse.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :questionnaire:
+      :paths:
+      - questionnaire
+      :full_paths:
+      - QuestionnaireResponse.questionnaire
+      :comparators: {}
+      :values: []
+      :type: canonical
+      :contains_multiple: false
+      :target_resource: Questionnaire
+    :status:
+      :paths:
+      - status
+      :full_paths:
+      - QuestionnaireResponse.status
+      :comparators: {}
+      :values:
+      - in-progress
+      - completed
+      - amended
+      - entered-in-error
+      - stopped
+      :type: code
+      :contains_multiple: false
   :include_params: []
   :revincludes: []
   :required_concepts: []

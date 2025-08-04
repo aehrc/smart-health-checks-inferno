@@ -20,8 +20,57 @@
 - :code: update
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - questionnaire
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - status
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - QuestionnaireResponse.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :questionnaire:
+    :paths:
+    - questionnaire
+    :full_paths:
+    - QuestionnaireResponse.questionnaire
+    :comparators: {}
+    :values: []
+    :type: canonical
+    :contains_multiple: false
+    :target_resource: Questionnaire
+  :status:
+    :paths:
+    - status
+    :full_paths:
+    - QuestionnaireResponse.status
+    :comparators: {}
+    :values:
+    - in-progress
+    - completed
+    - amended
+    - entered-in-error
+    - stopped
+    :type: code
+    :contains_multiple: false
 :include_params: []
 :revincludes: []
 :required_concepts: []
@@ -104,6 +153,12 @@
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
 :tests:
+- :id: smart_health_checks_v030_draft_questionnaire_response_patient_search_test
+  :file_name: questionnaire_response_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_questionnaire_search_test
+  :file_name: questionnaire_response_questionnaire_search_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_status_search_test
+  :file_name: questionnaire_response_status_search_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_read_test
   :file_name: questionnaire_response_read_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_validation_test

@@ -18,8 +18,43 @@
 - :code: patch
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - category
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - category
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - Condition.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :category:
+    :paths:
+    - category
+    :full_paths:
+    - Condition.category
+    :comparators: {}
+    :values: []
+    :type: CodeableConcept
+    :contains_multiple: true
 :include_params: []
 :revincludes: []
 :required_concepts:
@@ -104,6 +139,12 @@
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
   - http://hl7.org/fhir/StructureDefinition/Organization
 :tests:
+- :id: smart_health_checks_v030_draft_shc_condition_patient_search_test
+  :file_name: shc_condition_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_condition_category_search_test
+  :file_name: shc_condition_category_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_condition_patient_category_search_test
+  :file_name: shc_condition_patient_category_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_condition_validation_test
   :file_name: shc_condition_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_condition_must_support_test

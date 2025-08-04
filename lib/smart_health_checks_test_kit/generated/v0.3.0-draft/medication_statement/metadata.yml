@@ -18,8 +18,51 @@
 - :code: patch
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - status
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - MedicationStatement.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :status:
+    :paths:
+    - status
+    :full_paths:
+    - MedicationStatement.status
+    :comparators: {}
+    :values:
+    - active
+    - completed
+    - entered-in-error
+    - intended
+    - stopped
+    - on-hold
+    - unknown
+    - not-taken
+    :type: code
+    :contains_multiple: false
 :include_params:
 - MedicationStatement:medication
 :revincludes: []
@@ -115,6 +158,12 @@
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
   - http://hl7.org/fhir/StructureDefinition/Organization
 :tests:
+- :id: smart_health_checks_v030_draft_medication_statement_patient_search_test
+  :file_name: medication_statement_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_medication_statement_status_search_test
+  :file_name: medication_statement_status_search_test.rb
+- :id: smart_health_checks_v030_draft_medication_statement_patient_status_search_test
+  :file_name: medication_statement_patient_status_search_test.rb
 - :id: smart_health_checks_v030_draft_medication_statement_validation_test
   :file_name: medication_statement_validation_test.rb
 - :id: smart_health_checks_v030_draft_medication_statement_must_support_test

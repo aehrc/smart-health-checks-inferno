@@ -17,11 +17,11 @@ require_relative 'shc_waist_circumference_group'
 require_relative 'shc_smoking_status_group'
 require_relative 'allergy_intolerance_group'
 require_relative 'shc_condition_group'
-require_relative 'encounter_group'
 require_relative 'immunization_group'
 require_relative 'medication_statement_group'
-require_relative 'practitioner_group'
 require_relative 'questionnaire_response_group'
+require_relative 'encounter_group'
+require_relative 'practitioner_group'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -131,15 +131,15 @@ module SmartHealthChecksTestKit
 
         group from: :smart_health_checks_v030_draft_shc_condition
 
-        group from: :smart_health_checks_v030_draft_encounter
-
         group from: :smart_health_checks_v030_draft_immunization
 
         group from: :smart_health_checks_v030_draft_medication_statement
 
-        group from: :smart_health_checks_v030_draft_practitioner
-
         group from: :smart_health_checks_v030_draft_questionnaire_response
+
+        group from: :smart_health_checks_v030_draft_encounter
+
+        group from: :smart_health_checks_v030_draft_practitioner
       end
     end
   end

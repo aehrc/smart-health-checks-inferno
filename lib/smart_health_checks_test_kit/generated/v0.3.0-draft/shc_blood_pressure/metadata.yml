@@ -16,8 +16,39 @@
 - :code: create
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - code
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - Observation.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - Observation.code
+    :comparators: {}
+    :values:
+    - 85354-9
+    - '75367002'
+    :type: CodeableConcept
+    :contains_multiple: false
 :include_params: []
 :revincludes: []
 :required_concepts: []
@@ -209,6 +240,10 @@
   - http://hl7.org/fhir/StructureDefinition/MolecularSequence
   - http://hl7.org/fhir/StructureDefinition/vitalsigns
 :tests:
+- :id: smart_health_checks_v030_draft_shc_blood_pressure_patient_search_test
+  :file_name: shc_blood_pressure_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_blood_pressure_code_search_test
+  :file_name: shc_blood_pressure_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_validation_test
   :file_name: shc_blood_pressure_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_must_support_test

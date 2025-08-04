@@ -21,7 +21,7 @@ module SmartHealthChecksTestKit
       end
 
       run do
-        perform_read_test(scratch.dig(:references, 'QuestionnaireResponse'))
+        perform_read_test(all_scratch_resources)
       end
     end
   end

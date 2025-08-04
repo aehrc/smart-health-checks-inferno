@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'shc_heart_rhythm/shc_heart_rhythm_patient_search_test'
+require_relative 'shc_heart_rhythm/shc_heart_rhythm_code_search_test'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_validation_test'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_must_support_test'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_reference_resolution_test'
@@ -18,6 +20,25 @@ must contain resources conforming to the Smart Health Checks Heart Rhythm as
 specified in the Smart Health Checks v0.3.0-draft Implementation Guide.
 
 # Testing Methodology
+## Searching
+This test sequence will first perform each required search associated
+with this resource. This sequence will perform searches with the
+following parameters:
+
+* patient
+* code
+
+### Search Parameters
+The first search uses the selected patient(s) from the prior launch sequence. Any subsequent searches will look for its parameter values from the results of the first search. For example, the `identifier` search in the patient sequence is performed by looking for an existing `Patient.identifier` from any of the resources returned in the `_id` search. If a value cannot be found this way, the search is skipped.
+
+### Search Validation
+Inferno will retrieve up to the first 20 bundle pages of the reply for
+Observation resources and save them for subsequent tests. Each of
+these resources is then checked to see if it matches the searched
+parameters in accordance with [FHIR search
+guidelines](https://www.hl7.org/fhir/search.html). The test will fail,
+for example, if a Patient search for `gender=male` returns a `female`
+patient.
 
 
 ## Must Support
@@ -51,6 +72,8 @@ read succeeds.
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'shc_heart_rhythm', 'metadata.yml'), aliases: true))
       end
 
+      test from: :smart_health_checks_v030_draft_shc_heart_rhythm_patient_search_test
+      test from: :smart_health_checks_v030_draft_shc_heart_rhythm_code_search_test
       test from: :smart_health_checks_v030_draft_shc_heart_rhythm_validation_test
       test from: :smart_health_checks_v030_draft_shc_heart_rhythm_must_support_test
       test from: :smart_health_checks_v030_draft_shc_heart_rhythm_reference_resolution_test

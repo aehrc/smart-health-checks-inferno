@@ -16,8 +16,46 @@
 - :code: create
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - status
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - patient
+    :full_paths:
+    - Immunization.patient
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :status:
+    :paths:
+    - status
+    :full_paths:
+    - Immunization.status
+    :comparators: {}
+    :values:
+    - completed
+    - entered-in-error
+    - not-done
+    :type: code
+    :contains_multiple: false
 :include_params: []
 :revincludes: []
 :required_concepts: []
@@ -103,6 +141,12 @@
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Organization
 :tests:
+- :id: smart_health_checks_v030_draft_immunization_patient_search_test
+  :file_name: immunization_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_immunization_status_search_test
+  :file_name: immunization_status_search_test.rb
+- :id: smart_health_checks_v030_draft_immunization_patient_status_search_test
+  :file_name: immunization_patient_status_search_test.rb
 - :id: smart_health_checks_v030_draft_immunization_validation_test
   :file_name: immunization_validation_test.rb
 - :id: smart_health_checks_v030_draft_immunization_must_support_test

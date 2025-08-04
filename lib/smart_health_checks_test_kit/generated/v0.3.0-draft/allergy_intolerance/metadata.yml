@@ -18,8 +18,23 @@
 - :code: patch
   :expectation: SHALL
 :operations: []
-:searches: []
-:search_definitions: {}
+:searches:
+- :names:
+  - patient
+  :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - patient
+    :full_paths:
+    - AllergyIntolerance.patient
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
 :include_params: []
 :revincludes: []
 :required_concepts:
@@ -100,6 +115,8 @@
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
   - http://hl7.org/fhir/StructureDefinition/Organization
 :tests:
+- :id: smart_health_checks_v030_draft_allergy_intolerance_patient_search_test
+  :file_name: allergy_intolerance_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_allergy_intolerance_validation_test
   :file_name: allergy_intolerance_validation_test.rb
 - :id: smart_health_checks_v030_draft_allergy_intolerance_must_support_test
