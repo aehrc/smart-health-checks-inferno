@@ -33,7 +33,14 @@
       "expectation": ["SHALL", "SHOULD", "MAY"],
       "search_params_to_ignore": ["_count", "_sort", "_include"]
     },
-    "profiles": {},
+    "profiles": {
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient": {
+        "first_class_profile": "read"
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner": {
+        "first_class_profile": "read"
+      }
+    },
     "resources": {
       "Medication": {
         "skip": true
