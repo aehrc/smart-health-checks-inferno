@@ -121,4 +121,4 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 ## Links
 
 - [Smart Forms Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html)
-- [Report Issues](https://github.com/hl7au/au-fhir-core-inferno/issues)
+- [Report Issues](https://github.com/aehrc/smart-health-checks-inferno/issues)
