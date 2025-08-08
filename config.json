@@ -16,15 +16,15 @@
     "links": [
       {
         "label": "Report Issue",
-        "url": "https://github.com/hl7au/au-fhir-core-inferno/issues"
+        "url": "https://github.com/aehrc/smart-health-checks-inferno/issues"
       },
       {
-        "label": "Open Source",
-        "url": "https://github.com/hl7au/au-fhir-core-inferno"
+        "label": "Source Code",
+        "url": "https://github.com/aehrc/smart-health-checks-inferno"
       },
       {
-        "label": "Smart Forms Implementation Guide",
-        "url": "https://build.fhir.org/ig/hl7au/au-fhir-core/"
+        "label": "Implementation Guide",
+        "url": "https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html"
       }
     ]
   },
