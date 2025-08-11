@@ -19,5 +19,4 @@
 /docs/yard
 .yardoc
 node_modules
-/lib/smart_health_checks_test_kit/igs/
 package_archive_bundle.json
