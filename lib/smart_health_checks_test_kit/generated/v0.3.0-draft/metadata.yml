@@ -1294,8 +1294,10 @@
       :discriminator:
         :type: value
         :values:
-        -
-        -
+        - :path: code
+          :value: vital-signs
+        - :path: system
+          :value: http://terminology.hl7.org/CodeSystem/observation-category
     - :slice_id: Observation.code.coding:loincHeartRhythmCode
       :slice_name: loincHeartRhythmCode
       :path: code.coding

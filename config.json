@@ -42,6 +42,15 @@
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter": {
         "first_class_profile": "read"
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm": {
+        "register_extractors": [
+          {
+            "path_to_extractor": "lib/smart_health_checks_test_kit/extractors/hr_ms_values/extractor.rb",
+            "extractor_class": "InfernoSuiteGenerator::Generator::HRMSValuesExtractor",
+            "extractor_type": "must_support"
+          }
+        ]
       }
     },
     "resources": {
