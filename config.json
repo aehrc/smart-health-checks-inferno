@@ -39,6 +39,9 @@
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner": {
         "first_class_profile": "read"
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter": {
+        "first_class_profile": "read"
       }
     },
     "resources": {
