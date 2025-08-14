@@ -6,6 +6,7 @@ require_relative 'immunization/immunization_patient_status_search_test'
 require_relative 'immunization/immunization_validation_test'
 require_relative 'immunization/immunization_must_support_test'
 require_relative 'immunization/immunization_reference_resolution_test'
+require_relative 'immunization/immunization_create_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -80,6 +81,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_immunization_validation_test
       test from: :smart_health_checks_v030_draft_immunization_must_support_test
       test from: :smart_health_checks_v030_draft_immunization_reference_resolution_test
+      test from: :smart_health_checks_v030_draft_immunization_create_test
     end
   end
 end

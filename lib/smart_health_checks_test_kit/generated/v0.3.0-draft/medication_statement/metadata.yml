@@ -170,6 +170,8 @@
   :file_name: medication_statement_must_support_test.rb
 - :id: smart_health_checks_v030_draft_medication_statement_reference_resolution_test
   :file_name: medication_statement_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_medication_statement_create_test
+  :file_name: medication_statement_create_test.rb
 :id: smart_health_checks_v030_draft_medication_statement
 :file_name: medication_statement_group.rb
 :delayed_references:

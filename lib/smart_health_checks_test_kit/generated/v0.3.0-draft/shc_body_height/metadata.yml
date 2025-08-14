@@ -213,6 +213,8 @@
   :file_name: shc_body_height_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_body_height_reference_resolution_test
   :file_name: shc_body_height_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_body_height_create_test
+  :file_name: shc_body_height_create_test.rb
 :id: smart_health_checks_v030_draft_shc_body_height
 :file_name: shc_body_height_group.rb
 :delayed_references: []

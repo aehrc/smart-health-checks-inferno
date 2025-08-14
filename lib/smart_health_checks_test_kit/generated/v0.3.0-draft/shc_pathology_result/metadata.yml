@@ -172,6 +172,8 @@
   :file_name: shc_pathology_result_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_pathology_result_reference_resolution_test
   :file_name: shc_pathology_result_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_pathology_result_create_test
+  :file_name: shc_pathology_result_create_test.rb
 :id: smart_health_checks_v030_draft_shc_pathology_result
 :file_name: shc_pathology_result_group.rb
 :delayed_references: []

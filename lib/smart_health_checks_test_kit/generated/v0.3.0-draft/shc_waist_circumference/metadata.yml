@@ -213,6 +213,8 @@
   :file_name: shc_waist_circumference_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_waist_circumference_reference_resolution_test
   :file_name: shc_waist_circumference_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_waist_circumference_create_test
+  :file_name: shc_waist_circumference_create_test.rb
 :id: smart_health_checks_v030_draft_shc_waist_circumference
 :file_name: shc_waist_circumference_group.rb
 :delayed_references: []

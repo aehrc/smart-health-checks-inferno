@@ -151,6 +151,8 @@
   :file_name: shc_condition_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_condition_reference_resolution_test
   :file_name: shc_condition_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_condition_create_test
+  :file_name: shc_condition_create_test.rb
 :id: smart_health_checks_v030_draft_shc_condition
 :file_name: shc_condition_group.rb
 :delayed_references: []

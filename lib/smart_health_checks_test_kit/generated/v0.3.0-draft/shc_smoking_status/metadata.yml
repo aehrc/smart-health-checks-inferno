@@ -159,6 +159,8 @@
   :file_name: shc_smoking_status_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_smoking_status_reference_resolution_test
   :file_name: shc_smoking_status_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_smoking_status_create_test
+  :file_name: shc_smoking_status_create_test.rb
 :id: smart_health_checks_v030_draft_shc_smoking_status
 :file_name: shc_smoking_status_group.rb
 :delayed_references: []

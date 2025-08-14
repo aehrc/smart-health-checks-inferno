@@ -180,6 +180,8 @@
   :file_name: shc_heart_rhythm_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_reference_resolution_test
   :file_name: shc_heart_rhythm_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_heart_rhythm_create_test
+  :file_name: shc_heart_rhythm_create_test.rb
 :id: smart_health_checks_v030_draft_shc_heart_rhythm
 :file_name: shc_heart_rhythm_group.rb
 :delayed_references: []

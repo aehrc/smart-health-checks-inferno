@@ -5,6 +5,7 @@ require_relative 'shc_body_weight/shc_body_weight_code_search_test'
 require_relative 'shc_body_weight/shc_body_weight_validation_test'
 require_relative 'shc_body_weight/shc_body_weight_must_support_test'
 require_relative 'shc_body_weight/shc_body_weight_reference_resolution_test'
+require_relative 'shc_body_weight/shc_body_weight_create_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -77,6 +78,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_shc_body_weight_validation_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_must_support_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_reference_resolution_test
+      test from: :smart_health_checks_v030_draft_shc_body_weight_create_test
     end
   end
 end

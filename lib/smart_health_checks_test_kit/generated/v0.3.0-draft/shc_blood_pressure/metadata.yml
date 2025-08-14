@@ -250,6 +250,8 @@
   :file_name: shc_blood_pressure_must_support_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_reference_resolution_test
   :file_name: shc_blood_pressure_reference_resolution_test.rb
+- :id: smart_health_checks_v030_draft_shc_blood_pressure_create_test
+  :file_name: shc_blood_pressure_create_test.rb
 :id: smart_health_checks_v030_draft_shc_blood_pressure
 :file_name: shc_blood_pressure_group.rb
 :delayed_references: []
