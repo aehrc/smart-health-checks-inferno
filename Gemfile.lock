@@ -1,12 +1,10 @@
 GIT
   remote: https://github.com/beda-software/inferno_suite_generator.git
-  revision: 393b81b904629d4b1bda1445e88726b21a66ad71
-  ref: 393b81b904629d4b1bda1445e88726b21a66ad71
+  revision: 5eceff1089091f178ef79a1360ff0dff0db85e14
+  ref: 5eceff1089091f178ef79a1360ff0dff0db85e14
   specs:
     inferno_suite_generator (0.1.0)
       inferno_core (>= 0.6.1)
-      smart_app_launch_test_kit (>= 0.4.0)
-      tls_test_kit (~> 0.2.0)
 
 PATH
   remote: .
