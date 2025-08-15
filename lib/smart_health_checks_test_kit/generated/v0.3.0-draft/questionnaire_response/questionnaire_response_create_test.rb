@@ -14,7 +14,8 @@ module SmartHealthChecksTestKit
             title: 'Smart Health Checks Questionnaire Response resource in JSON format',
             description: 'Smart Health Checks Questionnaire Response in JSON format to be sent to the server.',
             default: '',
-            optional: false
+            optional: false,
+            type: 'textarea'
 
       id :smart_health_checks_v030_draft_questionnaire_response_create_test
 

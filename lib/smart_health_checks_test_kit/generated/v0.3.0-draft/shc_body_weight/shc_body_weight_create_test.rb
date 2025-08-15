@@ -14,7 +14,8 @@ module SmartHealthChecksTestKit
             title: 'Smart Health Checks Body Weight resource in JSON format',
             description: 'Smart Health Checks Body Weight in JSON format to be sent to the server.',
             default: '',
-            optional: false
+            optional: false,
+            type: 'textarea'
 
       id :smart_health_checks_v030_draft_shc_body_weight_create_test
 

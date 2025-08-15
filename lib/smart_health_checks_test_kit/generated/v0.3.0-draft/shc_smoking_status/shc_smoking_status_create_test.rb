@@ -14,7 +14,8 @@ module SmartHealthChecksTestKit
             title: 'Smart Health Checks Smoking Status resource in JSON format',
             description: 'Smart Health Checks Smoking Status in JSON format to be sent to the server.',
             default: '',
-            optional: false
+            optional: false,
+            type: 'textarea'
 
       id :smart_health_checks_v030_draft_shc_smoking_status_create_test
 

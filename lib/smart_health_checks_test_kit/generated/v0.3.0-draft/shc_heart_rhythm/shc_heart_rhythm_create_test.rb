@@ -14,7 +14,8 @@ module SmartHealthChecksTestKit
             title: 'Smart Health Checks Heart Rhythm resource in JSON format',
             description: 'Smart Health Checks Heart Rhythm in JSON format to be sent to the server.',
             default: '',
-            optional: false
+            optional: false,
+            type: 'textarea'
 
       id :smart_health_checks_v030_draft_shc_heart_rhythm_create_test
 
