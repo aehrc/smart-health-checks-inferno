@@ -39,7 +39,7 @@ module SmartHealthChecksTestKit
       end
 
       run do
-        perform_reference_resolution_test(scratch_resources[:all])
+        perform_reference_resolution_test(scratch_resources[:all], { 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient:1.1.0-preview' })
       end
     end
   end
