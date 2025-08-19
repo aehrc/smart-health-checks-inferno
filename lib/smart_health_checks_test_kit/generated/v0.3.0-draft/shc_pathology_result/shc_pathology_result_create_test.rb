@@ -14,7 +14,6 @@ module SmartHealthChecksTestKit
             title: 'Smart Health Checks Pathology Result resource in JSON format',
             description: 'Smart Health Checks Pathology Result in JSON format to be sent to the server.',
             default: '{
-  "id": "3014128d-fa6c-4665-928a-035e3ff8fd9e",
   "meta": {
     "profile": [
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
