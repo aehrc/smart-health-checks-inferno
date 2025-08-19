@@ -10,7 +10,7 @@
   },
   "suite": {
     "title": "Smart Health Checks",
-    "extra_json_paths": ["search-params.json"],
+    "extra_json_paths": ["search-params.json", "example-resources.json"],
     "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
     "outer_groups": [],
     "links": [
