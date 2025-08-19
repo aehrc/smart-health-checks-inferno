@@ -179,75 +179,40 @@
     },
     {
       "resource": {
-        "clinicalStatus": {
-          "coding": [
-            {
-              "code": "active",
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-              "display": "Active"
-            }
-          ]
-        },
-        "reaction": [
-          {
-            "severity": "mild",
-            "substance": {
-              "text": "Egg",
-              "coding": [
-                {
-                  "code": "102263004",
-                  "system": "http://snomed.info/sct",
-                  "display": "Eggs (edible)"
-                }
-              ]
-            },
-            "manifestation": [
-              {
-                "coding": [
-                  {
-                    "code": "active",
-                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                    "display": "Active"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "note": [
-          {
-            "text": "noneknown note"
-          }
-        ],
-        "onsetDateTime": "2023-02-12",
-        "type": "allergy",
         "meta": {
           "profile": [
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
           ]
         },
-        "verificationStatus": {
+        "clinicalStatus": {
           "coding": [
             {
-              "code": "unconfirmed",
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-              "display": "Unconfirmed"
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
             }
           ]
         },
-        "category": [
-          "environment"
+        "patient": {
+          "reference": "http://example.com"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "code": "active",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ],
+            "severity": "mild"
+          }
         ],
-        "resourceType": "AllergyIntolerance",
-        "code": {
-          "coding": [
-            {
-              "code": "716186003",
-              "system": "http://snomed.info/sct",
-              "display": "No known allergy"
-            }
-          ]
-        }
+        "resourceType": "AllergyIntolerance"
       }
     },
     {
