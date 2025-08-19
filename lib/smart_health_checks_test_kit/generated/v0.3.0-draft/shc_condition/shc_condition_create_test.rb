@@ -13,7 +13,17 @@ module SmartHealthChecksTestKit
       input :shccondition_data,
             title: 'Smart Health Checks Condition resource in JSON format',
             description: 'Smart Health Checks Condition in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+    ]
+  },
+  "subject": {
+    "reference": "http://example.com"
+  },
+  "resourceType": "Condition"
+}',
             optional: false,
             type: 'textarea'
 

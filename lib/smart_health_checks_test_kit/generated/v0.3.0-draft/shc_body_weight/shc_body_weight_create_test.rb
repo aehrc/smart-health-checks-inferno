@@ -13,7 +13,24 @@ module SmartHealthChecksTestKit
       input :shcbody_weight_data,
             title: 'Smart Health Checks Body Weight resource in JSON format',
             description: 'Smart Health Checks Body Weight in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "id": "3014128d-fa6c-4665-928a-035e3ff8fd9e",
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+    ]
+  },
+  "status": "text",
+  "code": {
+    "coding": [
+      {
+        "system": "http://example.com",
+        "code": "example"
+      }
+    ]
+  },
+  "resourceType": "Observation"
+}',
             optional: false,
             type: 'textarea'
 

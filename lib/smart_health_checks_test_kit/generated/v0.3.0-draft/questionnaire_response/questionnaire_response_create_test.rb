@@ -13,7 +13,15 @@ module SmartHealthChecksTestKit
       input :shcquestionnaire_response_data,
             title: 'Smart Health Checks Questionnaire Response resource in JSON format',
             description: 'Smart Health Checks Questionnaire Response in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
+    ]
+  },
+  "status": "text",
+  "resourceType": "QuestionnaireResponse"
+}',
             optional: false,
             type: 'textarea'
 

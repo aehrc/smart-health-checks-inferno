@@ -13,7 +13,135 @@ module SmartHealthChecksTestKit
       input :shcallergy_intolerance_data,
             title: 'Smart Health Checks AllergyIntolerance resource in JSON format',
             description: 'Smart Health Checks AllergyIntolerance in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "unconfirmed",
+        "display": "Unconfirmed"
+      }
+    ]
+  },
+  "type": "allergy",
+  "category": [
+    "environment"
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "716186003",
+        "display": "No known allergy"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/patient-tc-3",
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI",
+            "display": "National unique individual identifier"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608833357361"
+    }
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-tc"
+  },
+  "onsetDateTime": "2023-02-12",
+  "recorder": {
+    "reference": "PractitionerRole/practitionerrole-tc",
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NPI",
+            "display": "National provider identifier"
+          }
+        ],
+        "text": "HPI-I"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003614900041243"
+    }
+  },
+  "asserter": {
+    "reference": "Patient/patient-tc-3",
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI",
+            "display": "National unique individual identifier"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608833357361"
+    }
+  },
+  "note": [
+    {
+      "text": "noneknown note"
+    }
+  ],
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "102263004",
+            "display": "Eggs (edible)"
+          }
+        ],
+        "text": "Egg"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      ],
+      "severity": "mild"
+    }
+  ],
+  "resourceType": "AllergyIntolerance"
+}',
             optional: false,
             type: 'textarea'
 

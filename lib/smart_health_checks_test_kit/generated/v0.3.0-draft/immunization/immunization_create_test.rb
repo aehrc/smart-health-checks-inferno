@@ -13,7 +13,27 @@ module SmartHealthChecksTestKit
       input :shcimmunization_data,
             title: 'Smart Health Checks Immunization resource in JSON format',
             description: 'Smart Health Checks Immunization in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+    ]
+  },
+  "status": "text",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://example.com",
+        "code": "example"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "http://example.com"
+  },
+  "occurrenceString": "example",
+  "resourceType": "Immunization"
+}',
             optional: false,
             type: 'textarea'
 

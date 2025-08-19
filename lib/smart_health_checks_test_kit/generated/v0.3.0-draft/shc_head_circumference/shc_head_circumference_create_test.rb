@@ -13,7 +13,24 @@ module SmartHealthChecksTestKit
       input :shchead_circumference_data,
             title: 'Smart Health Checks Head Circumference resource in JSON format',
             description: 'Smart Health Checks Head Circumference in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "id": "3014128d-fa6c-4665-928a-035e3ff8fd9e",
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+    ]
+  },
+  "status": "text",
+  "code": {
+    "coding": [
+      {
+        "system": "http://example.com",
+        "code": "example"
+      }
+    ]
+  },
+  "resourceType": "Observation"
+}',
             optional: false,
             type: 'textarea'
 

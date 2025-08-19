@@ -13,7 +13,32 @@ module SmartHealthChecksTestKit
       input :shcmedication_statement_data,
             title: 'Smart Health Checks MedicationStatement resource in JSON format',
             description: 'Smart Health Checks MedicationStatement in JSON format to be sent to the server.',
-            default: '',
+            default: '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+    ]
+  },
+  "status": "text",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://pbs.gov.au/code/item",
+        "code": "13528B",
+        "display": "simvastatin 10 mg tablet, 30"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "21242011000036102",
+        "display": "simvastatin (medicinal product)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "http://example.com"
+  },
+  "resourceType": "MedicationStatement"
+}',
             optional: false,
             type: 'textarea'
 
