@@ -31,7 +31,10 @@
   "configs": {
     "generic": {
       "expectation": ["SHALL", "SHOULD", "MAY"],
-      "search_params_to_ignore": ["_count", "_sort", "_include"]
+      "search_params_to_ignore": ["_count", "_sort", "_include"],
+      "rewrite_profile_url": {
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient:1.1.0-preview"
+      }
     },
     "profiles": {
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient": {
