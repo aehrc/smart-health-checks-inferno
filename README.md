@@ -17,6 +17,16 @@ Smart Health Checks Inferno is designed to validate FHIR servers that implement 
 
 The test suite validates resource conformance, search capabilities, and reference resolution according to the implementation guide specifications.
 
+## Quick Start
+
+1. Install Docker and Docker Compose.
+2. From the project root, run:
+   ```bash
+   make setup
+   make run
+   ```
+3. Open http://localhost/ in your browser.
+
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started)
@@ -53,14 +63,28 @@ make run
 
 This will build and start all the necessary services. Once running, you can access the application at [http://localhost](http://localhost).
 
+### Stopping and Cleanup
+
+To stop services:
+```bash
+make stop
+```
+
+To remove containers:
+```bash
+make down
+```
+
 ## Development
 
 ### Generating Test Files
 
-To generate or regenerate test files from the implementation guide:
+To generate or regenerate test files from the implementation guide (for local development):
 ```bash
-make generate
+make generate_local
 ```
+
+Note: The Docker-based target `make generate` is intended for maintainers and may rely on internal tooling. For most contributors, use `make generate_local`.
 
 ### Running Tests
 
@@ -83,10 +107,16 @@ make rubocop-fix
 
 ### Full Development Restart
 
-To stop, rebuild, and restart the application with fresh generated files:
+To stop, rebuild, and restart the application with freshly generated files for local development, run:
 ```bash
-make full_develop_restart
+make stop
+make down
+make generate_local
+make setup
+make run
 ```
+
+Note: The convenience target `make full_develop_restart` uses the Docker-based generator and may rely on maintainer-only tooling. If it fails, use the sequence above.
 
 ## Configuration
 
@@ -120,5 +150,5 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 
 ## Links
 
-- [Smart Forms Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html)
+- [Smart Health Checks Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html)
 - [Report Issues](https://github.com/aehrc/smart-health-checks-inferno/issues)
