@@ -1,0 +1,3085 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "address": [
+          {
+            "use": "home",
+            "city": "Blacktown",
+            "line": [
+              "29 Gadsby Street"
+            ],
+            "type": "both",
+            "state": "NSW",
+            "country": "AU",
+            "postalCode": "2148"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient"
+          ],
+          "lastUpdated": "2025-08-19T16:48:02.216689Z",
+          "versionId": "404",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T11:41:17.783134Z"
+            }
+          ]
+        },
+        "name": [
+          {
+            "use": "usual",
+            "text": "Wang Li",
+            "given": [
+              "Li"
+            ],
+            "family": "Wang",
+            "prefix": [
+              "Mr"
+            ]
+          }
+        ],
+        "birthDate": "1975-05-03",
+        "resourceType": "Patient",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender",
+            "extension": [
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "446141000124107",
+                      "system": "http://snomed.info/sct",
+                      "display": "Identifies as female gender (finding)"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/closing-the-gap-registration",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+            "valueCoding": {
+              "code": "9",
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+              "display": "Not stated/inadequately described"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns",
+            "extension": [
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "LA29519-8",
+                      "system": "http://loinc.org",
+                      "display": "she/her/her/hers/herself"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity",
+            "extension": [
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "446151000124109",
+                      "system": "http://snomed.info/sct",
+                      "display": "Identifies as male gender (finding)"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "text": "Cantonese",
+              "coding": [
+                {
+                  "code": "yue",
+                  "system": "urn:ietf:bcp:47"
+                }
+              ]
+            },
+            "preferred": true
+          }
+        ],
+        "id": "patient-tc-3",
+        "identifier": [
+          {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+            "extension": [
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+                "valueCoding": {
+                  "code": "active",
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1"
+                }
+              },
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+                "valueCoding": {
+                  "code": "verified",
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+                  "display": "verified"
+                }
+              }
+            ]
+          },
+          {
+            "type": {
+              "text": "Medicare Number",
+              "coding": [
+                {
+                  "code": "MC",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "29533070322",
+            "system": "http://ns.electronichealth.net.au/id/medicare-number"
+          },
+          {
+            "type": {
+              "text": "Medical Record Number",
+              "coding": [
+                {
+                  "code": "MR",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "Medical record number"
+                }
+              ]
+            },
+            "value": "2338189",
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/medicalrecord/1.0/8003626566699734",
+            "assigner": {
+              "display": "Large Metropolitan Hospital"
+            }
+          }
+        ],
+        "telecom": [
+          {
+            "use": "home",
+            "value": "tc-1.2@amail.example.com",
+            "system": "email"
+          }
+        ],
+        "gender": "male",
+        "contact": [
+          {
+            "name": {
+              "use": "usual",
+              "text": "Wang Li",
+              "given": [
+                "Li"
+              ],
+              "family": "Wang",
+              "prefix": [
+                "Mr"
+              ]
+            },
+            "telecom": [
+              {
+                "use": "home",
+                "value": "tc-1.2@amail.example.com",
+                "system": "email"
+              }
+            ],
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "code": "E",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Patient/patient-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Patient/patient-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-15T12:01:54.430077Z",
+          "versionId": "47",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T12:01:54.430077Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "ai-tc-2",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/ai-tc-2",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/ai-tc-2"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-15T12:03:28.366485Z",
+          "versionId": "48",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T12:03:28.366485Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "ai-tc-3",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/ai-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/ai-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-15T15:27:16.773062Z",
+          "versionId": "51",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T15:27:16.773062Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "ai-tc-4",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/ai-tc-4",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/ai-tc-4"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-15T15:33:40.017730Z",
+          "versionId": "52",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T15:33:40.017730Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "8c390926-7dd9-4a9d-9298-6b57c1d48426",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/8c390926-7dd9-4a9d-9298-6b57c1d48426",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/8c390926-7dd9-4a9d-9298-6b57c1d48426"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-15T15:40:22.401682Z",
+          "versionId": "53",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T15:40:22.401682Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "4910ee91-a49d-4216-a008-ea993f05b046",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/4910ee91-a49d-4216-a008-ea993f05b046",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/4910ee91-a49d-4216-a008-ea993f05b046"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-19T06:03:49.338495Z",
+          "versionId": "88",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T06:03:49.338495Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "d39aae66-54cb-45ba-abd9-e00e5ce12b22",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/d39aae66-54cb-45ba-abd9-e00e5ce12b22",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/d39aae66-54cb-45ba-abd9-e00e5ce12b22"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-19T06:41:27.219650Z",
+          "versionId": "140",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T06:41:27.219650Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "f1fc7911-282a-4139-8f3c-2d321973b3a7",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/f1fc7911-282a-4139-8f3c-2d321973b3a7",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/f1fc7911-282a-4139-8f3c-2d321973b3a7"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-19T06:47:05.929003Z",
+          "versionId": "164",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T06:47:05.929003Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "2eb0b4a9-4b52-464f-bcb5-212178227634",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/2eb0b4a9-4b52-464f-bcb5-212178227634",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/2eb0b4a9-4b52-464f-bcb5-212178227634"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          "environment"
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "display": "Active"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
+          ],
+          "lastUpdated": "2025-08-19T07:02:14.252186Z",
+          "versionId": "179",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T07:02:14.252186Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "type": "allergy",
+        "resourceType": "AllergyIntolerance",
+        "asserter": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "note": [
+          {
+            "text": "noneknown note"
+          }
+        ],
+        "id": "e5acf626-b336-457b-bd3e-32fd6f2b35a3",
+        "recorder": {
+          "identifier": {
+            "type": {
+              "text": "HPI-I",
+              "coding": [
+                {
+                  "code": "NPI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National provider identifier"
+                }
+              ]
+            },
+            "value": "8003614900041243",
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+          },
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-02-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "unconfirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "display": "Unconfirmed"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "severity": "mild",
+            "substance": {
+              "text": "Egg",
+              "coding": [
+                {
+                  "code": "102263004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Eggs (edible)"
+                }
+              ]
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "code": "active",
+                    "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                    "display": "Active"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"noneknown\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;noneknown&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-allergyintolerance.html\">AU Core AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>code</b>: No known allergy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#716186003; absent-unknown-uv-ips#no-known-allergies &quot;No known allergies&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <span>: GP Visit</span></p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>asserter</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/AllergyIntolerance/e5acf626-b336-457b-bd3e-32fd6f2b35a3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/AllergyIntolerance/e5acf626-b336-457b-bd3e-32fd6f2b35a3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "encounter-diagnosis",
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "resolved",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
+          ],
+          "lastUpdated": "2025-08-19T17:36:58.069840Z",
+          "versionId": "559",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:36:58.069840Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "resourceType": "Condition",
+        "asserter": {
+          "reference": "Practitioner/practitioner-tc"
+        },
+        "note": [
+          {
+            "text": "Puncture wound to sole of left foot from stepping on a rusty nail.              Wound red and swollen, no calf muscle tenderness, no coughing nor chest pain              which excludes pulmonary embolism."
+          }
+        ],
+        "id": "condition-tc-3",
+        "recorder": {
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "severity": {
+          "coding": [
+            {
+              "code": "24484000",
+              "system": "http://snomed.info/sct",
+              "display": "Severe"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "283680004",
+              "system": "http://snomed.info/sct",
+              "display": "Nail wound of sole of foot"
+            }
+          ]
+        },
+        "onsetDateTime": "2017-03-30",
+        "abatementDateTime": "2015-02-14",
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "confirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Condition/condition-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Condition/condition-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "patient": {
+          "identifier": {
+            "type": {
+              "text": "IHI",
+              "coding": [
+                {
+                  "code": "NI",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "National unique individual identifier"
+                }
+              ]
+            },
+            "value": "8003608833357361",
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0"
+          },
+          "reference": "Patient/patient-tc-3"
+        },
+        "protocolApplied": [
+          {
+            "series": "primary vaccination course 2-dose",
+            "doseNumberPositiveInt": 1,
+            "targetDisease": [
+              {
+                "text": "COVID-19",
+                "coding": [
+                  {
+                    "code": "840539006",
+                    "system": "http://snomed.info/sct",
+                    "display": "COVID-19"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
+          ],
+          "lastUpdated": "2025-08-19T17:40:46.122091Z",
+          "versionId": "576",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:40:46.122091Z"
+            }
+          ]
+        },
+        "site": {
+          "text": "Left upper arm",
+          "coding": [
+            {
+              "code": "368208006",
+              "system": "http://snomed.info/sct",
+              "display": "Left upper arm structure"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "vaccineCode": {
+          "text": "Pfizer Comirnaty",
+          "coding": [
+            {
+              "code": "830851000168105",
+              "system": "http://snomed.info/sct",
+              "display": "Varicella-zoster live vaccine"
+            }
+          ]
+        },
+        "reasonCode": [
+          {
+            "text": "COVID-19 Immunization",
+            "coding": [
+              {
+                "code": "840539006",
+                "system": "http://snomed.info/sct",
+                "display": "COVID-19"
+              }
+            ]
+          }
+        ],
+        "route": {
+          "text": "Intramuscular",
+          "coding": [
+            {
+              "code": "78421000",
+              "system": "http://snomed.info/sct",
+              "display": "Intramuscular route"
+            }
+          ]
+        },
+        "resourceType": "Immunization",
+        "recorded": "2021-06-17",
+        "note": [
+          {
+            "text": "Primary vaccination course 2-dose"
+          }
+        ],
+        "primarySource": true,
+        "status": "completed",
+        "id": "immunization-tc-3",
+        "lotNumber": "200000000P",
+        "manufacturer": {
+          "display": "Pfizer Australia Ltd"
+        },
+        "location": {
+          "reference": "Location/location-tc"
+        },
+        "occurrenceDateTime": "2021-06-17",
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "type": {
+                  "text": "HPI-I",
+                  "coding": [
+                    {
+                      "code": "NPI",
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "display": "National provider identifier"
+                    }
+                  ]
+                },
+                "value": "8003619900015717",
+                "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+              },
+              "reference": "PractitionerRole/practitionerrole-tc"
+            },
+            "function": {
+              "text": "Administering Provider",
+              "coding": [
+                {
+                  "code": "AP",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+                  "display": "Administering Provider"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"covid-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;covid-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-immunization.html\">AU Core Immunization</a></p></div><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Pfizer Comirnaty <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (air-vaccine-code-formats#COMIRN; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#1525011000168107 &quot;Comirnaty&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-bennelong-anne.html\">Patient/bennelong-anne</a> &quot; BENNELONG&quot;</p><p><b>encounter</b>: <a href=\"Encounter-covid-admin-1.html\">Encounter/covid-admin-1</a></p><p><b>occurrence</b>: 2021-06-17</p><p><b>recorded</b>: 2021-06-17</p><p><b>primarySource</b>: true</p><p><b>location</b>: <a href=\"Location-bobrester-medical-center.html\">Location/bobrester-medical-center</a> &quot;Tindal Building&quot;</p><p><b>manufacturer</b>: <span>: Pfizer Australia Ltd</span></p><p><b>lotNumber</b>: 200000000P</p><p><b>site</b>: Left upper arm <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#368208006 &quot;Left upper arm structure&quot;)</span></p><p><b>route</b>: Intramuscular <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#78421000 &quot;Intramuscular route&quot;)</span></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Function</b></td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td>Administering Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v2-0443.html\">providerRole</a>#AP)</span></td><td><a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></td></tr></table><h3>ProtocolApplieds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Series</b></td><td><b>TargetDisease</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>primary vaccination course 2-dose</td><td>COVID-19 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#840539006)</span></td><td>1</td></tr></table></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Immunization/immunization-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Immunization/immunization-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": {
+          "coding": [
+            {
+              "code": "inpatient",
+              "system": "http://terminology.hl7.org/CodeSystem/medication-statement-category",
+              "display": "Inpatient"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
+          ],
+          "lastUpdated": "2025-08-19T17:44:09.978798Z",
+          "versionId": "581",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:44:09.978798Z"
+            }
+          ]
+        },
+        "dosage": [
+          {
+            "text": "40 mg/day",
+            "timing": {
+              "repeat": {
+                "period": 1,
+                "frequency": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "code": "mg",
+                  "unit": "mg",
+                  "value": 40,
+                  "system": "http://unitsofmeasure.org"
+                }
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "code": "38341003",
+                "system": "http://snomed.info/sct",
+                "display": "Hypertension"
+              }
+            ]
+          }
+        ],
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "13528B",
+              "system": "http://pbs.gov.au/code/item",
+              "display": "simvastatin 10 mg tablet, 30"
+            },
+            {
+              "code": "21242011000036102",
+              "system": "http://snomed.info/sct",
+              "display": "simvastatin (medicinal product)"
+            }
+          ]
+        },
+        "statusReason": [
+          {
+            "coding": [
+              {
+                "code": "intolerance",
+                "system": "http://terminology.hl7.org/CodeSystem/medication-statement-status-reason",
+                "display": "Intolerance"
+              }
+            ]
+          }
+        ],
+        "resourceType": "MedicationStatement",
+        "note": [
+          {
+            "text": "simvastatin"
+          }
+        ],
+        "status": "active",
+        "id": "medicationstatement-tc-3",
+        "context": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "dateAsserted": "2019-02-05",
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/medicationrequest-tc"
+          }
+        ],
+        "informationSource": {
+          "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "effectivePeriod": {
+          "start": "2014"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/MedicationStatement/medicationstatement-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/MedicationStatement/medicationstatement-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "http://loinc.org",
+              "system": "8884-9"
+            },
+            {
+              "code": "http://snomed.info/sct",
+              "system": "364074009"
+            }
+          ]
+        },
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+          ],
+          "lastUpdated": "2025-08-19T17:26:30.341485Z",
+          "versionId": "500",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:23:34.620275Z"
+            }
+          ]
+        },
+        "status": "text",
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "id": "rhythm-tc-3",
+        "resourceType": "Observation"
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/rhythm-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/rhythm-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Social History",
+            "coding": [
+              {
+                "code": "social-history",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
+          ],
+          "lastUpdated": "2025-08-19T17:32:06.316224Z",
+          "versionId": "518",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:32:06.316224Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2016-07-02",
+        "status": "final",
+        "id": "smokingstatus-tc-3",
+        "code": {
+          "text": "Smoking status",
+          "coding": [
+            {
+              "code": "72166-2",
+              "system": "http://loinc.org"
+            },
+            {
+              "code": "1747861000168109",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "text": "Smoker",
+          "coding": [
+            {
+              "code": "77176002",
+              "system": "http://snomed.info/sct",
+              "display": "Current smoker"
+            },
+            {
+              "code": "LA18979-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/smokingstatus-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/smokingstatus-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
+          ],
+          "lastUpdated": "2025-08-19T16:50:50.884141Z",
+          "versionId": "412",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T16:50:50.884141Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "valueQuantity": {
+          "code": "cm",
+          "unit": "cm",
+          "value": 175,
+          "system": "http://unitsofmeasure.org"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2016-07-02",
+        "status": "final",
+        "id": "bodyheight-tc-3",
+        "code": {
+          "text": "height",
+          "coding": [
+            {
+              "code": "8302-2",
+              "system": "http://loinc.org",
+              "display": "Body height"
+            },
+            {
+              "code": "50373000",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/bodyheight-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/bodyheight-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+          ],
+          "lastUpdated": "2025-08-19T16:55:44.990277Z",
+          "versionId": "419",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-15T11:31:06.819504Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "resourceType": "Observation",
+        "component": [
+          {
+            "code": {
+              "text": "Systolic blood pressure",
+              "coding": [
+                {
+                  "code": "8480-6",
+                  "system": "http://loinc.org",
+                  "display": "Systolic blood pressure"
+                },
+                {
+                  "code": "271649006",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
+            },
+            "dataAbsentReason": {
+              "text": "Unknown",
+              "coding": [
+                {
+                  "code": "unknown",
+                  "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                  "display": "Unknown"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "text": "Diastolic blood pressure",
+              "coding": [
+                {
+                  "code": "8462-4",
+                  "system": "http://loinc.org",
+                  "display": "Diastolic blood pressure"
+                },
+                {
+                  "code": "271650006",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
+            },
+            "dataAbsentReason": {
+              "text": "Unknown",
+              "coding": [
+                {
+                  "code": "unknown",
+                  "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+                  "display": "Unknown"
+                }
+              ]
+            }
+          }
+        ],
+        "effectiveDateTime": "2023-02-20T06:20:00+10:00",
+        "status": "final",
+        "id": "bloodpressure-data-absent-tc-3",
+        "code": {
+          "text": "Blood pressure systolic and diastolic",
+          "coding": [
+            {
+              "code": "85354-9",
+              "system": "http://loinc.org",
+              "display": "Blood pressure panel with all children optional"
+            },
+            {
+              "code": "75367002",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "dataAbsentReason": {
+          "text": "Unknown",
+          "coding": [
+            {
+              "code": "unknown",
+              "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+              "display": "Unknown"
+            }
+          ]
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/bloodpressure-data-absent-tc",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/bloodpressure-data-absent-tc"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
+          ],
+          "lastUpdated": "2025-08-19T17:30:02.002536Z",
+          "versionId": "510",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:28:27.486365Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "valueQuantity": {
+          "code": "cm",
+          "unit": "cm",
+          "value": 32,
+          "system": "http://unitsofmeasure.org"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2023-03-14",
+        "status": "final",
+        "id": "waistcircum-tc-4",
+        "code": {
+          "text": "Waist Circumference",
+          "coding": [
+            {
+              "code": "276361009",
+              "system": "http://snomed.info/sct"
+            },
+            {
+              "code": "8280-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/waistcircum-tc-4",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/waistcircum-tc-4"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
+          ],
+          "lastUpdated": "2025-08-19T16:57:46.947574Z",
+          "versionId": "428",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T16:57:46.947574Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "valueQuantity": {
+          "code": "kg",
+          "unit": "kg",
+          "value": 70,
+          "system": "http://unitsofmeasure.org"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2023-03-14",
+        "status": "final",
+        "id": "bodyweight-tc-3",
+        "code": {
+          "text": "weight",
+          "coding": [
+            {
+              "code": "29463-7",
+              "system": "http://loinc.org",
+              "display": "Body weight"
+            },
+            {
+              "code": "27113001",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/bodyweight-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/bodyweight-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
+          ],
+          "lastUpdated": "2025-08-19T16:26:40.811194Z",
+          "versionId": "380",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T16:26:40.811194Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "resourceType": "Observation",
+        "component": [
+          {
+            "code": {
+              "text": "Systolic blood pressure",
+              "coding": [
+                {
+                  "code": "8480-6",
+                  "system": "http://loinc.org",
+                  "display": "Systolic blood pressure"
+                },
+                {
+                  "code": "271649006",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "mm[Hg]",
+              "unit": "mmHg",
+              "value": 109,
+              "system": "http://unitsofmeasure.org"
+            }
+          },
+          {
+            "code": {
+              "text": "Diastolic blood pressure",
+              "coding": [
+                {
+                  "code": "8462-4",
+                  "system": "http://loinc.org",
+                  "display": "Diastolic blood pressure"
+                },
+                {
+                  "code": "271650006",
+                  "system": "http://snomed.info/sct"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "mm[Hg]",
+              "unit": "mmHg",
+              "value": 44,
+              "system": "http://unitsofmeasure.org"
+            }
+          }
+        ],
+        "effectiveDateTime": "2016-07-02",
+        "status": "final",
+        "id": "bloodpressure-tc-3",
+        "code": {
+          "text": "Blood pressure systolic and diastolic",
+          "coding": [
+            {
+              "code": "85354-9",
+              "system": "http://loinc.org",
+              "display": "Blood pressure panel with all children optional"
+            },
+            {
+              "code": "75367002",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "Practitioner/practitioner-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/bloodpressure-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/bloodpressure-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
+          ],
+          "lastUpdated": "2025-08-19T17:09:16.815509Z",
+          "versionId": "455",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:09:16.815509Z"
+            }a
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "valueQuantity": {
+          "code": "/min",
+          "unit": "beats/minute",
+          "value": 80,
+          "system": "http://unitsofmeasure.org"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2016-07-02",
+        "status": "final",
+        "id": "heartrate-tc-3",
+        "code": {
+          "text": "Heart rate",
+          "coding": [
+            {
+              "code": "8867-4",
+              "system": "http://loinc.org",
+              "display": "Heart rate"
+            },
+            {
+              "code": "364075005",
+              "system": "http://snomed.info/sct",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/heartrate-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/heartrate-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "text": "Vital Signs",
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
+          ],
+          "lastUpdated": "2025-08-19T17:06:55.605157Z",
+          "versionId": "448",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:02:24.757654Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "valueQuantity": {
+          "code": "cm",
+          "unit": "cm",
+          "value": 32,
+          "system": "http://unitsofmeasure.org"
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2023-03-14",
+        "status": "final",
+        "id": "waistcircum-tc-3",
+        "code": {
+          "text": "Waist Circumference",
+          "coding": [
+            {
+              "code": "363812007",
+              "system": "http://snomed.info/sct"
+            },
+            {
+              "code": "9843-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "identifier": {
+              "type": {
+                "text": "HPI-I",
+                "coding": [
+                  {
+                    "code": "NPI",
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "display": "National provider identifier"
+                  }
+                ]
+              },
+              "value": "8003614900041243",
+              "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0"
+            },
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/waistcircum-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/waistcircum-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "code": "MB",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "code": "mmol/L",
+              "unit": "mmol/L",
+              "value": 10,
+              "system": "http://unitsofmeasure.org"
+            },
+            "high": {
+              "code": "mmol/L",
+              "unit": "mmol/L",
+              "value": 30,
+              "system": "http://unitsofmeasure.org"
+            },
+            "text": "Typical positive range (lower Ct values indicate higher viral load)",
+            "type": {
+              "text": "Treatment Range",
+              "coding": [
+                {
+                  "code": "treatment",
+                  "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                  "display": "Treatment Range"
+                }
+              ]
+            }
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/pathresult-tc-3"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
+          ],
+          "lastUpdated": "2025-08-19T17:00:31.811410Z",
+          "versionId": "438",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:00:25.154815Z"
+            }
+          ]
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "1240581000000104",
+                "system": "http://snomed.info/sct",
+                "display": "Severe acute respiratory syndrome coronavirus 2 detected (finding)"
+              }
+            ]
+          }
+        ],
+        "specimen": {
+          "reference": "Specimen/specimen-tc"
+        },
+        "resourceType": "Observation",
+        "component": [
+          {
+            "code": {
+              "text": "RdRp gene detection",
+              "coding": [
+                {
+                  "code": "94558-4",
+                  "system": "http://loinc.org",
+                  "display": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen by Rapid immunoassay"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "260373001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Detected"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "PATHOLOGY LAB NATA/RCPA accreditation does not cover the SARS-CoV-2 (COVID-19) PCR test."
+          },
+          {
+            "text": "This test is currently under evaluation and has not been fully validated. Failure to detect organism-specific nucleic acids does not exclude the presence of disease due to this agent."
+          }
+        ],
+        "effectiveDateTime": "2021-02-15T12:00:00+10:00",
+        "status": "final",
+        "id": "pathresult-tc-3",
+        "code": {
+          "text": "2019-Novel Coronavirus PCR",
+          "coding": [
+            {
+              "code": "94309-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "text": "Placer Order Identifier",
+              "coding": [
+                {
+                  "code": "PLAC",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "value": "3451451243",
+            "system": "http://bobrestergp.example.com/order",
+            "assigner": {
+              "display": "Bobregster Medical Center QLD"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "code": "FILL",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "display": "Filler Identifier"
+                }
+              ]
+            },
+            "value": "8328qjs",
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003621566684455"
+          }
+        ],
+        "valueCodeableConcept": {
+          "text": "Not detected",
+          "coding": [
+            {
+              "code": "260415000",
+              "system": "http://snomed.info/sct",
+              "display": "Not detected"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "performer": [
+          {
+            "display": "PATHOLOGY LAB"
+          },
+          {
+            "reference": "PractitionerRole/practitionerrole-tc"
+          }
+        ],
+        "text": {
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"pathresult-covid-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;pathresult-covid-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-diagnosticresult-path.html\">AU Core Pathology Result Observation</a></p></div><p><b>identifier</b>: Placer Order Identifier/3451451243, Filler Identifier/8328qjs</p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#laboratory)</span>, Microbiology <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v2-0074.html\">diagnosticServiceSectionId</a>#MB)</span></p><p><b>code</b>: 2019-Novel Coronavirus PCR <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#94309-2)</span></p><p><b>subject</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>effective</b>: 2021-02-15 12:00:00+1000</p><p><b>performer</b>: <span>: PATHOLOGY LAB</span></p><p><b>value</b>: Not detected <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#260415000)</span></p><p><b>note</b>: PATHOLOGY LAB NATA/RCPA accreditation does not cover the SARS-CoV-2 (COVID-19) PCR test., This test is currently under evaluation and has not been fully validated. Failure to detect organism-specific nucleic acids does not exclude the presence of disease due to this agent.</p><p><b>specimen</b>: <a href=\"Specimen-nasoswab.html\">Specimen/nasoswab</a></p></div>",
+          "status": "generated"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/pathresult-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/pathresult-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "questionnaire": "questionnaire-tc-3",
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
+          ],
+          "lastUpdated": "2025-08-19T18:04:52.917100Z",
+          "versionId": "641",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:53:35.227714Z"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-tc"
+        },
+        "item": [
+          {
+            "item": [
+              {
+                "text": "Hello, World",
+                "linkId": "item.item"
+              }
+            ],
+            "text": "item",
+            "linkId": "item"
+          },
+          {
+            "answer": [
+              {
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "item2"
+          },
+          {
+            "answer": [
+              {
+                "item": [
+                  {
+                    "linkId": "item3"
+                  }
+                ]
+              }
+            ],
+            "linkId": "item3"
+          }
+        ],
+        "resourceType": "QuestionnaireResponse",
+        "author": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "status": "text",
+        "id": "questionnaire-response-tc-3",
+        "identifier": {
+          "id": "uniq-iq-3"
+        },
+        "authored": "2025-08-19T17:53:35.227714Z",
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        },
+        "text": {
+          "div": "Demo text",
+          "status": "additional"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/QuestionnaireResponse/questionnaire-response-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/QuestionnaireResponse/questionnaire-response-tc-3"
+        }
+      ]
+    }
+  ]
+}
