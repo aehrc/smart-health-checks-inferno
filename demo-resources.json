@@ -2062,63 +2062,6 @@
     },
     {
       "resource": {
-        "code": {
-          "coding": [
-            {
-              "code": "http://loinc.org",
-              "system": "8884-9"
-            },
-            {
-              "code": "http://snomed.info/sct",
-              "system": "364074009"
-            }
-          ]
-        },
-        "meta": {
-          "profile": [
-            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
-          ],
-          "lastUpdated": "2025-08-19T17:26:30.341485Z",
-          "versionId": "500",
-          "extension": [
-            {
-              "url": "http://fhir.aidbox.app/extension/createdat",
-              "valueInstant": "2025-08-19T17:23:34.620275Z"
-            }
-          ]
-        },
-        "status": "text",
-        "subject": {
-          "reference": "Patient/patient-tc-3"
-        },
-        "category": [
-          {
-            "text": "Vital Signs",
-            "coding": [
-              {
-                "code": "vital-signs",
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "display": "Vital Signs"
-              }
-            ]
-          }
-        ],
-        "id": "rhythm-tc-3",
-        "resourceType": "Observation"
-      },
-      "search": {
-        "mode": "match"
-      },
-      "fullUrl": "http://localhost:8080/Observation/rhythm-tc-3",
-      "link": [
-        {
-          "relation": "self",
-          "url": "http://localhost:8080/Observation/rhythm-tc-3"
-        }
-      ]
-    },
-    {
-      "resource": {
         "category": [
           {
             "text": "Social History",
@@ -3095,6 +3038,71 @@
         {
           "relation": "self",
           "url": "http://localhost:8080/Observation/bloodpressure-data-absent-tc-3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "vital-signs",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
+          ],
+          "lastUpdated": "2025-08-20T04:44:24.247160Z",
+          "versionId": "795",
+          "extension": [
+            {
+              "url": "http://fhir.aidbox.app/extension/createdat",
+              "valueInstant": "2025-08-19T17:23:34.620275Z"
+            }
+          ]
+        },
+        "resourceType": "Observation",
+        "effectiveDateTime": "2025-08-19T17:23:34.620275Z",
+        "status": "registered",
+        "id": "rhythm-tc-3",
+        "code": {
+          "coding": [
+            {
+              "code": "8884-9",
+              "system": "http://loinc.org"
+            },
+            {
+              "code": "364074009",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "933506231000036108",
+              "system": "http://snomed.info/sct",
+              "display": "Regular heart rhythm"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-tc-3"
+        }
+      },
+      "search": {
+        "mode": "match"
+      },
+      "fullUrl": "http://localhost:8080/Observation/rhythm-tc-3",
+      "link": [
+        {
+          "relation": "self",
+          "url": "http://localhost:8080/Observation/rhythm-tc-3"
         }
       ]
     },
