@@ -8,7 +8,8 @@ Smart Health Checks Inferno is designed to validate FHIR servers that implement 
 
 - Patient
 - Practitioner
-- Observations (Blood Pressure, Body Height, Body Weight, etc.)
+- Encounter
+- Observations (e.g., Blood Pressure, Body Height, Body Weight, Heart Rate, Heart Rhythm, Head Circumference, Waist Circumference, Pathology Result, Smoking Status)
 - Questionnaire Responses
 - Conditions
 - Immunizations
@@ -30,7 +31,7 @@ The test suite validates resource conformance, search capabilities, and referenc
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Compose v2](https://docs.docker.com/compose/install/)
 
 ## Installation
 
@@ -127,11 +128,13 @@ The project configuration is stored in `config.json`. Key configuration options 
 - Profile configurations
 - Resource configurations
 
+At runtime, the terminology server URL is also configurable via the `TX_SERVER_URL` environment variable in `compose.yaml` (defaults to https://tx.dev.hl7.org.au/fhir). You can override it by creating a Docker Compose override file or by editing `compose.yaml`.
+
 ## Project Structure
 
 - `lib/smart_health_checks_test_kit/`: Main test kit code
   - `generated/`: Generated test files based on the implementation guide
-  - `version.rb`: Version information
+  - `igs/`: Implementation Guide packages and related files used by the validator
 
 ## Docker Services
 
