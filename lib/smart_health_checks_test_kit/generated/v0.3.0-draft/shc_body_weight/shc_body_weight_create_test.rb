@@ -10,10 +10,14 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct Observation resource from Observation create interaction'
       description 'A server SHALL support the Observation create interaction.'
 
-      input :shcbody_weight_data,
-            title: 'Smart Health Checks Body Weight resource in JSON format',
-            description: 'Smart Health Checks Body Weight in JSON format to be sent to the server.',
-            default: '{
+      id :smart_health_checks_v030_draft_shc_body_weight_create_test
+
+      def resource_type
+        'Observation'
+      end
+
+      def input_data
+        '{
   "meta": {
     "profile": [
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
@@ -29,18 +33,7 @@ module SmartHealthChecksTestKit
     ]
   },
   "resourceType": "Observation"
-}',
-            optional: false,
-            type: 'textarea'
-
-      id :smart_health_checks_v030_draft_shc_body_weight_create_test
-
-      def resource_type
-        'Observation'
-      end
-
-      def input_data
-        'shcbody_weight_data'
+}'
       end
 
       run do

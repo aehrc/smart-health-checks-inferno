@@ -10,21 +10,6 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct QuestionnaireResponse resource from QuestionnaireResponse create interaction'
       description 'A server SHALL support the QuestionnaireResponse create interaction.'
 
-      input :shcquestionnaire_response_data,
-            title: 'Smart Health Checks Questionnaire Response resource in JSON format',
-            description: 'Smart Health Checks Questionnaire Response in JSON format to be sent to the server.',
-            default: '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
-    ]
-  },
-  "status": "text",
-  "resourceType": "QuestionnaireResponse"
-}',
-            optional: false,
-            type: 'textarea'
-
       id :smart_health_checks_v030_draft_questionnaire_response_create_test
 
       def resource_type
@@ -32,7 +17,15 @@ module SmartHealthChecksTestKit
       end
 
       def input_data
-        'shcquestionnaire_response_data'
+        '{
+  "meta": {
+    "profile": [
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
+    ]
+  },
+  "status": "text",
+  "resourceType": "QuestionnaireResponse"
+}'
       end
 
       run do

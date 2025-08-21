@@ -10,10 +10,14 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct MedicationStatement resource from MedicationStatement create interaction'
       description 'A server SHALL support the MedicationStatement create interaction.'
 
-      input :shcmedication_statement_data,
-            title: 'Smart Health Checks MedicationStatement resource in JSON format',
-            description: 'Smart Health Checks MedicationStatement in JSON format to be sent to the server.',
-            default: '{
+      id :smart_health_checks_v030_draft_medication_statement_create_test
+
+      def resource_type
+        'MedicationStatement'
+      end
+
+      def input_data
+        '{
   "meta": {
     "profile": [
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
@@ -38,18 +42,7 @@ module SmartHealthChecksTestKit
     "reference": "http://example.com"
   },
   "resourceType": "MedicationStatement"
-}',
-            optional: false,
-            type: 'textarea'
-
-      id :smart_health_checks_v030_draft_medication_statement_create_test
-
-      def resource_type
-        'MedicationStatement'
-      end
-
-      def input_data
-        'shcmedication_statement_data'
+}'
       end
 
       run do
