@@ -169,6 +169,8 @@
   :file_name: questionnaire_response_reference_resolution_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_create_test
   :file_name: questionnaire_response_create_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_update_test
+  :file_name: questionnaire_response_update_test.rb
 :id: smart_health_checks_v030_draft_questionnaire_response
 :file_name: questionnaire_response_group.rb
 :delayed_references: []
