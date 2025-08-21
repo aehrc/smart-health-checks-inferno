@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Smart Forms Inferno tests'
   spec.homepage      = 'https://github.com/aehrc/smart-health-checks-inferno'
   spec.license       = 'Apache-2.0'
-  spec.add_runtime_dependency 'inferno_core', '>= 0.6.1'
+  spec.add_runtime_dependency 'inferno_core', '>= 1.0.6'
   spec.add_runtime_dependency 'smart_app_launch_test_kit', '>= 0.4.0'
   spec.add_runtime_dependency 'tls_test_kit', '~> 0.2.0'
   spec.add_development_dependency 'database_cleaner-sequel', '~> 1.8'
