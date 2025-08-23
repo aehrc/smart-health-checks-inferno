@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/beda-software/inferno_suite_generator.git
-  revision: c5f423ee41dcc1ee379bf293b930009568bc5c70
-  ref: c5f423ee41dcc1ee379bf293b930009568bc5c70
+  revision: 63727f3731b4cd86913b3a470b55f6b2b7e2822a
+  ref: 63727f3731b4cd86913b3a470b55f6b2b7e2822a
   specs:
     inferno_suite_generator (0.1.0)
       inferno_core (>= 0.6.1)
