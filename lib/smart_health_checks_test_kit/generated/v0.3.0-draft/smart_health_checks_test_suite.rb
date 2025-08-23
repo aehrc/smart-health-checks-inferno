@@ -44,8 +44,7 @@ module SmartHealthChecksTestKit
       end
 
       fhir_resource_validator do
-        # igs 'csiro.fhir.au.smartforms#0.3.0-draft'
-        igs '/home/igs/0.3.0.tgz'
+        igs 'csiro.fhir.au.smartforms#0.3.0-draft'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
           "The value provided ('json') was not found in the value set 'MimeType'",

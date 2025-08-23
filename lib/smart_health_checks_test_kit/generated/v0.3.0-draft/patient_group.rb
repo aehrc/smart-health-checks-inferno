@@ -3,6 +3,7 @@
 require_relative 'patient/patient_read_test'
 require_relative 'patient/patient_validation_test'
 require_relative 'patient/patient_must_support_test'
+require_relative 'patient/patient_patch_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -54,6 +55,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_patient_read_test
       test from: :smart_health_checks_v030_draft_patient_validation_test
       test from: :smart_health_checks_v030_draft_patient_must_support_test
+      test from: :smart_health_checks_v030_draft_patient_patch_test
     end
   end
 end
