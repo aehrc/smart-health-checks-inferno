@@ -10,6 +10,12 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct Patient resource from Patient patch interaction (JSONPatch)'
       description 'A server SHALL support the Patient patch interaction (JSONPatch).'
 
+      input :patient_ids,
+            title: 'Patient IDs',
+            description: 'Comma separated list of patient',
+            default: '',
+            optional: true
+
       id :smart_health_checks_v030_draft_patient_json_patch_test
 
       def patch_data; end
