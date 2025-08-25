@@ -17,7 +17,7 @@ module SmartHealthChecksTestKit
       end
 
       def patch_data
-        [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }]
+        [{ op: 'replace', path: '/subject', value: { 'reference' => 'http://example.com/1' } }]
       end
 
       run do
