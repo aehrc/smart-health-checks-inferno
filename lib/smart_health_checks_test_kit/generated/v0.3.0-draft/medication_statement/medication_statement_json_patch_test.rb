@@ -12,8 +12,12 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_medication_statement_json_patch_test
 
+      def resource_type
+        'MedicationStatement'
+      end
+
       def patch_data
-        { resource_type: 'MedicationStatement', id: 'chloramphenicol-pat-sf', patchset: [{ op: 'replace', path: '/status', value: 'completed' }] }
+        [{ op: 'replace', path: '/status', value: 'completed' }]
       end
 
       run do

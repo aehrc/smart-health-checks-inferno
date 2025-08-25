@@ -12,8 +12,12 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_allergy_intolerance_json_patch_test
 
+      def resource_type
+        'AllergyIntolerance'
+      end
+
       def patch_data
-        { resource_type: 'AllergyIntolerance', id: '604a-pat-sf', patchset: [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }] }
+        [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }]
       end
 
       run do

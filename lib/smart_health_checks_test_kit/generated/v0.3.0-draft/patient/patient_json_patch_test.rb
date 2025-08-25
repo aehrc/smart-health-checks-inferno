@@ -14,9 +14,13 @@ module SmartHealthChecksTestKit
             title: 'Patient IDs',
             description: 'Comma separated list of patient',
             default: '',
-            optional: true
+            optional: false
 
       id :smart_health_checks_v030_draft_patient_json_patch_test
+
+      def resource_type
+        'Patient'
+      end
 
       def patch_data; end
 

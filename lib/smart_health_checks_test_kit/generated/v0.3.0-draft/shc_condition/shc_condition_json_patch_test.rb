@@ -12,8 +12,12 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_shc_condition_json_patch_test
 
+      def resource_type
+        'Condition'
+      end
+
       def patch_data
-        { resource_type: 'Condition', id: 'fever-pat-sf', patchset: [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }] }
+        [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/condition-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }]
       end
 
       run do
