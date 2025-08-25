@@ -139,12 +139,8 @@
   :file_name: patient_validation_test.rb
 - :id: smart_health_checks_v030_draft_patient_must_support_test
   :file_name: patient_must_support_test.rb
-- :id: smart_health_checks_v030_draft_patient_xml_patch_test
-  :file_name: patient_xml_patch_test.rb
 - :id: smart_health_checks_v030_draft_patient_json_patch_test
   :file_name: patient_json_patch_test.rb
-- :id: smart_health_checks_v030_draft_patient_fhirpath_xml_patch_test
-  :file_name: patient_fhir_path_xml_patch_test.rb
 - :id: smart_health_checks_v030_draft_patient_fhirpath_json_patch_test
   :file_name: patient_fhir_path_json_patch_test.rb
 :id: smart_health_checks_v030_draft_patient
