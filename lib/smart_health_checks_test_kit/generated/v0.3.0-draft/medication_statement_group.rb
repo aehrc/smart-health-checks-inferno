@@ -8,7 +8,6 @@ require_relative 'medication_statement/medication_statement_must_support_test'
 require_relative 'medication_statement/medication_statement_reference_resolution_test'
 require_relative 'medication_statement/medication_statement_create_test'
 require_relative 'medication_statement/medication_statement_json_patch_test'
-require_relative 'medication_statement/medication_statement_fhir_path_json_patch_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -85,7 +84,6 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_medication_statement_reference_resolution_test
       test from: :smart_health_checks_v030_draft_medication_statement_create_test
       test from: :smart_health_checks_v030_draft_medication_statement_json_patch_test
-      test from: :smart_health_checks_v030_draft_medication_statement_fhirpath_json_patch_test
     end
   end
 end

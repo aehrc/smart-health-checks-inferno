@@ -155,8 +155,6 @@
   :file_name: shc_condition_create_test.rb
 - :id: smart_health_checks_v030_draft_shc_condition_json_patch_test
   :file_name: shc_condition_json_patch_test.rb
-- :id: smart_health_checks_v030_draft_shc_condition_fhirpath_json_patch_test
-  :file_name: shc_condition_fhir_path_json_patch_test.rb
 :id: smart_health_checks_v030_draft_shc_condition
 :file_name: shc_condition_group.rb
 :delayed_references: []
