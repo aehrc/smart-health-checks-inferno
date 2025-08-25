@@ -7,14 +7,15 @@ module SmartHealthChecksTestKit
     class PatientJSONPatchTest < Inferno::Test
       include InfernoSuiteGenerator::PatchTest
 
-      title '(SHALL) Server returns correct Patient resource from Patient patch interaction ()'
-      description 'A server SHALL support the Patient patch interaction ().'
+      title '(SHALL) Server returns correct Patient resource from Patient patch interaction (JSONPatch)'
+      description 'A server SHALL support the Patient patch interaction (JSONPatch).'
 
-      id :smart_health_checks_v030_draft_patient__patch_test
+      id :smart_health_checks_v030_draft_patient_json_patch_test
 
       def patch_data; end
 
       run do
+        perform_json_patch_test
       end
     end
   end

@@ -13,7 +13,7 @@ module SmartHealthChecksTestKit
       id :smart_health_checks_v030_draft_medication_statement_fhirpath_xml_patch_test
 
       def patch_data
-        { resource_type: 'MedicationStatement', id: 'chloramphenicol-pat-sf', patchset: { 'parameter' => [{ 'name' => 'operation', 'part' => [{ 'name' => 'type', 'valueCode' => 'replace' }, { 'name' => 'path', 'valueString' => 'MedicationStatement.status' }, { 'name' => 'name', 'valueString' => 'status' }, { 'name' => 'value', 'valueCode' => 'completed' }, { 'name' => 'pathLabel', 'valueString' => 'Status' }] }], 'resourceType' => 'Parameters' } }
+        { resource_type: 'MedicationStatement', id: 'chloramphenicol-pat-sf', patchset: [{ 'parameter' => [{ 'name' => 'operation', 'part' => [{ 'name' => 'type', 'valueCode' => 'replace' }, { 'name' => 'path', 'valueString' => 'MedicationStatement.status' }, { 'name' => 'name', 'valueString' => 'status' }, { 'name' => 'value', 'valueCode' => 'completed' }, { 'name' => 'pathLabel', 'valueString' => 'Status' }] }], 'resourceType' => 'Parameters' }] }
       end
 
       run do
