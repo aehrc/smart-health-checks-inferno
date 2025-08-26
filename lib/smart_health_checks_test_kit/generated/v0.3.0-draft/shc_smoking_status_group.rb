@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_smoking_status/shc_smoking_status_patient_search_test'
 require_relative 'shc_smoking_status/shc_smoking_status_code_search_test'
 require_relative 'shc_smoking_status/shc_smoking_status_validation_test'

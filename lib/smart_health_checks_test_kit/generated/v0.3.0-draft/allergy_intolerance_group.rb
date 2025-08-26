@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'allergy_intolerance/allergy_intolerance_patient_search_test'
 require_relative 'allergy_intolerance/allergy_intolerance_validation_test'
 require_relative 'allergy_intolerance/allergy_intolerance_must_support_test'

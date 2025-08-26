@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'medication_statement/medication_statement_patient_search_test'
 require_relative 'medication_statement/medication_statement_status_search_test'
 require_relative 'medication_statement/medication_statement_patient_status_search_test'

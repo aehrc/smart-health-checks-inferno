@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_body_height/shc_body_height_patient_search_test'
 require_relative 'shc_body_height/shc_body_height_code_search_test'
 require_relative 'shc_body_height/shc_body_height_validation_test'

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_blood_pressure/shc_blood_pressure_patient_search_test'
 require_relative 'shc_blood_pressure/shc_blood_pressure_code_search_test'
 require_relative 'shc_blood_pressure/shc_blood_pressure_validation_test'

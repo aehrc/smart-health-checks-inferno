@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_condition/shc_condition_patient_search_test'
 require_relative 'shc_condition/shc_condition_category_search_test'
 require_relative 'shc_condition/shc_condition_patient_category_search_test'

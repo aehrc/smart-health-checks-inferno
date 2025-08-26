@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_patient_search_test'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_code_search_test'
 require_relative 'shc_heart_rhythm/shc_heart_rhythm_validation_test'
