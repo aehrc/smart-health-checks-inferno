@@ -16,10 +16,6 @@ module SmartHealthChecksTestKit
         'Condition'
       end
 
-      def patch_data
-        [{ op: 'replace', path: '/subject', value: { 'reference' => 'http://example.com/1' } }]
-      end
-
       run do
         perform_json_patch_test
       end

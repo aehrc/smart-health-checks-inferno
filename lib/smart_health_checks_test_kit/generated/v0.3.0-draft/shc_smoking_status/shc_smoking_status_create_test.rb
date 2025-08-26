@@ -22,26 +22,6 @@ module SmartHealthChecksTestKit
         'Observation'
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
-    ]
-  },
-  "status": "text",
-  "code": {
-    "coding": [
-      {
-        "system": "http://example.com",
-        "code": "example"
-      }
-    ]
-  },
-  "resourceType": "Observation"
-}'
-      end
-
       run do
         perform_create_test
       end

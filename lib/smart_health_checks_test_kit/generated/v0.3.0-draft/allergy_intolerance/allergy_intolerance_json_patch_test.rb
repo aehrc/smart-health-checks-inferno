@@ -16,10 +16,6 @@ module SmartHealthChecksTestKit
         'AllergyIntolerance'
       end
 
-      def patch_data
-        [{ op: 'replace', path: '/clinicalStatus', value: { 'coding' => [{ 'system' => 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical', 'code' => 'inactive', 'display' => 'Inactive' }] } }]
-      end
-
       run do
         perform_json_patch_test
       end

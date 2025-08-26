@@ -22,10 +22,6 @@ module SmartHealthChecksTestKit
         'Patient'
       end
 
-      def patch_data
-        [{ op: 'replace', path: '/gender', value: 'other' }]
-      end
-
       run do
         perform_json_patch_test
       end

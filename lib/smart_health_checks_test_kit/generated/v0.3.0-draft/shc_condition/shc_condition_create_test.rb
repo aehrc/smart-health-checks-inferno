@@ -22,20 +22,6 @@ module SmartHealthChecksTestKit
         'Condition'
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
-    ]
-  },
-  "subject": {
-    "reference": "http://example.com"
-  },
-  "resourceType": "Condition"
-}'
-      end
-
       run do
         perform_create_test
       end

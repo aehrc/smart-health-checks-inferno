@@ -22,30 +22,6 @@ module SmartHealthChecksTestKit
         'Immunization'
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
-    ]
-  },
-  "status": "text",
-  "vaccineCode": {
-    "coding": [
-      {
-        "system": "http://example.com",
-        "code": "example"
-      }
-    ]
-  },
-  "patient": {
-    "reference": "http://example.com"
-  },
-  "occurrenceString": "example",
-  "resourceType": "Immunization"
-}'
-      end
-
       run do
         perform_create_test
       end

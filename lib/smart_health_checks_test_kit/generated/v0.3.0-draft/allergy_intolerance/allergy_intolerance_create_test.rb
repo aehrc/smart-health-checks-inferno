@@ -22,45 +22,6 @@ module SmartHealthChecksTestKit
         'AllergyIntolerance'
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
-    ]
-  },
-  "clinicalStatus": {
-    "coding": [
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-        "code": "active",
-        "display": "Active"
-      }
-    ]
-  },
-  "patient": {
-    "reference": "http://example.com"
-  },
-  "reaction": [
-    {
-      "manifestation": [
-        {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ]
-        }
-      ],
-      "severity": "mild"
-    }
-  ],
-  "resourceType": "AllergyIntolerance"
-}'
-      end
-
       run do
         perform_create_test
       end

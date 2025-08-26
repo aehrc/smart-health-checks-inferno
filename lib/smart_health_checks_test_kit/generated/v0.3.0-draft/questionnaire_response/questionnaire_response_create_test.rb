@@ -22,18 +22,6 @@ module SmartHealthChecksTestKit
         'QuestionnaireResponse'
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
-    ]
-  },
-  "status": "text",
-  "resourceType": "QuestionnaireResponse"
-}'
-      end
-
       run do
         perform_create_test
       end

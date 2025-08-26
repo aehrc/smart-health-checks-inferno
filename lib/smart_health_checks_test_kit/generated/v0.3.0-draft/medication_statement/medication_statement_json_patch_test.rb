@@ -16,10 +16,6 @@ module SmartHealthChecksTestKit
         'MedicationStatement'
       end
 
-      def patch_data
-        [{ op: 'replace', path: '/status', value: 'completed' }]
-      end
-
       run do
         perform_json_patch_test
       end
