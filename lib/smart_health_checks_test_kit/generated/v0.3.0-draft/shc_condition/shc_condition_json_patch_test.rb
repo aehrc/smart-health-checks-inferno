@@ -12,6 +12,12 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_shc_condition_json_patch_test
 
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
+      end
+
       def resource_type
         'Condition'
       end
