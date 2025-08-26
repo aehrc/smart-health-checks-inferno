@@ -18,6 +18,12 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_encounter_read_test
 
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
+      end
+
       def resource_type
         'Encounter'
       end
