@@ -18,12 +18,12 @@
 :operations: []
 :searches:
 - :names:
-  - code
+  - patient
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :names:
-  - patient
+  - code
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
@@ -178,10 +178,10 @@
   - http://hl7.org/fhir/StructureDefinition/Observation
   - http://hl7.org/fhir/StructureDefinition/MolecularSequence
 :tests:
-- :id: smart_health_checks_v030_draft_shc_heart_rhythm_code_search_test
-  :file_name: shc_heart_rhythm_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_patient_search_test
   :file_name: shc_heart_rhythm_patient_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_heart_rhythm_code_search_test
+  :file_name: shc_heart_rhythm_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_validation_test
   :file_name: shc_heart_rhythm_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_must_support_test

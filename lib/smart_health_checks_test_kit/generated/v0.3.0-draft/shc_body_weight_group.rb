@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/core/ig_demodata'
-require_relative 'shc_body_weight/shc_body_weight_code_search_test'
 require_relative 'shc_body_weight/shc_body_weight_patient_search_test'
+require_relative 'shc_body_weight/shc_body_weight_code_search_test'
 require_relative 'shc_body_weight/shc_body_weight_validation_test'
 require_relative 'shc_body_weight/shc_body_weight_must_support_test'
 require_relative 'shc_body_weight/shc_body_weight_reference_resolution_test'
@@ -27,8 +27,8 @@ This test sequence will first perform each required search associated
 with this resource. This sequence will perform searches with the
 following parameters:
 
-* code
 * patient
+* code
 
 ### Search Parameters
 The first search uses the selected patient(s) from the prior launch sequence. Any subsequent searches will look for its parameter values from the results of the first search. For example, the `identifier` search in the patient sequence is performed by looking for an existing `Patient.identifier` from any of the resources returned in the `_id` search. If a value cannot be found this way, the search is skipped.
@@ -74,8 +74,8 @@ read succeeds.
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'shc_body_weight', 'metadata.yml'), aliases: true))
       end
 
-      test from: :smart_health_checks_v030_draft_shc_body_weight_code_search_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_patient_search_test
+      test from: :smart_health_checks_v030_draft_shc_body_weight_code_search_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_validation_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_must_support_test
       test from: :smart_health_checks_v030_draft_shc_body_weight_reference_resolution_test

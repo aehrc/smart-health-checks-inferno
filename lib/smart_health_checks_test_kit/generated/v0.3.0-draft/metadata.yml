@@ -839,12 +839,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -1081,12 +1081,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -1286,12 +1286,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -1491,12 +1491,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -1655,12 +1655,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -1868,12 +1868,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -2070,12 +2070,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -2250,12 +2250,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
@@ -2455,12 +2455,12 @@
   :operations: []
   :searches:
   - :names:
-    - code
+    - patient
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   - :names:
-    - patient
+    - code
     :expectation: SHALL
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true

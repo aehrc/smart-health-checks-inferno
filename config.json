@@ -75,12 +75,16 @@
             "extractor_type": "must_support"
           }
         ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult": {
+        "search_param": {
+          "clinical-code": {
+            "default_values": ["251739003", "24701-5"]
+          }
+        }
       }
     },
     "resources": {
-      "Observation": {
-        "forced_initial_search": ["code"]
-      },
       "Medication": {
         "skip": true
       },
