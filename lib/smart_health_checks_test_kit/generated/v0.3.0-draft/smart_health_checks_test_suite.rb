@@ -4,6 +4,7 @@ require 'base64'
 require 'inferno/dsl/oauth_credentials'
 require 'inferno_suite_generator/utils/helpers'
 require_relative '../../version'
+require_relative '../../outer_groups/teardown'
 
 require_relative 'patient_group'
 require_relative 'allergy_intolerance_group'
@@ -141,6 +142,8 @@ module SmartHealthChecksTestKit
         group from: :smart_health_checks_v030_draft_encounter
 
         group from: :smart_health_checks_v030_draft_practitioner
+
+        group from: :smart_health_checks_v030_draft_teardown
       end
     end
   end
