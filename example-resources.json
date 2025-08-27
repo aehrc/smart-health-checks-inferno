@@ -21,7 +21,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -40,7 +40,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -59,7 +59,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -78,7 +78,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -97,7 +97,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -116,7 +116,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -135,7 +135,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -154,7 +154,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -173,7 +173,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference"
           ]
         },
-        "status": "text",
+        "status": "registered",
         "resourceType": "Observation"
       }
     },
@@ -194,7 +194,16 @@
           ]
         },
         "patient": {
-          "reference": "http://example.com"
+          "reference": "Patient/pat-sf"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "716186003",
+              "system": "http://snomed.info/sct",
+              "display": "No known allergy"
+            }
+          ]
         },
         "reaction": [
           {
@@ -218,7 +227,7 @@
     {
       "resource": {
         "resourceType": "QuestionnaireResponse",
-        "status": "text",
+        "status": "in-progress",
         "meta": {
           "profile": [
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
@@ -229,7 +238,7 @@
     {
       "resource": {
         "resourceType": "MedicationStatement",
-        "status": "text",
+        "status": "active",
         "medicationCodeableConcept": {
           "coding": [
             {
@@ -245,7 +254,7 @@
           ]
         },
         "subject": {
-          "reference": "http://example.com"
+          "reference": "Patient/pat-sf"
         },
         "meta": {
           "profile": [
@@ -262,7 +271,7 @@
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
           ]
         },
-        "status": "text",
+        "status": "completed",
         "vaccineCode": {
           "coding": [
             {
@@ -272,7 +281,7 @@
           ]
         },
         "patient": {
-          "reference": "http://example.com"
+          "reference": "Patient/pat-sf"
         },
         "occurrenceString": "example"
       }
@@ -281,8 +290,23 @@
       "resource": {
         "resourceType": "Condition",
         "subject": {
-          "reference": "http://example.com"
+          "reference": "Patient/pat-sf"
         },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "55607006",
+                "display": "Problem"
+              },
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
         "meta": {
           "profile": [
             "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"

@@ -28,6 +28,12 @@
       }
     ]
   },
+  "constants": {
+    "default_fhir_server": "https://proxy.smartforms.io/fhir",
+    "read_ids.patient": "pat-sf",
+    "read_ids.encounter": "health-check-pat-sf",
+    "read_ids.practitioner": "primary-peter"
+  },
   "configs": {
     "generic": {
       "expectation": ["SHALL", "SHOULD", "MAY"],
