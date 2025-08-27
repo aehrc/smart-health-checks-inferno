@@ -78,6 +78,9 @@
       }
     },
     "resources": {
+      "Observation": {
+        "forced_initial_search": ["code"]
+      },
       "Medication": {
         "skip": true
       },

@@ -18,12 +18,12 @@
 :operations: []
 :searches:
 - :names:
-  - patient
+  - code
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 - :names:
-  - code
+  - patient
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
@@ -211,10 +211,10 @@
   - http://hl7.org/fhir/StructureDefinition/MolecularSequence
   - http://hl7.org/fhir/StructureDefinition/vitalsigns
 :tests:
-- :id: smart_health_checks_v030_draft_shc_head_circumference_patient_search_test
-  :file_name: shc_head_circumference_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_head_circumference_code_search_test
   :file_name: shc_head_circumference_code_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_head_circumference_patient_search_test
+  :file_name: shc_head_circumference_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_head_circumference_validation_test
   :file_name: shc_head_circumference_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_head_circumference_must_support_test

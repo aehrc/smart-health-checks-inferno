@@ -16,6 +16,14 @@ code on the Observation resource. This test
 will pass if resources are returned and match the search criteria. If
 none are returned, the test is skipped.
 
+Because this is the first search of the sequence, resources in the
+response will be used for subsequent tests.
+
+Additionally, this test will check that GET and POST search methods
+return the same number of results. Search by POST is required by the
+FHIR R4 specification, and these tests interpret search by GET as a
+requirement of Smart Health Checks v0.3.0-draft.
+
 [Smart Health Checks Server CapabilityStatement](https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement)
 
       )
@@ -30,9 +38,12 @@ none are returned, the test is skipped.
 
       def self.properties
         @properties ||= InfernoSuiteGenerator::SearchTestProperties.new(
+          first_search: true,
+          fixed_value_search: true,
           resource_type: 'Observation',
           search_param_names: ['code'],
-          token_search_params: ['code']
+          token_search_params: ['code'],
+          test_post_search: true
         )
       end
 
