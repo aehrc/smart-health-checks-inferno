@@ -44,7 +44,9 @@
     :full_paths:
     - Observation.code
     :comparators: {}
-    :values: []
+    :values:
+    - '251739003'
+    - 24701-5
     :type: CodeableConcept
     :contains_multiple: false
 :include_params: []
