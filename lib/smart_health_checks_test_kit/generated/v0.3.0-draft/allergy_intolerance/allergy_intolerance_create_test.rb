@@ -32,8 +32,17 @@ module SmartHealthChecksTestKit
       }
     ]
   },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "716186003",
+        "display": "No known allergy"
+      }
+    ]
+  },
   "patient": {
-    "reference": "http://example.com"
+    "reference": "Patient/pat-sf"
   },
   "reaction": [
     {

@@ -23,8 +23,23 @@ module SmartHealthChecksTestKit
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
     ]
   },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "55607006",
+          "display": "Problem"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item"
+        }
+      ]
+    }
+  ],
   "subject": {
-    "reference": "http://example.com"
+    "reference": "Patient/pat-sf"
   },
   "resourceType": "Condition"
 }'

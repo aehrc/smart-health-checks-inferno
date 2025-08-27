@@ -23,7 +23,7 @@ module SmartHealthChecksTestKit
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
     ]
   },
-  "status": "text",
+  "status": "registered",
   "code": {
     "coding": [
       {

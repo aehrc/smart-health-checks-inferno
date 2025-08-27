@@ -23,7 +23,7 @@ module SmartHealthChecksTestKit
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
     ]
   },
-  "status": "text",
+  "status": "completed",
   "vaccineCode": {
     "coding": [
       {
@@ -33,7 +33,7 @@ module SmartHealthChecksTestKit
     ]
   },
   "patient": {
-    "reference": "http://example.com"
+    "reference": "Patient/pat-sf"
   },
   "occurrenceString": "example",
   "resourceType": "Immunization"

@@ -13,7 +13,7 @@ module SmartHealthChecksTestKit
       input :encounter_ids,
             title: 'Encounter IDs',
             description: 'Comma separated list of encounter IDs that in sum contain all MUST SUPPORT elements',
-            default: '',
+            default: 'health-check-pat-sf',
             optional: true
 
       id :smart_health_checks_v030_draft_encounter_read_test

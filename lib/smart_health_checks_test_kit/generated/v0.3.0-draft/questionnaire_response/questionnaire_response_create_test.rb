@@ -23,7 +23,7 @@ module SmartHealthChecksTestKit
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
     ]
   },
-  "status": "text",
+  "status": "in-progress",
   "resourceType": "QuestionnaireResponse"
 }'
       end

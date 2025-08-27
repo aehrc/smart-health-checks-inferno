@@ -23,7 +23,7 @@ module SmartHealthChecksTestKit
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
     ]
   },
-  "status": "text",
+  "status": "active",
   "medicationCodeableConcept": {
     "coding": [
       {
@@ -39,7 +39,7 @@ module SmartHealthChecksTestKit
     ]
   },
   "subject": {
-    "reference": "http://example.com"
+    "reference": "Patient/pat-sf"
   },
   "resourceType": "MedicationStatement"
 }'
