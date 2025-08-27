@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'encounter/encounter_read_test'
 require_relative 'encounter/encounter_validation_test'
 require_relative 'encounter/encounter_must_support_test'

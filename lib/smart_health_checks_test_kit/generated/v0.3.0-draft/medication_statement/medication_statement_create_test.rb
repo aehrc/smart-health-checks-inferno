@@ -12,37 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_medication_statement_create_test
 
-      def resource_type
-        'MedicationStatement'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement"
-    ]
-  },
-  "status": "active",
-  "medicationCodeableConcept": {
-    "coding": [
-      {
-        "system": "http://pbs.gov.au/code/item",
-        "code": "13528B",
-        "display": "simvastatin 10 mg tablet, 30"
-      },
-      {
-        "system": "http://snomed.info/sct",
-        "code": "21242011000036102",
-        "display": "simvastatin (medicinal product)"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/pat-sf"
-  },
-  "resourceType": "MedicationStatement"
-}'
+      def resource_type
+        'MedicationStatement'
       end
 
       run do

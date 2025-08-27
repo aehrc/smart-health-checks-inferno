@@ -12,20 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_questionnaire_response_create_test
 
-      def resource_type
-        'QuestionnaireResponse'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
-    ]
-  },
-  "status": "in-progress",
-  "resourceType": "QuestionnaireResponse"
-}'
+      def resource_type
+        'QuestionnaireResponse'
       end
 
       run do

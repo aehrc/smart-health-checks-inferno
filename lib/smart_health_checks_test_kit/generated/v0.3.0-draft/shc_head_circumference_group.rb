@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_head_circumference/shc_head_circumference_patient_search_test'
 require_relative 'shc_head_circumference/shc_head_circumference_code_search_test'
 require_relative 'shc_head_circumference/shc_head_circumference_validation_test'

@@ -12,46 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_shc_condition_create_test
 
-      def resource_type
-        'Condition'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition"
-    ]
-  },
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "55607006",
-          "display": "Problem"
-        },
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-          "code": "problem-list-item"
-        }
-      ]
-    }
-  ],
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "283680004",
-        "display": "Nail wound of sole of foot"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/pat-sf"
-  },
-  "resourceType": "Condition"
-}'
+      def resource_type
+        'Condition'
       end
 
       run do

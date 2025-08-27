@@ -12,32 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_immunization_create_test
 
-      def resource_type
-        'Immunization'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization"
-    ]
-  },
-  "status": "completed",
-  "vaccineCode": {
-    "coding": [
-      {
-        "system": "http://example.com",
-        "code": "example"
-      }
-    ]
-  },
-  "patient": {
-    "reference": "Patient/pat-sf"
-  },
-  "occurrenceString": "example",
-  "resourceType": "Immunization"
-}'
+      def resource_type
+        'Immunization'
       end
 
       run do

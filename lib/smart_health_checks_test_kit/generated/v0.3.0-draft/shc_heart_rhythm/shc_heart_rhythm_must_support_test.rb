@@ -16,6 +16,9 @@ module SmartHealthChecksTestKit
 
         * Observation.category
         * Observation.category:vitalSignsCategory
+        * Observation.category:vitalSignsCategory.coding
+        * Observation.category:vitalSignsCategory.coding.code
+        * Observation.category:vitalSignsCategory.coding.system
         * Observation.code
         * Observation.code.coding
         * Observation.code.coding:loincHeartRhythmCode

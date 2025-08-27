@@ -12,28 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_shc_body_height_create_test
 
-      def resource_type
-        'Observation'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure"
-    ]
-  },
-  "status": "registered",
-  "code": {
-    "coding": [
-      {
-        "system": "http://example.com",
-        "code": "example"
-      }
-    ]
-  },
-  "resourceType": "Observation"
-}'
+      def resource_type
+        'Observation'
       end
 
       run do

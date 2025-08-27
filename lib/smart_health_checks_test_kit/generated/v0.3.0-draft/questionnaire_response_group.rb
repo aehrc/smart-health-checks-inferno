@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'questionnaire_response/questionnaire_response_patient_search_test'
 require_relative 'questionnaire_response/questionnaire_response_questionnaire_search_test'
 require_relative 'questionnaire_response/questionnaire_response_status_search_test'

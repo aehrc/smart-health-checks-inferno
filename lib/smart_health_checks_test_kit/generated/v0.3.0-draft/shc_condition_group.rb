@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_condition/shc_condition_patient_search_test'
 require_relative 'shc_condition/shc_condition_category_search_test'
 require_relative 'shc_condition/shc_condition_patient_category_search_test'
@@ -7,6 +8,7 @@ require_relative 'shc_condition/shc_condition_validation_test'
 require_relative 'shc_condition/shc_condition_must_support_test'
 require_relative 'shc_condition/shc_condition_reference_resolution_test'
 require_relative 'shc_condition/shc_condition_create_test'
+require_relative 'shc_condition/shc_condition_json_patch_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -82,6 +84,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_shc_condition_must_support_test
       test from: :smart_health_checks_v030_draft_shc_condition_reference_resolution_test
       test from: :smart_health_checks_v030_draft_shc_condition_create_test
+      test from: :smart_health_checks_v030_draft_shc_condition_json_patch_test
     end
   end
 end

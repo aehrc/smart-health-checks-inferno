@@ -12,56 +12,14 @@ module SmartHealthChecksTestKit
 
       id :smart_health_checks_v030_draft_allergy_intolerance_create_test
 
-      def resource_type
-        'AllergyIntolerance'
+      def self.demodata
+        @demodata ||= InfernoSuiteGenerator::Generator::IGDemodata.new(
+          YAML.load_file(File.join(File.dirname(__dir__), 'demodata.yml'), aliases: true)
+        )
       end
 
-      def input_data
-        '{
-  "meta": {
-    "profile": [
-      "https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance"
-    ]
-  },
-  "clinicalStatus": {
-    "coding": [
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-        "code": "active",
-        "display": "Active"
-      }
-    ]
-  },
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "716186003",
-        "display": "No known allergy"
-      }
-    ]
-  },
-  "patient": {
-    "reference": "Patient/pat-sf"
-  },
-  "reaction": [
-    {
-      "manifestation": [
-        {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ]
-        }
-      ],
-      "severity": "mild"
-    }
-  ],
-  "resourceType": "AllergyIntolerance"
-}'
+      def resource_type
+        'AllergyIntolerance'
       end
 
       run do

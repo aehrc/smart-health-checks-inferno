@@ -88,6 +88,11 @@
   :elements:
   - :path: status
   - :path: category
+  - :path: category:vitalSignsCategory.coding
+  - :path: category:vitalSignsCategory.coding.system
+    :fixed_value: http://terminology.hl7.org/CodeSystem/observation-category
+  - :path: category:vitalSignsCategory.coding.code
+    :fixed_value: vital-signs
   - :path: code
   - :path: code.coding
   - :path: code.text
@@ -103,6 +108,9 @@
 :mandatory_elements:
 - Observation.status
 - Observation.category
+- Observation.category.coding
+- Observation.category.coding.system
+- Observation.category.coding.code
 - Observation.code
 - Observation.code.coding
 - Observation.code.coding.system
