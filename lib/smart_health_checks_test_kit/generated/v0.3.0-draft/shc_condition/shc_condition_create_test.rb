@@ -38,6 +38,15 @@ module SmartHealthChecksTestKit
       ]
     }
   ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "283680004",
+        "display": "Nail wound of sole of foot"
+      }
+    ]
+  },
   "subject": {
     "reference": "Patient/pat-sf"
   },
