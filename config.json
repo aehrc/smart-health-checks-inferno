@@ -76,6 +76,12 @@
       },
       "DiagnosticReport": {
         "skip": true
+      },
+      "Bundle": {
+        "skip": true
+      },
+      "Parameters": {
+        "skip": true
       }
     }
   }
