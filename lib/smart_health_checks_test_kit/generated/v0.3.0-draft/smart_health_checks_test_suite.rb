@@ -6,6 +6,10 @@ require 'inferno_suite_generator/utils/helpers'
 require_relative '../../version'
 
 require_relative 'patient_group'
+require_relative 'allergy_intolerance_group'
+require_relative 'shc_condition_group'
+require_relative 'immunization_group'
+require_relative 'medication_statement_group'
 require_relative 'shc_blood_pressure_group'
 require_relative 'shc_body_height_group'
 require_relative 'shc_body_weight_group'
@@ -15,10 +19,6 @@ require_relative 'shc_heart_rate_group'
 require_relative 'shc_heart_rhythm_group'
 require_relative 'shc_waist_circumference_group'
 require_relative 'shc_smoking_status_group'
-require_relative 'allergy_intolerance_group'
-require_relative 'shc_condition_group'
-require_relative 'immunization_group'
-require_relative 'medication_statement_group'
 require_relative 'questionnaire_response_group'
 require_relative 'encounter_group'
 require_relative 'practitioner_group'
@@ -110,6 +110,14 @@ module SmartHealthChecksTestKit
 
         group from: :smart_health_checks_v030_draft_patient
 
+        group from: :smart_health_checks_v030_draft_allergy_intolerance
+
+        group from: :smart_health_checks_v030_draft_shc_condition
+
+        group from: :smart_health_checks_v030_draft_immunization
+
+        group from: :smart_health_checks_v030_draft_medication_statement
+
         group from: :smart_health_checks_v030_draft_shc_blood_pressure
 
         group from: :smart_health_checks_v030_draft_shc_body_height
@@ -127,14 +135,6 @@ module SmartHealthChecksTestKit
         group from: :smart_health_checks_v030_draft_shc_waist_circumference
 
         group from: :smart_health_checks_v030_draft_shc_smoking_status
-
-        group from: :smart_health_checks_v030_draft_allergy_intolerance
-
-        group from: :smart_health_checks_v030_draft_shc_condition
-
-        group from: :smart_health_checks_v030_draft_immunization
-
-        group from: :smart_health_checks_v030_draft_medication_statement
 
         group from: :smart_health_checks_v030_draft_questionnaire_response
 
