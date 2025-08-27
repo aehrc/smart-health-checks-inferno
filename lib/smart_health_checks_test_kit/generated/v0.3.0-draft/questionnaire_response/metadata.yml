@@ -77,7 +77,7 @@
 :must_supports:
   :extensions:
   - :id: QuestionnaireResponse.questionnaire.extension:questionnaireDisplay
-    :url: http://hl7.org/fhir/StructureDefinition/display|5.3.0-ballot-tc1
+    :url: http://hl7.org/fhir/StructureDefinition/display
   :slices: []
   :elements:
   - :path: id
