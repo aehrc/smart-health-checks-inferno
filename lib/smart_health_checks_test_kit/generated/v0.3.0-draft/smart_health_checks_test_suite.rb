@@ -86,7 +86,7 @@ module SmartHealthChecksTestKit
       input :url,
             title: 'FHIR Endpoint',
             description: 'URL of the FHIR endpoint',
-            default: ''
+            default: 'https://proxy.smartforms.io/fhir'
       input :smart_credentials,
             title: 'OAuth Credentials',
             type: :oauth_credentials,
