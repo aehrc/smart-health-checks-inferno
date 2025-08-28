@@ -99,6 +99,12 @@ module SmartHealthChecksTestKit
             title: 'Header value',
             optional: true
 
+      input :extra_bundle,
+            title: 'Extra Transaction Bundle',
+            description: 'A FHIR Bundle containing resources to be included as patch requests in the test suite.',
+            type: 'textarea',
+            optional: true
+
       fhir_client do
         url :url
         oauth_credentials :smart_credentials
