@@ -9,7 +9,8 @@ require_relative 'questionnaire_response/questionnaire_response_validation_test'
 require_relative 'questionnaire_response/questionnaire_response_must_support_test'
 require_relative 'questionnaire_response/questionnaire_response_reference_resolution_test'
 require_relative 'questionnaire_response/questionnaire_response_create_test'
-require_relative 'questionnaire_response/questionnaire_response_update_test'
+require_relative 'questionnaire_response/questionnaire_response_update_update_test'
+require_relative 'questionnaire_response/questionnaire_response_new_update_update_test'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -87,7 +88,8 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_questionnaire_response_must_support_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_reference_resolution_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_create_test
-      test from: :smart_health_checks_v030_draft_questionnaire_response_update_test
+      test from: :smart_health_checks_v030_draft_questionnaire_response_update_update_test
+      test from: :smart_health_checks_v030_draft_questionnaire_response_update_new_update_test
     end
   end
 end
