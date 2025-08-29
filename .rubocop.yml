@@ -1,5 +1,12 @@
 require:
   - rubocop-erb
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'smart_health_checks_test_kit.gemspec'
+    - 'lib/smart_health_checks_test_kit/ext/**/*'
+
 Style/Documentation:
   Enabled: false
 Layout/LineLength:
