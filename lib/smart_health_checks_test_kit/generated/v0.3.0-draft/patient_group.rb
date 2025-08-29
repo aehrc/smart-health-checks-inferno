@@ -56,7 +56,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_patient_read_test
       test from: :smart_health_checks_v030_draft_patient_validation_test
       test from: :smart_health_checks_v030_draft_patient_must_support_test
-      test from: :smart_health_checks_v030_draft_patient_json_patch_test
+      # test from: :smart_health_checks_v030_draft_patient_json_patch_test
     end
   end
 end

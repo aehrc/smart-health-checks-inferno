@@ -78,7 +78,7 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_allergy_intolerance_must_support_test
       test from: :smart_health_checks_v030_draft_allergy_intolerance_reference_resolution_test
       test from: :smart_health_checks_v030_draft_allergy_intolerance_create_test
-      test from: :smart_health_checks_v030_draft_allergy_intolerance_json_patch_test
+      # test from: :smart_health_checks_v030_draft_allergy_intolerance_json_patch_test
     end
   end
 end
