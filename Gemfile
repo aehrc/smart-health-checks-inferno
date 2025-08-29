@@ -10,9 +10,9 @@ group :development, :test do
   gem 'debug'
 end
 
+gem 'inferno_suite_generator', github: 'beda-software/inferno_suite_generator', ref: '5f4060763af89b59597f5bd34ad38cebd23dff33'
 gem 'pg', '~> 1.5'
 gem 'rubocop', '~> 1.63.2'
 gem 'rubocop-erb', '~> 0.3.0'
 gem 'sqlite3', '~> 1.4'
-gem 'inferno_suite_generator', github: 'beda-software/inferno_suite_generator', ref: 'a9f401940a6cbce53fe235db85f67f32234daccf'
 # gem 'inferno_suite_generator', path: '../inferno_suite_generator'
