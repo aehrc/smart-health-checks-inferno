@@ -125,8 +125,8 @@
   :file_name: allergy_intolerance_reference_resolution_test.rb
 - :id: smart_health_checks_v030_draft_allergy_intolerance_create_test
   :file_name: allergy_intolerance_create_test.rb
-- :id: smart_health_checks_v030_draft_allergy_intolerance_json_patch_test
-  :file_name: allergy_intolerance_json_patch_test.rb
+- :id: smart_health_checks_v030_draft_allergy_intolerance_fhirpath_json_patch_test
+  :file_name: allergy_intolerance_fhir_path_json_patch_test.rb
 :id: smart_health_checks_v030_draft_allergy_intolerance
 :file_name: allergy_intolerance_group.rb
 :delayed_references: []
