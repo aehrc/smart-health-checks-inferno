@@ -52,6 +52,42 @@
               },
               {
                 "name": "path",
+                "valueString": "AllergyIntolerance.clinicalStatus"
+              },
+              {
+                "name": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                      "code": "active",
+                      "display": "Active"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "AllergyIntolerance/allergy-123"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "replace"
+              },
+              {
+                "name": "path",
                 "valueString": "Condition.clinicalStatus"
               },
               {
@@ -62,6 +98,42 @@
                       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                       "code": "inactive",
                       "display": "Inactive"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "Condition/condition-456"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "replace"
+              },
+              {
+                "name": "path",
+                "valueString": "Condition.clinicalStatus"
+              },
+              {
+                "name": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                      "code": "active",
+                      "display": "Active"
                     }
                   ]
                 }
@@ -116,11 +188,67 @@
               },
               {
                 "name": "path",
+                "valueString": "MedicationStatement.status"
+              },
+              {
+                "name": "value",
+                "valueCode": "active"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "MedicationStatement/medstmt-789"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "replace"
+              },
+              {
+                "name": "path",
                 "valueString": "Patient.gender"
               },
               {
                 "name": "value",
                 "valueCode": "other"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "Patient/patient-101"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "replace"
+              },
+              {
+                "name": "path",
+                "valueString": "Patient.gender"
+              },
+              {
+                "name": "value",
+                "valueCode": "female"
               }
             ]
           }
