@@ -27712,6 +27712,11 @@
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+  - resourceType: QuestionnaireResponse
+    status: stopped
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
   Immunization:
   - resourceType: Immunization
     meta:

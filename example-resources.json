@@ -237,6 +237,17 @@
     },
     {
       "resource": {
+        "resourceType": "QuestionnaireResponse",
+        "status": "stopped",
+        "meta": {
+          "profile": [
+            "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse"
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
         "resourceType": "MedicationStatement",
         "status": "active",
         "medicationCodeableConcept": {
