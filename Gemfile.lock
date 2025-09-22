@@ -1,10 +1,11 @@
 GIT
   remote: https://github.com/beda-software/inferno_suite_generator.git
-  revision: 3cc36462da4d4ed9f17ab65addd91a02151768d0
-  ref: 3cc36462da4d4ed9f17ab65addd91a02151768d0
+  revision: 383be1b5b1b8c870bd4cbb0e1d690d0ea67e1abe
+  ref: 383be1b5b1b8c870bd4cbb0e1d690d0ea67e1abe
   specs:
     inferno_suite_generator (0.1.0)
       inferno_core (>= 0.6.1)
+      jsonpath (~> 1.1, >= 1.1.5)
 
 PATH
   remote: .
@@ -208,6 +209,8 @@ GEM
       aes_key_wrap
       bindata
       httpclient
+    jsonpath (1.1.5)
+      multi_json
     jwt (2.10.1)
       base64
     kramdown (2.5.1)
