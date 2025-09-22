@@ -58,6 +58,48 @@
       }
     },
     "profiles": {
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "85354-9"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "75367002"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "8302-2"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "50373000"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "29463-7"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "27113001"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "8867-4"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "364075005"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "72166-2"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "1747861000168109"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "8280-0"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "276361009"}]
+        ]
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "9843-4"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "363812007"}]
+        ]
+      },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient": {
         "first_class_profile": "read"
       },
@@ -68,6 +110,10 @@
         "first_class_profile": "read"
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm": {
+        "filter_set": [
+          [{"expression": "$.code.coding[?(@.system == 'http://loinc.org')].code", "value": "8884-9"}],
+          [{"expression": "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", "value": "364074009"}]
+        ],
         "register_extractors": [
           {
             "path_to_extractor": "lib/smart_health_checks_test_kit/extractors/hr_ms_values/extractor.rb",
