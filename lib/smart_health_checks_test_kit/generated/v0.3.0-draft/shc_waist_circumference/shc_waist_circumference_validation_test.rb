@@ -31,6 +31,10 @@ fail if their code/system are not found in the valueset.
         scratch[:shc_waist_circumference_resources] ||= {}
       end
 
+      def filter_set
+        [[{ 'expression' => "$.code.coding[?(@.system == 'http://loinc.org')].code", 'value' => '8280-0' }], [{ 'expression' => "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", 'value' => '276361009' }]]
+      end
+
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference',

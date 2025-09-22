@@ -31,6 +31,10 @@ fail if their code/system are not found in the valueset.
         scratch[:shc_blood_pressure_resources] ||= {}
       end
 
+      def filter_set
+        [[{ 'expression' => "$.code.coding[?(@.system == 'http://loinc.org')].code", 'value' => '85354-9' }], [{ 'expression' => "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", 'value' => '75367002' }]]
+      end
+
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure',
