@@ -5,6 +5,7 @@ require 'inferno/dsl/oauth_credentials'
 require 'inferno_suite_generator/utils/helpers'
 require_relative '../../version'
 require_relative '../../outer_groups/teardown'
+
 require_relative '../../ext/fhir_client_request_patch_payload'
 require_relative '../../ext/crud'
 require_relative '../../ext/patch_format'
@@ -48,7 +49,6 @@ module SmartHealthChecksTestKit
       end
 
       fhir_resource_validator do
-        # igs 'csiro.fhir.au.smartforms#0.3.0-draft'
         igs '/home/igs/0.3.0.tgz'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
