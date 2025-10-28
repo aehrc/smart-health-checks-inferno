@@ -31,6 +31,10 @@ fail if their code/system are not found in the valueset.
         scratch[:shc_pathology_result_resources] ||= {}
       end
 
+      def filter_set
+        []
+      end
+
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult',

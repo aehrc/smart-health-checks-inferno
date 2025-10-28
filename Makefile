@@ -1,24 +1,22 @@
 compose = docker compose
 inferno = run inferno
+rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/
+ber_generate = bundle exec rake smart_health_checks:generate
+lint_generated = rubocop -A lib/smart_health_checks_test_kit/
 
 .PHONY: setup generate summary new_release tests run pull build up stop down rubocop migrate clean_generated ig_download uploadfig_generate_local
 
 setup: pull build migrate
 
-generate: uploadfig_download_ig_deps
-	rm -rf lib/smart_health_checks_test_kit/generated/
-	$(compose) $(inferno) bundle exec rake smart_health_checks:generate
-	$(compose) $(inferno) rubocop -A lib/smart_health_checks_test_kit/
+generate:
+	$(rm_generated)
+	$(compose) $(inferno) $(ber_generate)
+	$(compose) $(inferno) $(lint_generated)
 
 generate_local:
-	rm -rf lib/smart_health_checks_test_kit/generated/
-	bundle exec rake smart_health_checks:generate
-	rubocop -A lib/smart_health_checks_test_kit/
-
-summary: build
-	$(compose) $(inferno) ruby lib/smart_health_checks_test_kit/generator/summary_generator.rb
-
-new_release: build ig_download generate summary
+	$(rm_generated)
+	$(ber_generate)
+	$(lint_generated)
 
 tests:
 	$(compose) run -e APP_ENV=test inferno bundle exec rspec
@@ -50,7 +48,7 @@ migrate:
 	$(compose) $(inferno) bundle exec rake db:migrate
 
 clean_generated:
-	sudo rm -rf lib/smart_forms_test_kit/generated/
+	sudo $(rm_generated)
 	git checkout lib/smart_forms_test_kit/generated/
 
 full_develop_restart: stop down generate setup run
