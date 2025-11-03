@@ -3,7 +3,7 @@
     "id": "csiro.fhir.au.smartforms",
     "version": "0.3.0-draft",
     "name": "Smart Health Checks Implementation Guide",
-    "link": "https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html",
+    "link": "https://smartforms.csiro.au/ig/0.3.0-draft/index.html",
     "cs_profile_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
     "cs_version_specific_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
     "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.3.0.tgz"

@@ -33,7 +33,7 @@ module SmartHealthChecksTestKit
     class SmartHealthChecksTestSuite < Inferno::TestSuite
       title 'Smart Health Checks v0.3.0-draft'
       description %(
-        The Smart Health Checks Test Kit tests systems for their conformance to the [Smart Health Checks Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html).
+        The Smart Health Checks Test Kit tests systems for their conformance to the [Smart Health Checks Implementation Guide](https://smartforms.csiro.au/ig/0.3.0-draft/index.html).
 
         HL7® FHIR® resources are validated with the Java validator using
         https://tx.dev.hl7.org.au/fhir as the terminology server.
