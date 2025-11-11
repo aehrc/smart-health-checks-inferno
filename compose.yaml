@@ -7,6 +7,8 @@ services:
       - ./lib/:/opt/inferno/lib
       - ./:/opt/inferno/
     depends_on:
+      validator-api-worker:
+        condition: service_started
       redis:
         condition: service_started
       postgres:
@@ -24,6 +26,8 @@ services:
       - ./data:/opt/inferno/data
     command: bundle exec sidekiq -r ./worker.rb
     depends_on:
+      validator-api-worker:
+        condition: service_started
       redis:
         condition: service_started
       postgres:
@@ -33,12 +37,12 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: inferno
       POSTGRES_USER: postgres
-  validator-api:
-    image: markiantorno/validator-wrapper:1.0.70
-    environment:
-      SESSION_CACHE_DURATION: -1
-    volumes:
-      - ./lib/smart_health_checks_test_kit/igs:/home/igs
+#  validator-api:
+#    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-0fab420
+#    environment:
+#      SESSION_CACHE_DURATION: -1
+#    volumes:
+#      - ./lib/smart_health_checks_test_kit/igs:/home/igs
   nginx:
     image: nginx
     ports:
@@ -69,5 +73,48 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: inferno
+  validator-api-worker:
+    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-b012bb4
+    depends_on:
+      validator-api:
+        condition: service_healthy
+    links:
+      - validator-api
+    env_file:
+      - ./env/app
+      - .env
+    tty: true
+  validator-api:
+    image: healthsamurai/aidboxone:edge
+    depends_on:
+      devbox-db:
+        condition: service_healthy
+    links:
+      - 'devbox-db:database'
+    ports:
+      - '127.0.0.1:8080:8080'
+    env_file:
+      - ./env/aidbox
+      - .env
+    volumes:
+      - ./resources:/resources
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      interval: 1s
+      timeout: 20s
+      retries: 100
+      test: curl --fail http://validator-api:8080/health || exit 1
+  devbox-db:
+    image: 'healthsamurai/aidboxdb:15.2'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: devbox
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 volumes:
   redis-data:
