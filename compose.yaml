@@ -74,7 +74,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: inferno
   validator-api-worker:
-    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-b012bb4
+    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-5226cbd
     depends_on:
       validator-api:
         condition: service_healthy
