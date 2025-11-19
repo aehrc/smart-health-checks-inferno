@@ -57,7 +57,7 @@ services:
       - redis-data:/data
     command: redis-server --appendonly yes
   validator-api-worker:
-    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-834fdde
+    image: ghcr.io/beda-software/aidbox-validator/aidbox-validator:main-a5d15ca
     depends_on:
       validator-api:
         condition: service_healthy
