@@ -1,18 +1,18 @@
 {
   "ig": {
     "id": "csiro.fhir.au.smartforms",
-    "version": "0.3.0-draft",
+    "version": "0.4.0-ci-build",
     "name": "Smart Health Checks Implementation Guide",
-    "link": "https://smartforms.csiro.au/ig/0.3.0-draft/index.html",
+    "link": "https://smartforms.csiro.au/ig/0.4.0-ci-build/index.html",
     "cs_profile_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
     "cs_version_specific_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
-    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.3.0.tgz"
+    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.4.0-ci-build.tgz"
   },
   "suite": {
     "title": "Smart Health Checks",
     "extra_json_paths": ["search-params.json", "example-resources.json", "patch-bundle.json"],
     "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
-    "rewrite_igs": "/home/igs/0.3.0.tgz",
+    "rewrite_igs": "/home/igs/0.4.0-ci-build.tgz",
     "extra_imports": [
       {
         "import_type": "relative",
