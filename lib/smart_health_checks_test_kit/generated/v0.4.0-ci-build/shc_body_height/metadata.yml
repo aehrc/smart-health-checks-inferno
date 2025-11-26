@@ -27,6 +27,12 @@
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
 :search_definitions:
   :patient:
     :paths:
@@ -207,6 +213,8 @@
   :file_name: shc_body_height_patient_search_test.rb
 - :id: smart_health_checks_v040_ci_build_shc_body_height_code_search_test
   :file_name: shc_body_height_code_search_test.rb
+- :id: smart_health_checks_v040_ci_build_shc_body_height_patient_code_search_test
+  :file_name: shc_body_height_patient_code_search_test.rb
 - :id: smart_health_checks_v040_ci_build_shc_body_height_validation_test
   :file_name: shc_body_height_validation_test.rb
 - :id: smart_health_checks_v040_ci_build_shc_body_height_must_support_test

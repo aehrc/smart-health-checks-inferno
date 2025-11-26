@@ -36,6 +36,18 @@
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - questionnaire
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
 :search_definitions:
   :patient:
     :paths:
@@ -154,6 +166,10 @@
   :file_name: questionnaire_response_questionnaire_search_test.rb
 - :id: smart_health_checks_v040_ci_build_questionnaire_response_status_search_test
   :file_name: questionnaire_response_status_search_test.rb
+- :id: smart_health_checks_v040_ci_build_questionnaire_response_patient_questionnaire_search_test
+  :file_name: questionnaire_response_patient_questionnaire_search_test.rb
+- :id: smart_health_checks_v040_ci_build_questionnaire_response_patient_status_search_test
+  :file_name: questionnaire_response_patient_status_search_test.rb
 - :id: smart_health_checks_v040_ci_build_questionnaire_response_read_test
   :file_name: questionnaire_response_read_test.rb
 - :id: smart_health_checks_v040_ci_build_questionnaire_response_validation_test
