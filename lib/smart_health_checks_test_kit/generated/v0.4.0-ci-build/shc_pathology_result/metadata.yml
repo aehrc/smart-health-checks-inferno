@@ -51,8 +51,7 @@
     - Observation.code
     :comparators: {}
     :values:
-    - '251739003'
-    - 24701-5
+    - 32309-7
     :type: CodeableConcept
     :contains_multiple: false
 :include_params: []

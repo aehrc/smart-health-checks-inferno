@@ -140,7 +140,7 @@
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult": {
         "search_param": {
           "clinical-code": {
-            "default_values": ["251739003", "24701-5"]
+            "default_values": ["32309-7"]
           }
         }
       }
