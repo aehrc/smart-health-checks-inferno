@@ -1,8 +1,8 @@
 compose = docker compose
 inferno = run inferno
-rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/v0.4.0-ci-build
+rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/v0.3.0-draft
 ber_generate = bundle exec rake smart_health_checks:generate
-lint_generated = rubocop -A lib/smart_health_checks_test_kit/generated/v0.4.0-ci-build
+lint_generated = rubocop -A lib/smart_health_checks_test_kit/generated/v0.3.0-draft
 
 .PHONY: setup generate summary new_release tests run pull build up stop down rubocop migrate clean_generated ig_download uploadfig_generate_local
 
