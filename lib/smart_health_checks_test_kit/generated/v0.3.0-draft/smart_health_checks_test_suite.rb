@@ -18,12 +18,12 @@ require_relative 'medication_statement_group'
 require_relative 'shc_blood_pressure_group'
 require_relative 'shc_body_height_group'
 require_relative 'shc_body_weight_group'
-require_relative 'shc_pathology_result_group'
 require_relative 'shc_head_circumference_group'
 require_relative 'shc_heart_rate_group'
 require_relative 'shc_heart_rhythm_group'
-require_relative 'shc_waist_circumference_group'
+require_relative 'shc_pathology_result_group'
 require_relative 'shc_smoking_status_group'
+require_relative 'shc_waist_circumference_group'
 require_relative 'questionnaire_response_group'
 require_relative 'encounter_group'
 require_relative 'practitioner_group'
@@ -49,7 +49,7 @@ module SmartHealthChecksTestKit
       end
 
       fhir_resource_validator do
-        igs '/home/igs/0.3.0.tgz'
+        igs '/home/igs/0.3.0-draft.tgz'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
           "The value provided ('json') was not found in the value set 'MimeType'",
@@ -134,17 +134,17 @@ module SmartHealthChecksTestKit
 
         group from: :smart_health_checks_v030_draft_shc_body_weight
 
-        group from: :smart_health_checks_v030_draft_shc_pathology_result
-
         group from: :smart_health_checks_v030_draft_shc_head_circumference
 
         group from: :smart_health_checks_v030_draft_shc_heart_rate
 
         group from: :smart_health_checks_v030_draft_shc_heart_rhythm
 
-        group from: :smart_health_checks_v030_draft_shc_waist_circumference
+        group from: :smart_health_checks_v030_draft_shc_pathology_result
 
         group from: :smart_health_checks_v030_draft_shc_smoking_status
+
+        group from: :smart_health_checks_v030_draft_shc_waist_circumference
 
         group from: :smart_health_checks_v030_draft_questionnaire_response
 

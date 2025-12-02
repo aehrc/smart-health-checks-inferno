@@ -38,7 +38,7 @@ fail if their code/system are not found in the valueset.
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference',
-                                '0.3.0',
+                                '0.3.0-draft',
                                 skip_if_empty: true)
       end
     end

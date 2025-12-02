@@ -21,6 +21,7 @@ module SmartHealthChecksTestKit
         * MedicationStatement.id
         * MedicationStatement.medication[x]
         * MedicationStatement.medication[x]:medicationCodeableConcept
+        * MedicationStatement.medication[x]:medicationCodeableConcept.text
         * MedicationStatement.medication[x]:medicationReference
         * MedicationStatement.note
         * MedicationStatement.note.text

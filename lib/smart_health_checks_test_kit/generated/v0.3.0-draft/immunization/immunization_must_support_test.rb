@@ -17,12 +17,13 @@ module SmartHealthChecksTestKit
         * Immunization.lotNumber
         * Immunization.note
         * Immunization.note.text
-        * Immunization.occurrence[x]
+        * Immunization.occurrenceDateTime
         * Immunization.occurrence[x]:occurrenceDateTime
         * Immunization.patient
         * Immunization.primarySource
         * Immunization.status
         * Immunization.vaccineCode
+        * Immunization.vaccineCode.text
       )
 
       id :smart_health_checks_v030_draft_immunization_must_support_test

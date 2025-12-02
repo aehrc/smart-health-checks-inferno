@@ -6,7 +6,7 @@
 :resource: Observation
 :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
 :profile_name: Smart Health Checks Heart Rhythm
-:profile_version: 0.3.0
+:profile_version: 0.3.0-draft
 :title: Observation Heart Rhythm
 :short_description: Verify support for the server capabilities required by the Smart
   Health Checks Heart Rhythm.
@@ -25,6 +25,12 @@
 - :names:
   - code
   :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
@@ -55,16 +61,6 @@
 :must_supports:
   :extensions: []
   :slices:
-  - :slice_id: Observation.category:vitalSignsCategory
-    :slice_name: vitalSignsCategory
-    :path: category
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code
-        :value: vital-signs
-      - :path: system
-        :value: http://terminology.hl7.org/CodeSystem/observation-category
   - :slice_id: Observation.code.coding:loincHeartRhythmCode
     :slice_name: loincHeartRhythmCode
     :path: code.coding
@@ -87,14 +83,6 @@
         :value: http://snomed.info/sct
   :elements:
   - :path: status
-  - :path: category
-  - :path: category:vitalSignsCategory.coding
-  - :path: category:vitalSignsCategory.coding.system
-    :fixed_value: http://terminology.hl7.org/CodeSystem/observation-category
-  - :path: category:vitalSignsCategory.coding.code
-    :fixed_value: vital-signs
-  - :path: code
-  - :path: code.coding
   - :path: code.text
   - :path: subject
     :types:
@@ -102,9 +90,7 @@
     :target_profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
   - :path: effective[x]
-  - :path: value[x]
   - :path: value[x].coding
-  - :path: dataAbsentReason
 :mandatory_elements:
 - Observation.status
 - Observation.category
@@ -126,62 +112,64 @@
 :references:
 - :path: Observation.basedOn
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/CarePlan
-  - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-  - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-  - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-  - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
 - :path: Observation.partOf
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-  - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-  - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-  - http://hl7.org/fhir/StructureDefinition/Procedure
-  - http://hl7.org/fhir/StructureDefinition/Immunization
-  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
 - :path: Observation.subject
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
 - :path: Observation.focus
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Resource
+  - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
 - :path: Observation.encounter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
 - :path: Observation.performer
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/Organization
-  - http://hl7.org/fhir/StructureDefinition/CareTeam
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
 - :path: Observation.specimen
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Specimen
+  - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
 - :path: Observation.device
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Device
-  - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+  - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
 - :path: Observation.hasMember
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Observation
-  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
 - :path: Observation.derivedFrom
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/DocumentReference
-  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-  - http://hl7.org/fhir/StructureDefinition/Media
-  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-  - http://hl7.org/fhir/StructureDefinition/Observation
-  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
 :tests:
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_patient_search_test
   :file_name: shc_heart_rhythm_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_code_search_test
   :file_name: shc_heart_rhythm_code_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_heart_rhythm_patient_code_search_test
+  :file_name: shc_heart_rhythm_patient_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_validation_test
   :file_name: shc_heart_rhythm_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_heart_rhythm_must_support_test

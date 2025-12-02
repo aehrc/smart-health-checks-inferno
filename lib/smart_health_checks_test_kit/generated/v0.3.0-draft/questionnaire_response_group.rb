@@ -4,6 +4,8 @@ require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'questionnaire_response/questionnaire_response_patient_search_test'
 require_relative 'questionnaire_response/questionnaire_response_questionnaire_search_test'
 require_relative 'questionnaire_response/questionnaire_response_status_search_test'
+require_relative 'questionnaire_response/questionnaire_response_patient_questionnaire_search_test'
+require_relative 'questionnaire_response/questionnaire_response_patient_status_search_test'
 require_relative 'questionnaire_response/questionnaire_response_read_test'
 require_relative 'questionnaire_response/questionnaire_response_validation_test'
 require_relative 'questionnaire_response/questionnaire_response_must_support_test'
@@ -34,6 +36,8 @@ following parameters:
 * patient
 * questionnaire
 * status
+* patient + questionnaire
+* patient + status
 
 ### Search Parameters
 The first search uses the selected patient(s) from the prior launch sequence. Any subsequent searches will look for its parameter values from the results of the first search. For example, the `identifier` search in the patient sequence is performed by looking for an existing `Patient.identifier` from any of the resources returned in the `_id` search. If a value cannot be found this way, the search is skipped.
@@ -74,7 +78,6 @@ read succeeds.
 
       id :smart_health_checks_v030_draft_questionnaire_response
       run_as_group
-      optional
 
       def self.metadata
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'questionnaire_response', 'metadata.yml'), aliases: true))
@@ -83,6 +86,8 @@ read succeeds.
       test from: :smart_health_checks_v030_draft_questionnaire_response_patient_search_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_questionnaire_search_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_status_search_test
+      test from: :smart_health_checks_v030_draft_questionnaire_response_patient_questionnaire_search_test
+      test from: :smart_health_checks_v030_draft_questionnaire_response_patient_status_search_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_read_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_validation_test
       test from: :smart_health_checks_v030_draft_questionnaire_response_must_support_test

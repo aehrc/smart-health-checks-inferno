@@ -15,6 +15,8 @@ module SmartHealthChecksTestKit
         found previously for the following must support elements:
 
         * Observation.category
+        * Observation.category:lab
+        * Observation.category:specificDiscipline
         * Observation.code
         * Observation.code.coding
         * Observation.component
@@ -36,6 +38,10 @@ module SmartHealthChecksTestKit
         * Observation.status
         * Observation.subject
         * Observation.value[x]
+        * Observation.value[x]:valueQuantity
+        * Observation.value[x]:valueQuantity.code
+        * Observation.value[x]:valueQuantity.system
+        * Observation.value[x]:valueQuantity.value
       )
 
       id :smart_health_checks_v030_draft_shc_pathology_result_must_support_test

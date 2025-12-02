@@ -19,10 +19,11 @@ module SmartHealthChecksTestKit
         * Condition.category
         * Condition.clinicalStatus
         * Condition.code
+        * Condition.code.text
         * Condition.id
         * Condition.note
         * Condition.note.text
-        * Condition.onset[x]
+        * Condition.onsetDateTime
         * Condition.onset[x]:onsetDateTime
         * Condition.severity
         * Condition.subject
