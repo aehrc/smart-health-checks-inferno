@@ -18,6 +18,12 @@ module SmartHealthChecksTestKit
         )
       end
 
+      def self.metadata
+        @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(
+          YAML.load_file(File.join(__dir__, 'metadata.yml'), aliases: true)
+        )
+      end
+
       def resource_type
         'Observation'
       end
