@@ -12,11 +12,15 @@
             "part": [
               {
                 "name": "type",
-                "valueCode": "replace"
+                "valueCode": "add"
               },
               {
                 "name": "path",
-                "valueString": "AllergyIntolerance.clinicalStatus"
+                "valueString": "AllergyIntolerance"
+              },
+              {
+                "name": "name",
+                "valueString": "clinicalStatus"
               },
               {
                 "name": "value",
@@ -24,83 +28,36 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                      "code": "resolved",
-                      "display": "Resolved"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "request": {
-        "method": "PATCH",
-        "url": "AllergyIntolerance/allergy-123"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Parameters",
-        "parameter": [
-          {
-            "name": "operation",
-            "part": [
-              {
-                "name": "type",
-                "valueCode": "replace"
-              },
-              {
-                "name": "path",
-                "valueString": "AllergyIntolerance.clinicalStatus"
-              },
-              {
-                "name": "value",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-                      "code": "active",
-                      "display": "Active"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "request": {
-        "method": "PATCH",
-        "url": "AllergyIntolerance/allergy-123"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Parameters",
-        "parameter": [
-          {
-            "name": "operation",
-            "part": [
-              {
-                "name": "type",
-                "valueCode": "replace"
-              },
-              {
-                "name": "path",
-                "valueString": "Condition.clinicalStatus"
-              },
-              {
-                "name": "value",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
                       "code": "inactive",
                       "display": "Inactive"
                     }
                   ]
                 }
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Clinical status"
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "AllergyIntolerance.note[0]"
+              },
+              {
+                "name": "name",
+                "valueString": "text"
+              },
+              {
+                "name": "value",
+                "valueMarkdown": "Does not react anymore."
               }
             ]
           }
@@ -108,7 +65,7 @@
       },
       "request": {
         "method": "PATCH",
-        "url": "Condition/condition-456"
+        "url": "AllergyIntolerance/allergy-123"
       }
     },
     {
@@ -120,22 +77,24 @@
             "part": [
               {
                 "name": "type",
-                "valueCode": "replace"
+                "valueCode": "add"
               },
               {
                 "name": "path",
-                "valueString": "Condition.clinicalStatus"
+                "valueString": "AllergyIntolerance"
+              },
+              {
+                "name": "name",
+                "valueString": "note"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Comment"
               },
               {
                 "name": "value",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                      "code": "active",
-                      "display": "Active"
-                    }
-                  ]
+                "valueAnnotation": {
+                  "text": "Over entire body"
                 }
               }
             ]
@@ -144,6 +103,75 @@
       },
       "request": {
         "method": "PATCH",
+        "url": "AllergyIntolerance/allergy-123"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "Condition"
+              },
+              {
+                "name": "name",
+                "valueString": "clinicalStatus"
+              },
+              {
+                "name": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                      "code": "unknown",
+                      "display": "Unknown"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Clinical status"
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "Condition"
+              },
+              {
+                "name": "name",
+                "valueString": "abatement"
+              },
+              {
+                "name": "value",
+                "valueDateTime": "2025-08-13"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Abatement date"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
         "url": "Condition/condition-456"
       }
     },
@@ -156,15 +184,223 @@
             "part": [
               {
                 "name": "type",
-                "valueCode": "replace"
+                "valueCode": "add"
               },
               {
                 "name": "path",
-                "valueString": "MedicationStatement.status"
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "status"
+              },
+              {
+                "name": "value",
+                "valueCode": "completed"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Status"
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement.note[0]"
+              },
+              {
+                "name": "name",
+                "valueString": "text"
+              },
+              {
+                "name": "value",
+                "valueMarkdown": "Problem resolved with treatment"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "MedicationStatement/medstmt-789"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement.dosage[0]"
+              },
+              {
+                "name": "name",
+                "valueString": "text"
+              },
+              {
+                "name": "value",
+                "valueString": "1/2 tablet in the morning. Increase dose to 1 tablet after 4 weeks."
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "note"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Comment"
+              },
+              {
+                "name": "value",
+                "valueAnnotation": {
+                  "text": "Monitor for effectiveness."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "MedicationStatement/medstmt-789"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "status"
+              },
+              {
+                "name": "value",
+                "valueCode": "on-hold"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Status"
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "dosage"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Dosage"
+              },
+              {
+                "name": "value",
+                "valueDosage": {
+                  "text": "1 at night"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PATCH",
+        "url": "MedicationStatement/medstmt-789"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Parameters",
+        "parameter": [
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement"
+              },
+              {
+                "name": "name",
+                "valueString": "status"
               },
               {
                 "name": "value",
                 "valueCode": "stopped"
+              },
+              {
+                "name": "pathLabel",
+                "valueString": "Status"
+              }
+            ]
+          },
+          {
+            "name": "operation",
+            "part": [
+              {
+                "name": "type",
+                "valueCode": "add"
+              },
+              {
+                "name": "path",
+                "valueString": "MedicationStatement.dosage[0]"
+              },
+              {
+                "name": "name",
+                "valueString": "text"
+              },
+              {
+                "name": "value",
+                "valueString": "1/2 tablet in the morning. Increase to 1 after 4 weeks."
               }
             ]
           }
@@ -173,90 +409,6 @@
       "request": {
         "method": "PATCH",
         "url": "MedicationStatement/medstmt-789"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Parameters",
-        "parameter": [
-          {
-            "name": "operation",
-            "part": [
-              {
-                "name": "type",
-                "valueCode": "replace"
-              },
-              {
-                "name": "path",
-                "valueString": "MedicationStatement.status"
-              },
-              {
-                "name": "value",
-                "valueCode": "active"
-              }
-            ]
-          }
-        ]
-      },
-      "request": {
-        "method": "PATCH",
-        "url": "MedicationStatement/medstmt-789"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Parameters",
-        "parameter": [
-          {
-            "name": "operation",
-            "part": [
-              {
-                "name": "type",
-                "valueCode": "replace"
-              },
-              {
-                "name": "path",
-                "valueString": "Patient.gender"
-              },
-              {
-                "name": "value",
-                "valueCode": "other"
-              }
-            ]
-          }
-        ]
-      },
-      "request": {
-        "method": "PATCH",
-        "url": "Patient/patient-101"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Parameters",
-        "parameter": [
-          {
-            "name": "operation",
-            "part": [
-              {
-                "name": "type",
-                "valueCode": "replace"
-              },
-              {
-                "name": "path",
-                "valueString": "Patient.gender"
-              },
-              {
-                "name": "value",
-                "valueCode": "female"
-              }
-            ]
-          }
-        ]
-      },
-      "request": {
-        "method": "PATCH",
-        "url": "Patient/patient-101"
       }
     }
   ]
