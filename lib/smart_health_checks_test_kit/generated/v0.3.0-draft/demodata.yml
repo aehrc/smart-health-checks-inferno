@@ -28051,101 +28051,179 @@
       - name: value
         valueString: 1/2 tablet in the morning. Increase to 1 after 4 weeks.
   - resourceType: Parameters
-    parameter: &5
-    - name: operation
-      part:
-      - name: type
-        valueCode: replace
-      - name: path
-        valueString: AllergyIntolerance.clinicalStatus
-      - name: value
-        valueCodeableConcept: &13
-          coding:
-          - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-            code: resolved
-            display: Resolved
-  - resourceType: Parameters
     parameter: &6
     - name: operation
       part:
       - name: type
-        valueCode: replace
+        valueCode: add
       - name: path
-        valueString: AllergyIntolerance.clinicalStatus
-      - name: value
-        valueCodeableConcept: &14
-          coding:
-          - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-            code: active
-            display: Active
-  - resourceType: Parameters
-    parameter: &1
-    - name: operation
-      part:
-      - name: type
-        valueCode: replace
-      - name: path
-        valueString: Condition.clinicalStatus
-      - name: value
-        valueCodeableConcept: &10
-          coding:
-          - system: http://terminology.hl7.org/CodeSystem/condition-clinical
-            code: inactive
-            display: Inactive
-  - resourceType: Parameters
-    parameter: &2
-    - name: operation
-      part:
-      - name: type
-        valueCode: replace
-      - name: path
-        valueString: Condition.clinicalStatus
+        valueString: AllergyIntolerance
+      - name: name
+        valueString: clinicalStatus
       - name: value
         valueCodeableConcept: &11
           coding:
-          - system: http://terminology.hl7.org/CodeSystem/condition-clinical
-            code: active
-            display: Active
-  - resourceType: Parameters
-    parameter: &3
+          - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+            code: inactive
+            display: Inactive
+      - name: pathLabel
+        valueString: Clinical status
     - name: operation
       part:
       - name: type
-        valueCode: replace
+        valueCode: add
       - name: path
-        valueString: MedicationStatement.status
+        valueString: AllergyIntolerance.note[0]
+      - name: name
+        valueString: text
       - name: value
-        valueCode: stopped
-  - resourceType: Parameters
-    parameter: &4
-    - name: operation
-      part:
-      - name: type
-        valueCode: replace
-      - name: path
-        valueString: MedicationStatement.status
-      - name: value
-        valueCode: active
+        valueMarkdown: Does not react anymore.
   - resourceType: Parameters
     parameter: &7
     - name: operation
       part:
       - name: type
-        valueCode: replace
+        valueCode: add
       - name: path
-        valueString: Patient.gender
+        valueString: AllergyIntolerance
+      - name: name
+        valueString: note
+      - name: pathLabel
+        valueString: Comment
       - name: value
-        valueCode: other
+        valueAnnotation: &12
+          text: Over entire body
   - resourceType: Parameters
-    parameter: &8
+    parameter: &1
     - name: operation
       part:
       - name: type
-        valueCode: replace
+        valueCode: add
       - name: path
-        valueString: Patient.gender
+        valueString: Condition
+      - name: name
+        valueString: clinicalStatus
       - name: value
-        valueCode: female
+        valueCodeableConcept: &9
+          coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+            code: unknown
+            display: Unknown
+      - name: pathLabel
+        valueString: Clinical status
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: Condition
+      - name: name
+        valueString: abatement
+      - name: value
+        valueDateTime: '2025-08-13'
+      - name: pathLabel
+        valueString: Abatement date
+  - resourceType: Parameters
+    parameter: &2
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement
+      - name: name
+        valueString: status
+      - name: value
+        valueCode: completed
+      - name: pathLabel
+        valueString: Status
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement.note[0]
+      - name: name
+        valueString: text
+      - name: value
+        valueMarkdown: Problem resolved with treatment
+  - resourceType: Parameters
+    parameter: &3
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement.dosage[0]
+      - name: name
+        valueString: text
+      - name: value
+        valueString: 1/2 tablet in the morning. Increase dose to 1 tablet after 4
+          weeks.
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement
+      - name: name
+        valueString: note
+      - name: pathLabel
+        valueString: Comment
+      - name: value
+        valueAnnotation:
+          text: Monitor for effectiveness.
+  - resourceType: Parameters
+    parameter: &4
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement
+      - name: name
+        valueString: status
+      - name: value
+        valueCode: on-hold
+      - name: pathLabel
+        valueString: Status
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement
+      - name: name
+        valueString: dosage
+      - name: pathLabel
+        valueString: Dosage
+      - name: value
+        valueDosage:
+          text: 1 at night
+  - resourceType: Parameters
+    parameter: &5
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement
+      - name: name
+        valueString: status
+      - name: value
+        valueCode: stopped
+      - name: pathLabel
+        valueString: Status
+    - name: operation
+      part:
+      - name: type
+        valueCode: add
+      - name: path
+        valueString: MedicationStatement.dosage[0]
+      - name: name
+        valueString: text
+      - name: value
+        valueString: 1/2 tablet in the morning. Increase to 1 after 4 weeks.
   Patient:
   - resourceType: Patient
     meta:
@@ -28442,7 +28520,7 @@
         - name: name
           valueString: clinicalStatus
         - name: value
-          valueCodeableConcept: &9
+          valueCodeableConcept: &8
             coding:
             - system: http://terminology.hl7.org/CodeSystem/condition-clinical
               code: inactive
@@ -28463,8 +28541,6 @@
           valueString: Abatement date
     - resourceType: Parameters
       parameter: *1
-    - resourceType: Parameters
-      parameter: *2
     MedicationStatement:
     - resourceType: Parameters
       meta:
@@ -28512,9 +28588,13 @@
           valueAnnotation:
             text: Monitor following increased dosage.
     - resourceType: Parameters
+      parameter: *2
+    - resourceType: Parameters
       parameter: *3
     - resourceType: Parameters
       parameter: *4
+    - resourceType: Parameters
+      parameter: *5
     AllergyIntolerance:
     - resourceType: Parameters
       meta:
@@ -28530,7 +28610,7 @@
         - name: name
           valueString: clinicalStatus
         - name: value
-          valueCodeableConcept: &12
+          valueCodeableConcept: &10
             coding:
             - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
               code: inactive
@@ -28550,25 +28630,17 @@
         - name: pathLabel
           valueString: Comment
     - resourceType: Parameters
-      parameter: *5
-    - resourceType: Parameters
       parameter: *6
-    Patient:
     - resourceType: Parameters
       parameter: *7
-    - resourceType: Parameters
-      parameter: *8
   :JSONPatch:
     Condition:
     - :op: add
       :path: "/Condition"
+      :value: *8
+    - :op: add
+      :path: "/Condition"
       :value: *9
-    - :op: replace
-      :path: "/clinicalStatus"
-      :value: *10
-    - :op: replace
-      :path: "/clinicalStatus"
-      :value: *11
     MedicationStatement:
     - :op: add
       :path: "/MedicationStatement"
@@ -28576,26 +28648,25 @@
     - :op: add
       :path: "/dosage/0"
       :value: 1 tablet in the morning.
-    - :op: replace
-      :path: "/status"
+    - :op: add
+      :path: "/MedicationStatement"
+      :value: completed
+    - :op: add
+      :path: "/dosage/0"
+      :value: 1/2 tablet in the morning. Increase dose to 1 tablet after 4 weeks.
+    - :op: add
+      :path: "/MedicationStatement"
+      :value: on-hold
+    - :op: add
+      :path: "/MedicationStatement"
       :value: stopped
-    - :op: replace
-      :path: "/status"
-      :value: active
     AllergyIntolerance:
     - :op: add
       :path: "/AllergyIntolerance"
+      :value: *10
+    - :op: add
+      :path: "/AllergyIntolerance"
+      :value: *11
+    - :op: add
+      :path: "/AllergyIntolerance"
       :value: *12
-    - :op: replace
-      :path: "/clinicalStatus"
-      :value: *13
-    - :op: replace
-      :path: "/clinicalStatus"
-      :value: *14
-    Patient:
-    - :op: replace
-      :path: "/gender"
-      :value: other
-    - :op: replace
-      :path: "/gender"
-      :value: female
