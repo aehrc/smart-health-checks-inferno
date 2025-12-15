@@ -6,7 +6,7 @@
 :resource: Observation
 :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
 :profile_name: Smart Health Checks Blood Pressure
-:profile_version: 0.3.0
+:profile_version: 0.3.0-draft
 :title: Observation Blood Pressure
 :short_description: Verify support for the server capabilities required by the Smart
   Health Checks Blood Pressure.
@@ -25,6 +25,12 @@
 - :names:
   - code
   :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
@@ -244,6 +250,8 @@
   :file_name: shc_blood_pressure_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_code_search_test
   :file_name: shc_blood_pressure_code_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_blood_pressure_patient_code_search_test
+  :file_name: shc_blood_pressure_patient_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_validation_test
   :file_name: shc_blood_pressure_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_blood_pressure_must_support_test

@@ -16,10 +16,11 @@ module SmartHealthChecksTestKit
 
         * AllergyIntolerance.clinicalStatus
         * AllergyIntolerance.code
+        * AllergyIntolerance.code.text
         * AllergyIntolerance.id
         * AllergyIntolerance.note
         * AllergyIntolerance.note.text
-        * AllergyIntolerance.onset[x]
+        * AllergyIntolerance.onsetDateTime
         * AllergyIntolerance.patient
         * AllergyIntolerance.reaction
         * AllergyIntolerance.reaction.manifestation

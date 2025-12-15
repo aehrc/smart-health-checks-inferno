@@ -6,7 +6,7 @@
 :resource: Observation
 :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
 :profile_name: Smart Health Checks Pathology Result
-:profile_version: 0.3.0
+:profile_version: 0.3.0-draft
 :title: Observation Pathology Result
 :short_description: Verify support for the server capabilities required by the Smart
   Health Checks Pathology Result.
@@ -27,6 +27,12 @@
   :expectation: SHALL
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
 :search_definitions:
   :patient:
     :paths:
@@ -45,8 +51,7 @@
     - Observation.code
     :comparators: {}
     :values:
-    - '251739003'
-    - 24701-5
+    - 32309-7
     :type: CodeableConcept
     :contains_multiple: false
 :include_params: []
@@ -61,6 +66,32 @@
     :discriminator:
       :type: type
       :code: DateTime
+  - :slice_id: Observation.value[x]:valueQuantity
+    :slice_name: valueQuantity
+    :path: value[x]
+    :discriminator:
+      :type: type
+      :code: Quantity
+  - :slice_id: Observation.category:lab
+    :slice_name: lab
+    :path: category
+    :discriminator:
+      :type: value
+      :values:
+      - :path: coding.system
+        :value: http://terminology.hl7.org/CodeSystem/observation-category
+      - :path: coding.code
+        :value: laboratory
+  - :slice_id: Observation.category:specificDiscipline
+    :slice_name: specificDiscipline
+    :path: category
+    :discriminator:
+      :type: value
+      :values:
+      - :path: coding.system
+        :value: http://terminology.hl7.org/CodeSystem/v2-0074
+      - :path: coding.code
+        :value:
   :elements:
   - :path: status
   - :path: category
@@ -76,6 +107,9 @@
     :types:
     - Reference
   - :path: value[x]
+  - :path: value[x]:valueQuantity.value
+  - :path: value[x]:valueQuantity.system
+  - :path: value[x]:valueQuantity.code
   - :path: dataAbsentReason
   - :path: interpretation
   - :path: specimen
@@ -112,6 +146,10 @@
   :strength: required
   :system: http://hl7.org/fhir/ValueSet/observation-status
   :path: status
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/quantity-comparator
+  :path: value.comparator
 :references:
 - :path: Observation.basedOn
   :profiles:
@@ -168,6 +206,8 @@
   :file_name: shc_pathology_result_patient_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_pathology_result_code_search_test
   :file_name: shc_pathology_result_code_search_test.rb
+- :id: smart_health_checks_v030_draft_shc_pathology_result_patient_code_search_test
+  :file_name: shc_pathology_result_patient_code_search_test.rb
 - :id: smart_health_checks_v030_draft_shc_pathology_result_validation_test
   :file_name: shc_pathology_result_validation_test.rb
 - :id: smart_health_checks_v030_draft_shc_pathology_result_must_support_test

@@ -14,21 +14,12 @@ module SmartHealthChecksTestKit
         Statement. This test will look through the Observation resources
         found previously for the following must support elements:
 
-        * Observation.category
-        * Observation.category:vitalSignsCategory
-        * Observation.category:vitalSignsCategory.coding
-        * Observation.category:vitalSignsCategory.coding.code
-        * Observation.category:vitalSignsCategory.coding.system
-        * Observation.code
-        * Observation.code.coding
         * Observation.code.coding:loincHeartRhythmCode
         * Observation.code.coding:snomedHeartRhythmCode
         * Observation.code.text
-        * Observation.dataAbsentReason
         * Observation.effective[x]
         * Observation.status
         * Observation.subject
-        * Observation.value[x]
         * Observation.value[x].coding
       )
 

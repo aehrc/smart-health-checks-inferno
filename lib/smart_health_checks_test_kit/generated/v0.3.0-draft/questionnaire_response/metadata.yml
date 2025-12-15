@@ -6,7 +6,7 @@
 :resource: QuestionnaireResponse
 :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
 :profile_name: Smart Health Checks Questionnaire Response
-:profile_version: 0.3.0
+:profile_version: 0.3.0-draft
 :title: Questionnaire Response
 :short_description: Verify support for the server capabilities required by the Smart
   Health Checks Questionnaire Response.
@@ -34,6 +34,18 @@
 - :names:
   - status
   :expectation: SHALL
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - questionnaire
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - status
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
@@ -134,7 +146,7 @@
   - http://hl7.org/fhir/StructureDefinition/Procedure
 - :path: QuestionnaireResponse.subject
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Resource
+  - http://hl7.org/fhir/StructureDefinition/Patient
 - :path: QuestionnaireResponse.encounter
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Encounter
@@ -154,6 +166,10 @@
   :file_name: questionnaire_response_questionnaire_search_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_status_search_test
   :file_name: questionnaire_response_status_search_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_patient_questionnaire_search_test
+  :file_name: questionnaire_response_patient_questionnaire_search_test.rb
+- :id: smart_health_checks_v030_draft_questionnaire_response_patient_status_search_test
+  :file_name: questionnaire_response_patient_status_search_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_read_test
   :file_name: questionnaire_response_read_test.rb
 - :id: smart_health_checks_v030_draft_questionnaire_response_validation_test

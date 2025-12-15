@@ -3,6 +3,7 @@
 require 'inferno_suite_generator/core/ig_demodata'
 require_relative 'shc_pathology_result/shc_pathology_result_patient_search_test'
 require_relative 'shc_pathology_result/shc_pathology_result_code_search_test'
+require_relative 'shc_pathology_result/shc_pathology_result_patient_code_search_test'
 require_relative 'shc_pathology_result/shc_pathology_result_validation_test'
 require_relative 'shc_pathology_result/shc_pathology_result_must_support_test'
 require_relative 'shc_pathology_result/shc_pathology_result_reference_resolution_test'
@@ -29,6 +30,7 @@ following parameters:
 
 * patient
 * code
+* patient + code
 
 ### Search Parameters
 The first search uses the selected patient(s) from the prior launch sequence. Any subsequent searches will look for its parameter values from the results of the first search. For example, the `identifier` search in the patient sequence is performed by looking for an existing `Patient.identifier` from any of the resources returned in the `_id` search. If a value cannot be found this way, the search is skipped.
@@ -76,6 +78,7 @@ read succeeds.
 
       test from: :smart_health_checks_v030_draft_shc_pathology_result_patient_search_test
       test from: :smart_health_checks_v030_draft_shc_pathology_result_code_search_test
+      test from: :smart_health_checks_v030_draft_shc_pathology_result_patient_code_search_test
       test from: :smart_health_checks_v030_draft_shc_pathology_result_validation_test
       test from: :smart_health_checks_v030_draft_shc_pathology_result_must_support_test
       test from: :smart_health_checks_v030_draft_shc_pathology_result_reference_resolution_test

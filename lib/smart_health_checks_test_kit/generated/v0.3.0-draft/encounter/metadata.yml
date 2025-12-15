@@ -6,7 +6,7 @@
 :resource: Encounter
 :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter
 :profile_name: Smart Health Checks Encounter
-:profile_version: 0.3.0
+:profile_version: 0.3.0-draft
 :title: Encounter
 :short_description: Verify support for the server capabilities required by the Smart
   Health Checks Encounter.

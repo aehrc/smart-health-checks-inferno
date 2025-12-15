@@ -12,7 +12,7 @@
   :resource: AllergyIntolerance
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
   :profile_name: Smart Health Checks AllergyIntolerance
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: AllergyIntolerance
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks AllergyIntolerance.
@@ -54,12 +54,14 @@
     - :path: clinicalStatus
     - :path: verificationStatus
     - :path: code
+    - :path: code.text
     - :path: patient
       :types:
       - Reference
       :target_profiles:
       - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - :path: onset[x]
+    - :path: onsetDateTime
+      :original_path: onset[x]
     - :path: note
     - :path: note.text
     - :path: reaction
@@ -116,10 +118,10 @@
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
   - :path: AllergyIntolerance.note.author[x]
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCExtractBundle
@@ -129,7 +131,7 @@
   :resource: Bundle
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCExtractBundle
   :profile_name: Smart Health Checks Extract Bundle
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Extract Bundle
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Extract Bundle.
@@ -214,7 +216,7 @@
   :resource: Condition
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
   :profile_name: Smart Health Checks Condition
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Condition
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Condition.
@@ -290,12 +292,14 @@
     - :path: category
     - :path: severity
     - :path: code
+    - :path: code.text
     - :path: subject
       :types:
       - Reference
       :target_profiles:
       - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - :path: onset[x]
+    - :path: onsetDateTime
+      :original_path: onset[x]
     - :path: abatement[x]
     - :path: note
     - :path: note.text
@@ -342,10 +346,10 @@
     - http://hl7.org/fhir/StructureDefinition/Resource
   - :path: Condition.note.author[x]
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCEncounter
@@ -355,7 +359,7 @@
   :resource: Encounter
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter
   :profile_name: Smart Health Checks Encounter
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Encounter
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Encounter.
@@ -481,7 +485,7 @@
   :resource: Immunization
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization
   :profile_name: Smart Health Checks Immunization
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Immunization
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Immunization.
@@ -546,12 +550,14 @@
     :elements:
     - :path: status
     - :path: vaccineCode
+    - :path: vaccineCode.text
     - :path: patient
       :types:
       - Reference
       :target_profiles:
       - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - :path: occurrence[x]
+    - :path: occurrenceDateTime
+      :original_path: occurrence[x]
     - :path: primarySource
     - :path: lotNumber
     - :path: note
@@ -600,10 +606,10 @@
     - http://hl7.org/fhir/StructureDefinition/Organization
   - :path: Immunization.note.author[x]
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   - :path: Immunization.reasonReference
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Condition
@@ -624,7 +630,7 @@
   :resource: Medication
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication
   :profile_name: Smart Health Checks Medication
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Medication
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Medication.
@@ -664,7 +670,7 @@
   :resource: MedicationStatement
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
   :profile_name: Smart Health Checks MedicationStatement
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: MedicationStatement
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks MedicationStatement.
@@ -746,6 +752,7 @@
     - :path: medication[x]
       :types:
       - Reference
+    - :path: medication[x]:medicationCodeableConcept.text
     - :path: subject
       :types:
       - Reference
@@ -811,10 +818,10 @@
     - http://hl7.org.au/fhir/StructureDefinition/au-diagnosticreport
   - :path: MedicationStatement.note.author[x]
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :delayed_references:
   - :path: medication[x]
     :resources:
@@ -827,7 +834,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
   :profile_name: Smart Health Checks Blood Pressure
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Blood Pressure
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Blood Pressure.
@@ -846,6 +853,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -1069,7 +1082,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
   :profile_name: Smart Health Checks Body Height
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Body Height
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Body Height.
@@ -1088,6 +1101,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -1274,7 +1293,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
   :profile_name: Smart Health Checks Body Weight
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Body Weight
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Body Weight.
@@ -1293,6 +1312,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -1472,172 +1497,6 @@
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
-- :name: SHCPathologyResult
-  :class_name: ShcpathologyresultSequence
-  :version: v0.3.0-draft
-  :reformatted_version: v030_draft
-  :resource: Observation
-  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
-  :profile_name: Smart Health Checks Pathology Result
-  :profile_version: 0.3.0
-  :title: Observation Pathology Result
-  :short_description: Verify support for the server capabilities required by the Smart
-    Health Checks Pathology Result.
-  :interactions:
-  - :code: search-type
-    :expectation: SHALL
-  - :code: create
-    :expectation: SHALL
-  :operations: []
-  :searches:
-  - :names:
-    - patient
-    :expectation: SHALL
-    :names_not_must_support_or_mandatory: []
-    :must_support_or_mandatory: true
-  - :names:
-    - code
-    :expectation: SHALL
-    :names_not_must_support_or_mandatory: []
-    :must_support_or_mandatory: true
-  :search_definitions:
-    :patient:
-      :paths:
-      - subject
-      :full_paths:
-      - Observation.subject
-      :comparators: {}
-      :values: []
-      :type: Reference
-      :contains_multiple: false
-      :target_resource: Patient
-    :code:
-      :paths:
-      - code
-      :full_paths:
-      - Observation.code
-      :comparators: {}
-      :values:
-      - '251739003'
-      - 24701-5
-      :type: CodeableConcept
-      :contains_multiple: false
-  :include_params: *1
-  :revincludes: *2
-  :required_concepts: []
-  :must_supports:
-    :extensions: []
-    :slices:
-    - :slice_id: Observation.effective[x]:effectiveDateTime
-      :slice_name: effectiveDateTime
-      :path: effective[x]
-      :discriminator:
-        :type: type
-        :code: DateTime
-    :elements:
-    - :path: status
-    - :path: category
-    - :path: code
-    - :path: code.coding
-    - :path: subject
-      :types:
-      - Reference
-      :target_profiles:
-      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - :path: effective[x]
-    - :path: performer
-      :types:
-      - Reference
-    - :path: value[x]
-    - :path: dataAbsentReason
-    - :path: interpretation
-    - :path: specimen
-      :types:
-      - Reference
-      :target_profiles:
-      - http://hl7.org.au/fhir/StructureDefinition/au-specimen
-    - :path: referenceRange
-    - :path: referenceRange.low
-    - :path: referenceRange.high
-    - :path: referenceRange.type
-    - :path: referenceRange.text
-    - :path: hasMember
-      :types:
-      - Reference
-      :target_profiles:
-      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
-    - :path: component
-    - :path: component.code
-    - :path: component.value[x]
-    - :path: component.dataAbsentReason
-  :mandatory_elements:
-  - Observation.status
-  - Observation.category
-  - Observation.category.coding
-  - Observation.category.coding.system
-  - Observation.category.coding.code
-  - Observation.code
-  - Observation.subject
-  - Observation.effective[x]
-  - Observation.component.code
-  :bindings:
-  - :type: code
-    :strength: required
-    :system: http://hl7.org/fhir/ValueSet/observation-status
-    :path: status
-  :references:
-  - :path: Observation.basedOn
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
-  - :path: Observation.partOf
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-  - :path: Observation.subject
-    :profiles:
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-  - :path: Observation.focus
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
-  - :path: Observation.encounter
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
-  - :path: Observation.performer
-    :profiles:
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
-  - :path: Observation.specimen
-    :profiles:
-    - http://hl7.org.au/fhir/StructureDefinition/au-specimen
-  - :path: Observation.device
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
-  - :path: Observation.hasMember
-    :profiles:
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
-  - :path: Observation.derivedFrom
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-  :delayed_references: []
-  :ig_id: csiro.fhir.au.smartforms
 - :name: SHCHeadCircumference
   :class_name: ShcheadcircumferenceSequence
   :version: v0.3.0-draft
@@ -1645,7 +1504,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
   :profile_name: Smart Health Checks Head Circumference
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Head Circumference
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Head Circumference.
@@ -1664,6 +1523,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -1858,7 +1723,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
   :profile_name: Smart Health Checks Heart Rate
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Heart Rate
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Heart Rate.
@@ -1877,6 +1742,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -2060,7 +1931,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
   :profile_name: Smart Health Checks Heart Rhythm
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Heart Rhythm
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Heart Rhythm.
@@ -2079,6 +1950,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -2109,16 +1986,6 @@
   :must_supports:
     :extensions: []
     :slices:
-    - :slice_id: Observation.category:vitalSignsCategory
-      :slice_name: vitalSignsCategory
-      :path: category
-      :discriminator:
-        :type: value
-        :values:
-        - :path: code
-          :value: vital-signs
-        - :path: system
-          :value: http://terminology.hl7.org/CodeSystem/observation-category
     - :slice_id: Observation.code.coding:loincHeartRhythmCode
       :slice_name: loincHeartRhythmCode
       :path: code.coding
@@ -2141,13 +2008,368 @@
           :value: http://snomed.info/sct
     :elements:
     - :path: status
+    - :path: code.text
+    - :path: subject
+      :types:
+      - Reference
+      :target_profiles:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    - :path: effective[x]
+    - :path: value[x].coding
+  :mandatory_elements:
+  - Observation.status
+  - Observation.category
+  - Observation.category.coding
+  - Observation.category.coding.system
+  - Observation.category.coding.code
+  - Observation.code
+  - Observation.code.coding
+  - Observation.code.coding.system
+  - Observation.code.coding.code
+  - Observation.subject
+  - Observation.effective[x]
+  - Observation.component.code
+  :bindings:
+  - :type: code
+    :strength: required
+    :system: http://hl7.org/fhir/ValueSet/observation-status
+    :path: status
+  :references:
+  - :path: Observation.basedOn
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+  - :path: Observation.partOf
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+  - :path: Observation.subject
+    :profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  - :path: Observation.focus
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
+  - :path: Observation.encounter
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+  - :path: Observation.performer
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+  - :path: Observation.specimen
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
+  - :path: Observation.device
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
+  - :path: Observation.hasMember
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+  - :path: Observation.derivedFrom
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+  :delayed_references: []
+  :ig_id: csiro.fhir.au.smartforms
+- :name: SHCPathologyResult
+  :class_name: ShcpathologyresultSequence
+  :version: v0.3.0-draft
+  :reformatted_version: v030_draft
+  :resource: Observation
+  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
+  :profile_name: Smart Health Checks Pathology Result
+  :profile_version: 0.3.0-draft
+  :title: Observation Pathology Result
+  :short_description: Verify support for the server capabilities required by the Smart
+    Health Checks Pathology Result.
+  :interactions:
+  - :code: search-type
+    :expectation: SHALL
+  - :code: create
+    :expectation: SHALL
+  :operations: []
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - 32309-7
+      :type: CodeableConcept
+      :contains_multiple: false
+  :include_params: *1
+  :revincludes: *2
+  :required_concepts: []
+  :must_supports:
+    :extensions: []
+    :slices:
+    - :slice_id: Observation.effective[x]:effectiveDateTime
+      :slice_name: effectiveDateTime
+      :path: effective[x]
+      :discriminator:
+        :type: type
+        :code: DateTime
+    - :slice_id: Observation.value[x]:valueQuantity
+      :slice_name: valueQuantity
+      :path: value[x]
+      :discriminator:
+        :type: type
+        :code: Quantity
+    - :slice_id: Observation.category:lab
+      :slice_name: lab
+      :path: category
+      :discriminator:
+        :type: value
+        :values:
+        - :path: coding.system
+          :value: http://terminology.hl7.org/CodeSystem/observation-category
+        - :path: coding.code
+          :value: laboratory
+    - :slice_id: Observation.category:specificDiscipline
+      :slice_name: specificDiscipline
+      :path: category
+      :discriminator:
+        :type: value
+        :values:
+        - :path: coding.system
+          :value: http://terminology.hl7.org/CodeSystem/v2-0074
+        - :path: coding.code
+          :value:
+    :elements:
+    - :path: status
     - :path: category
-    - :path: category:vitalSignsCategory.coding
-    - :path: category:vitalSignsCategory.coding.system
-      :fixed_value: http://terminology.hl7.org/CodeSystem/observation-category
-    - :path: category:vitalSignsCategory.coding.code
-      :fixed_value: vital-signs
     - :path: code
+    - :path: code.coding
+    - :path: subject
+      :types:
+      - Reference
+      :target_profiles:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    - :path: effective[x]
+    - :path: performer
+      :types:
+      - Reference
+    - :path: value[x]
+    - :path: value[x]:valueQuantity.value
+    - :path: value[x]:valueQuantity.system
+    - :path: value[x]:valueQuantity.code
+    - :path: dataAbsentReason
+    - :path: interpretation
+    - :path: specimen
+      :types:
+      - Reference
+      :target_profiles:
+      - http://hl7.org.au/fhir/StructureDefinition/au-specimen
+    - :path: referenceRange
+    - :path: referenceRange.low
+    - :path: referenceRange.high
+    - :path: referenceRange.type
+    - :path: referenceRange.text
+    - :path: hasMember
+      :types:
+      - Reference
+      :target_profiles:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
+    - :path: component
+    - :path: component.code
+    - :path: component.value[x]
+    - :path: component.dataAbsentReason
+  :mandatory_elements:
+  - Observation.status
+  - Observation.category
+  - Observation.category.coding
+  - Observation.category.coding.system
+  - Observation.category.coding.code
+  - Observation.code
+  - Observation.subject
+  - Observation.effective[x]
+  - Observation.component.code
+  :bindings:
+  - :type: code
+    :strength: required
+    :system: http://hl7.org/fhir/ValueSet/observation-status
+    :path: status
+  - :type: code
+    :strength: required
+    :system: http://hl7.org/fhir/ValueSet/quantity-comparator
+    :path: value.comparator
+  :references:
+  - :path: Observation.basedOn
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/CarePlan
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  - :path: Observation.partOf
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
+    - http://hl7.org/fhir/StructureDefinition/Procedure
+    - http://hl7.org/fhir/StructureDefinition/Immunization
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+  - :path: Observation.subject
+    :profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  - :path: Observation.focus
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Resource
+  - :path: Observation.encounter
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Encounter
+  - :path: Observation.performer
+    :profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+  - :path: Observation.specimen
+    :profiles:
+    - http://hl7.org.au/fhir/StructureDefinition/au-specimen
+  - :path: Observation.device
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Device
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+  - :path: Observation.hasMember
+    :profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
+  - :path: Observation.derivedFrom
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/Media
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
+    - http://hl7.org/fhir/StructureDefinition/Observation
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  :delayed_references: []
+  :ig_id: csiro.fhir.au.smartforms
+- :name: SHCSmokingStatus
+  :class_name: ShcsmokingstatusSequence
+  :version: v0.3.0-draft
+  :reformatted_version: v030_draft
+  :resource: Observation
+  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
+  :profile_name: Smart Health Checks Smoking Status
+  :profile_version: 0.3.0-draft
+  :title: Observation Smoking Status
+  :short_description: Verify support for the server capabilities required by the Smart
+    Health Checks Smoking Status.
+  :interactions:
+  - :code: search-type
+    :expectation: SHALL
+  - :code: create
+    :expectation: SHALL
+  :operations: []
+  :searches:
+  - :names:
+    - patient
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :names:
+    - code
+    :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  :search_definitions:
+    :patient:
+      :paths:
+      - subject
+      :full_paths:
+      - Observation.subject
+      :comparators: {}
+      :values: []
+      :type: Reference
+      :contains_multiple: false
+      :target_resource: Patient
+    :code:
+      :paths:
+      - code
+      :full_paths:
+      - Observation.code
+      :comparators: {}
+      :values:
+      - '1747861000168109'
+      :type: CodeableConcept
+      :contains_multiple: false
+  :include_params: *1
+  :revincludes: *2
+  :required_concepts: []
+  :must_supports:
+    :extensions: []
+    :slices:
+    - :slice_id: Observation.code.coding:loincSmokingStatus
+      :slice_name: loincSmokingStatus
+      :path: code.coding
+      :discriminator:
+        :type: value
+        :values:
+        - :path: code
+          :value: 72166-2
+        - :path: system
+          :value: http://loinc.org
+    :elements:
+    - :path: status
+    - :path: category
+    - :path: code.coding.code
+      :fixed_value: '1747861000168109'
     - :path: code.coding
     - :path: code.text
     - :path: subject
@@ -2162,11 +2384,7 @@
   :mandatory_elements:
   - Observation.status
   - Observation.category
-  - Observation.category.coding
-  - Observation.category.coding.system
-  - Observation.category.coding.code
   - Observation.code
-  - Observation.code.coding
   - Observation.code.coding.system
   - Observation.code.coding.code
   - Observation.subject
@@ -2240,7 +2458,7 @@
   :resource: Observation
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
   :profile_name: Smart Health Checks Waist Circumference
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Observation Waist Circumference
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Waist Circumference.
@@ -2259,6 +2477,12 @@
   - :names:
     - code
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - code
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -2438,168 +2662,17 @@
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
-- :name: SHCSmokingStatus
-  :class_name: ShcsmokingstatusSequence
-  :version: v0.3.0-draft
-  :reformatted_version: v030_draft
-  :resource: Observation
-  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
-  :profile_name: Smart Health Checks Smoking Status
-  :profile_version: 0.3.0
-  :title: Observation Smoking Status
-  :short_description: Verify support for the server capabilities required by the Smart
-    Health Checks Smoking Status.
-  :interactions:
-  - :code: search-type
-    :expectation: SHALL
-  - :code: create
-    :expectation: SHALL
-  :operations: []
-  :searches:
-  - :names:
-    - patient
-    :expectation: SHALL
-    :names_not_must_support_or_mandatory: []
-    :must_support_or_mandatory: true
-  - :names:
-    - code
-    :expectation: SHALL
-    :names_not_must_support_or_mandatory: []
-    :must_support_or_mandatory: true
-  :search_definitions:
-    :patient:
-      :paths:
-      - subject
-      :full_paths:
-      - Observation.subject
-      :comparators: {}
-      :values: []
-      :type: Reference
-      :contains_multiple: false
-      :target_resource: Patient
-    :code:
-      :paths:
-      - code
-      :full_paths:
-      - Observation.code
-      :comparators: {}
-      :values:
-      - '1747861000168109'
-      :type: CodeableConcept
-      :contains_multiple: false
-  :include_params: *1
-  :revincludes: *2
-  :required_concepts: []
-  :must_supports:
-    :extensions: []
-    :slices:
-    - :slice_id: Observation.code.coding:loincSmokingStatus
-      :slice_name: loincSmokingStatus
-      :path: code.coding
-      :discriminator:
-        :type: value
-        :values:
-        - :path: code
-          :value: 72166-2
-        - :path: system
-          :value: http://loinc.org
-    :elements:
-    - :path: status
-    - :path: category
-    - :path: code.coding.code
-      :fixed_value: '1747861000168109'
-    - :path: code.coding
-    - :path: code.text
-    - :path: subject
-      :types:
-      - Reference
-      :target_profiles:
-      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-    - :path: effective[x]
-    - :path: value[x]
-    - :path: value[x].coding
-    - :path: dataAbsentReason
-  :mandatory_elements:
-  - Observation.status
-  - Observation.category
-  - Observation.code
-  - Observation.code.coding.system
-  - Observation.code.coding.code
-  - Observation.subject
-  - Observation.effective[x]
-  - Observation.component.code
-  :bindings:
-  - :type: code
-    :strength: required
-    :system: http://hl7.org/fhir/ValueSet/observation-status
-    :path: status
-  :references:
-  - :path: Observation.basedOn
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
-  - :path: Observation.partOf
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-  - :path: Observation.subject
-    :profiles:
-    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
-  - :path: Observation.focus
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
-  - :path: Observation.encounter
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
-  - :path: Observation.performer
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-  - :path: Observation.specimen
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
-  - :path: Observation.device
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
-  - :path: Observation.hasMember
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-  - :path: Observation.derivedFrom
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-  :delayed_references: []
-  :ig_id: csiro.fhir.au.smartforms
-- :name: SHCAllergyIntolerancePatch
-  :class_name: ShcallergyintolerancepatchSequence
+- :name: SHCPatchAllergyIntolerance
+  :class_name: ShcpatchallergyintoleranceSequence
   :version: v0.3.0-draft
   :reformatted_version: v030_draft
   :resource: Parameters
-  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerancePatch
-  :profile_name: Smart Health Checks AllergyIntolerance Patch
-  :profile_version: 0.3.0
-  :title: AllergyIntolerance Patch
+  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance
+  :profile_name: Smart Health Checks Patch AllergyIntolerance
+  :profile_version: 0.3.0-draft
+  :title: Patch AllergyIntolerance
   :short_description: Verify support for the server capabilities required by the Smart
-    Health Checks AllergyIntolerance Patch.
+    Health Checks Patch AllergyIntolerance.
   :interactions: []
   :operations: []
   :searches: []
@@ -2610,53 +2683,90 @@
   - parameter.part.valueCodeableConcept
   :must_supports:
     :extensions: []
-    :slices: []
+    :slices:
+    - :slice_id: Parameters.parameter.part:type
+      :slice_name: type
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:path
+      :slice_name: path
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:value
+      :slice_name: value
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:pathLabel
+      :slice_name: pathLabel
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
+          :value:
     :elements:
-    - :path: parameter:clinicalStatus.name
-    - :path: parameter:clinicalStatus.part:type.name
-    - :path: parameter:clinicalStatus.part:type.value[x]
-    - :path: parameter:clinicalStatus.part:path.name
-    - :path: parameter:clinicalStatus.part:path.value[x]
-    - :path: parameter:clinicalStatus.part:value.name
-    - :path: parameter:clinicalStatus.part:value.value[x]
-    - :path: parameter:clinicalStatus.part:value.value[x].coding
-    - :path: parameter:clinicalStatus.part:pathLabel.name
-    - :path: parameter:clinicalStatus.part:pathLabel.value[x]
-    - :path: parameter:comment.name
-    - :path: parameter:comment.part:type.name
-    - :path: parameter:comment.part:type.value[x]
-    - :path: parameter:comment.part:path.name
-    - :path: parameter:comment.part:path.value[x]
-    - :path: parameter:comment.part:value.name
-    - :path: parameter:comment.part:value.value[x]
-    - :path: parameter:comment.part:pathLabel.name
-    - :path: parameter:comment.part:pathLabel.value[x]
+    - :path: parameter
+    - :path: parameter.name
+    - :path: parameter.part:type.name
+    - :path: parameter.part:type.value[x]
+      :fixed_value: add
+    - :path: parameter.part:path.name
+    - :path: parameter.part:path.value[x]
+    - :path: parameter.part:name.name
+    - :path: parameter.part:name.value[x]
+    - :path: parameter.part:value.name
+    - :path: parameter.part:value.value[x]
+    - :path: parameter.part:value.value[x]:valueAnnotation.text
+    - :path: parameter.part:pathLabel.name
+    - :path: parameter.part:pathLabel.value[x]
   :mandatory_elements:
   - Parameters.parameter
   - Parameters.parameter.name
   - Parameters.parameter.part
   - Parameters.parameter.part.name
   - Parameters.parameter.part.value[x]
-  - Parameters.parameter.part.value[x].coding
+  - Parameters.parameter.part.value[x].text
   :bindings:
-  - :type: CodeableConcept
+  - :type: string
     :strength: required
-    :system: https://smartforms.csiro.au/ig/ValueSet/AllergyIntoleranceClinicalStatusMinimal
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchAllergyIntoleranceElementPath
     :path: parameter.part.value
-  :references: []
+  - :type: string
+    :strength: required
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchAllergyIntoleranceElementName
+    :path: parameter.part.value
+  :references:
+  - :path: Parameters.parameter.part.value[x].author[x]
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
-- :name: SHCConditionPatch
-  :class_name: ShcconditionpatchSequence
+- :name: SHCPatchCondition
+  :class_name: ShcpatchconditionSequence
   :version: v0.3.0-draft
   :reformatted_version: v030_draft
   :resource: Parameters
-  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCConditionPatch
-  :profile_name: Smart Health Checks Condition Patch
-  :profile_version: 0.3.0
-  :title: Condition Patch
+  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition
+  :profile_name: Smart Health Checks Patch Condition
+  :profile_version: 0.3.0-draft
+  :title: Patch Condition
   :short_description: Verify support for the server capabilities required by the Smart
-    Health Checks Condition Patch.
+    Health Checks Patch Condition.
   :interactions: []
   :operations: []
   :searches: []
@@ -2668,150 +2778,162 @@
   :must_supports:
     :extensions: []
     :slices:
-    - :slice_id: Parameters.parameter:clinicalStatus
-      :slice_name: clinicalStatus
-      :path: parameter
+    - :slice_id: Parameters.parameter.part:type
+      :slice_name: type
+      :path: parameter.part
       :discriminator:
         :type: value
         :values:
-        - :path: part
+        - :path: name
           :value:
-    - :slice_id: Parameters.parameter:abatementDate
-      :slice_name: abatementDate
-      :path: parameter
+    - :slice_id: Parameters.parameter.part:path
+      :slice_name: path
+      :path: parameter.part
       :discriminator:
         :type: value
         :values:
-        - :path: part
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:value
+      :slice_name: value
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:pathLabel
+      :slice_name: pathLabel
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
           :value:
     :elements:
-    - :path: parameter:clinicalStatus.name
-    - :path: parameter:clinicalStatus.part:type.name
-    - :path: parameter:clinicalStatus.part:type.value[x]
-      :fixed_value: replace
-    - :path: parameter:clinicalStatus.part:path.name
-    - :path: parameter:clinicalStatus.part:path.value[x]
-    - :path: parameter:clinicalStatus.part:value.name
-    - :path: parameter:clinicalStatus.part:value.value[x]
-    - :path: parameter:clinicalStatus.part:value.value[x].coding
-    - :path: parameter:clinicalStatus.part:pathLabel.name
-    - :path: parameter:clinicalStatus.part:pathLabel.value[x]
-    - :path: parameter:abatementDate.name
-    - :path: parameter:abatementDate.part:type.name
-    - :path: parameter:abatementDate.part:type.value[x]
-      :fixed_value: replace
-    - :path: parameter:abatementDate.part:path.name
-    - :path: parameter:abatementDate.part:path.value[x]
-    - :path: parameter:abatementDate.part:value.name
-    - :path: parameter:abatementDate.part:value.value[x]
-    - :path: parameter:abatementDate.part:pathLabel.name
-    - :path: parameter:abatementDate.part:pathLabel.value[x]
+    - :path: parameter
+    - :path: parameter.name
+    - :path: parameter.part:type.name
+    - :path: parameter.part:type.value[x]
+      :fixed_value: add
+    - :path: parameter.part:path.name
+    - :path: parameter.part:path.value[x]
+    - :path: parameter.part:name.name
+    - :path: parameter.part:name.value[x]
+    - :path: parameter.part:value.name
+    - :path: parameter.part:value.value[x]
+    - :path: parameter.part:pathLabel.name
+    - :path: parameter.part:pathLabel.value[x]
   :mandatory_elements:
   - Parameters.parameter
   - Parameters.parameter.name
   - Parameters.parameter.part
   - Parameters.parameter.part.name
   - Parameters.parameter.part.value[x]
-  - Parameters.parameter.part.value[x].coding
   :bindings:
-  - :type: CodeableConcept
+  - :type: string
     :strength: required
-    :system: http://hl7.org/fhir/ValueSet/condition-clinical
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchConditionElementPath
+    :path: parameter.part.value
+  - :type: string
+    :strength: required
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchConditionElementName
     :path: parameter.part.value
   :references: []
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
-- :name: SHCMedicationStatementPatch
-  :class_name: ShcmedicationstatementpatchSequence
+- :name: SHCPatchMedicationStatement
+  :class_name: ShcpatchmedicationstatementSequence
   :version: v0.3.0-draft
   :reformatted_version: v030_draft
   :resource: Parameters
-  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatementPatch
-  :profile_name: Smart Health Checks MedicationStatement Patch
-  :profile_version: 0.3.0
-  :title: MedicationStatement Patch
+  :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement
+  :profile_name: Smart Health Checks Patch MedicationStatement
+  :profile_version: 0.3.0-draft
+  :title: Patch MedicationStatement
   :short_description: Verify support for the server capabilities required by the Smart
-    Health Checks MedicationStatement Patch.
+    Health Checks Patch MedicationStatement.
   :interactions: []
   :operations: []
   :searches: []
   :search_definitions: {}
   :include_params: *3
   :revincludes: *4
-  :required_concepts:
-  - parameter.part.valueCodeableConcept
+  :required_concepts: []
   :must_supports:
     :extensions: []
     :slices:
-    - :slice_id: Parameters.parameter:status
-      :slice_name: status
-      :path: parameter
+    - :slice_id: Parameters.parameter.part:type
+      :slice_name: type
+      :path: parameter.part
       :discriminator:
         :type: value
         :values:
-        - :path: part
+        - :path: name
           :value:
-    - :slice_id: Parameters.parameter:comment
-      :slice_name: comment
-      :path: parameter
+    - :slice_id: Parameters.parameter.part:path
+      :slice_name: path
+      :path: parameter.part
       :discriminator:
         :type: value
         :values:
-        - :path: part
+        - :path: name
           :value:
-    - :slice_id: Parameters.parameter:dosage
-      :slice_name: dosage
-      :path: parameter
+    - :slice_id: Parameters.parameter.part:value
+      :slice_name: value
+      :path: parameter.part
       :discriminator:
         :type: value
         :values:
-        - :path: part
+        - :path: name
+          :value:
+    - :slice_id: Parameters.parameter.part:pathLabel
+      :slice_name: pathLabel
+      :path: parameter.part
+      :discriminator:
+        :type: value
+        :values:
+        - :path: name
           :value:
     :elements:
-    - :path: parameter:status.name
-    - :path: parameter:status.part:type.name
-    - :path: parameter:status.part:type.value[x]
-      :fixed_value: replace
-    - :path: parameter:status.part:path.name
-    - :path: parameter:status.part:path.value[x]
-    - :path: parameter:status.part:value.name
-    - :path: parameter:status.part:value.value[x]
-    - :path: parameter:status.part:value.value[x].coding
-    - :path: parameter:status.part:pathLabel.name
-    - :path: parameter:status.part:pathLabel.value[x]
-    - :path: parameter:comment.name
-    - :path: parameter:comment.part:type.name
-    - :path: parameter:comment.part:type.value[x]
-      :fixed_value: replace
-    - :path: parameter:comment.part:path.name
-    - :path: parameter:comment.part:path.value[x]
-    - :path: parameter:comment.part:value.name
-    - :path: parameter:comment.part:value.value[x]
-    - :path: parameter:comment.part:pathLabel.name
-    - :path: parameter:comment.part:pathLabel.value[x]
-    - :path: parameter:dosage.name
-    - :path: parameter:dosage.part:type.name
-    - :path: parameter:dosage.part:type.value[x]
-      :fixed_value: replace
-    - :path: parameter:dosage.part:path.name
-    - :path: parameter:dosage.part:path.value[x]
-    - :path: parameter:dosage.part:value.name
-    - :path: parameter:dosage.part:value.value[x]
-    - :path: parameter:dosage.part:pathLabel.name
-    - :path: parameter:dosage.part:pathLabel.value[x]
+    - :path: parameter
+    - :path: parameter.name
+    - :path: parameter.part:type.name
+    - :path: parameter.part:type.value[x]
+      :fixed_value: add
+    - :path: parameter.part:path.name
+    - :path: parameter.part:path.value[x]
+    - :path: parameter.part:name.name
+    - :path: parameter.part:name.value[x]
+    - :path: parameter.part:value.name
+    - :path: parameter.part:value.value[x]
+    - :path: parameter.part:value.value[x]:valueDosage.text
+    - :path: parameter.part:value.value[x]:valueAnnotation.text
+    - :path: parameter.part:pathLabel.name
+    - :path: parameter.part:pathLabel.value[x]
   :mandatory_elements:
   - Parameters.parameter
   - Parameters.parameter.name
   - Parameters.parameter.part
   - Parameters.parameter.part.name
   - Parameters.parameter.part.value[x]
-  - Parameters.parameter.part.value[x].coding
+  - Parameters.parameter.part.value[x].text
   :bindings:
-  - :type: CodeableConcept
+  - :type: string
     :strength: required
-    :system: https://smartforms.csiro.au/ig/ValueSet/MedicationStatementStatusLimited
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchMedicationStatementElementPath
     :path: parameter.part.value
-  :references: []
+  - :type: string
+    :strength: required
+    :system: https://smartforms.csiro.au/ig/ValueSet/SHCPatchMedicationStatementElementName
+    :path: parameter.part.value
+  :references:
+  - :path: Parameters.parameter.part.value[x].author[x]
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPatient
@@ -2821,14 +2943,12 @@
   :resource: Patient
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient
   :profile_name: Smart Health Checks Patient
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Patient
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Patient.
   :interactions:
   - :code: read
-    :expectation: SHALL
-  - :code: patch
     :expectation: SHALL
   :operations: []
   :searches: []
@@ -2956,7 +3076,7 @@
   :resource: Practitioner
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner
   :profile_name: Smart Health Checks Practitioner
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Practitioner
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Practitioner.
@@ -3004,7 +3124,7 @@
   :resource: QuestionnaireResponse
   :profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
   :profile_name: Smart Health Checks Questionnaire Response
-  :profile_version: 0.3.0
+  :profile_version: 0.3.0-draft
   :title: Questionnaire Response
   :short_description: Verify support for the server capabilities required by the Smart
     Health Checks Questionnaire Response.
@@ -3032,6 +3152,18 @@
   - :names:
     - status
     :expectation: SHALL
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - questionnaire
+    :names_not_must_support_or_mandatory: []
+    :must_support_or_mandatory: true
+  - :expectation: SHALL
+    :names:
+    - patient
+    - status
     :names_not_must_support_or_mandatory: []
     :must_support_or_mandatory: true
   :search_definitions:
@@ -3132,7 +3264,7 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
   - :path: QuestionnaireResponse.subject
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Patient
   - :path: QuestionnaireResponse.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
