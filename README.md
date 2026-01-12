@@ -155,3 +155,54 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 
 - [Smart Health Checks Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html)
 - [Report Issues](https://github.com/aehrc/smart-health-checks-inferno/issues)
+
+
+## Walkthroughs
+
+### How to generate a set of test cases for a new IG.
+
+First step is to stop the running docker instances and bring them down
+
+```bash
+make stop
+make down
+```
+
+Place the .tgz file of the IG under the ./lib/smart_health_checks_test_kit/igs/
+
+Modify the .env file to ensure the IG_VERSION_NUMBER and IG_VERSION_STRING has the new values. 
+Note: IG_VERSION_STRING is used to create internal test files based on the teardown process. 
+Eg
+```
+IG_VERSION_NUMBER="0.5.0"
+IG_VERSION_STRING="v050"
+```
+
+> Note: Ensure the IG file name is same as the IG_VERSION_NUMBER. e.g IG_VERSION_NUMBER="1.2.1" should have the tgz file with the name 1.2.1.tgz under above mentioned location.
+
+Then you will need to edit the version numbers in the config.json file through the make command. To do this run: 
+
+```bash
+make prepare_new_config
+```
+
+This will ensure the config.json values are updated with the .env version numbers. No manual entry is needed.
+Once this is done, you can now generate the file. To generate the files in the docker environment run: 
+
+```bash
+make generate
+```
+
+Once all the test files are generated, we need to setup the database. To do this run: 
+
+```bash
+make setup
+```
+Now that the database is setup, you can simply run: 
+```bash
+make run
+```
+This will start the docker instances of inferno testkit. You can access the web application at [http://localhost](http://localhost).
+
+> Note: In Aidbox implementation, in addition to the above steps, we need to add the URL or the IG to the installed package list. To do this you need to access the Aidbox admin page on [http://localhost:8080](http://localhost:8080) , use the default admin password (Username:admin, Password: password ), On the left toolbox, select **FAR > Import Package >** enter **URL** or add the file.  e.g ( https://build.fhir.org/ig/aehrc/smart-forms-ig//package.tgz )
+

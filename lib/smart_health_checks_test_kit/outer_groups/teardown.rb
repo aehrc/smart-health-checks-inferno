@@ -3,11 +3,11 @@
 require 'inferno_suite_generator/utils/helpers'
 
 module SmartHealthChecksTestKit
-  module SmartHealthChecksV030_DRAFT
+  module SmartHealthChecksV040
     class TeardownGroup < Inferno::TestGroup
       SUCCESS_STATUSES = [200, 202, 204].freeze
 
-      id :smart_health_checks_v030_draft_teardown
+      id :smart_health_checks_v040_teardown
       title 'Teardown Service'
       short_description 'Service to clean up test resources after test execution.'
       description %(
@@ -27,7 +27,7 @@ accumulation on the test server.
       run_as_group
 
       test do
-        id :smart_health_checks_v030_draft_teardown_resources
+        id :smart_health_checks_v040_teardown_resources
         title 'Resource cleanup service'
         description %(
 This service operation deletes test resources that were created during the

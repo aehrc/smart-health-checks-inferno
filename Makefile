@@ -1,8 +1,10 @@
+-include .env
+
 compose = docker compose
 inferno = run inferno
-rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/v0.3.0-draft
+rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/v$(IG_VERSION_NUMBER)
 ber_generate = bundle exec rake smart_health_checks:generate
-lint_generated = rubocop -A lib/smart_health_checks_test_kit/generated/v0.3.0-draft
+lint_generated = rubocop -A lib/smart_health_checks_test_kit/generated/v$(IG_VERSION_NUMBER)
 
 .PHONY: setup generate summary new_release tests run pull build up stop down rubocop migrate clean_generated ig_download uploadfig_generate_local
 
@@ -36,7 +38,7 @@ stop:
 	$(compose) stop
 
 down:
-	$(compose) down
+	$(compose) down --remove-orphans
 
 rubocop:
 	$(compose) $(inferno) rubocop
@@ -53,3 +55,7 @@ clean_generated:
 
 full_develop_restart: stop down generate setup run
 
+prepare_new_config:
+	@echo "IG_VERSION_NUMBER=$(IG_VERSION_NUMBER)"
+	@echo "IG_VERSION_STRING=$(IG_VERSION_STRING)"
+	python3 config.py
