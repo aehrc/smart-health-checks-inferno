@@ -170,7 +170,7 @@ make down
 
 Place the .tgz file of the IG under the ./lib/smart_health_checks_test_kit/igs/
 
-Modify the .env file to ensure the IG_VERSION_NUMBER and IG_VERSION_STRING has the new values. 
+Modify the .env file to ensure the IG_VERSION_NUMBER and IG_VERSION_STRING have the new values. 
 Note: IG_VERSION_STRING is used to create internal test files based on the teardown process. 
 Eg
 ```
@@ -178,7 +178,7 @@ IG_VERSION_NUMBER="0.5.0"
 IG_VERSION_STRING="v050"
 ```
 
-> Note: Ensure the IG file name is same as the IG_VERSION_NUMBER. e.g IG_VERSION_NUMBER="1.2.1" should have the tgz file with the name 1.2.1.tgz under above mentioned location.
+> Note: Ensure the IG file name is the same as the IG_VERSION_NUMBER. e.g IG_VERSION_NUMBER="1.2.1" should have the tgz file with the name 1.2.1.tgz under above mentioned location.
 
 Then you will need to edit the version numbers in the config.json file through the make command. To do this run: 
 
