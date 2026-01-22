@@ -33,7 +33,6 @@ This test sequence will first perform each required search associated
 with this resource. This sequence will perform searches with the
 following parameters:
 
-* patient
 * patient + questionnaire
 * patient + status
 
@@ -84,7 +83,6 @@ read succeeds.
       test from: :smart_health_checks_v040_questionnaire_response_patient_search_test
       test from: :smart_health_checks_v040_questionnaire_response_questionnaire_search_test
       test from: :smart_health_checks_v040_questionnaire_response_status_search_test
-      # test from: :smart_health_checks_v040_questionnaire_response_patient_search_test
       test from: :smart_health_checks_v040_questionnaire_response_patient_questionnaire_search_test
       test from: :smart_health_checks_v040_questionnaire_response_patient_status_search_test
       test from: :smart_health_checks_v040_questionnaire_response_read_test
