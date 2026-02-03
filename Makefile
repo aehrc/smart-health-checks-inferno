@@ -1,4 +1,9 @@
+MODE ?= default
+ifeq ($(MODE), default)
 compose = docker compose
+else ifeq ($(MODE), aidbox)
+compose = docker compose -f compose.aidbox.yaml
+endif
 inferno = run inferno
 rm_generated = rm -rf lib/smart_health_checks_test_kit/generated/
 ber_generate = bundle exec rake smart_health_checks:generate
@@ -10,13 +15,13 @@ setup: pull build migrate
 
 generate:
 	$(rm_generated)
-	$(compose) $(inferno) $(ber_generate)
-	$(compose) $(inferno) $(lint_generated)
-
-generate_local:
-	$(rm_generated)
-	$(ber_generate)
-	$(lint_generated)
+	ifeq ($(MODE), local)
+		$(ber_generate)
+		$(lint_generated)
+	else
+		$(compose) $(inferno) $(ber_generate)
+		$(compose) $(inferno) $(lint_generated)
+	endif
 
 tests:
 	$(compose) run -e APP_ENV=test inferno bundle exec rspec
@@ -52,4 +57,3 @@ clean_generated:
 	git checkout lib/smart_forms_test_kit/generated/
 
 full_develop_restart: stop down generate setup run
-
