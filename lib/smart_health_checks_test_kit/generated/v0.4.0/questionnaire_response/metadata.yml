@@ -1,0 +1,190 @@
+---
+:name: SHCQuestionnaireResponse
+:class_name: ShcquestionnaireresponseSequence
+:version: v0.4.0
+:reformatted_version: v040
+:resource: QuestionnaireResponse
+:profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+:profile_name: Smart Health Checks Questionnaire Response
+:profile_version: 0.4.0
+:title: Questionnaire Response
+:short_description: Verify support for the server capabilities required by the Smart
+  Health Checks Questionnaire Response.
+:interactions:
+- :code: read
+  :expectation: SHALL
+- :code: search-type
+  :expectation: SHALL
+- :code: create
+  :expectation: SHALL
+- :code: update
+  :expectation: SHALL
+:operations: []
+:searches:
+- :names:
+  - patient
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - questionnaire
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - status
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - questionnaire
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - status
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - QuestionnaireResponse.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :questionnaire:
+    :paths:
+    - questionnaire
+    :full_paths:
+    - QuestionnaireResponse.questionnaire
+    :comparators: {}
+    :values: []
+    :type: canonical
+    :contains_multiple: false
+    :target_resource: Questionnaire
+  :status:
+    :paths:
+    - status
+    :full_paths:
+    - QuestionnaireResponse.status
+    :comparators: {}
+    :values:
+    - in-progress
+    - completed
+    - amended
+    - entered-in-error
+    - stopped
+    :type: code
+    :contains_multiple: false
+:include_params: []
+:revincludes: []
+:required_concepts: []
+:must_supports:
+  :extensions:
+  - :id: QuestionnaireResponse.questionnaire.extension:questionnaireDisplay
+    :url: http://hl7.org/fhir/StructureDefinition/display
+  :slices: []
+  :elements:
+  - :path: id
+  - :path: text
+  - :path: identifier
+  - :path: questionnaire
+  - :path: status
+  - :path: subject
+    :types:
+    - Reference
+  - :path: encounter
+    :types:
+    - Reference
+  - :path: authored
+  - :path: author
+    :types:
+    - Reference
+  - :path: item
+  - :path: item.linkId
+  - :path: item.text
+  - :path: item.answer
+  - :path: item.answer.value[x]
+    :types:
+    - Reference
+  - :path: item.answer.item
+  - :path: item.item
+:mandatory_elements:
+- QuestionnaireResponse.id
+- QuestionnaireResponse.extension.url
+- QuestionnaireResponse.extension.value[x]
+- QuestionnaireResponse.questionnaire
+- QuestionnaireResponse.status
+- QuestionnaireResponse.subject
+- QuestionnaireResponse.authored
+- QuestionnaireResponse.author
+- QuestionnaireResponse.item.linkId
+:bindings:
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/questionnaire-answers-status
+  :path: status
+:references:
+- :path: QuestionnaireResponse.extension.value[x]
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Device
+  - http://hl7.org/fhir/StructureDefinition/Organization
+- :path: QuestionnaireResponse.basedOn
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+- :path: QuestionnaireResponse.partOf
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+- :path: QuestionnaireResponse.subject
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Patient
+- :path: QuestionnaireResponse.encounter
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+- :path: QuestionnaireResponse.author
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Practitioner
+- :path: QuestionnaireResponse.source
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+:tests:
+- :id: smart_health_checks_v040_questionnaire_response_patient_search_test
+  :file_name: questionnaire_response_patient_search_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_questionnaire_search_test
+  :file_name: questionnaire_response_questionnaire_search_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_status_search_test
+  :file_name: questionnaire_response_status_search_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_patient_questionnaire_search_test
+  :file_name: questionnaire_response_patient_questionnaire_search_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_patient_status_search_test
+  :file_name: questionnaire_response_patient_status_search_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_read_test
+  :file_name: questionnaire_response_read_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_validation_test
+  :file_name: questionnaire_response_validation_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_must_support_test
+  :file_name: questionnaire_response_must_support_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_reference_resolution_test
+  :file_name: questionnaire_response_reference_resolution_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_create_test
+  :file_name: questionnaire_response_create_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_update_update_test
+  :file_name: questionnaire_response_update_update_test.rb
+- :id: smart_health_checks_v040_questionnaire_response_update_new_update_test
+  :file_name: questionnaire_response_new_update_update_test.rb
+:id: smart_health_checks_v040_questionnaire_response
+:file_name: questionnaire_response_group.rb
+:delayed_references: []
+:ig_id: csiro.fhir.au.smartforms
