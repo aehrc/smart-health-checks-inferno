@@ -64,6 +64,40 @@ make run
 
 This will build and start all the necessary services. Once running, you can access the application at [http://localhost](http://localhost).
 
+### Choosing a validator: HAPI or Aidbox
+
+The test suite validates FHIR resources using a validator service. You can run with either the **HAPI (Java) validator** (default) or the **Aidbox validator**.
+
+#### HAPI validator (default)
+
+The default setup uses the [validator-wrapper](https://github.com/markiantorno/validator-wrapper) (HAPI/Java-based FHIR validator). No extra configuration is needed.
+
+```bash
+make setup
+make run
+```
+
+This uses `compose.yaml`. 
+
+#### Aidbox validator
+
+To run with the [Aidbox validator](https://github.com/beda-software/aidbox-validator) (Aidbox FHIR server + validator worker), set `MODE=aidbox` and ensure you have a valid [Aidbox license](https://aidbox.app).
+
+1. Create a `.env` file in the project root with your Aidbox license:
+   ```bash
+   AIDBOX_LICENSE=<you-license-key>
+   ```
+
+2. Run with Aidbox mode:
+   ```bash
+   MODE=aidbox make setup
+   MODE=aidbox make run
+   ```
+
+This uses `compose.aidbox.yaml`, which starts the Aidbox FHIR server and the aidbox-validator worker. The validator is proxied at the same path (`/hl7validatorapi`), so the Inferno app works the same from the user’s perspective.
+
+**Note:** Other make targets also respect `MODE`. For example, to run tests with the Aidbox stack: `MODE=aidbox make tests`. To stop Aidbox services: `MODE=aidbox make stop`.
+
 ### Stopping and Cleanup
 
 To stop services:
@@ -142,7 +176,7 @@ The project uses several Docker services:
 
 - `inferno`: The main application
 - `inferno-worker`: Background worker using Sidekiq
-- `validator-api`: Dockerized official validator wrapper
+- `validator-api`: FHIR validator — **HAPI** (default, `compose.yaml`) or **Aidbox** (`MODE=aidbox`, `compose.aidbox.yaml`). In Aidbox mode, `validator-api-worker` (aidbox-validator) also runs.
 - `nginx`: Web server that proxies requests
 - `redis`: Used for caching and background job queuing
 - `postgres`: Database for storing test results
