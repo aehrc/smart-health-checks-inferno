@@ -1,0 +1,237 @@
+---
+:name: SHCHeadCircumference
+:class_name: ShcheadcircumferenceSequence
+:version: v0.4.0
+:reformatted_version: v040
+:resource: Observation
+:profile_url: https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
+:profile_name: Smart Health Checks Head Circumference
+:profile_version: 0.4.0
+:title: Observation Head Circumference
+:short_description: Verify support for the server capabilities required by the Smart
+  Health Checks Head Circumference.
+:interactions:
+- :code: search-type
+  :expectation: SHALL
+- :code: create
+  :expectation: SHALL
+:operations: []
+:searches:
+- :names:
+  - patient
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - code
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :expectation: SHALL
+  :names:
+  - patient
+  - code
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+:search_definitions:
+  :patient:
+    :paths:
+    - subject
+    :full_paths:
+    - Observation.subject
+    :comparators: {}
+    :values: []
+    :type: Reference
+    :contains_multiple: false
+    :target_resource: Patient
+  :code:
+    :paths:
+    - code
+    :full_paths:
+    - Observation.code
+    :comparators: {}
+    :values:
+    - 9843-4
+    - '363812007'
+    :type: CodeableConcept
+    :contains_multiple: false
+:include_params: []
+:revincludes: []
+:required_concepts: []
+:must_supports:
+  :extensions: []
+  :slices:
+  - :slice_id: Observation.value[x]:valueQuantity
+    :slice_name: valueQuantity
+    :path: value[x]
+    :discriminator:
+      :type: type
+      :code: Quantity
+  - :slice_id: Observation.category:VSCat
+    :slice_name: VSCat
+    :path: category
+    :discriminator:
+      :type: value
+      :values:
+      - :path: coding.code
+        :value: vital-signs
+      - :path: coding.system
+        :value: http://terminology.hl7.org/CodeSystem/observation-category
+  - :slice_id: Observation.code.coding:HeadCircumCode
+    :slice_name: HeadCircumCode
+    :path: code.coding
+    :discriminator:
+      :type: value
+      :values:
+      - :path: code
+        :value: 9843-4
+      - :path: system
+        :value: http://loinc.org
+  - :slice_id: Observation.code.coding:snomedHeadCircumCode
+    :slice_name: snomedHeadCircumCode
+    :path: code.coding
+    :discriminator:
+      :type: value
+      :values:
+      - :path: code
+        :value: '363812007'
+      - :path: system
+        :value: http://snomed.info/sct
+  :elements:
+  - :path: status
+    :fixed_value: final
+  - :path: category
+  - :path: category:VSCat.coding
+  - :path: category:VSCat.coding.system
+    :fixed_value: http://terminology.hl7.org/CodeSystem/observation-category
+  - :path: category:VSCat.coding.code
+    :fixed_value: vital-signs
+  - :path: code
+  - :path: code.text
+  - :path: subject
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  - :path: encounter
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter
+  - :path: effective[x]
+  - :path: performer
+    :types:
+    - Reference
+  - :path: value[x]
+  - :path: value[x]:valueQuantity.value
+  - :path: value[x]:valueQuantity.unit
+  - :path: value[x]:valueQuantity.system
+    :fixed_value: http://unitsofmeasure.org
+  - :path: value[x]:valueQuantity.code
+  - :path: dataAbsentReason
+  - :path: component
+  - :path: component.code
+  - :path: component.value[x]
+  - :path: component.dataAbsentReason
+:mandatory_elements:
+- Observation.status
+- Observation.category
+- Observation.category.coding
+- Observation.category.coding.system
+- Observation.category.coding.code
+- Observation.code
+- Observation.code.coding
+- Observation.code.coding.system
+- Observation.code.coding.code
+- Observation.subject
+- Observation.effective[x]
+- Observation.value[x].value
+- Observation.value[x].unit
+- Observation.value[x].system
+- Observation.value[x].code
+- Observation.component.code
+:bindings:
+- :type: code
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/quantity-comparator
+  :path: value.comparator
+- :type: code
+  :strength: required
+  :system: https://healthterminologies.gov.au/fhir/ValueSet/metric-body-length-units-1
+  :path: value.code
+- :type: Quantity
+  :strength: required
+  :system: http://hl7.org/fhir/ValueSet/ucum-vitals-common
+  :path: component.value
+:references:
+- :path: Observation.basedOn
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/CarePlan
+  - http://hl7.org/fhir/StructureDefinition/DeviceRequest
+  - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
+  - http://hl7.org/fhir/StructureDefinition/MedicationRequest
+  - http://hl7.org/fhir/StructureDefinition/NutritionOrder
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+- :path: Observation.partOf
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
+  - http://hl7.org/fhir/StructureDefinition/MedicationDispense
+  - http://hl7.org/fhir/StructureDefinition/MedicationStatement
+  - http://hl7.org/fhir/StructureDefinition/Procedure
+  - http://hl7.org/fhir/StructureDefinition/Immunization
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+- :path: Observation.subject
+  :profiles:
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+- :path: Observation.focus
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Resource
+- :path: Observation.encounter
+  :profiles:
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter
+- :path: Observation.performer
+  :profiles:
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+- :path: Observation.specimen
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Specimen
+- :path: Observation.device
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Device
+  - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+- :path: Observation.hasMember
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/vitalsigns
+- :path: Observation.derivedFrom
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+  - http://hl7.org/fhir/StructureDefinition/Media
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/vitalsigns
+:tests:
+- :id: smart_health_checks_v040_shc_head_circumference_patient_search_test
+  :file_name: shc_head_circumference_patient_search_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_code_search_test
+  :file_name: shc_head_circumference_code_search_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_patient_code_search_test
+  :file_name: shc_head_circumference_patient_code_search_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_validation_test
+  :file_name: shc_head_circumference_validation_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_must_support_test
+  :file_name: shc_head_circumference_must_support_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_reference_resolution_test
+  :file_name: shc_head_circumference_reference_resolution_test.rb
+- :id: smart_health_checks_v040_shc_head_circumference_create_test
+  :file_name: shc_head_circumference_create_test.rb
+:id: smart_health_checks_v040_shc_head_circumference
+:file_name: shc_head_circumference_group.rb
+:delayed_references: []
+:ig_id: csiro.fhir.au.smartforms
