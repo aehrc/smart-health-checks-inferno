@@ -24,6 +24,6 @@ namespace :smart_health_checks do
   task :generate do
     require 'inferno_suite_generator'
 
-    InfernoSuiteGenerator::Generator.generate('./config.json')
+    InfernoSuiteGenerator::Generator.generate('./config_030_draft.json')
   end
 end
