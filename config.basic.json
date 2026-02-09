@@ -1,12 +1,9 @@
 {
   "ig": {
     "id": "csiro.fhir.au.smartforms",
-    "version": "0.4.0",
     "name": "Smart Health Checks Implementation Guide",
-    "link": "https://smartforms.csiro.au/ig/0.4.0/index.html",
     "cs_profile_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
-    "cs_version_specific_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement",
-    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.4.0-fixed.tgz"
+    "cs_version_specific_url": "https://smartforms.csiro.au/ig/CapabilityStatement/SHCHostFHIRServerCapabilityStatement"
   },
   "suite": {
     "title": "Smart Health Checks",
@@ -16,7 +13,6 @@
       "patch-bundle.json"
     ],
     "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
-    "rewrite_igs": "/home/igs/0.4.0-fixed.tgz",
     "extra_imports": [
       {
         "import_type": "relative",
@@ -71,18 +67,7 @@
         "_count",
         "_sort",
         "_include"
-      ],
-      "rewrite_profile_url": {
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson|2.0.0-ballot",
-        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path|2.0.0-ballot",
-        "http://hl7.org.au/fhir/StructureDefinition/au-specimen": "http://hl7.org.au/fhir/StructureDefinition/au-specimen|5.1.0-preview"
-      }
+      ]
     },
     "profiles": {
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure": {
