@@ -23,7 +23,9 @@ namespace :smart_health_checks do
   desc 'Generate tests'
   task :generate do
     require 'inferno_suite_generator'
-
-    InfernoSuiteGenerator::Generator.generate('./config_030_draft.json')
+    config_files = ['./config_030_draft.json', './config_040.json']
+    config_files.each do |config_file|
+      InfernoSuiteGenerator::Generator.generate(config_file)
+    end
   end
 end
