@@ -10,7 +10,8 @@
     "extra_json_paths": [
       "search-params.json",
       "example-resources.json",
-      "patch-bundle.json"
+      "patch-bundle.json",
+      "assets-bundle.json"
     ],
     "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
     "extra_imports": [
@@ -58,16 +59,8 @@
   },
   "configs": {
     "generic": {
-      "expectation": [
-        "SHALL",
-        "SHOULD",
-        "MAY"
-      ],
-      "search_params_to_ignore": [
-        "_count",
-        "_sort",
-        "_include"
-      ]
+      "expectation": ["SHALL", "SHOULD", "MAY"],
+      "search_params_to_ignore": ["_count", "_sort", "_include"]
     },
     "profiles": {
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure": {
@@ -217,9 +210,7 @@
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult": {
         "search_param": {
           "clinical-code": {
-            "default_values": [
-              "32309-7"
-            ]
+            "default_values": ["32309-7"]
           }
         }
       }
