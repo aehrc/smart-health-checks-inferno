@@ -115,6 +115,10 @@
   - http://hl7.org/fhir/StructureDefinition/MedicationRequest
   - http://hl7.org/fhir/StructureDefinition/CarePlan
   - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  :resource_types:
+  - MedicationRequest
+  - CarePlan
+  - ServiceRequest
 - :path: MedicationStatement.partOf
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -122,16 +126,29 @@
   - http://hl7.org/fhir/StructureDefinition/MedicationStatement
   - http://hl7.org/fhir/StructureDefinition/Procedure
   - http://hl7.org/fhir/StructureDefinition/Observation
+  :resource_types:
+  - MedicationAdministration
+  - MedicationDispense
+  - MedicationStatement
+  - Procedure
+  - Observation
 - :path: MedicationStatement.medication[x]
   :profiles:
   - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication
+  :resource_types:
+  - Medication
 - :path: MedicationStatement.subject
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  :resource_types:
+  - Patient
 - :path: MedicationStatement.context
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Encounter
   - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+  :resource_types:
+  - Encounter
+  - EpisodeOfCare
 - :path: MedicationStatement.informationSource
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Patient
@@ -139,20 +156,37 @@
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Patient
+  - Practitioner
+  - PractitionerRole
+  - RelatedPerson
+  - Organization
 - :path: MedicationStatement.derivedFrom
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Resource
+  :resource_types:
+  - Resource
 - :path: MedicationStatement.reasonReference
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition
   - http://hl7.org/fhir/StructureDefinition/Observation
   - http://hl7.org.au/fhir/StructureDefinition/au-diagnosticreport
+  :resource_types:
+  - Condition
+  - Observation
+  - DiagnosticReport
 - :path: MedicationStatement.note.author[x]
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
   - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  :resource_types:
+  - Practitioner
+  - Patient
+  - RelatedPerson
+  - Organization
 :tests:
 - :id: smart_health_checks_v040_medication_statement_patient_search_test
   :file_name: medication_statement_patient_search_test.rb

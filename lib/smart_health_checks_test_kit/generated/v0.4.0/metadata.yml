@@ -101,27 +101,46 @@
   - :path: AllergyIntolerance.patient
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: AllergyIntolerance.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: AllergyIntolerance.recorder
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Patient
+    - RelatedPerson
   - :path: AllergyIntolerance.asserter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+    :resource_types:
+    - Patient
+    - RelatedPerson
+    - Practitioner
+    - PractitionerRole
   - :path: AllergyIntolerance.note.author[x]
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCExtractBundle
@@ -323,35 +342,60 @@
   - :path: Condition.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Condition.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Condition.recorder
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Patient
+    - RelatedPerson
   - :path: Condition.asserter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Patient
+    - RelatedPerson
   - :path: Condition.stage.assessment
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/ClinicalImpression
     - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
     - http://hl7.org/fhir/StructureDefinition/Observation
+    :resource_types:
+    - ClinicalImpression
+    - DiagnosticReport
+    - Observation
   - :path: Condition.evidence.detail
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Condition.note.author[x]
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCEncounter
@@ -435,49 +479,82 @@
   - :path: Encounter.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Encounter.episodeOfCare
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+    :resource_types:
+    - EpisodeOfCare
   - :path: Encounter.basedOn
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - ServiceRequest
   - :path: Encounter.participant.individual
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - RelatedPerson
   - :path: Encounter.appointment
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Appointment
+    :resource_types:
+    - Appointment
   - :path: Encounter.reasonReference
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure
+    :resource_types:
+    - Condition
+    - Observation
+    - Procedure
   - :path: Encounter.diagnosis.condition
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Condition
     - http://hl7.org/fhir/StructureDefinition/Procedure
+    :resource_types:
+    - Condition
+    - Procedure
   - :path: Encounter.account
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Account
+    :resource_types:
+    - Account
   - :path: Encounter.hospitalization.origin
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Location
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Location
+    - Organization
   - :path: Encounter.hospitalization.destination
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Location
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Location
+    - Organization
   - :path: Encounter.location.location
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-location
+    :resource_types:
+    - Location
   - :path: Encounter.serviceProvider
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
+    :resource_types:
+    - Organization
   - :path: Encounter.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCImmunization
@@ -582,47 +659,80 @@
   - :path: Immunization.patient
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Immunization.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Immunization.location
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Location
+    :resource_types:
+    - Location
   - :path: Immunization.manufacturer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   - :path: Immunization.performer.actor
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
   - :path: Immunization.performer.actor
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
   - :path: Immunization.performer.actor
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
   - :path: Immunization.note.author[x]
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   - :path: Immunization.reasonReference
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Condition
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
+    :resource_types:
+    - Condition
+    - Observation
+    - DiagnosticReport
   - :path: Immunization.reaction.detail
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Observation
+    :resource_types:
+    - Observation
   - :path: Immunization.protocolApplied.authority
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCMedication
@@ -663,6 +773,8 @@
   - :path: Medication.manufacturer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCMedicationStatement
@@ -781,6 +893,10 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/CarePlan
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - MedicationRequest
+    - CarePlan
+    - ServiceRequest
   - :path: MedicationStatement.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -788,16 +904,29 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationStatement
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Observation
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Observation
   - :path: MedicationStatement.medication[x]
     :profiles:
     - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication
+    :resource_types:
+    - Medication
   - :path: MedicationStatement.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: MedicationStatement.context
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
     - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+    :resource_types:
+    - Encounter
+    - EpisodeOfCare
   - :path: MedicationStatement.informationSource
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Patient
@@ -805,20 +934,37 @@
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Patient
+    - Practitioner
+    - PractitionerRole
+    - RelatedPerson
+    - Organization
   - :path: MedicationStatement.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: MedicationStatement.reasonReference
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org.au/fhir/StructureDefinition/au-diagnosticreport
+    :resource_types:
+    - Condition
+    - Observation
+    - DiagnosticReport
   - :path: MedicationStatement.note.author[x]
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   :delayed_references:
   - :path: medication[x]
     :resources:
@@ -1025,6 +1171,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -1033,15 +1186,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -1050,18 +1216,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -1070,6 +1252,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCBodyHeight
@@ -1236,6 +1425,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -1244,15 +1440,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -1261,18 +1470,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -1281,6 +1506,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCBodyWeight
@@ -1447,6 +1679,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -1455,15 +1694,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -1472,18 +1724,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -1492,6 +1760,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCHeadCircumference
@@ -1667,6 +1942,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -1675,15 +1957,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
@@ -1691,18 +1986,33 @@
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -1711,6 +2021,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCHeartRate
@@ -1874,6 +2191,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -1882,15 +2206,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -1899,18 +2236,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -1919,6 +2272,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCHeartRhythm
@@ -2040,6 +2400,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
@@ -2048,15 +2415,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
@@ -2065,18 +2445,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    :resource_types:
+    - Observation
+    - QuestionnaireResponse
+    - MolecularSequence
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
@@ -2085,6 +2481,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - Observation
+    - MolecularSequence
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPathologyResult
@@ -2247,6 +2650,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -2255,15 +2665,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
@@ -2271,16 +2694,29 @@
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org.au/fhir/StructureDefinition/au-specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
+    :resource_types:
+    - DiagnosticReport
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -2289,6 +2725,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - Observation
+    - MolecularSequence
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCSmokingStatus
@@ -2401,6 +2844,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -2409,15 +2859,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -2426,18 +2889,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    :resource_types:
+    - Observation
+    - QuestionnaireResponse
+    - MolecularSequence
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -2446,6 +2925,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/Observation
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - Observation
+    - MolecularSequence
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCWaistCircumference
@@ -2612,6 +3098,13 @@
     - http://hl7.org/fhir/StructureDefinition/MedicationRequest
     - http://hl7.org/fhir/StructureDefinition/NutritionOrder
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    :resource_types:
+    - CarePlan
+    - DeviceRequest
+    - ImmunizationRecommendation
+    - MedicationRequest
+    - NutritionOrder
+    - ServiceRequest
   - :path: Observation.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
@@ -2620,15 +3113,28 @@
     - http://hl7.org/fhir/StructureDefinition/Procedure
     - http://hl7.org/fhir/StructureDefinition/Immunization
     - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    :resource_types:
+    - MedicationAdministration
+    - MedicationDispense
+    - MedicationStatement
+    - Procedure
+    - Immunization
+    - ImagingStudy
   - :path: Observation.subject
     :profiles:
     - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+    :resource_types:
+    - Patient
   - :path: Observation.focus
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Resource
+    :resource_types:
+    - Resource
   - :path: Observation.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter
+    :resource_types:
+    - Encounter
   - :path: Observation.performer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
@@ -2637,18 +3143,34 @@
     - http://hl7.org/fhir/StructureDefinition/CareTeam
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+    - CareTeam
+    - Patient
+    - RelatedPerson
   - :path: Observation.specimen
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Specimen
+    :resource_types:
+    - Specimen
   - :path: Observation.device
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    :resource_types:
+    - Device
+    - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   - :path: Observation.derivedFrom
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/DocumentReference
@@ -2657,6 +3179,13 @@
     - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
     - http://hl7.org/fhir/StructureDefinition/MolecularSequence
     - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    :resource_types:
+    - DocumentReference
+    - ImagingStudy
+    - Media
+    - QuestionnaireResponse
+    - MolecularSequence
+    - Observation
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPatchAllergyIntolerance
@@ -2751,6 +3280,11 @@
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPatchCondition
@@ -2931,6 +3465,11 @@
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - Patient
+    - RelatedPerson
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPatient
@@ -3052,18 +3591,29 @@
   - :path: Patient.contact.organization
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   - :path: Patient.generalPractitioner
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
     - http://hl7.org/fhir/StructureDefinition/Practitioner
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+    :resource_types:
+    - Organization
+    - Practitioner
+    - PractitionerRole
   - :path: Patient.managingOrganization
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   - :path: Patient.link.other
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Patient
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    :resource_types:
+    - Patient
+    - RelatedPerson
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCPractitioner
@@ -3112,6 +3662,8 @@
   - :path: Practitioner.qualification.issuer
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Organization
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms
 - :name: SHCQuestionnaireResponse
@@ -3251,28 +3803,48 @@
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Device
     - http://hl7.org/fhir/StructureDefinition/Organization
+    :resource_types:
+    - Device
+    - Organization
   - :path: QuestionnaireResponse.basedOn
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
     - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
+    :resource_types:
+    - CarePlan
+    - ServiceRequest
   - :path: QuestionnaireResponse.partOf
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    :resource_types:
+    - Observation
+    - Procedure
   - :path: QuestionnaireResponse.subject
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Patient
+    :resource_types:
+    - Patient
   - :path: QuestionnaireResponse.encounter
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+    :resource_types:
+    - Encounter
   - :path: QuestionnaireResponse.author
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Practitioner
+    :resource_types:
+    - Practitioner
   - :path: QuestionnaireResponse.source
     :profiles:
     - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
     - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
     - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
     - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    :resource_types:
+    - Patient
+    - Practitioner
+    - PractitionerRole
+    - RelatedPerson
   :delayed_references: []
   :ig_id: csiro.fhir.au.smartforms

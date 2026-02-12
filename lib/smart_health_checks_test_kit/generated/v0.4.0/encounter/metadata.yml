@@ -80,49 +80,82 @@
 - :path: Encounter.subject
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  :resource_types:
+  - Patient
 - :path: Encounter.episodeOfCare
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+  :resource_types:
+  - EpisodeOfCare
 - :path: Encounter.basedOn
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  :resource_types:
+  - ServiceRequest
 - :path: Encounter.participant.individual
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson
+  :resource_types:
+  - Practitioner
+  - PractitionerRole
+  - RelatedPerson
 - :path: Encounter.appointment
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Appointment
+  :resource_types:
+  - Appointment
 - :path: Encounter.reasonReference
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition
   - http://hl7.org/fhir/StructureDefinition/Observation
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure
+  :resource_types:
+  - Condition
+  - Observation
+  - Procedure
 - :path: Encounter.diagnosis.condition
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Condition
   - http://hl7.org/fhir/StructureDefinition/Procedure
+  :resource_types:
+  - Condition
+  - Procedure
 - :path: Encounter.account
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Account
+  :resource_types:
+  - Account
 - :path: Encounter.hospitalization.origin
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Location
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Location
+  - Organization
 - :path: Encounter.hospitalization.destination
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Location
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Location
+  - Organization
 - :path: Encounter.location.location
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-location
+  :resource_types:
+  - Location
 - :path: Encounter.serviceProvider
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
+  :resource_types:
+  - Organization
 - :path: Encounter.partOf
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Encounter
+  :resource_types:
+  - Encounter
 :tests:
 - :id: smart_health_checks_v040_encounter_read_test
   :file_name: encounter_read_test.rb

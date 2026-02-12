@@ -45,6 +45,8 @@
 - :path: Practitioner.qualification.issuer
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Organization
 :tests:
 - :id: smart_health_checks_v040_practitioner_read_test
   :file_name: practitioner_read_test.rb

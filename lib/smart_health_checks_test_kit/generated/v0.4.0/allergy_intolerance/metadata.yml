@@ -95,27 +95,46 @@
 - :path: AllergyIntolerance.patient
   :profiles:
   - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+  :resource_types:
+  - Patient
 - :path: AllergyIntolerance.encounter
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Encounter
+  :resource_types:
+  - Encounter
 - :path: AllergyIntolerance.recorder
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Practitioner
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
   - http://hl7.org/fhir/StructureDefinition/Patient
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  :resource_types:
+  - Practitioner
+  - PractitionerRole
+  - Patient
+  - RelatedPerson
 - :path: AllergyIntolerance.asserter
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Patient
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
   - http://hl7.org/fhir/StructureDefinition/Practitioner
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  :resource_types:
+  - Patient
+  - RelatedPerson
+  - Practitioner
+  - PractitionerRole
 - :path: AllergyIntolerance.note.author[x]
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
   - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  :resource_types:
+  - Practitioner
+  - Patient
+  - RelatedPerson
+  - Organization
 :tests:
 - :id: smart_health_checks_v040_allergy_intolerance_patient_search_test
   :file_name: allergy_intolerance_patient_search_test.rb

@@ -136,29 +136,49 @@
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Device
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Device
+  - Organization
 - :path: QuestionnaireResponse.basedOn
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/CarePlan
   - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  :resource_types:
+  - CarePlan
+  - ServiceRequest
 - :path: QuestionnaireResponse.partOf
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Observation
   - http://hl7.org/fhir/StructureDefinition/Procedure
+  :resource_types:
+  - Observation
+  - Procedure
 - :path: QuestionnaireResponse.subject
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Patient
+  :resource_types:
+  - Patient
 - :path: QuestionnaireResponse.encounter
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Encounter
+  :resource_types:
+  - Encounter
 - :path: QuestionnaireResponse.author
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Practitioner
+  :resource_types:
+  - Practitioner
 - :path: QuestionnaireResponse.source
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Patient
   - http://hl7.org/fhir/StructureDefinition/Practitioner
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  :resource_types:
+  - Patient
+  - Practitioner
+  - PractitionerRole
+  - RelatedPerson
 :tests:
 - :id: smart_health_checks_v030_draft_questionnaire_response_patient_search_test
   :file_name: questionnaire_response_patient_search_test.rb

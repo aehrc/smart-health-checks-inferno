@@ -118,18 +118,29 @@
 - :path: Patient.contact.organization
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Organization
 - :path: Patient.generalPractitioner
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Organization
   - http://hl7.org/fhir/StructureDefinition/Practitioner
   - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  :resource_types:
+  - Organization
+  - Practitioner
+  - PractitionerRole
 - :path: Patient.managingOrganization
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Organization
 - :path: Patient.link.other
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/Patient
   - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  :resource_types:
+  - Patient
+  - RelatedPerson
 :tests:
 - :id: smart_health_checks_v040_patient_read_test
   :file_name: patient_read_test.rb
