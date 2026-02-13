@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/test_modules/create_test'
+require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -26,6 +27,10 @@ module SmartHealthChecksTestKit
 
       def resource_type
         'QuestionnaireResponse'
+      end
+
+      def references_keeper
+        @references_keeper ||= InfernoSuiteGenerator::ReferencesKeeper.instance
       end
 
       run do
