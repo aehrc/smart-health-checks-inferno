@@ -30,7 +30,7 @@ module SmartHealthChecksTestKit
       end
 
       def references_keeper
-        @references_keeper ||= InfernoSuiteGenerator::ReferencesKeeper.instance
+        @rerefences_keeper = InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
       run do
