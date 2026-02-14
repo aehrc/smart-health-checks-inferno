@@ -56,4 +56,6 @@ clean_generated:
 	sudo $(rm_generated)
 	git checkout lib/smart_forms_test_kit/generated/
 
+start_from_zero: stop down setup run
+
 full_develop_restart: stop down generate setup run
