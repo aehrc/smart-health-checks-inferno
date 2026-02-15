@@ -11,6 +11,12 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct Immunization resource from Immunization create interaction'
       description 'A server SHALL support the Immunization create interaction.'
 
+      input :references_mapping_input,
+            title: 'References Mapping',
+            description: 'Mapping of references to the create resource. Format: {"Patient": ["patient_id1", "patient_id2"], "Condition": ["condition_id1", "condition_id2"]}',
+            type: 'textarea',
+            optional: true
+
       id :smart_health_checks_v040_immunization_create_test
 
       def self.demodata

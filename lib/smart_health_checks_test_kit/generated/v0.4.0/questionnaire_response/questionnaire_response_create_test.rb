@@ -11,6 +11,12 @@ module SmartHealthChecksTestKit
       title '(SHALL) Server returns correct QuestionnaireResponse resource from QuestionnaireResponse create interaction'
       description 'A server SHALL support the QuestionnaireResponse create interaction.'
 
+      input :references_mapping_input,
+            title: 'References Mapping',
+            description: 'Mapping of references to the create resource. Format: {"Patient": ["patient_id1", "patient_id2"], "Condition": ["condition_id1", "condition_id2"]}',
+            type: 'textarea',
+            optional: true
+
       id :smart_health_checks_v040_questionnaire_response_create_test
 
       def self.demodata

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/utils/helpers'
+require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -40,6 +41,10 @@ logging progress and results for monitoring purposes.
         )
 
         run do
+          info "Delete ReferencesKeeper instance with url #{url}"
+          info "ReferencesKeeper instances: #{InfernoSuiteGenerator::ReferencesKeeper.entities.count}"
+          InfernoSuiteGenerator::ReferencesKeeper.destroy_instance(url)
+          info "ReferencesKeeper instances: #{InfernoSuiteGenerator::ReferencesKeeper.entities.count}"
           candidates = scratch[:teardown_candidates] ||= []
           resource_types = candidates.map(&:resourceType).uniq
           info "Found #{candidates.length} resources to delete..."
