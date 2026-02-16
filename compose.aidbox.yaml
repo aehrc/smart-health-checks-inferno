@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   inferno:
     build:
@@ -55,9 +55,9 @@ services:
       postgres:
         condition: service_healthy
     links:
-      - 'postgres:database'
+      - "postgres:database"
     ports:
-      - '127.0.0.1:3500:3500'
+      - "127.0.0.1:3500:3500"
     env_file:
       - ./env/aidbox
       - .env
@@ -70,11 +70,23 @@ services:
       timeout: 20s
       retries: 100
       test: curl --fail http://validator-api:3500/health || exit 1
+  aidbox-configurer:
+    build:
+      context: ./
+    volumes:
+      - ./:/opt/inferno/
+    working_dir: /opt/inferno
+    command: ruby aidbox_config.rb
+    depends_on:
+      validator-api:
+        condition: service_healthy
+    env_file:
+      - ./env/aidbox
   nginx:
     image: nginx
     ports:
       - "80:80"
-    command: [nginx, '-g', 'daemon off;']
+    command: [nginx, "-g", "daemon off;"]
     volumes:
       - ./config/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
@@ -93,7 +105,7 @@ services:
     image: postgres:16.2-alpine3.19
     restart: always
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 5s
       timeout: 5s
       retries: 5
