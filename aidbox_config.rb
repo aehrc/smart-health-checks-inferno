@@ -106,7 +106,7 @@ configurer.add_upload_step(
 )
 configurer.add_upload_step(
   '/$upload-fhir-npm-packages',
-  './lib/smart_health_checks_test_kit/igs/0.4.0-ci-build.tgz',
+  './lib/smart_health_checks_test_kit/igs/0.4.0-4cb3b6.tgz',
   {
     'Accept' => 'application/json',
     'Authorization' => authorization,
