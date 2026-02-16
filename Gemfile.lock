@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/hl7au/inferno_suite_generator.git
-  revision: eb84956cd16f602feb1b91d4e6fff5ef2f0b3d57
-  ref: eb84956cd16f602feb1b91d4e6fff5ef2f0b3d57
+  revision: b1d4aa7002a14e6d784cc5844732649274768149
+  ref: b1d4aa7002a14e6d784cc5844732649274768149
   specs:
     inferno_suite_generator (0.1.0)
       deep_merge (~> 1.2, >= 1.2.2)
