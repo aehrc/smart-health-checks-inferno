@@ -104,4 +104,15 @@ configurer.add_upload_step(
   },
   form_field: 'file'
 )
+configurer.add_upload_step(
+  '/$upload-fhir-npm-packages',
+  './lib/smart_health_checks_test_kit/igs/0.4.0-ci-build.tgz',
+  {
+    'Accept' => 'application/json',
+    'Authorization' => authorization,
+    'Origin' => base_url,
+    'Referer' => 'http://localhost:3500/ui/console'
+  },
+  form_field: 'file'
+)
 configurer.execute_all
