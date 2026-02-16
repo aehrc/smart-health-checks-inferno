@@ -14,14 +14,13 @@ lint_generated = rubocop -A lib/smart_health_checks_test_kit/
 setup: pull build migrate
 
 generate:
-	$(rm_generated)
-	ifeq ($(MODE), local)
-		$(ber_generate)
-		$(lint_generated)
-	else
-		$(compose) $(inferno) $(ber_generate)
-		$(compose) $(inferno) $(lint_generated)
-	endif
+	if [ "$(MODE)" = "local" ]; then \
+		$(ber_generate); \
+		$(lint_generated); \
+	else \
+		$(compose) $(inferno) $(ber_generate); \
+		$(compose) $(inferno) $(lint_generated); \
+	fi
 
 tests:
 	$(compose) run -e APP_ENV=test inferno bundle exec rspec
@@ -55,5 +54,7 @@ migrate:
 clean_generated:
 	sudo $(rm_generated)
 	git checkout lib/smart_forms_test_kit/generated/
+
+start_from_zero: stop down setup run
 
 full_develop_restart: stop down generate setup run
