@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/test_modules/create_test'
+require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV030_DRAFT
@@ -9,6 +10,12 @@ module SmartHealthChecksTestKit
 
       title '(SHALL) Server returns correct Observation resource from Observation create interaction'
       description 'A server SHALL support the Observation create interaction.'
+
+      input :references_mapping_input,
+            title: 'References Mapping',
+            description: 'Mapping of references to the create resource. Format: {"Patient": ["patient_id1", "patient_id2"], "Condition": ["condition_id1", "condition_id2"]}',
+            type: 'textarea',
+            optional: true
 
       id :smart_health_checks_v030_draft_shc_waist_circumference_create_test
 
@@ -26,6 +33,10 @@ module SmartHealthChecksTestKit
 
       def resource_type
         'Observation'
+      end
+
+      def references_keeper
+        @rerefences_keeper = InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
       run do
