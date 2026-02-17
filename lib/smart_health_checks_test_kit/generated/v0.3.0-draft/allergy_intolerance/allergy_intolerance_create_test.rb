@@ -13,7 +13,7 @@ module SmartHealthChecksTestKit
 
       input :references_mapping_input,
             title: 'References Mapping',
-            description: 'Mapping of references to the create resource. Format: {"Patient": ["patient_id1", "patient_id2"], "Condition": ["condition_id1", "condition_id2"]}',
+            description: 'Mapping of references to the create resource. Format: ["Patient/patient_id1", "Medication/medication_id1"]',
             type: 'textarea',
             optional: true
 
