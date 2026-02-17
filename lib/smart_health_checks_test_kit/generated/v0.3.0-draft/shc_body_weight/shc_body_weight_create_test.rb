@@ -39,6 +39,10 @@ module SmartHealthChecksTestKit
         @rerefences_keeper = InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
+      def resource_to_create_filter
+        nil
+      end
+
       run do
         perform_create_test
       end
