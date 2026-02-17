@@ -26,6 +26,10 @@ module SmartHealthChecksTestKit
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'metadata.yml'), aliases: true))
       end
 
+      def resource_to_create_filter
+        nil
+      end
+
       run do
         perform_update_new_test
       end

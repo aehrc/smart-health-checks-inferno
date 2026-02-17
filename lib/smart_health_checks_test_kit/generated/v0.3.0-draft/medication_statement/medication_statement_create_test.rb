@@ -39,6 +39,11 @@ module SmartHealthChecksTestKit
         @rerefences_keeper = InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
+      def resource_to_create_filter
+        # This is a FHIRPath expression that will be used to filter the resources to create.
+        'MedicationStatement.medicationCodeableConcept.exists()'
+      end
+
       run do
         perform_create_test
       end

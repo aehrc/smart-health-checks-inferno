@@ -33,6 +33,10 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: inferno
       POSTGRES_USER: postgres
+  fhirpath:
+    image: infernocommunity/fhirpath-service
+    ports:
+      - "6789:6789"
   validator-api:
     image: markiantorno/validator-wrapper:1.0.70
     environment:

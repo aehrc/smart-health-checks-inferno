@@ -216,6 +216,9 @@
       }
     },
     "resources": {
+      "MedicationStatement": {
+        "resources_to_create_filter": "MedicationStatement.medicationCodeableConcept.exists()"
+      },
       "Medication": {
         "skip": true
       },
