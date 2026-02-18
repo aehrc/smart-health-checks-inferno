@@ -37,6 +37,8 @@ module SmartHealthChecksTestKit
 
         HL7® FHIR® resources are validated with the Java validator using
         https://tx.dev.hl7.org.au/fhir as the terminology server.
+
+        The test suite is generated using the [InfernoSuiteGenerator](https://github.com/hl7au/inferno_suite_generator) gem version 1.0.0.
       )
       version VERSION
 
