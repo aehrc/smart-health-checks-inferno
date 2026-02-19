@@ -32,7 +32,7 @@ fail if their code/system are not found in the valueset.
       end
 
       def filter_set
-        [[{ 'expression' => "$.code.coding[?(@.system == 'http://loinc.org')].code", 'value' => '8302-2' }], [{ 'expression' => "$.code.coding[?(@.system == 'http://snomed.info/sct')].code", 'value' => '50373000' }]]
+        [[{ 'expression' => "code.coding.where(system = 'http://loinc.org').code", 'value' => '8302-2' }], [{ 'expression' => "code.coding.where(system = 'http://snomed.info/sct').code", 'value' => '50373000' }]]
       end
 
       run do
