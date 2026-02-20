@@ -32,7 +32,7 @@ fail if their code/system are not found in the valueset.
       end
 
       def filter_set
-        []
+        [[{ 'expression' => "category.where(coding.system='http://terminology.hl7.org/CodeSystem/observation-category').coding.code", 'value' => 'laboratory' }]]
       end
 
       run do
