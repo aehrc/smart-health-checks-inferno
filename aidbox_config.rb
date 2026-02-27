@@ -89,9 +89,17 @@ password = ENV.fetch('AIDBOX_CLIENT_SECRET', 'secret')
 authorization = "Basic #{Base64.strict_encode64("#{login}:#{password}")}"
 base_url = ENV.fetch('AIDBOX_BASE_URL', 'http://localhost:3500')
 configurer = AidboxConfig.new(base_url)
-configurer.add_step('/fhir/ValueSet', 'POST', File.read('./resources/ValueSet-australian-indigenous-status-1.json'), { 'Content-Type' => 'application/json', 'Authorization' => authorization })
-configurer.add_step('/fhir/ValueSet', 'POST', File.read('./resources/ValueSet-australian-immunisation-register-vaccine-1.json'), { 'Content-Type' => 'application/json', 'Authorization' => authorization })
-configurer.add_step('/fhir/ValueSet', 'POST', File.read('./resources/ValueSet-australian-medication-1.json'), { 'Content-Type' => 'application/json', 'Authorization' => authorization })
+value_sets = [
+  'ValueSet-australian-indigenous-status-1.json',
+  'ValueSet-australian-immunisation-register-vaccine-1.json',
+  'ValueSet-australian-medication-1.json',
+  'ValueSet-ihi-record-status-1.json',
+  'ValueSet-ihi-status-1.json',
+  'ValueSet-date-accuracy-indicator-1.json'
+]
+value_sets.each do |value_set|
+  configurer.add_step('/fhir/ValueSet', 'POST', File.read("./resources/#{value_set}"), { 'Content-Type' => 'application/json', 'Authorization' => authorization })
+end
 configurer.add_step('/fhir/CodeSystem', 'POST', File.read('./resources/CodeSystem-australian-indigenous-status-1.json'), { 'Content-Type' => 'application/json', 'Authorization' => authorization })
 configurer.add_upload_step(
   '/$upload-fhir-npm-packages',
