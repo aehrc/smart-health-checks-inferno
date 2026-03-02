@@ -227,7 +227,7 @@
         ],
         "search_param": {
           "clinical-code": {
-            "default_values": ["32309-7"]
+            "default_values": ["32309-7", "14647-2"]
           }
         }
       }

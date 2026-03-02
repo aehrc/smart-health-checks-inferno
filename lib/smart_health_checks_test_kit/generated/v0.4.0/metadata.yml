@@ -2543,6 +2543,7 @@
       :comparators: {}
       :values:
       - 32309-7
+      - 14647-2
       :type: CodeableConcept
       :contains_multiple: false
   :include_params: *1
