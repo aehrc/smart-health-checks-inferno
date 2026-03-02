@@ -13,7 +13,7 @@ module SmartHealthChecksTestKit
       input :patient_ids,
             title: 'Patient IDs',
             description: 'Comma separated list of patient IDs that in sum contain all MUST SUPPORT elements',
-            default: 'pat-sf',
+            default: 'pat-sf, baby-smith-john',
             optional: true
 
       id :smart_health_checks_v040_patient_read_test
