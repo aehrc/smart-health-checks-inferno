@@ -49,6 +49,10 @@ none are returned, the test is skipped.
         scratch[:shc_head_circumference_resources] ||= {}
       end
 
+      def keep_all_search_results?
+        true
+      end
+
       run do
         run_search_test
       end

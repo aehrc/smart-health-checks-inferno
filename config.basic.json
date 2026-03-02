@@ -64,6 +64,7 @@
     },
     "profiles": {
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -80,6 +81,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -96,6 +98,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -112,6 +115,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -128,6 +132,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -144,6 +149,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -160,6 +166,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -185,6 +192,7 @@
         "first_class_profile": "read"
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {
@@ -208,6 +216,7 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult": {
+        "keep_all_search_results": true,
         "filter_set": [
           [
             {

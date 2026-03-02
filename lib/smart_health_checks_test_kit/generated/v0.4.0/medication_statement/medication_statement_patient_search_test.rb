@@ -67,6 +67,10 @@ requirement of Smart Health Checks v0.4.0.
         scratch[:medication_statement_resources] ||= {}
       end
 
+      def keep_all_search_results?
+        false
+      end
+
       run do
         run_search_test
       end

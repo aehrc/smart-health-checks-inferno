@@ -45,6 +45,10 @@ none are returned, the test is skipped.
         scratch[:medication_statement_resources] ||= {}
       end
 
+      def keep_all_search_results?
+        false
+      end
+
       run do
         run_search_test
       end

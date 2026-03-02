@@ -46,6 +46,10 @@ none are returned, the test is skipped.
         scratch[:shc_body_weight_resources] ||= {}
       end
 
+      def keep_all_search_results?
+        true
+      end
+
       run do
         run_search_test
       end
