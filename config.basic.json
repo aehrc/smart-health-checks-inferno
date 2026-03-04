@@ -230,6 +230,9 @@
             "default_values": ["32309-7", "14647-2"]
           }
         }
+      },
+      "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse": {
+        "exclude_elements_from_must_support": ["identifier", "item.text", "item.answer", "item.answer.value[x]", "item.answer.item"] 
       }
     },
     "resources": {

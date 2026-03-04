@@ -19,7 +19,6 @@ module SmartHealthChecksTestKit
 
         * QuestionnaireResponse.author
         * QuestionnaireResponse.encounter
-        * QuestionnaireResponse.item.answer.value[x]
         * QuestionnaireResponse.subject
       )
 

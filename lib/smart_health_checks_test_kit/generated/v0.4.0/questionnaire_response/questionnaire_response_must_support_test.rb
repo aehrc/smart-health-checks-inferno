@@ -18,14 +18,9 @@ module SmartHealthChecksTestKit
         * QuestionnaireResponse.authored
         * QuestionnaireResponse.encounter
         * QuestionnaireResponse.id
-        * QuestionnaireResponse.identifier
         * QuestionnaireResponse.item
-        * QuestionnaireResponse.item.answer
-        * QuestionnaireResponse.item.answer.item
-        * QuestionnaireResponse.item.answer.value[x]
         * QuestionnaireResponse.item.item
         * QuestionnaireResponse.item.linkId
-        * QuestionnaireResponse.item.text
         * QuestionnaireResponse.questionnaire
         * QuestionnaireResponse.questionnaire.extension:questionnaireDisplay
         * QuestionnaireResponse.status

@@ -94,7 +94,6 @@
   :elements:
   - :path: id
   - :path: text
-  - :path: identifier
   - :path: questionnaire
   - :path: status
   - :path: subject
@@ -109,12 +108,6 @@
     - Reference
   - :path: item
   - :path: item.linkId
-  - :path: item.text
-  - :path: item.answer
-  - :path: item.answer.value[x]
-    :types:
-    - Reference
-  - :path: item.answer.item
   - :path: item.item
 :mandatory_elements:
 - QuestionnaireResponse.extension.url
