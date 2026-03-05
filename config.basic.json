@@ -216,6 +216,15 @@
         ]
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult": {
+        "slice_discriminator_default_value": [
+          {
+            "slice_id": "Observation.category:specificDiscipline",
+            "value": [
+              { "path": "coding.system", "value": "http://terminology.hl7.org/CodeSystem/v2-0074" },
+              { "path": "coding.code", "value": ["BG", "BLB", "CG", "CH", "CP", "GE", "HM", "IMM", "LAB", "MB", "MCB", "MYC", "OSL", "OTH", "SP", "SR", "TX", "VR"] }
+            ]
+          }
+        ],
         "keep_all_search_results": true,
         "filter_set": [
           [

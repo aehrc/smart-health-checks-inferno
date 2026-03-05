@@ -93,6 +93,24 @@
         :value: http://terminology.hl7.org/CodeSystem/v2-0074
       - :path: coding.code
         :value:
+        - BG
+        - BLB
+        - CG
+        - CH
+        - CP
+        - GE
+        - HM
+        - IMM
+        - LAB
+        - MB
+        - MCB
+        - MYC
+        - OSL
+        - OTH
+        - SP
+        - SR
+        - TX
+        - VR
   :elements:
   - :path: status
   - :path: category
