@@ -109,6 +109,29 @@
   - :path: item
   - :path: item.linkId
   - :path: item.item
+  - :path: item.item.linkId
+  - :path: item.item.text
+  - :path: item.item.item
+  - :path: item.item.item.linkId
+  - :path: item.item.item.text
+  - :path: item.item.item.answer
+  - :path: item.item.item.answer.value[x]
+    :types:
+    - Reference
+  - :path: item.item.item.item
+  - :path: item.item.item.item.linkId
+  - :path: item.item.item.item.text
+  - :path: item.item.item.item.answer
+  - :path: item.item.item.item.answer.value[x]
+    :types:
+    - Reference
+  - :path: item.item.item.item.item
+  - :path: item.item.item.item.item.linkId
+  - :path: item.item.item.item.item.text
+  - :path: item.item.item.item.item.answer
+  - :path: item.item.item.item.item.answer.value[x]
+    :types:
+    - Reference
 :mandatory_elements:
 - QuestionnaireResponse.extension.url
 - QuestionnaireResponse.extension.value[x]
@@ -117,20 +140,19 @@
 - QuestionnaireResponse.subject
 - QuestionnaireResponse.authored
 - QuestionnaireResponse.author
+- QuestionnaireResponse.source.extension.url
+- QuestionnaireResponse.source.extension.value[x]
 - QuestionnaireResponse.item.linkId
+- QuestionnaireResponse.item.item.linkId
+- QuestionnaireResponse.item.item.item.linkId
+- QuestionnaireResponse.item.item.item.item.linkId
+- QuestionnaireResponse.item.item.item.item.item.linkId
 :bindings:
 - :type: code
   :strength: required
   :system: http://hl7.org/fhir/ValueSet/questionnaire-answers-status
   :path: status
 :references:
-- :path: QuestionnaireResponse.extension.value[x]
-  :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Device
-  - http://hl7.org/fhir/StructureDefinition/Organization
-  :resource_types:
-  - Device
-  - Organization
 - :path: QuestionnaireResponse.basedOn
   :profiles:
   - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
@@ -171,6 +193,13 @@
   - Practitioner
   - PractitionerRole
   - RelatedPerson
+- :path: QuestionnaireResponse.source.extension.value[x]
+  :profiles:
+  - http://hl7.org/fhir/StructureDefinition/Device
+  - http://hl7.org/fhir/StructureDefinition/Organization
+  :resource_types:
+  - Device
+  - Organization
 :tests:
 - :id: smart_health_checks_v040_questionnaire_response_patient_search_test
   :file_name: questionnaire_response_patient_search_test.rb

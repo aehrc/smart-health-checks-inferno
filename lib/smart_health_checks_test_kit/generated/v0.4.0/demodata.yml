@@ -36,6 +36,9 @@
   - RedFlagsEarlyIdentificationGuide
   - AbsoluteCVDRiskCalculation
   - Immunisation
+  AllergyIntolerance:
+  - AllergyIntolerance-ExtractBundleEntry1-pat-sf
+  - 604a-pat-sf
   Parameters:
   - SHCPatchAllergyIntolerance2
   - SHCPatchMedicationStatement1
@@ -44,28 +47,37 @@
   - SHCPatchMedicationStatement3
   - SHCPatchAllergyIntolerance1
   - SHCPatchMedicationStatement4
+  Condition:
+  - Condition-ExtractBundleEntry1-pat-sf
+  - Condition-ExtractBundleEntry2-pat-sf
+  - fever-pat-sf
+  MedicationStatement:
+  - MedicationStatement-ExtractBundleEntry1-pat-sf
+  - chloramphenicol-pat-sf
+  - active-bisoprolol-internal-pat-sf
+  - active-bisoprolol-external-pat-sf
+  Patient:
+  - baby-smith-john
+  - pat-sf
   Practitioner:
   - primary-peter
+  Encounter:
+  - health-check-pat-sf
   Observation:
   - HeartRate-pat-sf
   - SmokingStatus-pat-sf
   - WaistCircumference-pat-sf
+  - HeadCircumference-baby-smith-john
   - BodyHeight-pat-sf
+  - lipid-chol-pat-sf
   - BodyWeight-pat-sf
   - BloodPressure-pat-sf
+  - lipid-hdl-pat-sf
   - HeartRhythm-pat-sf
-  MedicationStatement:
-  - chloramphenicol-pat-sf
-  - active-bisoprolol-internal-pat-sf
-  - active-bisoprolol-external-pat-sf
+  Immunization:
+  - Immunization-ExtractBundleEntry1-pat-sf
   Medication:
   - bisoprolol-external-pat-sf
-  AllergyIntolerance:
-  - 604a-pat-sf
-  Patient:
-  - pat-sf
-  Condition:
-  - fever-pat-sf
 :resource_body_list:
   Questionnaire:
   - resourceType: Questionnaire
@@ -84,7 +96,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -93,31 +105,31 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     - resourceType: ValueSet
@@ -660,18 +672,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -679,7 +693,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -1378,6 +1392,9 @@
           display: Other tobacco use
     - resourceType: ValueSet
       id: YesNoNotAskedDeclined
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/valueset-supplement
+        valueCanonical: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
       url: https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined
       name: YesNoNotAskedDeclined
       title: Yes/No/Not Asked/Asked But Declined
@@ -1387,7 +1404,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -1401,11 +1418,13 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9c63f3f7-c471-451d-aad3-d84bca7a3c8c
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 4
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -1413,7 +1432,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
+        - name: used-supplement
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -1908,7 +1929,7 @@
         language: text/fhirpath
         expression: "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final'
           or status = 'amended' or status = 'corrected').first()"
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -2111,7 +2132,7 @@
         valueExpression:
           name: HealthPrioritiesSummaryAllergiesAdverseReactions
           language: text/fhirpath
-          expression: item.where(linkId='d4e4db07-a795-4a30-bd0f-9c109f96a22b').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value
+          expression: item.where(linkId='allergy').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value
       - url: http://hl7.org/fhir/StructureDefinition/variable
         valueExpression:
           name: HealthPrioritiesSummaryFamilyHistory
@@ -3040,7 +3061,7 @@
                   width='19' height='19' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self:
                   center;\"/>\r\n\t</div>\r\n</div>"
       - linkId: 5b224753-9365-44e3-823b-9c17e7394005
-        text: Patient Details
+        text: Patient details
         type: group
         repeats: false
         item:
@@ -5055,7 +5076,6 @@
               linkId: allergynew-substance
               text: Substance
               type: open-choice
-              required: true
               repeats: false
               answerValueSet: https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1
             - extension:
@@ -13684,7 +13704,7 @@
         expression: "%ObsTobaccoSmokingStatusDateString.substring(8,2).toInteger().toString()
           + ' ' + %ObsTobaccoSmokingStatusDateString.substring(5,2).replace('01','Jan').replace('02','Feb').replace('03','Mar').replace('04','Apr').replace('05','May').replace('06','Jun').replace('07','Jul').replace('08','Aug').replace('09','Sep').replace('10','Oct').replace('11','Nov').replace('12','Dec')
           + ' ' + %ObsTobaccoSmokingStatusDateString.substring(0,4)"
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -14013,18 +14033,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -14032,7 +14054,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -14076,7 +14098,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -14293,7 +14315,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -14499,18 +14521,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -14518,7 +14542,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -14562,7 +14586,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -14796,7 +14820,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -14805,31 +14829,31 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     extension:
@@ -14878,7 +14902,7 @@
         name: QuestionnaireResponseLatest
         language: application/x-fhir-query
         expression: QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&_count=1&_sort=-authored&patient={{%patient.id}}
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -15114,7 +15138,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -15382,18 +15406,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -15401,7 +15427,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -15411,6 +15437,9 @@
           display: 'No'
     - resourceType: ValueSet
       id: YesNoNotAskedDeclined
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/valueset-supplement
+        valueCanonical: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
       url: https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined
       name: YesNoNotAskedDeclined
       title: Yes/No/Not Asked/Asked But Declined
@@ -15420,7 +15449,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -15434,11 +15463,13 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9c63f3f7-c471-451d-aad3-d84bca7a3c8c
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 4
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -15446,7 +15477,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
+        - name: used-supplement
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -15555,7 +15588,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -16164,18 +16197,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -16183,7 +16218,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -16205,7 +16240,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -16214,35 +16249,38 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     - resourceType: ValueSet
       id: YesNoNotAskedDeclined
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/valueset-supplement
+        valueCanonical: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
       url: https://smartforms.csiro.au/ig/ValueSet/YesNoNotAskedDeclined
       name: YesNoNotAskedDeclined
       title: Yes/No/Not Asked/Asked But Declined
@@ -16252,7 +16290,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -16266,11 +16304,13 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9c63f3f7-c471-451d-aad3-d84bca7a3c8c
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 4
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -16278,7 +16318,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
+        - name: used-supplement
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -17104,7 +17146,7 @@
         language: text/fhirpath
         expression: "%ObsTobaccoSmokingStatus.entry.resource.where(status = 'final'
           or status = 'amended' or status = 'corrected').first()"
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -17210,7 +17252,7 @@
         valueExpression:
           name: HealthPrioritiesSummaryAllergiesAdverseReactions
           language: text/fhirpath
-          expression: item.where(linkId='d4e4db07-a795-4a30-bd0f-9c109f96a22b').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value
+          expression: item.where(linkId='allergy').item.where(linkId='3e689aeb-69a1-4a9b-93bd-50377511dd9b').answer.value
       - url: http://hl7.org/fhir/StructureDefinition/variable
         valueExpression:
           name: HealthPrioritiesSummaryFamilyHistory
@@ -17684,7 +17726,7 @@
       valueString: HealthPrioritiesSummaryAbsoluteCVDRisk
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: HealthPrioritiesSummaryInvestigations
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -18213,18 +18255,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -18232,7 +18276,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -18276,7 +18320,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -18721,7 +18765,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -18730,31 +18774,31 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     extension:
@@ -18793,7 +18837,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -19130,18 +19174,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -19149,7 +19195,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -19193,7 +19239,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -19410,18 +19456,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -19429,7 +19477,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -19473,7 +19521,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -19748,7 +19796,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -20024,7 +20072,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -20236,7 +20284,7 @@
       - url: description
         valueString: The encounter that is to be used to pre-populate the form
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -20430,18 +20478,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -20449,7 +20499,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -20493,7 +20543,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -20944,18 +20994,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -20963,7 +21015,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -21285,7 +21337,7 @@
           '')))"
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -21880,7 +21932,7 @@
         name: AllergyIntolerance
         language: application/x-fhir-query
         expression: AllergyIntolerance?patient={{%patient.id}}
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -22126,7 +22178,6 @@
             linkId: allergynew-substance
             text: Substance
             type: open-choice
-            required: true
             repeats: false
             answerValueSet: https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1
           - extension:
@@ -22207,18 +22258,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -22226,7 +22279,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -22270,7 +22323,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -22552,7 +22605,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -22741,18 +22794,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -22760,7 +22815,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -22804,7 +22859,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -23575,7 +23630,7 @@
         name: height
         language: text/fhirpath
         expression: item.where(linkId='c587e3b6-b91a-40dc-9a16-179342d001e9').item.where(linkId='53d5d5a6-3198-4bec-92ac-03fe7d77fb68').item.where(linkId='6226a5c5-b5c3-4ebb-a689-2b286322cfe0').item.where(linkId='obs-height-newresult').answer.value
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -24566,7 +24621,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -25155,18 +25210,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -25174,7 +25231,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -25218,7 +25275,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -25732,7 +25789,7 @@
       valueString: age
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: Condition
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -26107,18 +26164,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -26126,7 +26185,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -26170,7 +26229,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -26562,18 +26621,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -26581,7 +26642,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -26603,7 +26664,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -26612,31 +26673,31 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     extension:
@@ -26675,7 +26736,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -27069,7 +27130,7 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
@@ -27078,31 +27139,31 @@
           - code: NA
             display: N/A
       expansion:
-        identifier: urn:uuid:e9020f5b-3df2-4fcb-9f8f-9aa20ef6f181
-        timestamp: '2025-10-29T16:30:17+10:00'
+        identifier: urn:uuid:76fe7a73-dbf9-4e97-86e1-981bc4d34be2
+        timestamp: '2026-03-02T12:08:22+10:00'
         total: 3
+        offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
+        - name: count
+          valueInteger: 1000
+        - name: offset
+          valueInteger: 0
+        - name: excludeNested
+          valueBoolean: false
+        - name: used-codesystem
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: version
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/YesNoNA|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "Y"
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: "N"
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
           code: NA
           display: N/A
     - resourceType: ValueSet
@@ -27677,7 +27738,7 @@
         name: PostalAddress
         language: text/fhirpath
         expression: "%patient.address.where(type='postal')"
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -27707,7 +27768,7 @@
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
     - linkId: 5b224753-9365-44e3-823b-9c17e7394005
-      text: Patient Details
+      text: Patient details
       type: group
       repeats: false
       item:
@@ -28609,18 +28670,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -28628,7 +28691,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -28672,7 +28735,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -28921,18 +28984,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -28940,7 +29005,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -28984,7 +29049,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -29222,7 +29287,7 @@
       url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assembleContext
       valueString: age
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -30197,7 +30262,7 @@
         name: RepopulateOverrideAnswer
         language: text/fhirpath
         expression: repeat(item).where(linkId='cvdrisk-repopulateoverride').answer.value
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -30739,18 +30804,20 @@
       compose:
         include:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          version: 2.0.0
+          version: 3.0.0
           concept:
           - code: "Y"
             display: 'Yes'
           - code: "N"
             display: 'No'
       expansion:
-        identifier: urn:uuid:5d9dbf1e-e156-4961-bb02-051dfc831832
-        timestamp: '2025-09-18T16:28:54+10:00'
+        identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
+        timestamp: '2026-03-02T12:08:23+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -30758,7 +30825,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|2.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: "Y"
@@ -30883,7 +30950,7 @@
         name: Immunization
         language: application/x-fhir-query
         expression: Immunization?patient={{%patient.id}}&status=completed
-    - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.versionAlgorithm[x]
+    - url: http://hl7.org/fhir/StructureDefinition/artifact-versionAlgorithm
       valueCoding:
         system: http://hl7.org/fhir/version-algorithm
         code: semver
@@ -31220,6 +31287,78 @@
                 style=\"display: flex; flex-direction: row;\">Attention required&nbsp;\r\n\t\t<img
                 width='19' height='19' src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkY4QzAwIiBzdHJva2Utd2lkdGg9IjkiLz48bGluZSB4MT0iNTAiIHkxPSIyOCIgeDI9IjUwIiB5Mj0iNjAiIHN0cm9rZT0iI0ZGOEMwMCIgc3Ryb2tlLXdpZHRoPSI5Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI0ZGOEMwMCIvPjwvc3ZnPg=='\r\n\t\tstyle=\"align-self:
                 center;\"/>\r\n\t</div>\r\n</div>"
+  AllergyIntolerance:
+  - resourceType: AllergyIntolerance
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+        code: active
+    code:
+      coding:
+      - system: http://snomed.info/sct
+        code: '387458008'
+        display: Aspirin
+    patient:
+      reference: Patient/pat-sf
+    note:
+    - text: Moderate reaction
+    reaction:
+    - manifestation:
+      - coding:
+        - system: http://snomed.info/sct
+          code: '126485001'
+          display: Urticaria
+  - resourceType: AllergyIntolerance
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+        code: active
+    code:
+      coding:
+      - system: http://snomed.info/sct
+        code: '412583005'
+        display: Bee pollen
+      text: Bee pollen
+    patient:
+      reference: Patient/pat-sf
+    note:
+    - text: comment
+    reaction:
+    - manifestation:
+      - coding:
+        - system: http://snomed.info/sct
+          code: '271807003'
+          display: Rash
+        text: Rash
+  - meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+        code: active
+        display: Active
+    patient:
+      reference: Patient/pat-sf
+    code:
+      coding:
+      - code: '716186003'
+        system: http://snomed.info/sct
+        display: No known allergy
+    reaction:
+    - manifestation:
+      - coding:
+        - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+          code: active
+          display: Active
+      severity: mild
+    resourceType: AllergyIntolerance
   Parameters:
   - resourceType: Parameters
     meta:
@@ -31590,298 +31729,123 @@
         valueString: text
       - name: value
         valueString: 1/2 tablet in the morning. Increase to 1 after 4 weeks.
-  Practitioner:
-  - resourceType: Practitioner
+  Condition:
+  - resourceType: Condition
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner
-    identifier:
-    - system: http://www.acme.org/practitioners
-      value: '25456'
-    name:
-    - family: Primary
-      given:
-      - Peter
-      prefix:
-      - Dr
-    address:
-    - use: work
-      line:
-      - 310 Hay St
-      city: East Perth
-      state: WA
-      postalCode: '6004'
-  Observation:
-  - resourceType: Observation
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
-    status: final
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+        code: active
     category:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
+      - system: http://terminology.hl7.org/CodeSystem/condition-category
+        code: problem-list-item
     code:
-      coding:
-      - system: http://loinc.org
-        code: 8867-4
-      - system: http://snomed.info/sct
-        code: '364075005'
-      text: Heart rate
+      text: Really bad pain
     subject:
       reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueQuantity:
-      value: 75
-      unit: "/min"
-      system: http://unitsofmeasure.org
-      code: "/min"
-  - resourceType: Observation
+    onsetDateTime: '2025-08-13'
+  - resourceType: Condition
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
-    status: final
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+        code: active
     category:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: social-history
+      - system: http://terminology.hl7.org/CodeSystem/condition-category
+        code: problem-list-item
     code:
       coding:
       - system: http://snomed.info/sct
-        code: '1747861000168109'
-      - system: http://loinc.org
-        code: 72166-2
-      text: Smoking status
+        code: '195967001'
+        display: Asthma
     subject:
       reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueCodeableConcept:
-      coding:
-      - system: http://snomed.info/sct
-        code: '8517006'
-        display: Ex-smoker
-  - resourceType: Observation
+    onsetDateTime: '2025-07-01'
+    note:
+    - text: Difficulty breathing
+  - resourceType: Condition
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
-    status: final
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
+    clinicalStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+        code: active
+        display: Active
+    verificationStatus:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+        code: confirmed
+        display: Confirmed
+      text: Confirmed
     category:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
+      - system: http://terminology.hl7.org/CodeSystem/condition-category
+        code: problem-list-item
+    severity:
+      coding:
+      - system: http://snomed.info/sct
+        code: '6736007'
+        display: Moderate
     code:
       coding:
-      - system: http://loinc.org
-        code: 8280-0
       - system: http://snomed.info/sct
-        code: '276361009'
-      text: Waist circumference
+        code: '63993003'
+        display: Remittent fever
+      text: Remittent fever
     subject:
       reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueQuantity:
-      value: 90
-      unit: cm
-      system: http://unitsofmeasure.org
-      code: cm
-  - resourceType: Observation
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
-    status: final
+    onsetDateTime: '2015-02-11T00:00:00.000Z'
+    recordedDate: '2015-02-12'
+    recorder:
+      reference: Practitioner/primary-peter
+  - resourceType: Condition
+    subject:
+      reference: Patient/pat-sf
+    code:
+      coding:
+      - system: http://snomed.info/sct
+        code: '283680004'
+        display: Nail wound of sole of foot
     category:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
-    code:
-      coding:
-      - system: http://loinc.org
-        code: 8302-2
       - system: http://snomed.info/sct
-        code: '50373000'
-      text: Height
-    subject:
-      reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueQuantity:
-      value: 164
-      unit: cm
-      system: http://unitsofmeasure.org
-      code: cm
-  - resourceType: Observation
+        code: '55607006'
+        display: Problem
+      - system: http://terminology.hl7.org/CodeSystem/condition-category
+        code: problem-list-item
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
-    status: final
-    category:
-    - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
-    code:
-      coding:
-      - system: http://loinc.org
-        code: 29463-7
-      - system: http://snomed.info/sct
-        code: '27113001'
-      text: Weight
-    subject:
-      reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueQuantity:
-      value: 80
-      unit: kg
-      system: http://unitsofmeasure.org
-      code: kg
-  - resourceType: Observation
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
-    status: final
-    category:
-    - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
-    code:
-      coding:
-      - system: http://loinc.org
-        code: 85354-9
-      - system: http://snomed.info/sct
-        code: '75367002'
-      text: Blood pressure
-    subject:
-      reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    component:
-    - code:
-        coding:
-        - system: http://loinc.org
-          code: 8480-6
-        - system: http://snomed.info/sct
-          code: '271649006'
-        text: Systolic
-      valueQuantity:
-        value: 170
-        unit: mm[Hg]
-        system: http://unitsofmeasure.org
-        code: mm[Hg]
-    - code:
-        coding:
-        - system: http://loinc.org
-          code: 8462-4
-        - system: http://snomed.info/sct
-          code: '271650006'
-        text: Diastolic
-      valueQuantity:
-        value: 90
-        unit: mm[Hg]
-        system: http://unitsofmeasure.org
-        code: mm[Hg]
-  - resourceType: Observation
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
-    status: final
-    category:
-    - coding:
-      - system: http://terminology.hl7.org/CodeSystem/observation-category
-        code: vital-signs
-    code:
-      coding:
-      - system: http://loinc.org
-        code: 8884-9
-      - system: http://snomed.info/sct
-        code: '364074009'
-      text: Heart rhythm
-    subject:
-      reference: Patient/pat-sf
-    effectiveDateTime: '2025-08-15'
-    valueCodeableConcept:
-      coding:
-      - system: http://snomed.info/sct
-        code: '933506231000036108'
-        display: Regular heart rhythm
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
-    status: registered
-    resourceType: Observation
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
-    status: registered
-    resourceType: Observation
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
   MedicationStatement:
+  - resourceType: MedicationStatement
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
+    status: active
+    medicationCodeableConcept:
+      coding:
+      - system: http://snomed.info/sct
+        code: '85332011000036101'
+        display: Coveram 10 mg/10 mg (perindopril arginine/amlodipine) tablet
+    subject:
+      reference: Patient/pat-sf
+    dateAsserted: '2025-08-15T10:08:34.551+10:00'
+    reasonCode:
+    - coding:
+      - system: http://snomed.info/sct
+        code: '38341003'
+        display: Hypertension
+    note:
+    - text: Review regularly
+    dosage:
+    - text: One tablet daily
   - resourceType: MedicationStatement
     meta:
       profile:
@@ -31951,67 +31915,33 @@
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
-  Medication:
-  - resourceType: Medication
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication
-    code:
-      coding:
-      - system: http://snomed.info/sct
-        code: '23281011000036106'
-        display: Bisoprolol fumarate 2.5 mg tablet
-      text: Bisoprolol 2.5mg tab
-  AllergyIntolerance:
-  - resourceType: AllergyIntolerance
-    meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
-    clinicalStatus:
-      coding:
-      - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-        code: active
-    code:
-      coding:
-      - system: http://snomed.info/sct
-        code: '412583005'
-        display: Bee pollen
-      text: Bee pollen
-    patient:
-      reference: Patient/pat-sf
-    note:
-    - text: comment
-    reaction:
-    - manifestation:
-      - coding:
-        - system: http://snomed.info/sct
-          code: '271807003'
-          display: Rash
-        text: Rash
-  - meta:
-      profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
-    clinicalStatus:
-      coding:
-      - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-        code: active
-        display: Active
-    patient:
-      reference: Patient/pat-sf
-    code:
-      coding:
-      - code: '716186003'
-        system: http://snomed.info/sct
-        display: No known allergy
-    reaction:
-    - manifestation:
-      - coding:
-        - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-          code: active
-          display: Active
-      severity: mild
-    resourceType: AllergyIntolerance
   Patient:
+  - resourceType: Patient
+    meta:
+      profile:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatient
+    identifier:
+    - use: temp
+      type:
+        coding:
+        - system: http://terminology.hl7.org/CodeSystem/v2-0203
+          code: MR
+      system: http://ns.electronichealth.net.au/id/abn-scoped/medicalrecord/1.0/51824753003
+      value: '7746677'
+      assigner:
+        display: QLD Hospital
+    name:
+    - use: temp
+      family: SMITH
+      given:
+      - Baby of Emma
+    gender: male
+    birthDate: '2022-09-14'
+    _birthDate:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/patient-birthTime
+        valueDateTime: '2022-09-14T14:35:45-05:00'
   - resourceType: Patient
     meta:
       profile:
@@ -32163,73 +32093,457 @@
         - system: urn:ietf:bcp:47
           code: yub
         text: Yugambal
-  Condition:
-  - resourceType: Condition
+  Practitioner:
+  - resourceType: Practitioner
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
-    clinicalStatus:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPractitioner
+    identifier:
+    - system: http://www.acme.org/practitioners
+      value: '25456'
+    name:
+    - family: Primary
+      given:
+      - Peter
+      prefix:
+      - Dr
+    address:
+    - use: work
+      line:
+      - 310 Hay St
+      city: East Perth
+      state: WA
+      postalCode: '6004'
+  Encounter:
+  - resourceType: Encounter
+    meta:
+      profile:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCEncounter
+    status: in-progress
+    class:
+      system: http://terminology.hl7.org/CodeSystem/v3-ActCode
+      code: AMB
+      display: ambulatory
+    serviceType:
       coding:
-      - system: http://terminology.hl7.org/CodeSystem/condition-clinical
-        code: active
-        display: Active
-    verificationStatus:
-      coding:
-      - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
-        code: confirmed
-        display: Confirmed
-      text: Confirmed
-    category:
+      - system: http://snomed.info/sct
+        code: '788007007'
+        display: General practice service
+    subject:
+      reference: Patient/pat-sf
+      identifier:
+        type:
+          coding:
+          - system: http://terminology.hl7.org/CodeSystem/v2-0203
+            code: MC
+            display: Patient's Medicare Number
+          text: Medicare Number
+        system: http://ns.electronichealth.net.au/id/medicare-number
+        value: '69514496771'
+    period:
+      start: '2025-02-10T09:20:00+10:00'
+    reasonCode:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/condition-category
-        code: problem-list-item
-    severity:
-      coding:
-      - system: http://snomed.info/sct
-        code: '6736007'
-        display: Moderate
-    code:
-      coding:
-      - system: http://snomed.info/sct
-        code: '63993003'
-        display: Remittent fever
-      text: Remittent fever
-    subject:
-      reference: Patient/pat-sf
-    onsetDateTime: '2015-02-11T00:00:00.000Z'
-    recordedDate: '2015-02-12'
-    recorder:
-      reference: Practitioner/primary-peter
-  - resourceType: Condition
-    subject:
-      reference: Patient/pat-sf
-    code:
-      coding:
       - system: http://snomed.info/sct
         code: '283680004'
         display: Nail wound of sole of foot
+  Observation:
+  - resourceType: Observation
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
+    status: final
     category:
     - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 8867-4
       - system: http://snomed.info/sct
-        code: '55607006'
-        display: Problem
-      - system: http://terminology.hl7.org/CodeSystem/condition-category
-        code: problem-list-item
+        code: '364075005'
+      text: Heart rate
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 75
+      unit: "/min"
+      system: http://unitsofmeasure.org
+      code: "/min"
+  - resourceType: Observation
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
-  QuestionnaireResponse:
-  - resourceType: QuestionnaireResponse
-    status: in-progress
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: social-history
+    code:
+      coding:
+      - system: http://snomed.info/sct
+        code: '1747861000168109'
+      - system: http://loinc.org
+        code: 72166-2
+      text: Smoking status
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueCodeableConcept:
+      coding:
+      - system: http://snomed.info/sct
+        code: '8517006'
+        display: Ex-smoker
+  - resourceType: Observation
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
-  - resourceType: QuestionnaireResponse
-    status: stopped
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 8280-0
+      - system: http://snomed.info/sct
+        code: '276361009'
+      text: Waist circumference
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 90
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
+  - resourceType: Observation
     meta:
       profile:
-      - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 9843-4
+      - system: http://snomed.info/sct
+        code: '363812007'
+      text: Head circumference
+    subject:
+      reference: Patient/baby-smith-john
+    effectiveDateTime: '2023-03-14'
+    valueQuantity:
+      value: 42
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
+  - resourceType: Observation
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 8302-2
+      - system: http://snomed.info/sct
+        code: '50373000'
+      text: Height
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 164
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
+  - resourceType: Observation
+    meta:
+      profile:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: laboratory
+        display: Laboratory
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v2-0074
+        code: CH
+        display: Chemistry
+      text: Chemistry
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 14647-2
+        display: Cholesterol [Moles/volume] in Serum or Plasma
+      text: Cholesterol
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2023-01-17'
+    valueQuantity:
+      value: 5.9
+      unit: mmol/L
+      system: http://unitsofmeasure.org
+      code: mmol/L
+    interpretation:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+        code: H
+        display: High
+    referenceRange:
+    - high:
+        value: 5.6
+        unit: mmol/L
+        system: http://unitsofmeasure.org
+        code: mmol/L
+  - resourceType: Observation
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 29463-7
+      - system: http://snomed.info/sct
+        code: '27113001'
+      text: Weight
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 80
+      unit: kg
+      system: http://unitsofmeasure.org
+      code: kg
+  - resourceType: Observation
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 85354-9
+      - system: http://snomed.info/sct
+        code: '75367002'
+      text: Blood pressure
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    component:
+    - code:
+        coding:
+        - system: http://loinc.org
+          code: 8480-6
+        - system: http://snomed.info/sct
+          code: '271649006'
+        text: Systolic
+      valueQuantity:
+        value: 170
+        unit: mm[Hg]
+        system: http://unitsofmeasure.org
+        code: mm[Hg]
+    - code:
+        coding:
+        - system: http://loinc.org
+          code: 8462-4
+        - system: http://snomed.info/sct
+          code: '271650006'
+        text: Diastolic
+      valueQuantity:
+        value: 90
+        unit: mm[Hg]
+        system: http://unitsofmeasure.org
+        code: mm[Hg]
+  - resourceType: Observation
+    meta:
+      profile:
+      - http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: laboratory
+        display: Laboratory
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v2-0074
+        code: CH
+        display: Chemistry
+      text: Chemistry
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 14646-4
+        display: Cholesterol in HDL [Moles/volume] in Serum or Plasma
+      text: HDL
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2023-01-17'
+    valueQuantity:
+      value: 1.5
+      unit: mmol/L
+      system: http://unitsofmeasure.org
+      code: mmol/L
+    interpretation:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+        code: "N"
+        display: Normal
+    referenceRange:
+    - low:
+        value: 1.0
+        unit: mmol/L
+        system: http://unitsofmeasure.org
+        code: mmol/L
+      high:
+        value: 2.2
+        unit: mmol/L
+        system: http://unitsofmeasure.org
+        code: mmol/L
+  - resourceType: Observation
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 8884-9
+      - system: http://snomed.info/sct
+        code: '364074009'
+      text: Heart rhythm
+    subject:
+      reference: Patient/pat-sf
+    effectiveDateTime: '2025-08-15'
+    valueCodeableConcept:
+      coding:
+      - system: http://snomed.info/sct
+        code: '933506231000036108'
+        display: Regular heart rhythm
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
+    status: registered
+    resourceType: Observation
+  - code:
+      coding:
+      - code: example
+        system: http://example.com
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
+    status: registered
+    resourceType: Observation
   Immunization:
+  - resourceType: Immunization
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization
+    status: completed
+    vaccineCode:
+      coding:
+      - system: http://snomed.info/sct
+        code: '884862121000036103'
+        display: Fluquadri 2025
+    patient:
+      reference: Patient/pat-sf
+    occurrenceDateTime: '2025-08-15'
+    lotNumber: '123'
   - resourceType: Immunization
     meta:
       profile:
@@ -32242,6 +32556,28 @@
     patient:
       reference: Patient/pat-sf
     occurrenceString: example
+  Medication:
+  - resourceType: Medication
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedication
+    code:
+      coding:
+      - system: http://snomed.info/sct
+        code: '23281011000036106'
+        display: Bisoprolol fumarate 2.5 mg tablet
+      text: Bisoprolol 2.5mg tab
+  QuestionnaireResponse:
+  - resourceType: QuestionnaireResponse
+    status: in-progress
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+  - resourceType: QuestionnaireResponse
+    status: stopped
+    meta:
+      profile:
+      - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
 :patch_body_list:
   :FHIRPATHPatchJson:
     Condition:

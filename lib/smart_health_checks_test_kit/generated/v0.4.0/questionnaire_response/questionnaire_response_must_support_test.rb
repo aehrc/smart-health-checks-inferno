@@ -20,6 +20,23 @@ module SmartHealthChecksTestKit
         * QuestionnaireResponse.id
         * QuestionnaireResponse.item
         * QuestionnaireResponse.item.item
+        * QuestionnaireResponse.item.item.item
+        * QuestionnaireResponse.item.item.item.answer
+        * QuestionnaireResponse.item.item.item.answer.value[x]
+        * QuestionnaireResponse.item.item.item.item
+        * QuestionnaireResponse.item.item.item.item.answer
+        * QuestionnaireResponse.item.item.item.item.answer.value[x]
+        * QuestionnaireResponse.item.item.item.item.item
+        * QuestionnaireResponse.item.item.item.item.item.answer
+        * QuestionnaireResponse.item.item.item.item.item.answer.value[x]
+        * QuestionnaireResponse.item.item.item.item.item.linkId
+        * QuestionnaireResponse.item.item.item.item.item.text
+        * QuestionnaireResponse.item.item.item.item.linkId
+        * QuestionnaireResponse.item.item.item.item.text
+        * QuestionnaireResponse.item.item.item.linkId
+        * QuestionnaireResponse.item.item.item.text
+        * QuestionnaireResponse.item.item.linkId
+        * QuestionnaireResponse.item.item.text
         * QuestionnaireResponse.item.linkId
         * QuestionnaireResponse.questionnaire
         * QuestionnaireResponse.questionnaire.extension:questionnaireDisplay
