@@ -22,6 +22,7 @@ module SmartHealthChecksTestKit
         * QuestionnaireResponse.item.item.item.answer.value[x]
         * QuestionnaireResponse.item.item.item.item.answer.value[x]
         * QuestionnaireResponse.item.item.item.item.item.answer.value[x]
+        * QuestionnaireResponse.item.item.item.item.item.item.answer.value[x]
         * QuestionnaireResponse.subject
       )
 

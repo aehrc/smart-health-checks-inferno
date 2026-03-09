@@ -3818,6 +3818,13 @@
     - :path: item.item.item.item.item.answer.value[x]
       :types:
       - Reference
+    - :path: item.item.item.item.item.item
+    - :path: item.item.item.item.item.item.linkId
+    - :path: item.item.item.item.item.item.text
+    - :path: item.item.item.item.item.item.answer
+    - :path: item.item.item.item.item.item.answer.value[x]
+      :types:
+      - Reference
   :mandatory_elements:
   - QuestionnaireResponse.extension.url
   - QuestionnaireResponse.extension.value[x]
@@ -3833,6 +3840,7 @@
   - QuestionnaireResponse.item.item.item.linkId
   - QuestionnaireResponse.item.item.item.item.linkId
   - QuestionnaireResponse.item.item.item.item.item.linkId
+  - QuestionnaireResponse.item.item.item.item.item.item.linkId
   :bindings:
   - :type: code
     :strength: required

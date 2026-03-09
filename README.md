@@ -189,3 +189,76 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 
 - [Smart Health Checks Implementation Guide](https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html)
 - [Report Issues](https://github.com/aehrc/smart-health-checks-inferno/issues)
+
+
+## Walkthrough: How to generate test suites through IG file. 
+
+### Download the IG .tgz 
+ 
+In this example, lets say we have the IG as `0.4.1.tgz` and downloaded to `lib\smart_health_checks_test_kit\igs`.
+
+### Create a new config file 
+
+In the main folder create a new config file called `config.041.json`.
+
+Edit the contents as required. 
+
+Example below:
+```
+{
+  "ig": {
+    "version": "0.4.1",
+    "link": "https://smartforms.csiro.au/ig/0.4.1/index.html",
+    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.4.1.tgz"
+  },
+  "suite": {
+    "rewrite_igs": "/home/igs/0.4.1.tgz"
+  },
+  "configs": {
+    "generic": {
+      "rewrite_profile_url": {
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson|2.0.0-ballot",
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path": "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path|2.0.0-ballot",
+        "http://hl7.org.au/fhir/StructureDefinition/au-specimen": "http://hl7.org.au/fhir/StructureDefinition/au-specimen|5.1.0-preview"
+      }
+    }
+  }
+}
+
+```
+
+### Modify the Rakefile 
+
+In the main folder, modify the Rakefile's `namespace :smart_health_checks do` section  to include the newly created config file. 
+
+
+>    config_files = ['./config.041.json']
+
+### Delete any previously generated files
+
+Under `lib\smart_health_checks_test_kit\generated`, delete the files that were created in previous sessions.
+
+### Perform cleanup and generate resouces 
+
+> make stop
+
+> make down
+
+> make setup
+
+> make generate
+
+> make setup
+
+> make run
+
+
+Note: If using Aidbox, use MODE=aidbox infront of the make commands
+
+
