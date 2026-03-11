@@ -240,6 +240,21 @@ In the main folder, modify the Rakefile's `namespace :smart_health_checks do` se
 
 >    config_files = ['./config.041.json']
 
+### Modify `aidbox_config.rb` (if using Aidbox)
+Add the aidbox config to include the new IG in the setup. 
+```
+configurer.add_upload_step(
+  '/$upload-fhir-npm-packages',
+  './lib/smart_health_checks_test_kit/igs/0.4.1.tgz',
+  {
+    'Accept' => 'application/json',
+    'Authorization' => authorization,
+    'Origin' => base_url,
+    'Referer' => 'http://localhost:3500/ui/console'
+  },
+  form_field: 'file'
+)
+```
 ### Delete any previously generated files
 
 Under `lib\smart_health_checks_test_kit\generated`, delete the files that were created in previous sessions.
