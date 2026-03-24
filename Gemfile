@@ -10,7 +10,7 @@ group :development, :test do
   gem 'debug'
 end
 
-gem 'inferno_suite_generator', github: 'hl7au/inferno_suite_generator', ref: 'a5238f643c6f9231b677ff8d087015aecb46f64b'
+gem 'inferno_suite_generator', github: 'hl7au/inferno_suite_generator', ref: 'cfca142000e5996035358b68403e3c3c3300cff8'
 # gem 'inferno_suite_generator', path: '../beda/os/inferno_suite_generator'
 gem 'pg', '~> 1.5'
 gem 'rubocop', '~> 1.63.2'
