@@ -51,9 +51,7 @@ requirement of Smart Health Checks v0.4.0.
           first_search: true,
           resource_type: 'MedicationStatement',
           search_param_names: ['patient'],
-          saves_delayed_references: true,
           possible_status_search: true,
-          includes: [{ 'parameter' => 'MedicationStatement:medication', 'target_resource' => '', 'paths' => '' }],
           test_reference_variants: true,
           test_post_search: true
         )

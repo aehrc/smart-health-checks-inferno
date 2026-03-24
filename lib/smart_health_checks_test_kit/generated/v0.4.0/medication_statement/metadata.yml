@@ -206,8 +206,5 @@
   :file_name: medication_statement_fhir_path_json_patch_test.rb
 :id: smart_health_checks_v040_medication_statement
 :file_name: medication_statement_group.rb
-:delayed_references:
-- :path: medication[x]
-  :resources:
-  - Medication
+:delayed_references: []
 :ig_id: csiro.fhir.au.smartforms
