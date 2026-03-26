@@ -84,12 +84,12 @@
   - Patient
 - :path: Encounter.episodeOfCare
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+  - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare|4.0.1
   :resource_types:
   - EpisodeOfCare
 - :path: Encounter.basedOn
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
   :resource_types:
   - ServiceRequest
 - :path: Encounter.participant.individual
@@ -103,7 +103,7 @@
   - RelatedPerson
 - :path: Encounter.appointment
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Appointment
+  - http://hl7.org/fhir/StructureDefinition/Appointment|4.0.1
   :resource_types:
   - Appointment
 - :path: Encounter.reasonReference
@@ -117,27 +117,27 @@
   - Procedure
 - :path: Encounter.diagnosis.condition
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Condition
-  - http://hl7.org/fhir/StructureDefinition/Procedure
+  - http://hl7.org/fhir/StructureDefinition/Condition|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
   :resource_types:
   - Condition
   - Procedure
 - :path: Encounter.account
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Account
+  - http://hl7.org/fhir/StructureDefinition/Account|4.0.1
   :resource_types:
   - Account
 - :path: Encounter.hospitalization.origin
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Location
-  - http://hl7.org/fhir/StructureDefinition/Organization
+  - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :resource_types:
   - Location
   - Organization
 - :path: Encounter.hospitalization.destination
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Location
-  - http://hl7.org/fhir/StructureDefinition/Organization
+  - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :resource_types:
   - Location
   - Organization
@@ -153,7 +153,7 @@
   - Organization
 - :path: Encounter.partOf
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
   :resource_types:
   - Encounter
 :tests:
