@@ -76,12 +76,21 @@
     :discriminator:
       :type: type
       :code: DateTime
+  - :slice_id: Condition.category:problemListCategory
+    :slice_name: problemListCategory
+    :path: category
+    :discriminator:
+      :type: value
+      :values:
+      - :path: coding.code
+        :value: problem-list-item
+      - :path: coding.system
+        :value: http://terminology.hl7.org/CodeSystem/condition-category
   :elements:
   - :path: id
   - :path: clinicalStatus
   - :path: verificationStatus
-  - :path: category.coding.code
-    :fixed_value: problem-list-item
+  - :path: category
   - :path: severity
   - :path: code
   - :path: code.text
@@ -97,6 +106,9 @@
   - :path: note.text
 :mandatory_elements:
 - Condition.category
+- Condition.category.coding
+- Condition.category.coding.system
+- Condition.category.coding.code
 - Condition.code
 - Condition.subject
 - Condition.note.text
@@ -117,15 +129,15 @@
   - Patient
 - :path: Condition.encounter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
   :resource_types:
   - Encounter
 - :path: Condition.recorder
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   :resource_types:
   - Practitioner
   - PractitionerRole
@@ -133,10 +145,10 @@
   - RelatedPerson
 - :path: Condition.asserter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   :resource_types:
   - Practitioner
   - PractitionerRole
@@ -144,16 +156,16 @@
   - RelatedPerson
 - :path: Condition.stage.assessment
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/ClinicalImpression
-  - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
-  - http://hl7.org/fhir/StructureDefinition/Observation
+  - http://hl7.org/fhir/StructureDefinition/ClinicalImpression|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
   :resource_types:
   - ClinicalImpression
   - DiagnosticReport
   - Observation
 - :path: Condition.evidence.detail
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Resource
+  - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
   :resource_types:
   - Resource
 - :path: Condition.note.author[x]

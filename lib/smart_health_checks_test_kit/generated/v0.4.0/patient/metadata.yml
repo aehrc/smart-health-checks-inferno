@@ -117,27 +117,27 @@
 :references:
 - :path: Patient.contact.organization
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Organization
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :resource_types:
   - Organization
 - :path: Patient.generalPractitioner
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Organization
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
   :resource_types:
   - Organization
   - Practitioner
   - PractitionerRole
 - :path: Patient.managingOrganization
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Organization
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :resource_types:
   - Organization
 - :path: Patient.link.other
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   :resource_types:
   - Patient
   - RelatedPerson
