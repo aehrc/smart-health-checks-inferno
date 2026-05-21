@@ -266,4 +266,3 @@
 :id: smart_health_checks_v040_shc_heart_rate
 :file_name: shc_heart_rate_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms

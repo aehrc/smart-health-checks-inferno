@@ -278,4 +278,3 @@
 :id: smart_health_checks_v040_shc_pathology_result
 :file_name: shc_pathology_result_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms

@@ -151,4 +151,3 @@
 :id: smart_health_checks_v040_patient
 :file_name: patient_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms

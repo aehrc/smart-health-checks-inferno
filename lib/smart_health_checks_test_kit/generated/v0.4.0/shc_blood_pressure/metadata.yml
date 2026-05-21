@@ -306,4 +306,3 @@
 :id: smart_health_checks_v040_shc_blood_pressure
 :file_name: shc_blood_pressure_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms
