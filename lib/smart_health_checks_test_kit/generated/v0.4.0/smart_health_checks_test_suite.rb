@@ -51,7 +51,7 @@ module SmartHealthChecksTestKit
       end
 
       fhir_resource_validator do
-        igs '/home/igs/0.4.0-e7eb072.tgz'
+        igs '/home/igs/0.4.0-46fb6c.tgz'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
           "The value provided ('json') was not found in the value set 'MimeType'",

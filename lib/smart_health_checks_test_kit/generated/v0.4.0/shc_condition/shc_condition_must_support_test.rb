@@ -16,7 +16,8 @@ module SmartHealthChecksTestKit
 
         * Condition.abatement[x]
         * Condition.abatement[x]:abatementDateTime
-        * Condition.category.coding.code
+        * Condition.category
+        * Condition.category:problemListCategory
         * Condition.clinicalStatus
         * Condition.code
         * Condition.code.text

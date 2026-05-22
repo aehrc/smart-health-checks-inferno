@@ -103,12 +103,12 @@
 :references:
 - :path: Observation.basedOn
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/CarePlan
-  - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-  - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-  - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-  - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
   :resource_types:
   - CarePlan
   - DeviceRequest
@@ -118,12 +118,12 @@
   - ServiceRequest
 - :path: Observation.partOf
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-  - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-  - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-  - http://hl7.org/fhir/StructureDefinition/Procedure
-  - http://hl7.org/fhir/StructureDefinition/Immunization
-  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
   :resource_types:
   - MedicationAdministration
   - MedicationDispense
@@ -138,22 +138,22 @@
   - Patient
 - :path: Observation.focus
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Resource
+  - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
   :resource_types:
   - Resource
 - :path: Observation.encounter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
   :resource_types:
   - Encounter
 - :path: Observation.performer
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/Organization
-  - http://hl7.org/fhir/StructureDefinition/CareTeam
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   :resource_types:
   - Practitioner
   - PractitionerRole
@@ -163,33 +163,33 @@
   - RelatedPerson
 - :path: Observation.specimen
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Specimen
+  - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
   :resource_types:
   - Specimen
 - :path: Observation.device
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Device
-  - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+  - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
   :resource_types:
   - Device
   - DeviceMetric
 - :path: Observation.hasMember
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Observation
-  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
   :resource_types:
   - Observation
   - QuestionnaireResponse
   - MolecularSequence
 - :path: Observation.derivedFrom
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/DocumentReference
-  - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-  - http://hl7.org/fhir/StructureDefinition/Media
-  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-  - http://hl7.org/fhir/StructureDefinition/Observation
-  - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+  - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
   :resource_types:
   - DocumentReference
   - ImagingStudy

@@ -105,15 +105,15 @@
     - Patient
   - :path: AllergyIntolerance.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: AllergyIntolerance.recorder
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -121,10 +121,10 @@
     - RelatedPerson
   - :path: AllergyIntolerance.asserter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
     :resource_types:
     - Patient
     - RelatedPerson
@@ -305,12 +305,21 @@
       :discriminator:
         :type: type
         :code: DateTime
+    - :slice_id: Condition.category:problemListCategory
+      :slice_name: problemListCategory
+      :path: category
+      :discriminator:
+        :type: value
+        :values:
+        - :path: coding.code
+          :value: problem-list-item
+        - :path: coding.system
+          :value: http://terminology.hl7.org/CodeSystem/condition-category
     :elements:
     - :path: id
     - :path: clinicalStatus
     - :path: verificationStatus
-    - :path: category.coding.code
-      :fixed_value: problem-list-item
+    - :path: category
     - :path: severity
     - :path: code
     - :path: code.text
@@ -326,6 +335,9 @@
     - :path: note.text
   :mandatory_elements:
   - Condition.category
+  - Condition.category.coding
+  - Condition.category.coding.system
+  - Condition.category.coding.code
   - Condition.code
   - Condition.subject
   - Condition.note.text
@@ -346,15 +358,15 @@
     - Patient
   - :path: Condition.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Condition.recorder
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -362,10 +374,10 @@
     - RelatedPerson
   - :path: Condition.asserter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -373,16 +385,16 @@
     - RelatedPerson
   - :path: Condition.stage.assessment
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/ClinicalImpression
-    - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
-    - http://hl7.org/fhir/StructureDefinition/Observation
+    - http://hl7.org/fhir/StructureDefinition/ClinicalImpression|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     :resource_types:
     - ClinicalImpression
     - DiagnosticReport
     - Observation
   - :path: Condition.evidence.detail
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Condition.note.author[x]
@@ -483,12 +495,12 @@
     - Patient
   - :path: Encounter.episodeOfCare
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+    - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare|4.0.1
     :resource_types:
     - EpisodeOfCare
   - :path: Encounter.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - ServiceRequest
   - :path: Encounter.participant.individual
@@ -502,7 +514,7 @@
     - RelatedPerson
   - :path: Encounter.appointment
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Appointment
+    - http://hl7.org/fhir/StructureDefinition/Appointment|4.0.1
     :resource_types:
     - Appointment
   - :path: Encounter.reasonReference
@@ -516,27 +528,27 @@
     - Procedure
   - :path: Encounter.diagnosis.condition
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Condition
-    - http://hl7.org/fhir/StructureDefinition/Procedure
+    - http://hl7.org/fhir/StructureDefinition/Condition|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
     :resource_types:
     - Condition
     - Procedure
   - :path: Encounter.account
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Account
+    - http://hl7.org/fhir/StructureDefinition/Account|4.0.1
     :resource_types:
     - Account
   - :path: Encounter.hospitalization.origin
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Location
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Location
     - Organization
   - :path: Encounter.hospitalization.destination
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Location
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Location
     - Organization
@@ -552,7 +564,7 @@
     - Organization
   - :path: Encounter.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   :delayed_references: []
@@ -663,42 +675,42 @@
     - Patient
   - :path: Immunization.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Immunization.location
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Location
+    - http://hl7.org/fhir/StructureDefinition/Location|4.0.1
     :resource_types:
     - Location
   - :path: Immunization.manufacturer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   - :path: Immunization.performer.actor
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    :resource_types:
-    - Practitioner
-    - PractitionerRole
-    - Organization
-  - :path: Immunization.performer.actor
-    :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
     - Organization
   - :path: Immunization.performer.actor
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    :resource_types:
+    - Practitioner
+    - PractitionerRole
+    - Organization
+  - :path: Immunization.performer.actor
+    :profiles:
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -716,21 +728,21 @@
     - Organization
   - :path: Immunization.reasonReference
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Condition
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/DiagnosticReport
+    - http://hl7.org/fhir/StructureDefinition/Condition|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1
     :resource_types:
     - Condition
     - Observation
     - DiagnosticReport
   - :path: Immunization.reaction.detail
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Observation
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     :resource_types:
     - Observation
   - :path: Immunization.protocolApplied.authority
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   :delayed_references: []
@@ -772,7 +784,7 @@
   :references:
   - :path: Medication.manufacturer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   :delayed_references: []
@@ -890,20 +902,20 @@
   :references:
   - :path: MedicationStatement.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - MedicationRequest
     - CarePlan
     - ServiceRequest
   - :path: MedicationStatement.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Observation
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -922,18 +934,18 @@
     - Patient
   - :path: MedicationStatement.context
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
-    - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare|4.0.1
     :resource_types:
     - Encounter
     - EpisodeOfCare
   - :path: MedicationStatement.informationSource
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Patient
     - Practitioner
@@ -942,7 +954,7 @@
     - Organization
   - :path: MedicationStatement.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: MedicationStatement.reasonReference
@@ -1165,12 +1177,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -1180,12 +1192,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -1200,22 +1212,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -1225,33 +1237,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - QuestionnaireResponse
     - MolecularSequence
     - Observation
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -1419,12 +1431,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -1434,12 +1446,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -1454,22 +1466,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -1479,33 +1491,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - QuestionnaireResponse
     - MolecularSequence
     - Observation
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -1673,12 +1685,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -1688,12 +1700,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -1708,22 +1720,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -1733,33 +1745,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - QuestionnaireResponse
     - MolecularSequence
     - Observation
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -2185,12 +2197,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -2200,12 +2212,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -2220,22 +2232,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -2245,33 +2257,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - QuestionnaireResponse
     - MolecularSequence
     - Observation
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -2663,12 +2675,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -2678,12 +2690,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -2698,12 +2710,12 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
@@ -2726,8 +2738,8 @@
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
@@ -2738,12 +2750,12 @@
     - DiagnosticReport
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -2857,12 +2869,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -2872,12 +2884,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -2892,22 +2904,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -2917,33 +2929,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
     :resource_types:
     - Observation
     - QuestionnaireResponse
     - MolecularSequence
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/Observation
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -3111,12 +3123,12 @@
   :references:
   - :path: Observation.basedOn
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/CarePlan
-    - http://hl7.org/fhir/StructureDefinition/DeviceRequest
-    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
-    - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-    - http://hl7.org/fhir/StructureDefinition/NutritionOrder
-    - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+    - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/NutritionOrder|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
     :resource_types:
     - CarePlan
     - DeviceRequest
@@ -3126,12 +3138,12 @@
     - ServiceRequest
   - :path: Observation.partOf
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-    - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-    - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-    - http://hl7.org/fhir/StructureDefinition/Procedure
-    - http://hl7.org/fhir/StructureDefinition/Immunization
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
+    - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Immunization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
     :resource_types:
     - MedicationAdministration
     - MedicationDispense
@@ -3146,22 +3158,22 @@
     - Patient
   - :path: Observation.focus
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Resource
+    - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
     :resource_types:
     - Resource
   - :path: Observation.encounter
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Encounter
+    - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
     :resource_types:
     - Encounter
   - :path: Observation.performer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/CareTeam
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/CareTeam|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Practitioner
     - PractitionerRole
@@ -3171,33 +3183,33 @@
     - RelatedPerson
   - :path: Observation.specimen
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Specimen
+    - http://hl7.org/fhir/StructureDefinition/Specimen|4.0.1
     :resource_types:
     - Specimen
   - :path: Observation.device
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Device
-    - http://hl7.org/fhir/StructureDefinition/DeviceMetric
+    - http://hl7.org/fhir/StructureDefinition/Device|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/DeviceMetric|4.0.1
     :resource_types:
     - Device
     - DeviceMetric
   - :path: Observation.hasMember
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - QuestionnaireResponse
     - MolecularSequence
     - Observation
   - :path: Observation.derivedFrom
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/DocumentReference
-    - http://hl7.org/fhir/StructureDefinition/ImagingStudy
-    - http://hl7.org/fhir/StructureDefinition/Media
-    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-    - http://hl7.org/fhir/StructureDefinition/MolecularSequence
-    - http://hl7.org/fhir/StructureDefinition/vitalsigns
+    - http://hl7.org/fhir/StructureDefinition/DocumentReference|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/ImagingStudy|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Media|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/MolecularSequence|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/vitalsigns|4.0.1
     :resource_types:
     - DocumentReference
     - ImagingStudy
@@ -3609,27 +3621,27 @@
   :references:
   - :path: Patient.contact.organization
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   - :path: Patient.generalPractitioner
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
-    - http://hl7.org/fhir/StructureDefinition/Practitioner
-    - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
     :resource_types:
     - Organization
     - Practitioner
     - PractitionerRole
   - :path: Patient.managingOrganization
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   - :path: Patient.link.other
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Patient
-    - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+    - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+    - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
     :resource_types:
     - Patient
     - RelatedPerson
@@ -3680,7 +3692,7 @@
   :references:
   - :path: Practitioner.qualification.issuer
     :profiles:
-    - http://hl7.org/fhir/StructureDefinition/Organization
+    - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
     :resource_types:
     - Organization
   :delayed_references: []

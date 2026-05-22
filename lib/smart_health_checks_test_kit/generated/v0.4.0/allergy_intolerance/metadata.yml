@@ -99,15 +99,15 @@
   - Patient
 - :path: AllergyIntolerance.encounter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
   :resource_types:
   - Encounter
 - :path: AllergyIntolerance.recorder
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
   :resource_types:
   - Practitioner
   - PractitionerRole
@@ -115,10 +115,10 @@
   - RelatedPerson
 - :path: AllergyIntolerance.asserter
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
   :resource_types:
   - Patient
   - RelatedPerson

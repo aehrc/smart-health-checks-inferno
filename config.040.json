@@ -2,10 +2,10 @@
   "ig": {
     "version": "0.4.0",
     "link": "https://smartforms.csiro.au/ig/0.4.0/index.html",
-    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.4.0-e7eb072.tgz"
+    "package_archive_path": "lib/smart_health_checks_test_kit/igs/0.4.0-46fb6c.tgz"
   },
   "suite": {
-    "rewrite_igs": "/home/igs/0.4.0-e7eb072.tgz"
+    "rewrite_igs": "/home/igs/0.4.0-46fb6c.tgz"
   },
   "configs": {
     "generic": {

@@ -112,20 +112,20 @@
 :references:
 - :path: MedicationStatement.basedOn
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/MedicationRequest
-  - http://hl7.org/fhir/StructureDefinition/CarePlan
-  - http://hl7.org/fhir/StructureDefinition/ServiceRequest
+  - http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/CarePlan|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/ServiceRequest|4.0.1
   :resource_types:
   - MedicationRequest
   - CarePlan
   - ServiceRequest
 - :path: MedicationStatement.partOf
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-  - http://hl7.org/fhir/StructureDefinition/MedicationDispense
-  - http://hl7.org/fhir/StructureDefinition/MedicationStatement
-  - http://hl7.org/fhir/StructureDefinition/Procedure
-  - http://hl7.org/fhir/StructureDefinition/Observation
+  - http://hl7.org/fhir/StructureDefinition/MedicationAdministration|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationDispense|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/MedicationStatement|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Procedure|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
   :resource_types:
   - MedicationAdministration
   - MedicationDispense
@@ -144,18 +144,18 @@
   - Patient
 - :path: MedicationStatement.context
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Encounter
-  - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare
+  - http://hl7.org/fhir/StructureDefinition/Encounter|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/EpisodeOfCare|4.0.1
   :resource_types:
   - Encounter
   - EpisodeOfCare
 - :path: MedicationStatement.informationSource
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Patient
-  - http://hl7.org/fhir/StructureDefinition/Practitioner
-  - http://hl7.org/fhir/StructureDefinition/PractitionerRole
-  - http://hl7.org/fhir/StructureDefinition/RelatedPerson
-  - http://hl7.org/fhir/StructureDefinition/Organization
+  - http://hl7.org/fhir/StructureDefinition/Patient|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1
+  - http://hl7.org/fhir/StructureDefinition/Organization|4.0.1
   :resource_types:
   - Patient
   - Practitioner
@@ -164,7 +164,7 @@
   - Organization
 - :path: MedicationStatement.derivedFrom
   :profiles:
-  - http://hl7.org/fhir/StructureDefinition/Resource
+  - http://hl7.org/fhir/StructureDefinition/Resource|4.0.1
   :resource_types:
   - Resource
 - :path: MedicationStatement.reasonReference
