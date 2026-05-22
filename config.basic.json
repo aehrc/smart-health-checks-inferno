@@ -245,6 +245,9 @@
       }
     },
     "resources": {
+      "Condition": {
+        "fixed_values_to_search": ["category"]
+      },
       "MedicationStatement": {
         "resources_to_create_filter": "MedicationStatement.medicationCodeableConcept.exists()"
       },
