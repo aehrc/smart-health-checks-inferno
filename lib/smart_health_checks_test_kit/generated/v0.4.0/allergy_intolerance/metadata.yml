@@ -151,4 +151,3 @@
 :id: smart_health_checks_v040_allergy_intolerance
 :file_name: allergy_intolerance_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms

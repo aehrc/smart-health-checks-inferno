@@ -57,4 +57,3 @@
 :id: smart_health_checks_v040_practitioner
 :file_name: practitioner_group.rb
 :delayed_references: []
-:ig_id: csiro.fhir.au.smartforms

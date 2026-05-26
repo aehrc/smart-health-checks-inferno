@@ -259,6 +259,9 @@
       },
       "Parameters": {
         "skip": true
+      },
+      "Observation": {
+        "fixed_values_to_search": ["code"]
       }
     }
   }
