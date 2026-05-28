@@ -31,6 +31,7 @@ none are returned, the test is skipped.
 
       def self.properties
         @properties ||= InfernoSuiteGenerator::SearchTestProperties.new(
+          fixed_value_search: true,
           resource_type: 'Condition',
           search_param_names: ['category'],
           token_search_params: ['category']
