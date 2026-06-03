@@ -43,6 +43,10 @@ module SmartHealthChecksTestKit
         nil
       end
 
+      def create_resource_overrides
+        {}
+      end
+
       run do
         perform_create_test
       end
