@@ -210,7 +210,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -324,10 +324,10 @@
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
           valueExpression:
             language: text/fhirpath
-            expression: "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+            expression: "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toString().substring(0,10).toDate()"
         linkId: '01418489-1ec4-4c3b-b96a-7c14c3e21cfe'
         text: Date of last completed health check
-        type: dateTime
+        type: date
         repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
@@ -403,7 +403,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '266919005'
             display: Never smoked
@@ -412,30 +412,28 @@
           - code: '77176002'
             display: Currently smokes
       expansion:
-        identifier: urn:uuid:b2e820da-5d0d-40d8-ab32-5ab7ab84626b
-        timestamp: '2025-10-08T10:11:49+10:00'
+        identifier: urn:uuid:8ba71b4e-19ac-4b06-8fa3-4d1a12fb704c
+        timestamp: '2026-06-04T09:57:01+10:00'
         parameter:
+        - name: used-codesystem
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
+        - name: version
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430
-        - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '266919005'
           display: Never smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '8517006'
           display: Previously smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '77176002'
           display: Currently smokes
     - resourceType: ValueSet
@@ -453,7 +451,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250131
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '75976002'
             display: Low Risk
@@ -462,28 +460,28 @@
           - code: '15508007'
             display: High Risk
       expansion:
-        identifier: urn:uuid:542be920-0ac6-401d-a924-0cbd705c7e99
-        timestamp: '2025-10-10T13:08:07+10:00'
-        offset: 0
+        identifier: urn:uuid:d45a6f7f-04a8-4b09-ac3b-14b8a4db72f6
+        timestamp: '2026-06-04T09:58:38+10:00'
         parameter:
-        - name: count
-          valueInteger: 1000
-        - name: offset
-          valueInteger: 0
-        - name: excludeNested
-          valueBoolean: false
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
+        - name: used-supplement
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
+        - name: warning-draft
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
         contains:
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '75976002'
           display: Low Risk
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '25594002'
           display: Intermediate Risk
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '15508007'
           display: High Risk
     extension:
@@ -910,7 +908,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -1692,11 +1690,13 @@
           - code: active
           - code: inactive
       expansion:
-        identifier: urn:uuid:40f0c59e-9fa5-4322-bc1d-5fde644a076c
-        timestamp: '2025-08-25T15:52:50+10:00'
+        identifier: urn:uuid:7e283615-1d6f-4e79-8380-609c0e3ba098
+        timestamp: '2026-06-03T14:38:25+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -1704,7 +1704,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1
         contains:
         - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
           code: active
@@ -1779,7 +1779,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -1999,6 +1999,7 @@
             linkId: allergynew-substance
             text: Substance
             type: open-choice
+            required: true
             repeats: false
             answerValueSet: https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1
           - extension:
@@ -2184,8 +2185,8 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
-        timestamp: '2026-03-02T12:08:23+10:00'
+        identifier: urn:uuid:4f3ac05a-a930-477b-8a49-03a09e1df2e1
+        timestamp: '2026-06-03T12:53:53+10:00'
         total: 4
         offset: 0
         parameter:
@@ -2398,13 +2399,13 @@
           concept:
           - code: NA
       expansion:
-        identifier: urn:uuid:f8e7efc2-94d6-403e-9e40-3a3a4e9fffb4
-        timestamp: '2025-05-01T10:00:56+10:00'
+        identifier: urn:uuid:7487141b-378a-42a9-bc33-e8233d1dc442
+        timestamp: '2026-06-03T11:12:00+10:00'
         total: 4
         offset: 0
         parameter:
         - name: displayLanguage
-          valueCode: en-US
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -2412,9 +2413,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v3-RoleCode
           code: MTH
@@ -2655,8 +2656,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d
-        timestamp: '2025-10-28T16:39:25+10:00'
+        identifier: urn:uuid:607da01f-2fd0-4fee-966e-ea9db4aa5d3b
+        timestamp: '2026-06-03T12:53:55+10:00'
+        total: 6
         offset: 0
         parameter:
         - name: displayLanguage
@@ -2670,9 +2672,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -2744,8 +2746,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d
-        timestamp: '2025-10-28T16:39:14+10:00'
+        identifier: urn:uuid:3d7b06c9-0430-4ea2-87a3-b681751809fa
+        timestamp: '2026-06-03T12:53:56+10:00'
+        total: 8
         offset: 0
         parameter:
         - name: displayLanguage
@@ -2759,9 +2762,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -2804,33 +2807,31 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '48031000119106'
             display: Quit >12 months
           - code: '735128000'
             display: Quit <12 months
       expansion:
-        identifier: urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26
-        timestamp: '2025-10-29T09:44:35+10:00'
+        identifier: urn:uuid:a91c3f75-0918-4e52-aae4-ac15ef176a54
+        timestamp: '2026-06-04T09:47:48+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '48031000119106'
           display: Quit >12 months
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '735128000'
           display: Quit <12 months
     - resourceType: ValueSet
@@ -2848,7 +2849,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '266919005'
             display: Never smoked
@@ -2863,42 +2864,40 @@
           - code: '713914004'
             display: Other tobacco use
       expansion:
-        identifier: urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135
-        timestamp: '2025-10-29T09:46:14+10:00'
+        identifier: urn:uuid:83a52367-2530-4e2e-ae46-3a7dca08c7e8
+        timestamp: '2026-06-04T09:49:22+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '266919005'
           display: Never smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '77176002'
           display: Current smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '8517006'
           display: Ex-smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '16090371000119103'
           display: Exposure to second hand tobacco smoke
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '394872000'
           display: Wants to quit
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '713914004'
           display: Other tobacco use
     - resourceType: ValueSet
@@ -2917,7 +2916,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '736595007'
             display: Declined
@@ -2928,34 +2927,32 @@
           - code: '171155001'
             display: Up to date
       expansion:
-        identifier: urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7
-        timestamp: '2025-10-29T09:42:14+10:00'
+        identifier: urn:uuid:ccc014c8-24ae-4011-a329-5549be8f853e
+        timestamp: '2026-06-04T09:44:16+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '736595007'
           display: Declined
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '410527000'
           display: Offered
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171154002'
           display: Not required
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171155001'
           display: Up to date
     extension:
@@ -3165,7 +3162,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -3630,7 +3627,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -3898,7 +3895,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -4300,7 +4297,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -4616,7 +4613,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -5049,24 +5046,14 @@
           - code: '361137007'
             display: Irregular heart rhythm
       expansion:
-        identifier: urn:uuid:7743ad1f-02f2-4977-b7a4-ea993b57023b
-        timestamp: '2025-10-28T16:39:30+10:00'
-        offset: 0
+        identifier: urn:uuid:ec8b048c-2670-47e4-8873-24bcb99734e5
+        timestamp: '2026-06-04T09:50:55+10:00'
+        total: 2
         parameter:
-        - name: displayLanguage
-          valueCode: en
-        - name: count
-          valueInteger: 1000
-        - name: offset
-          valueInteger: 0
-        - name: excludeNested
-          valueBoolean: false
-        - name: system-version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         contains:
         - system: http://snomed.info/sct
           code: '933506231000036108'
@@ -5582,7 +5569,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -5747,6 +5734,24 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: cm
+            - extension:
+              - url: key
+                valueId: shc-que-lengthheight-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new length/height result must
+                  also be entered.
+              - url: requirements
+                valueMarkdown: A new length/height date must be accompanied by a new
+                  length/height result to ensure a valid observation resource can
+                  be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-lengthheight-newresult
             text: New result
             type: decimal
@@ -5767,6 +5772,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-lengthheight-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new length/height result is entered, a date must
+                  also be entered.
+              - url: requirements
+                valueMarkdown: A new length/height result must be accompanied by a
+                  date to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-lengthheight-newdate
             text: New result date
             type: date
@@ -5830,6 +5852,23 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: cm
+            - extension:
+              - url: key
+                valueId: shc-que-height-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new height result must also be
+                  entered.
+              - url: requirements
+                valueMarkdown: A new height date must be accompanied by a new height
+                  result to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-height-newresult
             text: New result
             type: decimal
@@ -5850,6 +5889,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-height-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new height result is entered, a date must also be
+                  entered.
+              - url: requirements
+                valueMarkdown: A new height result must be accompanied by a date to
+                  ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-height-newdate
             text: New result date
             type: date
@@ -5908,6 +5964,23 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: kg
+            - extension:
+              - url: key
+                valueId: shc-que-weight-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new weight result must also be
+                  entered.
+              - url: requirements
+                valueMarkdown: A new weight date must be accompanied by a new weight
+                  result to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-weight-newresult
             text: New result
             type: decimal
@@ -5928,6 +6001,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-weight-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new weight result is entered, a date must also be
+                  entered.
+              - url: requirements
+                valueMarkdown: A new weight result must be accompanied by a date to
+                  ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-weight-newdate
             text: New result date
             type: date
@@ -6054,6 +6144,24 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: cm
+            - extension:
+              - url: key
+                valueId: shc-que-headcircumference-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new head circumference result
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: A new head circumference date must be accompanied by
+                  a new head circumference result to ensure a valid observation resource
+                  can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-headcircumference-newresult
             text: New result
             type: decimal
@@ -6074,6 +6182,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-headcircumference-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new head circumference result is entered, a date
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: A new head circumference result must be accompanied
+                  by a date to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-headcircumference-newdate
             text: New result date
             type: date
@@ -6133,6 +6258,24 @@
                 valueReference:
                   reference: "#WaistCircumferenceTemplate"
               url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
+            - extension:
+              - url: key
+                valueId: shc-que-waistcircumference-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new waist circumference result
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: A new waist circumference date must be accompanied
+                  by a new waist circumference result to ensure a valid observation
+                  resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-waistcircumference-newresult
             text: New result
             type: decimal
@@ -6153,6 +6296,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-waistcircumference-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new waist circumference result is entered, a date
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: A new waist circumference result must be accompanied
+                  by a date to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-waistcircumference-newdate
             text: New result date
             type: date
@@ -6211,6 +6371,24 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: "/min"
+            - extension:
+              - url: key
+                valueId: shc-que-heartrate-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new heart rate result must also
+                  be entered.
+              - url: requirements
+                valueMarkdown: A new heart rate date must be accompanied by a new
+                  heart rate result to ensure a valid observation resource can be
+                  extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-heartrate-newresult
             text: New result
             type: integer
@@ -6231,6 +6409,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-heartrate-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new heart rate result is entered, a date must also
+                  be entered.
+              - url: requirements
+                valueMarkdown: A new heart rate result must be accompanied by a date
+                  to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-heartrate-newdate
             text: New result date
             type: date
@@ -6287,6 +6482,24 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: radio-button
+            - extension:
+              - url: key
+                valueId: shc-que-heartrhythm-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()"
+              - url: human
+                valueString: If a date is entered, a new heart rhythm result must
+                  also be entered.
+              - url: requirements
+                valueMarkdown: A new heart rhythm date must be accompanied by a new
+                  heart rhythm result to ensure a valid observation resource can be
+                  extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-heartrhythm-newresult
             text: New result
             type: choice
@@ -6298,6 +6511,23 @@
                 language: text/fhirpath
                 expression: iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-heartrhythm-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()
+                    implies %resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()"
+              - url: human
+                valueString: If a new heart rhythm result is entered, a date must
+                  also be entered.
+              - url: requirements
+                valueMarkdown: A new heart rhythm result must be accompanied by a
+                  date to ensure a valid observation resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: obs-heartrhythm-newdate
             text: New result date
             type: date
@@ -6390,6 +6620,25 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: mm[Hg]
+            - extension:
+              - url: key
+                valueId: shc-que-bp-1
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "(%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()
+                    or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists())
+                    implies %resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()"
+              - url: human
+                valueString: If a diastolic value or date is entered, a systolic value
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: If a diastolic value or date is present, a systolic
+                  value must also be present to ensure a valid blood pressure observation
+                  resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: bp-newbp-systolic
             text: Systolic
             type: integer
@@ -6409,6 +6658,25 @@
               valueCoding:
                 system: http://unitsofmeasure.org
                 code: mm[Hg]
+            - extension:
+              - url: key
+                valueId: shc-que-bp-2
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                    or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists())
+                    implies %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()"
+              - url: human
+                valueString: If a systolic value or date is entered, a diastolic value
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: If a systolic value or date is present, a diastolic
+                  value must also be present to ensure a valid blood pressure observation
+                  resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: bp-newbp-diastolic
             text: Diastolic
             type: integer
@@ -6430,6 +6698,44 @@
                 expression: iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
                   or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(),
                   today())
+            - extension:
+              - url: key
+                valueId: shc-que-bp-3
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "%resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()
+                    implies (%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                    and %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())"
+              - url: human
+                valueString: If a date is entered, both a systolic and diastolic value
+                  must also be entered.
+              - url: requirements
+                valueMarkdown: If a date is present, both a systolic and diastolic
+                  value must also be present to ensure a valid blood pressure observation
+                  resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
+            - extension:
+              - url: key
+                valueId: shc-que-bp-4
+              - url: severity
+                valueCode: error
+              - url: expression
+                valueExpression:
+                  language: text/fhirpath
+                  expression: "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                    or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())
+                    implies %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()"
+              - url: human
+                valueString: If a systolic or diastolic value is entered, a date must
+                  also be entered.
+              - url: requirements
+                valueMarkdown: If a systolic or diastolic value is present, a date
+                  must also be present to ensure a valid blood pressure observation
+                  resource can be extracted.
+              url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             linkId: bp-newbp-date
             text: Date performed
             type: date
@@ -6632,7 +6938,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -6989,7 +7295,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -7204,7 +7510,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -7857,7 +8163,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -8138,7 +8444,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -8731,7 +9037,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -9188,7 +9494,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -9564,7 +9870,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -9807,6 +10113,7 @@
           linkId: vaccinestoday-vaccine
           text: Vaccine
           type: open-choice
+          required: true
           answerValueSet: "#amt-vaccine-1"
         - linkId: vaccinestoday-batch
           text: Batch number
@@ -9814,6 +10121,7 @@
         - linkId: vaccinestoday-date
           text: Administration date
           type: date
+          required: true
         - linkId: vaccinestoday-comment
           text: Comment
           type: string
@@ -9942,7 +10250,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -10172,7 +10480,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -10555,7 +10863,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -10927,8 +11235,8 @@
           - code: active
           - code: inactive
       expansion:
-        identifier: urn:uuid:79c6437f-1765-498a-979f-533bbeb06e33
-        timestamp: '2025-12-03T12:09:39+10:00'
+        identifier: urn:uuid:2ff73b06-cd8c-46f9-86ec-e60746783d71
+        timestamp: '2026-06-03T12:54:03+10:00'
         total: 2
         offset: 0
         parameter:
@@ -11126,7 +11434,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -11400,6 +11708,7 @@
             linkId: 2da85994-2d5e-42f1-8a81-abf44f397468
             text: Condition
             type: open-choice
+            required: true
             answerValueSet: "#clinical-condition-1"
           - linkId: 4d55bffb-3286-4a23-a785-3b9c346d464d
             text: Onset date
@@ -11566,7 +11875,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -11820,7 +12129,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -12074,7 +12383,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -12418,13 +12727,13 @@
           concept:
           - code: NA
       expansion:
-        identifier: urn:uuid:f8e7efc2-94d6-403e-9e40-3a3a4e9fffb4
-        timestamp: '2025-05-01T10:00:56+10:00'
+        identifier: urn:uuid:7487141b-378a-42a9-bc33-e8233d1dc442
+        timestamp: '2026-06-03T11:12:00+10:00'
         total: 4
         offset: 0
         parameter:
         - name: displayLanguage
-          valueCode: en-US
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -12432,9 +12741,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v3-RoleCode
           code: MTH
@@ -12656,8 +12965,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d
-        timestamp: '2025-10-28T16:39:25+10:00'
+        identifier: urn:uuid:607da01f-2fd0-4fee-966e-ea9db4aa5d3b
+        timestamp: '2026-06-03T12:53:55+10:00'
+        total: 6
         offset: 0
         parameter:
         - name: displayLanguage
@@ -12671,9 +12981,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -12745,8 +13055,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d
-        timestamp: '2025-10-28T16:39:14+10:00'
+        identifier: urn:uuid:3d7b06c9-0430-4ea2-87a3-b681751809fa
+        timestamp: '2026-06-03T12:53:56+10:00'
+        total: 8
         offset: 0
         parameter:
         - name: displayLanguage
@@ -12760,9 +13071,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -12949,7 +13260,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -13242,7 +13553,6 @@
               - system: http://hl7.org/fhir/questionnaire-item-control
                 code: check-box
           linkId: 311d83bb-f22e-4f60-9b50-b6e38dd2059b
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.extension:noFixedAddress
           text: No fixed address
           type: boolean
           repeats: false
@@ -13267,7 +13577,6 @@
                 language: text/fhirpath
                 expression: "%HomeAddressRepeat.select(line.join(', '))"
             linkId: 2fee2d51-7828-4178-b8c1-35edd32ba338
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line
             text: Street address
             type: string
             repeats: false
@@ -13277,7 +13586,6 @@
                 language: text/fhirpath
                 expression: "%HomeAddressRepeat.city"
             linkId: ddb65ed1-f4b2-4730-af2a-2f98bc73c76f
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city
             text: City
             type: string
             repeats: false
@@ -13292,7 +13600,6 @@
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: drop-down
             linkId: d9a1236c-8d6e-4f20-a12a-9d5de5a1d0f6
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state
             text: State
             type: choice
             repeats: false
@@ -13304,20 +13611,19 @@
                 expression: "%HomeAddressRepeat.postalCode"
             - extension:
               - url: key
-                valueId: constraint-regex-postcode
+                valueId: shc-que-postcode-1
               - url: severity
                 valueCode: warning
               - url: expression
                 valueExpression:
                   language: text/fhirpath
-                  expression: matches('^[0-9]{4}$')
+                  expression: "%resource.repeat(item).where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.all(value.matches('^[0-9]{4}$'))"
               - url: human
                 valueString: Postcode must be 4 digits
               url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             - url: http://hl7.org/fhir/StructureDefinition/entryFormat
               valueString: "####"
             linkId: 3f61a1ea-1c74-4f52-8519-432ce861a74f
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode
             text: Postcode
             type: string
             repeats: false
@@ -13343,7 +13649,6 @@
               language: text/fhirpath
               expression: "%PostalAddressRepeat.use"
           linkId: 622970f1-3cf1-4f0a-bf05-b00a08046eba
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.use
           text: Purpose of use
           type: string
           repeats: false
@@ -13353,7 +13658,6 @@
               language: text/fhirpath
               expression: "%PostalAddressRepeat.select(line.join(', '))"
           linkId: 2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line
           text: Street address
           type: string
           repeats: false
@@ -13363,7 +13667,6 @@
               language: text/fhirpath
               expression: "%PostalAddressRepeat.city"
           linkId: 2bde25e5-2c4c-4c0c-b6f3-c6859535a764
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city
           text: City
           type: string
           repeats: false
@@ -13378,7 +13681,6 @@
               - system: http://hl7.org/fhir/questionnaire-item-control
                 code: drop-down
           linkId: b41a8b11-8dbf-4999-9d0a-71d39240fed1
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state
           text: State
           type: choice
           repeats: false
@@ -13390,20 +13692,19 @@
               expression: "%PostalAddressRepeat.postalCode"
           - extension:
             - url: key
-              valueId: constraint-regex-postcode
+              valueId: shc-que-postcode-2
             - url: severity
               valueCode: warning
             - url: expression
               valueExpression:
                 language: text/fhirpath
-                expression: matches('^[0-9]{4}$')
+                expression: "%resource.repeat(item).where(linkId='28b58e50-2a04-4192-9655-efc8d72f32fa').answer.all(value.matches('^[0-9]{4}$'))"
             - url: human
               valueString: Postcode must be 4 digits
             url: http://hl7.org/fhir/StructureDefinition/targetConstraint
           - url: http://hl7.org/fhir/StructureDefinition/entryFormat
             valueString: "####"
           linkId: 28b58e50-2a04-4192-9655-efc8d72f32fa
-          definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode
           text: Postcode
           type: string
           repeats: false
@@ -13497,13 +13798,13 @@
               expression: "%MedicareNumberRepeat.value.substring(0,10)"
           - extension:
             - url: key
-              valueId: constraint-regex-medicarecardnumber-1
+              valueId: shc-que-medicarecardnumber-1
             - url: severity
               valueCode: warning
             - url: expression
               valueExpression:
                 language: text/fhirpath
-                expression: matches('^[0-9]{10}$')
+                expression: "%resource.repeat(item).where(linkId='eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf').answer.all(value.matches('^[0-9]{10}$'))"
             - url: human
               valueString: Medicare card number must be 10 digits
             url: http://hl7.org/fhir/StructureDefinition/targetConstraint
@@ -13518,13 +13819,13 @@
               expression: "%MedicareNumberRepeat.value.substring(10,1)"
           - extension:
             - url: key
-              valueId: constraint-regex-medicarecardnumber-2
+              valueId: shc-que-medicarecardnumber-2
             - url: severity
               valueCode: warning
             - url: expression
               valueExpression:
                 language: text/fhirpath
-                expression: matches('^[0-9]{1}$')
+                expression: "%resource.repeat(item).where(linkId='d6253253-a124-494e-a1d8-7ce02c69ec11').answer.all(value.matches('^[0-9]{1}$'))"
             - url: human
               valueString: Medicare card reference number must be 1 digit
             url: http://hl7.org/fhir/StructureDefinition/targetConstraint
@@ -13989,7 +14290,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -14454,7 +14755,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -15456,6 +15757,7 @@
       compose:
         include:
         - system: http://hl7.org/fhir/CodeSystem/medication-statement-status
+          version: 4.0.1
           concept:
           - code: active
           - code: completed
@@ -15568,7 +15870,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -15732,6 +16034,7 @@
             linkId: regularmedications-summary-current-status
             text: Status
             type: choice
+            required: true
             repeats: false
             answerValueSet: "#MedicationStatementStatusLimited"
           - extension:
@@ -15821,6 +16124,7 @@
             linkId: regularmedications-summary-new-medication
             text: Medication
             type: open-choice
+            required: true
             repeats: false
             answerValueSet: "#smart-health-checks-medicine-products"
           - linkId: regularmedications-summary-new-dosage
@@ -16017,7 +16321,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -16300,8 +16604,8 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
-        timestamp: '2026-03-02T12:08:23+10:00'
+        identifier: urn:uuid:4f3ac05a-a930-477b-8a49-03a09e1df2e1
+        timestamp: '2026-06-03T12:53:53+10:00'
         total: 4
         offset: 0
         parameter:
@@ -16348,7 +16652,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '736595007'
             display: Declined
@@ -16359,34 +16663,32 @@
           - code: '171155001'
             display: Up to date
       expansion:
-        identifier: urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7
-        timestamp: '2025-10-29T09:42:14+10:00'
+        identifier: urn:uuid:ccc014c8-24ae-4011-a329-5549be8f853e
+        timestamp: '2026-06-04T09:44:16+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '736595007'
           display: Declined
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '410527000'
           display: Offered
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171154002'
           display: Not required
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171155001'
           display: Up to date
     extension:
@@ -16450,7 +16752,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -17125,7 +17427,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -17440,7 +17742,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -17721,7 +18023,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -17944,33 +18246,31 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '48031000119106'
             display: Quit >12 months
           - code: '735128000'
             display: Quit <12 months
       expansion:
-        identifier: urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26
-        timestamp: '2025-10-29T09:44:35+10:00'
+        identifier: urn:uuid:a91c3f75-0918-4e52-aae4-ac15ef176a54
+        timestamp: '2026-06-04T09:47:48+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '48031000119106'
           display: Quit >12 months
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '735128000'
           display: Quit <12 months
     - resourceType: ValueSet
@@ -17988,7 +18288,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '266919005'
             display: Never smoked
@@ -18003,42 +18303,40 @@
           - code: '713914004'
             display: Other tobacco use
       expansion:
-        identifier: urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135
-        timestamp: '2025-10-29T09:46:14+10:00'
+        identifier: urn:uuid:83a52367-2530-4e2e-ae46-3a7dca08c7e8
+        timestamp: '2026-06-04T09:49:22+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '266919005'
           display: Never smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '77176002'
           display: Current smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '8517006'
           display: Ex-smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '16090371000119103'
           display: Exposure to second hand tobacco smoke
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '394872000'
           display: Wants to quit
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '713914004'
           display: Other tobacco use
     extension:
@@ -18123,7 +18421,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -18275,6 +18573,24 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: drop-down
+              - extension:
+                - url: key
+                  valueId: shc-que-smokingstatus-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a smoking status must also be
+                    entered.
+                - url: requirements
+                  valueMarkdown: A new smoking status date must be accompanied by
+                    a smoking status value to ensure a valid smoking status observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
               text: New status
               type: choice
@@ -18286,6 +18602,24 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-smokingstatus-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a smoking status is entered, a date must also be
+                    entered.
+                - url: requirements
+                  valueMarkdown: A new smoking status value must be accompanied by
+                    a date to ensure a valid smoking status observation resource can
+                    be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: substanceuse-smoking-smokingstatus-group-newdate
               text: New date
               type: date
@@ -18296,58 +18630,38 @@
               coding:
               - system: http://hl7.org/fhir/questionnaire-item-control
                 code: radio-button
+          - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+            valueExpression:
+              language: text/fhirpath
+              expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006')
+                or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code
+                = '8517006')"
           linkId: 96dc7c22-d003-459c-8a56-f6cd182fc077
           text: Quit status
           type: choice
-          enableWhen:
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '8517006'
           repeats: false
           answerValueSet: "#SmokingQuitStatus-1"
-        - linkId: 9e86387d-1be4-4c26-9047-9dd6b03e1ee0
+        - extension:
+          - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+            valueExpression:
+              language: text/fhirpath
+              expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or
+                code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code
+                = '8517006' or code = '77176002' or code = '394872000')"
+          linkId: 9e86387d-1be4-4c26-9047-9dd6b03e1ee0
           text: How many?
           type: string
-          enableWhen:
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '77176002'
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '8517006'
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '394872000'
-          enableBehavior: any
           repeats: false
-        - linkId: 32e71641-f660-4ca2-af99-dff8917f07be
+        - extension:
+          - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+            valueExpression:
+              language: text/fhirpath
+              expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006' or
+                code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.where(code
+                = '8517006' or code = '77176002' or code = '394872000').exists()"
+          linkId: 32e71641-f660-4ca2-af99-dff8917f07be
           text: How long as a smoker?
           type: string
-          enableWhen:
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '77176002'
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '8517006'
-          - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-            operator: "="
-            answerCoding:
-              system: http://snomed.info/sct
-              code: '394872000'
-          enableBehavior: any
       - linkId: 34feaee8-8088-43ee-991d-9729990b5550
         text: Alcohol and other substance use
         type: group
@@ -18541,13 +18855,13 @@
           concept:
           - code: NA
       expansion:
-        identifier: urn:uuid:f8e7efc2-94d6-403e-9e40-3a3a4e9fffb4
-        timestamp: '2025-05-01T10:00:56+10:00'
+        identifier: urn:uuid:7487141b-378a-42a9-bc33-e8233d1dc442
+        timestamp: '2026-06-03T11:12:00+10:00'
         total: 4
         offset: 0
         parameter:
         - name: displayLanguage
-          valueCode: en-US
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -18555,9 +18869,9 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-RoleCode|4.0.0
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|3.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v3-RoleCode
           code: MTH
@@ -18779,8 +19093,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:5cd85856-1ce5-43f2-afff-063f748c2c7d
-        timestamp: '2025-10-28T16:39:25+10:00'
+        identifier: urn:uuid:607da01f-2fd0-4fee-966e-ea9db4aa5d3b
+        timestamp: '2026-06-03T12:53:55+10:00'
+        total: 6
         offset: 0
         parameter:
         - name: displayLanguage
@@ -18794,9 +19109,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -18868,8 +19183,9 @@
           - code: asked-declined
           - code: not-asked
       expansion:
-        identifier: urn:uuid:3491de0c-49f2-4913-8909-a63c92d14c9d
-        timestamp: '2025-10-28T16:39:14+10:00'
+        identifier: urn:uuid:3d7b06c9-0430-4ea2-87a3-b681751809fa
+        timestamp: '2026-06-03T12:53:56+10:00'
+        total: 8
         offset: 0
         parameter:
         - name: displayLanguage
@@ -18883,9 +19199,9 @@
         - name: system-version
           valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-codesystem
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
@@ -19055,8 +19371,8 @@
           - code: active
           - code: inactive
       expansion:
-        identifier: urn:uuid:79c6437f-1765-498a-979f-533bbeb06e33
-        timestamp: '2025-12-03T12:09:39+10:00'
+        identifier: urn:uuid:2ff73b06-cd8c-46f9-86ec-e60746783d71
+        timestamp: '2026-06-03T12:54:03+10:00'
         total: 2
         offset: 0
         parameter:
@@ -19418,6 +19734,7 @@
       compose:
         include:
         - system: http://hl7.org/fhir/CodeSystem/medication-statement-status
+          version: 4.0.1
           concept:
           - code: active
           - code: completed
@@ -19568,11 +19885,13 @@
           - code: active
           - code: inactive
       expansion:
-        identifier: urn:uuid:40f0c59e-9fa5-4322-bc1d-5fde644a076c
-        timestamp: '2025-08-25T15:52:50+10:00'
+        identifier: urn:uuid:7e283615-1d6f-4e79-8380-609c0e3ba098
+        timestamp: '2026-06-03T14:38:25+10:00'
         total: 2
         offset: 0
         parameter:
+        - name: displayLanguage
+          valueCode: en
         - name: count
           valueInteger: 1000
         - name: offset
@@ -19580,7 +19899,7 @@
         - name: excludeNested
           valueBoolean: false
         - name: used-codesystem
-          valueUri: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.0
+          valueUri: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|1.0.1
         contains:
         - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
           code: active
@@ -19631,33 +19950,31 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '48031000119106'
             display: Quit >12 months
           - code: '735128000'
             display: Quit <12 months
       expansion:
-        identifier: urn:uuid:ee67ad1e-7faa-4fe8-ab3e-1995de4fcd26
-        timestamp: '2025-10-29T09:44:35+10:00'
+        identifier: urn:uuid:a91c3f75-0918-4e52-aae4-ac15ef176a54
+        timestamp: '2026-06-04T09:47:48+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/SmokingQuitStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '48031000119106'
           display: Quit >12 months
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '735128000'
           display: Quit <12 months
     - resourceType: ValueSet
@@ -19675,7 +19992,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '266919005'
             display: Never smoked
@@ -19690,42 +20007,40 @@
           - code: '713914004'
             display: Other tobacco use
       expansion:
-        identifier: urn:uuid:a7d04dc0-077c-4744-8e21-da8ce4cba135
-        timestamp: '2025-10-29T09:46:14+10:00'
+        identifier: urn:uuid:83a52367-2530-4e2e-ae46-3a7dca08c7e8
+        timestamp: '2026-06-04T09:49:22+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/TobaccoUseStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '266919005'
           display: Never smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '77176002'
           display: Current smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '8517006'
           display: Ex-smoker
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '16090371000119103'
           display: Exposure to second hand tobacco smoke
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '394872000'
           display: Wants to quit
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '713914004'
           display: Other tobacco use
     - resourceType: ValueSet
@@ -19755,8 +20070,8 @@
           - code: asked-declined
             display: Asked But Declined
       expansion:
-        identifier: urn:uuid:9f687505-6147-4a7c-ac67-080a7593c339
-        timestamp: '2026-03-02T12:08:23+10:00'
+        identifier: urn:uuid:4f3ac05a-a930-477b-8a49-03a09e1df2e1
+        timestamp: '2026-06-03T12:53:53+10:00'
         total: 4
         offset: 0
         parameter:
@@ -19803,7 +20118,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '736595007'
             display: Declined
@@ -19814,34 +20129,32 @@
           - code: '171155001'
             display: Up to date
       expansion:
-        identifier: urn:uuid:66e5ae5e-d111-45a0-b6b1-e433ec6edbe7
-        timestamp: '2025-10-29T09:42:14+10:00'
+        identifier: urn:uuid:ccc014c8-24ae-4011-a329-5549be8f853e
+        timestamp: '2026-06-04T09:44:16+10:00'
         parameter:
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksSCTSupplement|0.4.0
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/CervicalScreeningStatus-1|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '736595007'
           display: Declined
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '410527000'
           display: Offered
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171154002'
           display: Not required
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20251031
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '171155001'
           display: Up to date
     - resourceType: ValueSet
@@ -19938,24 +20251,14 @@
           - code: '361137007'
             display: Irregular heart rhythm
       expansion:
-        identifier: urn:uuid:7743ad1f-02f2-4977-b7a4-ea993b57023b
-        timestamp: '2025-10-28T16:39:30+10:00'
-        offset: 0
+        identifier: urn:uuid:ec8b048c-2670-47e4-8873-24bcb99734e5
+        timestamp: '2026-06-04T09:50:55+10:00'
+        total: 2
         parameter:
-        - name: displayLanguage
-          valueCode: en
-        - name: count
-          valueInteger: 1000
-        - name: offset
-          valueInteger: 0
-        - name: excludeNested
-          valueBoolean: false
-        - name: system-version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20251031
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         contains:
         - system: http://snomed.info/sct
           code: '933506231000036108'
@@ -20246,7 +20549,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '266919005'
             display: Never smoked
@@ -20255,30 +20558,28 @@
           - code: '77176002'
             display: Currently smokes
       expansion:
-        identifier: urn:uuid:b2e820da-5d0d-40d8-ab32-5ab7ab84626b
-        timestamp: '2025-10-08T10:11:49+10:00'
+        identifier: urn:uuid:8ba71b4e-19ac-4b06-8fa3-4d1a12fb704c
+        timestamp: '2026-06-04T09:57:01+10:00'
         parameter:
+        - name: used-codesystem
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
+        - name: version
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: used-supplement
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
-        - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430
-        - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250430
-        - name: warning-draft
-          valueUri: https://smartforms.csiro.au/ig/ValueSet/CVDRiskSmokingStatus-1|0.4.0
         - name: warning-draft
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
         contains:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '266919005'
           display: Never smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '8517006'
           display: Previously smoked
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250430
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '77176002'
           display: Currently smokes
     - resourceType: ValueSet
@@ -20296,7 +20597,7 @@
       compose:
         include:
         - system: http://snomed.info/sct
-          version: http://snomed.info/sct/32506021000036107/version/20250131
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           concept:
           - code: '75976002'
             display: Low Risk
@@ -20305,28 +20606,28 @@
           - code: '15508007'
             display: High Risk
       expansion:
-        identifier: urn:uuid:542be920-0ac6-401d-a924-0cbd705c7e99
-        timestamp: '2025-10-10T13:08:07+10:00'
-        offset: 0
+        identifier: urn:uuid:d45a6f7f-04a8-4b09-ac3b-14b8a4db72f6
+        timestamp: '2026-06-04T09:58:38+10:00'
         parameter:
-        - name: count
-          valueInteger: 1000
-        - name: offset
-          valueInteger: 0
-        - name: excludeNested
-          valueBoolean: false
         - name: used-codesystem
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
         - name: version
-          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20250131
+          valueUri: http://snomed.info/sct|http://snomed.info/sct/32506021000036107/version/20260531
+        - name: used-supplement
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
+        - name: warning-draft
+          valueUri: https://smartforms.csiro.au/ig/CodeSystem/CVDRiskSCTSupplement|0.4.0
         contains:
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '75976002'
           display: Low Risk
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '25594002'
           display: Intermediate Risk
         - system: http://snomed.info/sct
+          version: http://snomed.info/sct/32506021000036107/version/20260531
           code: '15508007'
           display: High Risk
     extension:
@@ -20600,7 +20901,7 @@
         code: AU
         display: Australia
     copyright: |
-      Copyright © 2022+ Australian Government Department of Health and Aged Care - All rights reserved.
+      Copyright © 2022+ Australian Government Department of Health, Disability and Ageing - All rights reserved.
       This content is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
       See https://creativecommons.org/licenses/by-sa/4.0/.
     item:
@@ -21441,10 +21742,10 @@
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
             valueExpression:
               language: text/fhirpath
-              expression: "%QuestionnaireResponseLatestCompleted.entry.resource.authored"
+              expression: "%QuestionnaireResponseLatestCompleted.entry.resource.authored.toString().substring(0,10).toDate()"
           linkId: '01418489-1ec4-4c3b-b96a-7c14c3e21cfe'
           text: Date of last completed health check
-          type: dateTime
+          type: date
           repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
@@ -22078,7 +22379,6 @@
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: check-box
             linkId: 311d83bb-f22e-4f60-9b50-b6e38dd2059b
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.extension:noFixedAddress
             text: No fixed address
             type: boolean
             repeats: false
@@ -22103,7 +22403,6 @@
                   language: text/fhirpath
                   expression: "%HomeAddressRepeat.select(line.join(', '))"
               linkId: 2fee2d51-7828-4178-b8c1-35edd32ba338
-              definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line
               text: Street address
               type: string
               repeats: false
@@ -22113,7 +22412,6 @@
                   language: text/fhirpath
                   expression: "%HomeAddressRepeat.city"
               linkId: ddb65ed1-f4b2-4730-af2a-2f98bc73c76f
-              definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city
               text: City
               type: string
               repeats: false
@@ -22128,7 +22426,6 @@
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: drop-down
               linkId: d9a1236c-8d6e-4f20-a12a-9d5de5a1d0f6
-              definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state
               text: State
               type: choice
               repeats: false
@@ -22140,20 +22437,19 @@
                   expression: "%HomeAddressRepeat.postalCode"
               - extension:
                 - url: key
-                  valueId: constraint-regex-postcode
+                  valueId: shc-que-postcode-1
                 - url: severity
                   valueCode: warning
                 - url: expression
                   valueExpression:
                     language: text/fhirpath
-                    expression: matches('^[0-9]{4}$')
+                    expression: "%resource.repeat(item).where(linkId='3f61a1ea-1c74-4f52-8519-432ce861a74f').answer.all(value.matches('^[0-9]{4}$'))"
                 - url: human
                   valueString: Postcode must be 4 digits
                 url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               - url: http://hl7.org/fhir/StructureDefinition/entryFormat
                 valueString: "####"
               linkId: 3f61a1ea-1c74-4f52-8519-432ce861a74f
-              definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode
               text: Postcode
               type: string
               repeats: false
@@ -22179,7 +22475,6 @@
                 language: text/fhirpath
                 expression: "%PostalAddressRepeat.use"
             linkId: 622970f1-3cf1-4f0a-bf05-b00a08046eba
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.use
             text: Purpose of use
             type: string
             repeats: false
@@ -22189,7 +22484,6 @@
                 language: text/fhirpath
                 expression: "%PostalAddressRepeat.select(line.join(', '))"
             linkId: 2e8437cd-5ea0-4d44-8ab2-d2aa9ef18ba7
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.line
             text: Street address
             type: string
             repeats: false
@@ -22199,7 +22493,6 @@
                 language: text/fhirpath
                 expression: "%PostalAddressRepeat.city"
             linkId: 2bde25e5-2c4c-4c0c-b6f3-c6859535a764
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.city
             text: City
             type: string
             repeats: false
@@ -22214,7 +22507,6 @@
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: drop-down
             linkId: b41a8b11-8dbf-4999-9d0a-71d39240fed1
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.state
             text: State
             type: choice
             repeats: false
@@ -22226,20 +22518,19 @@
                 expression: "%PostalAddressRepeat.postalCode"
             - extension:
               - url: key
-                valueId: constraint-regex-postcode
+                valueId: shc-que-postcode-2
               - url: severity
                 valueCode: warning
               - url: expression
                 valueExpression:
                   language: text/fhirpath
-                  expression: matches('^[0-9]{4}$')
+                  expression: "%resource.repeat(item).where(linkId='28b58e50-2a04-4192-9655-efc8d72f32fa').answer.all(value.matches('^[0-9]{4}$'))"
               - url: human
                 valueString: Postcode must be 4 digits
               url: http://hl7.org/fhir/StructureDefinition/targetConstraint
             - url: http://hl7.org/fhir/StructureDefinition/entryFormat
               valueString: "####"
             linkId: 28b58e50-2a04-4192-9655-efc8d72f32fa
-            definition: http://hl7.org.au/fhir/StructureDefinition/au-address#Address.postalCode
             text: Postcode
             type: string
             repeats: false
@@ -22333,13 +22624,13 @@
                 expression: "%MedicareNumberRepeat.value.substring(0,10)"
             - extension:
               - url: key
-                valueId: constraint-regex-medicarecardnumber-1
+                valueId: shc-que-medicarecardnumber-1
               - url: severity
                 valueCode: warning
               - url: expression
                 valueExpression:
                   language: text/fhirpath
-                  expression: matches('^[0-9]{10}$')
+                  expression: "%resource.repeat(item).where(linkId='eb2a59ed-9632-4df1-b5b1-1e85c3b4b7cf').answer.all(value.matches('^[0-9]{10}$'))"
               - url: human
                 valueString: Medicare card number must be 10 digits
               url: http://hl7.org/fhir/StructureDefinition/targetConstraint
@@ -22354,13 +22645,13 @@
                 expression: "%MedicareNumberRepeat.value.substring(10,1)"
             - extension:
               - url: key
-                valueId: constraint-regex-medicarecardnumber-2
+                valueId: shc-que-medicarecardnumber-2
               - url: severity
                 valueCode: warning
               - url: expression
                 valueExpression:
                   language: text/fhirpath
-                  expression: matches('^[0-9]{1}$')
+                  expression: "%resource.repeat(item).where(linkId='d6253253-a124-494e-a1d8-7ce02c69ec11').answer.all(value.matches('^[0-9]{1}$'))"
               - url: human
                 valueString: Medicare card reference number must be 1 digit
               url: http://hl7.org/fhir/StructureDefinition/targetConstraint
@@ -23192,6 +23483,7 @@
               linkId: 2da85994-2d5e-42f1-8a81-abf44f397468
               text: Condition
               type: open-choice
+              required: true
               answerValueSet: "#clinical-condition-1"
             - linkId: 4d55bffb-3286-4a23-a785-3b9c346d464d
               text: Onset date
@@ -23412,6 +23704,7 @@
               linkId: regularmedications-summary-current-status
               text: Status
               type: choice
+              required: true
               repeats: false
               answerValueSet: "#MedicationStatementStatusLimited"
             - extension:
@@ -23501,6 +23794,7 @@
               linkId: regularmedications-summary-new-medication
               text: Medication
               type: open-choice
+              required: true
               repeats: false
               answerValueSet: "#smart-health-checks-medicine-products"
             - linkId: regularmedications-summary-new-dosage
@@ -23847,6 +24141,7 @@
               linkId: allergynew-substance
               text: Substance
               type: open-choice
+              required: true
               repeats: false
               answerValueSet: https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1
             - extension:
@@ -27421,6 +27716,24 @@
                     coding:
                     - system: http://hl7.org/fhir/questionnaire-item-control
                       code: drop-down
+                - extension:
+                  - url: key
+                    valueId: shc-que-smokingstatus-1
+                  - url: severity
+                    valueCode: error
+                  - url: expression
+                    valueExpression:
+                      language: text/fhirpath
+                      expression: "%resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()
+                        implies %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()"
+                  - url: human
+                    valueString: If a date is entered, a smoking status must also
+                      be entered.
+                  - url: requirements
+                    valueMarkdown: A new smoking status date must be accompanied by
+                      a smoking status value to ensure a valid smoking status observation
+                      resource can be extracted.
+                  url: http://hl7.org/fhir/StructureDefinition/targetConstraint
                 linkId: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
                 text: New status
                 type: choice
@@ -27432,6 +27745,24 @@
                     language: text/fhirpath
                     expression: iif(%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(),
                       today())
+                - extension:
+                  - url: key
+                    valueId: shc-que-smokingstatus-2
+                  - url: severity
+                    valueCode: error
+                  - url: expression
+                    valueExpression:
+                      language: text/fhirpath
+                      expression: "%resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists()
+                        implies %resource.repeat(item).where(linkId='substanceuse-smoking-smokingstatus-group-newdate').answer.value.exists()"
+                  - url: human
+                    valueString: If a smoking status is entered, a date must also
+                      be entered.
+                  - url: requirements
+                    valueMarkdown: A new smoking status value must be accompanied
+                      by a date to ensure a valid smoking status observation resource
+                      can be extracted.
+                  url: http://hl7.org/fhir/StructureDefinition/targetConstraint
                 linkId: substanceuse-smoking-smokingstatus-group-newdate
                 text: New date
                 type: date
@@ -27442,58 +27773,38 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: radio-button
+            - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+              valueExpression:
+                language: text/fhirpath
+                expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006')
+                  or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code
+                  = '8517006')"
             linkId: 96dc7c22-d003-459c-8a56-f6cd182fc077
             text: Quit status
             type: choice
-            enableWhen:
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '8517006'
             repeats: false
             answerValueSet: "#SmokingQuitStatus-1"
-          - linkId: 9e86387d-1be4-4c26-9047-9dd6b03e1ee0
+          - extension:
+            - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+              valueExpression:
+                language: text/fhirpath
+                expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006'
+                  or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.exists(code
+                  = '8517006' or code = '77176002' or code = '394872000')"
+            linkId: 9e86387d-1be4-4c26-9047-9dd6b03e1ee0
             text: How many?
             type: string
-            enableWhen:
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '77176002'
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '8517006'
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '394872000'
-            enableBehavior: any
             repeats: false
-          - linkId: 32e71641-f660-4ca2-af99-dff8917f07be
+          - extension:
+            - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
+              valueExpression:
+                language: text/fhirpath
+                expression: "%ObsTobaccoSmokingStatusValue.exists(code = '8517006'
+                  or code = '77176002' or code = '394872000') or %resource.repeat(item).where(linkId='b639a3a8-f476-4cc8-b5c7-f5d2abb23511').answer.value.where(code
+                  = '8517006' or code = '77176002' or code = '394872000').exists()"
+            linkId: 32e71641-f660-4ca2-af99-dff8917f07be
             text: How long as a smoker?
             type: string
-            enableWhen:
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '77176002'
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '8517006'
-            - question: b639a3a8-f476-4cc8-b5c7-f5d2abb23511
-              operator: "="
-              answerCoding:
-                system: http://snomed.info/sct
-                code: '394872000'
-            enableBehavior: any
         - linkId: 34feaee8-8088-43ee-991d-9729990b5550
           text: Alcohol and other substance use
           type: group
@@ -29604,6 +29915,7 @@
             linkId: vaccinestoday-vaccine
             text: Vaccine
             type: open-choice
+            required: true
             answerValueSet: "#amt-vaccine-1"
           - linkId: vaccinestoday-batch
             text: Batch number
@@ -29611,6 +29923,7 @@
           - linkId: vaccinestoday-date
             text: Administration date
             type: date
+            required: true
           - linkId: vaccinestoday-comment
             text: Comment
             type: string
@@ -29834,6 +30147,24 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: cm
+              - extension:
+                - url: key
+                  valueId: shc-que-lengthheight-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new length/height result must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new length/height date must be accompanied by a
+                    new length/height result to ensure a valid observation resource
+                    can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-lengthheight-newresult
               text: New result
               type: decimal
@@ -29854,6 +30185,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-lengthheight-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-lengthheight-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-lengthheight-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new length/height result is entered, a date must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new length/height result must be accompanied by
+                    a date to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-lengthheight-newdate
               text: New result date
               type: date
@@ -29917,6 +30265,23 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: cm
+              - extension:
+                - url: key
+                  valueId: shc-que-height-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new height result must also
+                    be entered.
+                - url: requirements
+                  valueMarkdown: A new height date must be accompanied by a new height
+                    result to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-height-newresult
               text: New result
               type: decimal
@@ -29937,6 +30302,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-height-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-height-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-height-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new height result is entered, a date must also
+                    be entered.
+                - url: requirements
+                  valueMarkdown: A new height result must be accompanied by a date
+                    to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-height-newdate
               text: New result date
               type: date
@@ -29995,6 +30377,23 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: kg
+              - extension:
+                - url: key
+                  valueId: shc-que-weight-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new weight result must also
+                    be entered.
+                - url: requirements
+                  valueMarkdown: A new weight date must be accompanied by a new weight
+                    result to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-weight-newresult
               text: New result
               type: decimal
@@ -30015,6 +30414,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-weight-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-weight-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-weight-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new weight result is entered, a date must also
+                    be entered.
+                - url: requirements
+                  valueMarkdown: A new weight result must be accompanied by a date
+                    to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-weight-newdate
               text: New result date
               type: date
@@ -30141,6 +30557,24 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: cm
+              - extension:
+                - url: key
+                  valueId: shc-que-headcircumference-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new head circumference result
+                    must also be entered.
+                - url: requirements
+                  valueMarkdown: A new head circumference date must be accompanied
+                    by a new head circumference result to ensure a valid observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-headcircumference-newresult
               text: New result
               type: decimal
@@ -30161,6 +30595,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-headcircumference-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-headcircumference-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-headcircumference-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new head circumference result is entered, a date
+                    must also be entered.
+                - url: requirements
+                  valueMarkdown: A new head circumference result must be accompanied
+                    by a date to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-headcircumference-newdate
               text: New result date
               type: date
@@ -30220,6 +30671,24 @@
                   valueReference:
                     reference: "#WaistCircumferenceTemplate"
                 url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract
+              - extension:
+                - url: key
+                  valueId: shc-que-waistcircumference-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new waist circumference result
+                    must also be entered.
+                - url: requirements
+                  valueMarkdown: A new waist circumference date must be accompanied
+                    by a new waist circumference result to ensure a valid observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-waistcircumference-newresult
               text: New result
               type: decimal
@@ -30240,6 +30709,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-waistcircumference-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-waistcircumference-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-waistcircumference-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new waist circumference result is entered, a date
+                    must also be entered.
+                - url: requirements
+                  valueMarkdown: A new waist circumference result must be accompanied
+                    by a date to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-waistcircumference-newdate
               text: New result date
               type: date
@@ -30298,6 +30784,24 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: "/min"
+              - extension:
+                - url: key
+                  valueId: shc-que-heartrate-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new heart rate result must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new heart rate date must be accompanied by a new
+                    heart rate result to ensure a valid observation resource can be
+                    extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-heartrate-newresult
               text: New result
               type: integer
@@ -30318,6 +30822,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-heartrate-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-heartrate-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-heartrate-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new heart rate result is entered, a date must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new heart rate result must be accompanied by a
+                    date to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-heartrate-newdate
               text: New result date
               type: date
@@ -30374,6 +30895,24 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: radio-button
+              - extension:
+                - url: key
+                  valueId: shc-que-heartrhythm-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()"
+                - url: human
+                  valueString: If a date is entered, a new heart rhythm result must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new heart rhythm date must be accompanied by a
+                    new heart rhythm result to ensure a valid observation resource
+                    can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-heartrhythm-newresult
               text: New result
               type: choice
@@ -30385,6 +30924,23 @@
                   language: text/fhirpath
                   expression: iif(%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-heartrhythm-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='obs-heartrhythm-newresult').answer.value.exists()
+                      implies %resource.repeat(item).where(linkId='obs-heartrhythm-newdate').answer.value.exists()"
+                - url: human
+                  valueString: If a new heart rhythm result is entered, a date must
+                    also be entered.
+                - url: requirements
+                  valueMarkdown: A new heart rhythm result must be accompanied by
+                    a date to ensure a valid observation resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: obs-heartrhythm-newdate
               text: New result date
               type: date
@@ -30477,6 +31033,25 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: mm[Hg]
+              - extension:
+                - url: key
+                  valueId: shc-que-bp-1
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "(%resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()
+                      or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists())
+                      implies %resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()"
+                - url: human
+                  valueString: If a diastolic value or date is entered, a systolic
+                    value must also be entered.
+                - url: requirements
+                  valueMarkdown: If a diastolic value or date is present, a systolic
+                    value must also be present to ensure a valid blood pressure observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: bp-newbp-systolic
               text: Systolic
               type: integer
@@ -30496,6 +31071,25 @@
                 valueCoding:
                   system: http://unitsofmeasure.org
                   code: mm[Hg]
+              - extension:
+                - url: key
+                  valueId: shc-que-bp-2
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                      or %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists())
+                      implies %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists()"
+                - url: human
+                  valueString: If a systolic value or date is entered, a diastolic
+                    value must also be entered.
+                - url: requirements
+                  valueMarkdown: If a systolic value or date is present, a diastolic
+                    value must also be present to ensure a valid blood pressure observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: bp-newbp-diastolic
               text: Diastolic
               type: integer
@@ -30517,6 +31111,44 @@
                   expression: iif(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
                     or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists(),
                     today())
+              - extension:
+                - url: key
+                  valueId: shc-que-bp-3
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "%resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()
+                      implies (%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                      and %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())"
+                - url: human
+                  valueString: If a date is entered, both a systolic and diastolic
+                    value must also be entered.
+                - url: requirements
+                  valueMarkdown: If a date is present, both a systolic and diastolic
+                    value must also be present to ensure a valid blood pressure observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
+              - extension:
+                - url: key
+                  valueId: shc-que-bp-4
+                - url: severity
+                  valueCode: error
+                - url: expression
+                  valueExpression:
+                    language: text/fhirpath
+                    expression: "(%resource.repeat(item).where(linkId='bp-newbp-systolic').answer.value.exists()
+                      or %resource.repeat(item).where(linkId='bp-newbp-diastolic').answer.value.exists())
+                      implies %resource.repeat(item).where(linkId='bp-newbp-date').answer.value.exists()"
+                - url: human
+                  valueString: If a systolic or diastolic value is entered, a date
+                    must also be entered.
+                - url: requirements
+                  valueMarkdown: If a systolic or diastolic value is present, a date
+                    must also be present to ensure a valid blood pressure observation
+                    resource can be extracted.
+                url: http://hl7.org/fhir/StructureDefinition/targetConstraint
               linkId: bp-newbp-date
               text: Date performed
               type: date
@@ -33775,7 +34407,7 @@
         - linkId: '01418489-1ec4-4c3b-b96a-7c14c3e21cfe'
           text: Date of last completed health check
           answer:
-          - valueDateTime: '2026-03-09T11:05:19+00:00'
+          - valueDate: '2026-03-09'
         - linkId: 63fe14f3-2374-4382-bce7-180e2747c97f
           text: Date this health check commenced
           answer:
