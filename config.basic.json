@@ -241,7 +241,7 @@
         }
       },
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse": {
-        "exclude_elements_from_must_support": ["identifier", "item.text", "item.answer", "item.answer.value[x]", "item.answer.item"] 
+        "exclude_elements_from_must_support": ["identifier", "item.text", "item.answer", "item.answer.value[x]", "item.answer.item"]
       }
     },
     "resources": {
@@ -249,7 +249,8 @@
         "fixed_values_to_search": ["category"]
       },
       "MedicationStatement": {
-        "resources_to_create_filter": "MedicationStatement.medicationCodeableConcept.exists()"
+        "resources_to_create_filter": "MedicationStatement.medicationCodeableConcept.exists()",
+        "create_resource_overrides": { "dateAsserted": "${DateTime.now}" }
       },
       "Medication": {
         "skip": true

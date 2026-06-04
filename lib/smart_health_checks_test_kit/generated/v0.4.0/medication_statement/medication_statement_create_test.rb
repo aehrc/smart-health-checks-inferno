@@ -44,6 +44,14 @@ module SmartHealthChecksTestKit
         'MedicationStatement.medicationCodeableConcept.exists()'
       end
 
+      def create_resource_overrides
+        {
+
+          'dateAsserted' => '${DateTime.now}'
+
+        }
+      end
+
       run do
         perform_create_test
       end
