@@ -54,7 +54,7 @@ services:
       - .env
     tty: true
   validator-api:
-    image: healthsamurai/aidboxone:2512.2
+    image: docker.io/healthsamurai/aidboxone:2605
     depends_on:
       postgres:
         condition: service_healthy
