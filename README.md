@@ -97,7 +97,7 @@ To run with the [Aidbox validator](https://github.com/beda-software/aidbox-valid
 This uses `compose.aidbox.yaml`, which starts the Aidbox FHIR server and the aidbox-validator worker. The validator is proxied at the same path (`/hl7validatorapi`), so the Inferno app works the same from the user’s perspective.
 
 **Note:** Other make targets also respect `MODE`. For example, to run tests with the Aidbox stack: `MODE=aidbox make tests`. To stop Aidbox services: `MODE=aidbox make stop`.
-**Note** `MODE=aidbox make start_from_zero` will clear the data and setup the new database. 
+**Note** `MODE=aidbox make start_from_zero` will clear the data and run on a new database. 
 ### Stopping and Cleanup
 
 To stop services:
