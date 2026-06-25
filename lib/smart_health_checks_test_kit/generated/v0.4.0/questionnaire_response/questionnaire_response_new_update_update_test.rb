@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/test_modules/update_test'
-
 require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit

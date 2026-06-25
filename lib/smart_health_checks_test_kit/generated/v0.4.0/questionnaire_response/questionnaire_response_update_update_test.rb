@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/test_modules/update_test'
+require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV040
@@ -24,6 +25,10 @@ module SmartHealthChecksTestKit
 
       def self.metadata
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'metadata.yml'), aliases: true))
+      end
+
+      def references_keeper
+        @references_keeper ||= InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
       def resource_to_create_filter
