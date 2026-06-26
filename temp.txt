@@ -1,2 +1,2 @@
 Temp file to test main branch auto build workflow on the server.
--1
+-2
