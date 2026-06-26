@@ -61,7 +61,7 @@ services:
     links:
       - "postgres:database"
     ports:
-      - "127.0.0.1:3500:3500"
+      - "3500:3500"
     env_file:
       - ./env/aidbox
       - .env
