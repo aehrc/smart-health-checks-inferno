@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/test_modules/update_test'
+require 'inferno_suite_generator/utils/references_keeper'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV040
@@ -9,6 +10,12 @@ module SmartHealthChecksTestKit
 
       title '(SHALL) Server returns correct QuestionnaireResponse resource from QuestionnaireResponse update interaction (UpdateNew).'
       description 'A server SHALL support the QuestionnaireResponse update interaction (UpdateNew).'
+
+      input :references_mapping_input,
+            title: 'References Mapping',
+            description: 'Mapping of references for the update resource. Format: ["Patient/patient_id1", "Encounter/encounter_id1"]',
+            type: 'textarea',
+            optional: true
 
       id :smart_health_checks_v040_questionnaire_response_update_new_update_test
 
@@ -24,6 +31,10 @@ module SmartHealthChecksTestKit
 
       def self.metadata
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'metadata.yml'), aliases: true))
+      end
+
+      def references_keeper
+        @references_keeper ||= InfernoSuiteGenerator::ReferencesKeeper.get_or_create_instance(url)
       end
 
       def resource_to_create_filter
