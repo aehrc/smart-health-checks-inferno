@@ -240,20 +240,30 @@ In the main folder, modify the Rakefile's `namespace :smart_health_checks do` se
 
 >    config_files = ['./config.041.json']
 
-### Modify `aidbox_config.rb` (if using Aidbox)
-Add the aidbox config to include the new IG in the setup. 
-```
-configurer.add_upload_step(
-  '/$upload-fhir-npm-packages',
-  './lib/smart_health_checks_test_kit/igs/0.4.1.tgz',
-  {
-    'Accept' => 'application/json',
-    'Authorization' => authorization,
-    'Origin' => base_url,
-    'Referer' => 'http://localhost:3500/ui/console'
+### Modify `resources/init-bundle.json` (if using Aidbox)
+Add an `AidboxMigration` entry to include the new IG in the setup. Aidbox loads this
+transaction bundle on startup via the `BOX_INIT_BUNDLE` env var (see `env/aidbox`).
+```json
+{
+  "fullUrl": "urn:uuid:AidboxMigration:smart-health-checks-ig-0-4-1",
+  "request": {
+    "method": "POST",
+    "url": "AidboxMigration",
+    "ifNoneExist": "id=smart-health-checks-ig-0-4-1"
   },
-  form_field: 'file'
-)
+  "resource": {
+    "resourceType": "AidboxMigration",
+    "id": "smart-health-checks-ig-0-4-1",
+    "status": "to-run",
+    "action": "far-migration-fhir-package-install",
+    "params": {
+      "resourceType": "Parameters",
+      "parameter": [
+        { "name": "package", "valueString": "file:///resources/igs/0.4.1.tgz" }
+      ]
+    }
+  }
+}
 ```
 ### Delete any previously generated files
 

@@ -1,0 +1,556 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "CodeSystem/australian-indigenous-status-1",
+      "request": {
+        "method": "PUT",
+        "url": "CodeSystem/australian-indigenous-status-1"
+      },
+      "resource": {
+        "resourceType": "CodeSystem",
+        "id": "australian-indigenous-status-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-26T23:08:13.494+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablecodesystem",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/complete-code-system-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Australian Indigenous Status</h2><tt>https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1</tt><p>The Australian Indigenous Status code system defines concepts to support the representation of a person's indigenous status. That is, whether a person identifies as being of Aboriginal or Torres Strait Islander origin, as represented by a code. The concepts defined in this code system are equivalent to those defined in the value domain for the METEOR data element Person\u2014Indigenous status, code N (https://meteor.aihw.gov.au/content/602543)</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/CodeSystem/australian-indigenous-status-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.200.10012"
+          }
+        ],
+        "version": "1.0.5",
+        "name": "AustralianIndigenousStatus",
+        "title": "Australian Indigenous Status",
+        "status": "active",
+        "experimental": false,
+        "date": "2025-08-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Australian Indigenous Status code system defines concepts to support the representation of a person's indigenous status. That is, whether a person identifies as being of Aboriginal or Torres Strait Islander origin, as represented by a code. The concepts defined in this code system are equivalent to those defined in the value domain for the METEOR data element Person\u2014Indigenous status, code N (https://meteor.aihw.gov.au/content/602543)",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency \u2013 All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+        "caseSensitive": false,
+        "valueSet": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1/vs",
+        "compositional": false,
+        "versionNeeded": false,
+        "content": "complete",
+        "count": 5,
+        "concept": [
+          {
+            "code": "1",
+            "display": "Aboriginal but not Torres Strait Islander origin",
+            "definition": "Aboriginal but not Torres Strait Islander origin"
+          },
+          {
+            "code": "2",
+            "display": "Torres Strait Islander but not Aboriginal origin",
+            "definition": "Torres Strait Islander but not Aboriginal origin"
+          },
+          {
+            "code": "3",
+            "display": "Both Aboriginal and Torres Strait Islander origin",
+            "definition": "Both Aboriginal and Torres Strait Islander origin"
+          },
+          {
+            "code": "4",
+            "display": "Neither Aboriginal nor Torres Strait Islander origin",
+            "definition": "Neither Aboriginal nor Torres Strait Islander origin"
+          },
+          {
+            "code": "9",
+            "display": "Not stated/inadequately described",
+            "definition": "Not stated/inadequately described"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "ValueSet/australian-indigenous-status-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/australian-indigenous-status-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "australian-indigenous-status-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-26T23:08:08.184+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Australian Indigenous Status</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/australian-indigenous-status-1</tt><p>The Australian Indigenous Status value set includes values to support the representation of a person's Indigenous status. That is, whether a person identifies as being of Aboriginal or Torres Strait Islander origin. The values are those concepts defined in the Australian Indigenous Status code system (https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-indigenous-status-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-indigenous-status-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10001"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "AustralianIndigenousStatus",
+        "title": "Australian Indigenous Status",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Australian Indigenous Status value set includes values to support the representation of a person's Indigenous status. That is, whether a person identifies as being of Aboriginal or Torres Strait Islander origin. The values are those concepts defined in the Australian Indigenous Status code system (https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1).",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency \u2013 All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+        "compose": {
+          "include": [
+            {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "ValueSet/australian-immunisation-register-vaccine-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/australian-immunisation-register-vaccine-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "australian-immunisation-register-vaccine-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-26T23:07:24.799+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Australian Immunisation Register Vaccine</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1</tt><p>The Australian Immunisation Register Vaccine value set includes values that may be used to represent a vaccine product according to the Australian Immunisation Register vaccine code formats.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-immunisation-register-vaccine-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10043"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "AustralianImmunisationRegisterVaccine",
+        "title": "Australian Immunisation Register Vaccine",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Australian Immunisation Register Vaccine value set includes values that may be used to represent a vaccine product according to the Australian Immunisation Register vaccine code formats.",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource also includes material from the \u2018Australian Immunisation Register Vaccine Code Formats last updated: 7 February 2018 \u00a9 Commonwealth of Australia, represented by the Department of Human Services https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats. Licensed under https://creativecommons.org/licenses/by/3.0/au). \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+        "compose": {
+          "include": [
+            {
+              "system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "ValueSet/australian-medication-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/australian-medication-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "australian-medication-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-26T23:08:06.884+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Australian Medication</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1</tt><p>The Australian Medication value set includes all Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine, vaccine or other therapeutic good. This is suitable for the recording of a product which may be ordered for, administered to, or used by an individual.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-medication-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10003"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "AustralianMedication",
+        "title": "Australian Medication",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Australian Medication value set includes all Australian Medicines Terminology (AMT) product concepts that may be used for the identification of a medicine, vaccine or other therapeutic good. This is suitable for the recording of a product which may be ordered for, administered to, or used by an individual.",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes SNOMED Clinical Terms\u2122 (SNOMED CT\u00ae) which is used by permission of the International Health Terminology Standards Development Organisation (IHTSDO). All rights reserved. SNOMED CT\u00ae, was originally created by The College of American Pathologists. \u201cSNOMED\u201d and \u201cSNOMED CT\u201d are registered trademarks of the IHTSDO. \n\nThe rights to use and implement or implementation of SNOMED CT content are limited to the extent it is necessary to allow for the end use of this material.  No further rights are granted in respect of the International Release and no further use of any SNOMED CT content by any other party is permitted.\n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+        "compose": {
+          "include": [
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360061000036106"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360081000036101"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360071000036103"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360021000036102"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360041000036105"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360031000036100"
+                }
+              ]
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "filter": [
+                {
+                  "property": "concept",
+                  "op": "in",
+                  "value": "929360051000036108"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "ValueSet/ihi-record-status-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/ihi-record-status-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "ihi-record-status-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-02-24T00:07:33.110+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Individual Healthcare Identifier Record Status</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/ihi-record-status-1</tt><p>The Individual Healthcare Identifier Record Status value set includes values that may be used to describe the classification status of a record of an Individual Healthcare Identifier.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/ihi-record-status-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/ihi-record-status-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10022"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "IndividualHealthcareIdentifierRecordStatus",
+        "title": "Individual Healthcare Identifier Record Status",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Individual Healthcare Identifier Record Status value set includes values that may be used to describe the classification status of a record of an Individual Healthcare Identifier.",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency - All rights reserved. This content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.",
+        "compose": {
+          "include": [
+            {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "ValueSet/ihi-status-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/ihi-status-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "ihi-status-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-02-24T00:08:20.754+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Individual Healthcare Identifier Status</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/ihi-status-1</tt><p>The Individual Healthcare Identifier Status value set includes values that may be used to describe the classification status of an Individual Healthcare Identifier.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/ihi-status-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/ihi-status-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10021"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "IndividualHealthcareIdentifierStatus",
+        "title": "Individual Healthcare Identifier Status",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Individual Healthcare Identifier Status value set includes values that may be used to describe the classification status of an Individual Healthcare Identifier.",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency - All rights reserved. This content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/.",
+        "compose": {
+          "include": [
+            {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "ValueSet/date-accuracy-indicator-1",
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/date-accuracy-indicator-1"
+      },
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "date-accuracy-indicator-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-02-24T00:08:00.758+00:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "https://healthterminologies.gov.au/fhir/StructureDefinition/composed-value-set-4"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Date Accuracy Indicator</h2><tt>https://healthterminologies.gov.au/fhir/ValueSet/date-accuracy-indicator-1</tt><p>The Date Accuracy Indicator value set includes values that indicate the accuracy of components of a reported date.</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+            "valueUrl": "https://api.healthterminologies.gov.au/integration/R4/fhir/ValueSet/date-accuracy-indicator-1"
+          }
+        ],
+        "url": "https://healthterminologies.gov.au/fhir/ValueSet/date-accuracy-indicator-1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:1.2.36.1.2001.1004.201.10004"
+          }
+        ],
+        "version": "1.0.2",
+        "name": "DateAccuracyIndicator",
+        "title": "Date Accuracy Indicator",
+        "status": "active",
+        "experimental": false,
+        "date": "2020-05-31",
+        "publisher": "Australian Digital Health Agency",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "help@digitalhealth.gov.au"
+              }
+            ]
+          }
+        ],
+        "description": "The Date Accuracy Indicator value set includes values that indicate the accuracy of components of a reported date.",
+        "copyright": "Copyright \u00a9 2018 Australian Digital Health Agency - All rights reserved. Except for the material identified below, this content is licensed under a Creative Commons Attribution 4.0 International License. See https://creativecommons.org/licenses/by/4.0/. \n\nThis resource includes material that is based on Australian Institute of Health and Welfare material. \n\nAll copies of this resource must include this copyright statement and all information contained in this statement.",
+        "compose": {
+          "include": [
+            {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:AidboxMigration:smart-health-checks-ig",
+      "request": {
+        "method": "POST",
+        "url": "AidboxMigration",
+        "ifNoneExist": "id=smart-health-checks-ig"
+      },
+      "resource": {
+        "resourceType": "AidboxMigration",
+        "id": "smart-health-checks-ig",
+        "status": "to-run",
+        "action": "far-migration-fhir-package-install",
+        "params": {
+          "resourceType": "Parameters",
+          "parameter": [
+            {
+              "name": "package",
+              "valueString": "file:///resources/igs/0.4.0-3f0c.tgz"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

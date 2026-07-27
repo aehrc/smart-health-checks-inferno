@@ -67,6 +67,7 @@ services:
       - .env
     volumes:
       - ./resources:/resources
+      - ./lib/smart_health_checks_test_kit/igs:/resources/igs:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
@@ -74,18 +75,6 @@ services:
       timeout: 20s
       retries: 100
       test: curl --fail http://validator-api:3500/health || exit 1
-  aidbox-configure:
-    build:
-      context: ./
-    volumes:
-      - ./:/opt/inferno/
-    working_dir: /opt/inferno
-    command: ruby aidbox_config.rb
-    depends_on:
-      validator-api:
-        condition: service_healthy
-    env_file:
-      - ./env/aidbox
   nginx:
     image: nginx
     ports:
