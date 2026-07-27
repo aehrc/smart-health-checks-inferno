@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require 'inferno_suite_generator/core/ig_demodata'
+require_relative 'shc_condition/shc_condition_patient_category_search_test'
 require_relative 'shc_condition/shc_condition_patient_search_test'
 require_relative 'shc_condition/shc_condition_category_search_test'
-require_relative 'shc_condition/shc_condition_patient_category_search_test'
 require_relative 'shc_condition/shc_condition_validation_test'
 require_relative 'shc_condition/shc_condition_must_support_test'
 require_relative 'shc_condition/shc_condition_reference_resolution_test'
@@ -75,9 +75,9 @@ read succeeds.
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'shc_condition', 'metadata.yml'), aliases: true))
       end
 
+      test from: :smart_health_checks_v040_shc_condition_patient_category_search_test
       test from: :smart_health_checks_v040_shc_condition_patient_search_test
       test from: :smart_health_checks_v040_shc_condition_category_search_test
-      test from: :smart_health_checks_v040_shc_condition_patient_category_search_test
       test from: :smart_health_checks_v040_shc_condition_validation_test
       test from: :smart_health_checks_v040_shc_condition_must_support_test
       test from: :smart_health_checks_v040_shc_condition_reference_resolution_test
