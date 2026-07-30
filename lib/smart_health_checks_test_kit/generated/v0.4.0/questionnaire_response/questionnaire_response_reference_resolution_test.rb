@@ -43,7 +43,7 @@ module SmartHealthChecksTestKit
       run do
         perform_reference_resolution_test(
           scratch_resources[:all],
-          { 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-location' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-location', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson', 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path' => 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path', 'http://hl7.org.au/fhir/StructureDefinition/au-specimen' => 'http://hl7.org.au/fhir/StructureDefinition/au-specimen' },
+          {},
           %w[Encounter Patient Practitioner QuestionnaireResponse]
         )
       end
