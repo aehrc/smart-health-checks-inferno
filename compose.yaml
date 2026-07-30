@@ -38,9 +38,14 @@ services:
     ports:
       - "6789:6789"
   validator-api:
-    image: markiantorno/validator-wrapper:1.0.70
+    # Keep in step with the deployed validator (shc-inferno-platform/validator),
+    # currently wrapper 1.0.78 / HAPI 6.9.7. Terminology behaviour differs
+    # between HAPI releases, so a local pin that drifts from production will not
+    # reproduce production validation results.
+    image: markiantorno/validator-wrapper:1.0.78
     environment:
       SESSION_CACHE_DURATION: -1
+      SESSION_CACHE_SIZE: 3
     volumes:
       - ./lib/smart_health_checks_test_kit/igs:/home/igs
   nginx:
