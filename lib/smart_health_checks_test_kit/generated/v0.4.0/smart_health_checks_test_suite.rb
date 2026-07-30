@@ -60,6 +60,17 @@ module SmartHealthChecksTestKit
 
         cli_context do
           txServer ENV.fetch('TX_SERVER_URL', 'https://tx.dev.hl7.org.au/fhir')
+          # Select the SNOMED CT-AU edition. The validator otherwise defaults to the
+          # International edition (900000000000207008), which tx.dev.hl7.org.au does
+          # not carry, so every unversioned http://snomed.info/sct reference fails to
+          # resolve ("version 'null' could not be found") and value set membership
+          # then degrades to "none of the codings are in the value set" even for value
+          # sets that enumerate the code explicitly.
+          #
+          # Pinned to the edition/module without a date so the terminology server keeps
+          # supplying its own current version. Pinning a dated version would go stale
+          # every time tx.dev publishes a new release.
+          snomedCT ENV.fetch('SNOMED_EDITION', '32506021000036107')
           disableDefaultResourceFetcher false
         end
 
