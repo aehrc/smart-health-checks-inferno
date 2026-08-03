@@ -42,6 +42,14 @@ module SmartHealthChecksTestKit
       )
       version VERSION
 
+      # `id` MUST be declared before `fhir_resource_validator`. The validator captures the
+      # suite id eagerly as its `test_suite_id`, and Inferno keys validator sessions on it.
+      # If `id` comes after, the capture falls back to the base-class name
+      # "Inferno::Entities::TestSuite", which every affected suite then shares as a single
+      # validator session, collapsing separate IG versions onto one validator engine and
+      # causing intermittent "Unable to resolve profile ...|<version>" errors.
+      id :smart_health_checks_v040
+
       VERSION_SPECIFIC_MESSAGE_FILTERS = [].freeze
 
       def self.metadata
@@ -60,6 +68,7 @@ module SmartHealthChecksTestKit
 
         cli_context do
           txServer ENV.fetch('TX_SERVER_URL', 'https://tx.dev.hl7.org.au/fhir')
+          snomedCT ENV.fetch('SNOMED_EDITION', 'au')
           disableDefaultResourceFetcher false
         end
 
@@ -86,8 +95,6 @@ module SmartHealthChecksTestKit
           url: 'https://build.fhir.org/ig/aehrc/smart-forms-ig/index.html'
         }
       ]
-
-      id :smart_health_checks_v040
 
       input :url,
             title: 'FHIR Endpoint',
