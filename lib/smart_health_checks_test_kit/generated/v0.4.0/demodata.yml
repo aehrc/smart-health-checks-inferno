@@ -65,6 +65,7 @@
   - WaistCircumference-pat-sf
   - lipid-chol-pat-sf
   - lipid-hdl-pat-sf
+  - BodyWeight-pat-sf
   Parameters:
   - SHCPatchAllergyIntolerance1
   - SHCPatchAllergyIntolerance2
@@ -33237,7 +33238,7 @@
       reference: Practitioner/primary-peter
   - resourceType: Condition
     subject:
-      reference: Patient/pat-sf
+      reference: urn:uuid:patient-tc
     code:
       coding:
       - system: http://snomed.info/sct
@@ -33245,9 +33246,6 @@
         display: Nail wound of sole of foot
     category:
     - coding:
-      - system: http://snomed.info/sct
-        code: '55607006'
-        display: Problem
       - system: http://terminology.hl7.org/CodeSystem/condition-category
         code: problem-list-item
     meta:
@@ -33312,7 +33310,7 @@
       - system: http://example.com
         code: example
     patient:
-      reference: Patient/pat-sf
+      reference: urn:uuid:patient-tc
     occurrenceString: example
   Medication:
   - resourceType: Medication
@@ -33413,7 +33411,7 @@
         system: http://snomed.info/sct
         display: simvastatin (medicinal product)
     subject:
-      reference: Patient/pat-sf
+      reference: urn:uuid:patient-tc
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
@@ -33717,87 +33715,267 @@
         unit: mmol/L
         system: http://unitsofmeasure.org
         code: mmol/L
-  - code:
-      coding:
-      - code: example
-        system: http://example.com
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 85354-9
+      - system: http://snomed.info/sct
+        code: '75367002'
+      text: Blood pressure
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    component:
+    - code:
+        coding:
+        - system: http://loinc.org
+          code: 8480-6
+        - system: http://snomed.info/sct
+          code: '271649006'
+        text: Systolic
+      valueQuantity:
+        value: 170
+        unit: mm[Hg]
+        system: http://unitsofmeasure.org
+        code: mm[Hg]
+    - code:
+        coding:
+        - system: http://loinc.org
+          code: 8462-4
+        - system: http://snomed.info/sct
+          code: '271650006'
+        text: Diastolic
+      valueQuantity:
+        value: 90
+        unit: mm[Hg]
+        system: http://unitsofmeasure.org
+        code: mm[Hg]
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 8302-2
+      - system: http://snomed.info/sct
+        code: '50373000'
+      text: Height
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 164
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 29463-7
+      - system: http://snomed.info/sct
+        code: '27113001'
+      text: Weight
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 80
+      unit: kg
+      system: http://unitsofmeasure.org
+      code: kg
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 8867-4
+      - system: http://snomed.info/sct
+        code: '364075005'
+      text: Heart rate
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 75
+      unit: "/min"
+      system: http://unitsofmeasure.org
+      code: "/min"
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 8884-9
+      - system: http://snomed.info/sct
+        code: '364074009'
+      text: Heart rhythm
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueCodeableConcept:
+      coding:
+      - system: http://snomed.info/sct
+        code: '933506231000036108'
+        display: Regular heart rhythm
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCPathologyResult
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: laboratory
+        display: Laboratory
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v2-0074
+        code: CH
+        display: Chemistry
+      text: Chemistry
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 14647-2
+        display: Cholesterol [Moles/volume] in Serum or Plasma
+      text: Cholesterol
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2023-01-17'
+    valueQuantity:
+      value: 5.9
+      unit: mmol/L
+      system: http://unitsofmeasure.org
+      code: mmol/L
+    interpretation:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+        code: H
+        display: High
+    referenceRange:
+    - high:
+        value: 5.6
+        unit: mmol/L
+        system: http://unitsofmeasure.org
+        code: mmol/L
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: social-history
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://snomed.info/sct
+        code: '1747861000168109'
+      - system: http://loinc.org
+        code: 72166-2
+      text: Smoking status
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueCodeableConcept:
+      coding:
+      - system: http://snomed.info/sct
+        code: '8517006'
+        display: Ex-smoker
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
-    status: registered
-    resourceType: Observation
-  - code:
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
       coding:
-      - code: example
-        system: http://example.com
+      - system: http://loinc.org
+        code: 8280-0
+      - system: http://snomed.info/sct
+        code: '276361009'
+      text: Waist circumference
+    subject:
+      reference: urn:uuid:patient-tc
+    effectiveDateTime: '2025-08-15'
+    valueQuantity:
+      value: 90
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
+  - resourceType: Observation
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
-    status: registered
-    resourceType: Observation
+    language: en
+    status: final
+    category:
+    - coding:
+      - system: http://terminology.hl7.org/CodeSystem/observation-category
+        code: vital-signs
+    code:
+      coding:
+      - system: http://loinc.org
+        code: 9843-4
+      - system: http://snomed.info/sct
+        code: '363812007'
+      text: Head circumference
+    subject:
+      reference: urn:uid:patient-tc
+    effectiveDateTime: '2023-03-14'
+    valueQuantity:
+      value: 42
+      unit: cm
+      system: http://unitsofmeasure.org
+      code: cm
   Parameters:
   - resourceType: Parameters
     meta:
@@ -35167,11 +35345,23 @@
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+    authored: '2026-03-10T13:18:52+10:00'
+    subject:
+      reference: urn:uuid:patient-tc
+    author:
+      reference: urn:uuid:practitioner-tc
+    questionnaire: urn:uuid:questionnaire
   - resourceType: QuestionnaireResponse
     status: stopped
     meta:
       profile:
       - https://smartforms.csiro.au/ig/StructureDefinition/SHCQuestionnaireResponse
+    authored: '2026-03-10T13:18:52+10:00'
+    subject:
+      reference: urn:uuid:patient-tc
+    author:
+      reference: urn:uuid:practitioner-tc
+    questionnaire: urn:uuid:questionnaire
 :patch_body_list:
   :FHIRPATHPatchJson:
     Condition:

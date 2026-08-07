@@ -14,6 +14,7 @@
       "assets-bundle.json"
     ],
     "tx_server_url": "https://tx.dev.hl7.org.au/fhir",
+    "snomed_edition": "32506021000036107",
     "extra_imports": [
       {
         "import_type": "relative",
@@ -246,7 +247,8 @@
     },
     "resources": {
       "Condition": {
-        "fixed_values_to_search": ["category"]
+        "fixed_values_to_search": ["category"],
+        "forced_initial_search": ["patient", "category"]
       },
       "MedicationStatement": {
         "resources_to_create_filter": "MedicationStatement.medicationCodeableConcept.exists()",

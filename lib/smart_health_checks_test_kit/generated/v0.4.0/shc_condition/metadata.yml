@@ -19,20 +19,20 @@
   :expectation: SHALL
 :operations: []
 :searches:
-- :names:
-  - patient
-  :expectation: MAY
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
-- :names:
-  - category
-  :expectation: MAY
-  :names_not_must_support_or_mandatory: []
-  :must_support_or_mandatory: true
 - :expectation: SHALL
   :names:
   - patient
   - category
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - patient
+  :expectation: MAY
+  :names_not_must_support_or_mandatory: []
+  :must_support_or_mandatory: true
+- :names:
+  - category
+  :expectation: MAY
   :names_not_must_support_or_mandatory: []
   :must_support_or_mandatory: true
 :search_definitions:
@@ -180,12 +180,12 @@
   - RelatedPerson
   - Organization
 :tests:
+- :id: smart_health_checks_v040_shc_condition_patient_category_search_test
+  :file_name: shc_condition_patient_category_search_test.rb
 - :id: smart_health_checks_v040_shc_condition_patient_search_test
   :file_name: shc_condition_patient_search_test.rb
 - :id: smart_health_checks_v040_shc_condition_category_search_test
   :file_name: shc_condition_category_search_test.rb
-- :id: smart_health_checks_v040_shc_condition_patient_category_search_test
-  :file_name: shc_condition_patient_category_search_test.rb
 - :id: smart_health_checks_v040_shc_condition_validation_test
   :file_name: shc_condition_validation_test.rb
 - :id: smart_health_checks_v040_shc_condition_must_support_test
