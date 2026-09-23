@@ -106,9 +106,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -132,10 +132,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -2082,9 +2082,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -2104,10 +2104,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: YesNoNA
@@ -2125,9 +2125,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -2151,10 +2151,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -2175,9 +2175,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NASK
             display: Not Asked
@@ -2207,10 +2207,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NASK
@@ -3801,9 +3801,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -3827,10 +3827,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -4039,7 +4039,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: true
       - linkId: d8c88bff-75ea-476f-8f83-e9b72fc9e1a0
         text: Consent for sharing of information
@@ -4068,7 +4068,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: true
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
@@ -4210,9 +4210,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -4232,10 +4232,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -4446,7 +4446,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
           answerValueSet: "#YesNo"
       - extension:
@@ -4526,9 +4526,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -4548,10 +4548,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -4722,7 +4722,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -4755,7 +4755,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -4789,7 +4789,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -4822,7 +4822,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 11aa62ca-5a52-428b-952b-cfbcd2c75824
         text: Last hearing test (audiology)
@@ -6851,9 +6851,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -6873,10 +6873,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -7063,12 +7063,12 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           - question: 6286346d-c805-4519-8e82-bf364a215c58
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           enableBehavior: any
           repeats: false
       - extension:
@@ -8076,9 +8076,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -8098,10 +8098,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -8267,7 +8267,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 2ab74c97-55d9-4fd9-968f-8962d62ea573
         text: Health priorities, actions and follow-up
@@ -8950,9 +8950,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -8972,10 +8972,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -9167,12 +9167,12 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           - question: 69d92a26-95ac-4556-94da-5b0e09940bfd
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           enableBehavior: any
           repeats: false
       - extension:
@@ -9228,7 +9228,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -9261,7 +9261,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -9340,7 +9340,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 301789b0-8c6a-470d-8787-0ac6597e3bea
         text: Health priorities, actions and follow-up
@@ -9407,9 +9407,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -9429,10 +9429,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -9605,7 +9605,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "N"
+              code: N
           repeats: false
       - linkId: 367ac5dd-07fa-4bda-a775-d9f38b15affd
         text: Home safety
@@ -9633,7 +9633,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "N"
+              code: N
           repeats: false
       - linkId: '08d2e80e-3bb4-4f67-8b1c-090b1ace225a'
         text: Health priorities, actions and follow-up
@@ -9702,9 +9702,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -9724,10 +9724,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: amt-vaccine-1
@@ -10726,9 +10726,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -10748,10 +10748,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: YesNoNA
@@ -10769,9 +10769,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -10795,10 +10795,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -11788,9 +11788,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -11810,10 +11810,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -11979,7 +11979,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 44da9ba8-4636-4eaa-8bb1-aaa65f117fab
         text: Family concerns about your memory or thinking
@@ -12007,7 +12007,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -12296,9 +12296,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -12318,10 +12318,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -12509,12 +12509,12 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           - question: cb287506-9a64-4ee8-8f24-ba7cb77756f3
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           enableBehavior: any
           repeats: false
       - linkId: 1f362cb2-911f-448b-b717-2614f1aced86
@@ -12623,9 +12623,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -12649,10 +12649,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -13925,7 +13925,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 2bfe50cb-7913-4f31-bce2-763c17ff8b1a
         text: National Disability Insurance Scheme
@@ -13953,7 +13953,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -13986,7 +13986,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
         - linkId: 74ce4c60-31d6-4e78-9056-579937379451
           text: Number of children in your care
@@ -13996,7 +13996,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -14029,7 +14029,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -14062,7 +14062,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 3494631c-6b56-46dc-abf7-a17bfc1d025f
         text: Providers
@@ -14202,9 +14202,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -14224,10 +14224,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -14400,7 +14400,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -14434,7 +14434,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -14467,7 +14467,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -14634,7 +14634,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -15504,9 +15504,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -15526,10 +15526,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: smart-health-checks-medicine-products
@@ -16202,12 +16202,12 @@
           operator: "="
           answerCoding:
             system: http://terminology.hl7.org/CodeSystem/v2-0136
-            code: "Y"
+            code: Y
         - question: 3a2d27b6-e918-4df5-aca9-b374fcf9faad
           operator: "="
           answerCoding:
             system: http://terminology.hl7.org/CodeSystem/v2-0136
-            code: "Y"
+            code: Y
         enableBehavior: any
         repeats: false
       - linkId: aa9ff2ed-bcd2-406d-a9ff-89c201df2605
@@ -16551,9 +16551,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -16573,10 +16573,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: YesNoNotAskedDeclined
@@ -16594,9 +16594,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NASK
             display: Not Asked
@@ -16626,10 +16626,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NASK
@@ -16860,7 +16860,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText
@@ -17033,7 +17033,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: d844a31e-8e51-420b-855c-4f485a180a57
         text: Cervical screening
@@ -17230,7 +17230,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - linkId: 2e1ea1cc-1f74-4b2e-bfda-f6a1d41e1e50
         text: Continence issues
@@ -17258,7 +17258,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText
@@ -17340,9 +17340,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -17362,10 +17362,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -17552,12 +17552,12 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           - question: 353f528b-3518-4fb3-a0bd-3ed5ae6b036a
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           enableBehavior: any
           repeats: false
       - extension:
@@ -17654,9 +17654,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -17676,10 +17676,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -17847,7 +17847,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -17936,9 +17936,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -17958,10 +17958,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     extension:
     - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-assemble-expectation
@@ -18137,7 +18137,7 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           repeats: false
       - extension:
         - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -18751,9 +18751,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NA
             display: N/A
@@ -18777,10 +18777,10 @@
           valueUri: https://smartforms.csiro.au/ig/CodeSystem/HealthChecksExpandedYesNoIndicatorSupplement|0.4.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NA
@@ -19329,9 +19329,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
       expansion:
         identifier: urn:uuid:da1bff94-6562-46a8-a4ca-5954ca272aec
@@ -19351,10 +19351,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/v2-0532|3.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
     - resourceType: ValueSet
       id: ConditionClinicalStatusMinimal
@@ -20060,9 +20060,9 @@
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           version: 3.0.0
           concept:
-          - code: "Y"
+          - code: Y
             display: 'Yes'
-          - code: "N"
+          - code: N
             display: 'No'
           - code: NASK
             display: Not Asked
@@ -20092,10 +20092,10 @@
           valueUri: http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
         contains:
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "Y"
+          code: Y
           display: 'Yes'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
-          code: "N"
+          code: N
           display: 'No'
         - system: http://terminology.hl7.org/CodeSystem/v2-0532
           code: NASK
@@ -21939,7 +21939,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: true
         - linkId: d8c88bff-75ea-476f-8f83-e9b72fc9e1a0
           text: Consent for sharing of information
@@ -21968,7 +21968,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: true
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
@@ -22751,7 +22751,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 2bfe50cb-7913-4f31-bce2-763c17ff8b1a
           text: National Disability Insurance Scheme
@@ -22779,7 +22779,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -22812,7 +22812,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
           - linkId: 74ce4c60-31d6-4e78-9056-579937379451
             text: Number of children in your care
@@ -22822,7 +22822,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -22855,7 +22855,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -22888,7 +22888,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 3494631c-6b56-46dc-abf7-a17bfc1d025f
           text: Providers
@@ -23153,7 +23153,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
             answerValueSet: "#YesNo"
         - extension:
@@ -23872,12 +23872,12 @@
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           - question: 3a2d27b6-e918-4df5-aca9-b374fcf9faad
             operator: "="
             answerCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0136
-              code: "Y"
+              code: Y
           enableBehavior: any
           repeats: false
         - linkId: aa9ff2ed-bcd2-406d-a9ff-89c201df2605
@@ -24450,7 +24450,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -24629,7 +24629,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -24794,7 +24794,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "N"
+                code: N
             repeats: false
         - linkId: 367ac5dd-07fa-4bda-a775-d9f38b15affd
           text: Home safety
@@ -24822,7 +24822,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "N"
+                code: N
             repeats: false
         - linkId: '08d2e80e-3bb4-4f67-8b1c-090b1ace225a'
           text: Health priorities, actions and follow-up
@@ -25678,7 +25678,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 44da9ba8-4636-4eaa-8bb1-aaa65f117fab
           text: Family concerns about your memory or thinking
@@ -25707,7 +25707,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -26236,12 +26236,12 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             - question: 69d92a26-95ac-4556-94da-5b0e09940bfd
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             enableBehavior: any
             repeats: false
         - extension:
@@ -26297,7 +26297,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -26330,7 +26330,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -26404,7 +26404,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 301789b0-8c6a-470d-8787-0ac6597e3bea
           text: Health priorities, actions and follow-up
@@ -26557,7 +26557,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -26591,7 +26591,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -26624,7 +26624,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -26791,7 +26791,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/StructureDefinition/entryFormat
@@ -27976,7 +27976,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 2ab74c97-55d9-4fd9-968f-8962d62ea573
           text: Health priorities, actions and follow-up
@@ -28127,7 +28127,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText
@@ -28295,7 +28295,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: d844a31e-8e51-420b-855c-4f485a180a57
           text: Cervical screening
@@ -28486,7 +28486,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 2e1ea1cc-1f74-4b2e-bfda-f6a1d41e1e50
           text: Continence issues
@@ -28514,7 +28514,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-shortText
@@ -28697,12 +28697,12 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             - question: 6286346d-c805-4519-8e82-bf364a215c58
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             enableBehavior: any
             repeats: false
         - extension:
@@ -28968,7 +28968,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -29001,7 +29001,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -29035,7 +29035,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - extension:
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-enableWhenExpression
@@ -29068,7 +29068,7 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             repeats: false
         - linkId: 11aa62ca-5a52-428b-952b-cfbcd2c75824
           text: Last hearing test (audiology)
@@ -29388,12 +29388,12 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             - question: cb287506-9a64-4ee8-8f24-ba7cb77756f3
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             enableBehavior: any
             repeats: false
         - linkId: 1f362cb2-911f-448b-b717-2614f1aced86
@@ -29599,12 +29599,12 @@
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             - question: 353f528b-3518-4fb3-a0bd-3ed5ae6b036a
               operator: "="
               answerCoding:
                 system: http://terminology.hl7.org/CodeSystem/v2-0136
-                code: "Y"
+                code: Y
             enableBehavior: any
             repeats: false
         - extension:
@@ -33702,7 +33702,7 @@
     interpretation:
     - coding:
       - system: http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
-        code: "N"
+        code: N
         display: Normal
     referenceRange:
     - low:
@@ -34576,7 +34576,7 @@
           answer:
           - valueCoding:
               system: http://terminology.hl7.org/CodeSystem/v2-0532
-              code: "Y"
+              code: Y
               display: 'Yes'
         - linkId: 5960c096-d5f7-4745-bd74-44ff2775bde9
           text: Health check already in progress?
