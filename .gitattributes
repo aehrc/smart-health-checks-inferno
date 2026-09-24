@@ -1,1 +1,3 @@
 lib/smart_health_checks_test_kit/generated/** linguist-generated=true
+bin/hot-reload text eol=lf
+*.sh text eol=lf

@@ -17,12 +17,15 @@ services:
       POSTGRES_DB: inferno
       POSTGRES_USER: postgres
       TX_SERVER_URL: https://tx.dev.hl7.org.au/fhir
+      INFERNO_HOST: http://localhost
+    command: sh bin/hot-reload bundle exec puma
   inferno-worker:
     build:
       context: ./
     volumes:
       - ./data:/opt/inferno/data
-    command: bundle exec sidekiq -r ./worker.rb
+      - ./:/opt/inferno/
+    command: sh bin/hot-reload bundle exec sidekiq -r ./worker.rb
     depends_on:
       redis:
         condition: service_started
@@ -33,6 +36,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: inferno
       POSTGRES_USER: postgres
+      INFERNO_HOST: http://localhost
   fhirpath:
     image: infernocommunity/fhirpath-service
     ports:
