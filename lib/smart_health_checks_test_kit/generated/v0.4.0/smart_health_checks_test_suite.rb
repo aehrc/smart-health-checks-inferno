@@ -5,6 +5,7 @@ require 'inferno/dsl/oauth_credentials'
 require 'inferno_suite_generator/utils/helpers'
 require 'inferno_suite_generator/utils/fhirpath_lab_message_linker'
 require 'inferno_suite_generator/utils/resource_keeper_endpoints'
+require 'inferno_suite_generator/utils/validation_message_overrides'
 require_relative '../../version'
 require_relative '../../outer_groups/teardown'
 
@@ -32,7 +33,7 @@ require_relative 'practitioner_group'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV040
-    class SmartHealthChecksTestSuite < Inferno::TestSuite
+    class SmartHealthChecksTestSuite < Inferno::TestSuite # rubocop:disable Metrics/ClassLength
       title 'Smart Health Checks v0.4.0'
       description %(
         The Smart Health Checks Test Kit tests systems for their conformance to the [Smart Health Checks Implementation Guide](https://smartforms.csiro.au/ig/0.4.0/index.html).
@@ -54,6 +55,8 @@ module SmartHealthChecksTestKit
 
       VERSION_SPECIFIC_MESSAGE_FILTERS = [].freeze
 
+      VALIDATION_MESSAGE_OVERRIDES = [{ 'pattern' => 'Internal validator error occurred: Internal terminology validator error\\.\\s+Could not find value set ', 'from' => ['error'], 'to' => 'warning' }].freeze
+
       FHIRPATHLAB_URL = 'https://fhirpath-lab.com/FhirPath'
 
       suite_endpoint :get, '/resources/:session_id/:resource_type/:resource_id',
@@ -68,6 +71,10 @@ module SmartHealthChecksTestKit
       end
 
       fhir_resource_validator do
+        extend InfernoSuiteGenerator::ValidationMessageOverrides
+
+        message_overrides VALIDATION_MESSAGE_OVERRIDES
+
         igs '/home/igs/0.4.0-3f0c.tgz'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
