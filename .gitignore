@@ -21,3 +21,5 @@
 node_modules
 package_archive_bundle.json
 .env
+/ig_sources/*
+!/ig_sources/.gitkeep
