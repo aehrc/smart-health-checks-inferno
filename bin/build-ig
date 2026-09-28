@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# Build a FHIR IG from a GitHub repository at a given commit and store its
+# package in lib/smart_health_checks_test_kit/igs as <ig-version>-<commit>.tgz.
+#
+# Usage:
+#   bin/build-ig <github-repo-url> <commit-hash>
+#
+# Example:
+#   bin/build-ig https://github.com/HL7/smart-health-checks e7eb072
+#
+# Environment:
+#   IG_PUBLISHER_JAR  Path to an existing publisher.jar (default: downloaded
+#                     once into ig_sources/.publisher/publisher.jar)
+#   IG_TX             Terminology server passed as `-tx` (e.g. "n/a" to skip)
+#
+# Requirements: git, java 17+, sushi (for FSH-based IGs), curl, tar.
+
+set -euo pipefail
+
+if [[ $# -ne 2 ]]; then
+  echo "Usage: $0 <github-repo-url> <commit-hash>" >&2
+  exit 1
+fi
+
+REPO_URL="$1"
+COMMIT="$2"
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+SOURCES_ROOT="$ROOT_DIR/ig_sources"
+SRC_DIR="$SOURCES_ROOT/$COMMIT"
+IGS_DIR="$ROOT_DIR/lib/smart_health_checks_test_kit/igs"
+PUBLISHER_JAR="${IG_PUBLISHER_JAR:-$SOURCES_ROOT/.publisher/publisher.jar}"
+PUBLISHER_URL="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar"
+
+log() { echo "==> $*"; }
+
+# 1-2. Fetch sources at the requested commit into ig_sources/<commit>
+if [[ ! -d "$SRC_DIR/.git" ]]; then
+  log "Fetching $REPO_URL@$COMMIT into $SRC_DIR"
+  mkdir -p "$SRC_DIR"
+  git -C "$SRC_DIR" init -q
+  git -C "$SRC_DIR" remote add origin "$REPO_URL"
+  # A shallow fetch only works for full SHAs; fall back to a full fetch for short ones.
+  git -C "$SRC_DIR" fetch -q --depth 1 origin "$COMMIT" 2>/dev/null \
+    || git -C "$SRC_DIR" fetch -q origin
+else
+  log "Reusing existing sources in $SRC_DIR"
+fi
+git -C "$SRC_DIR" -c advice.detachedHead=false checkout -q "$COMMIT"
+log "Checked out $(git -C "$SRC_DIR" rev-parse HEAD)"
+
+# 3. Build the IG
+if [[ ! -f "$PUBLISHER_JAR" ]]; then
+  log "Downloading IG Publisher to $PUBLISHER_JAR"
+  mkdir -p "$(dirname "$PUBLISHER_JAR")"
+  curl -fL --progress-bar -o "$PUBLISHER_JAR" "$PUBLISHER_URL"
+fi
+
+PUBLISHER_ARGS=(-ig "$SRC_DIR")
+[[ -n "${IG_TX:-}" ]] && PUBLISHER_ARGS+=(-tx "$IG_TX")
+
+log "Building IG"
+rm -rf "$SRC_DIR/output"
+java -Xmx4g -jar "$PUBLISHER_JAR" "${PUBLISHER_ARGS[@]}"
+
+PACKAGE="$SRC_DIR/output/package.tgz"
+if [[ ! -f "$PACKAGE" ]]; then
+  echo "Build did not produce $PACKAGE" >&2
+  exit 1
+fi
+
+# 4. Move the package to igs as <ig-version>-<commit>.tgz
+IG_VERSION="$(tar -xOzf "$PACKAGE" package/package.json \
+  | ruby -rjson -e 'puts JSON.parse($stdin.read).fetch("version")')"
+TARGET="$IGS_DIR/$IG_VERSION-$COMMIT.tgz"
+
+mkdir -p "$IGS_DIR"
+mv "$PACKAGE" "$TARGET"
+log "Saved ${TARGET#"$ROOT_DIR"/}"

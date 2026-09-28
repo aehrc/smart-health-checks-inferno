@@ -148,6 +148,23 @@ To automatically fix code style issues:
 make rubocop-fix
 ```
 
+### Building an IG Package from Source
+
+To build an IG package from a GitHub commit:
+```bash
+bin/build-ig <github-repo-url> <commit-hash>
+```
+
+The script fetches the sources into ig_sources/<commit-hash>, builds the IG with the HL7 IG Publisher, and saves the package as lib/smart_health_checks_test_kit/igs/<ig-version>-<commit-hash>.tgz.
+
+Requirements: git, curl, ruby, Java 17+ and SUSHI.
+
+Optional environment variables:
+- IG_PUBLISHER_JAR - path to an existing publisher.jar
+- IG_TX - terminology server for the publisher (use n/a to skip it)
+
+The contents of ig_sources are ignored by git.
+
 ### Full Development Restart
 
 To stop, rebuild, and restart the application with freshly generated files for local development, run:
@@ -177,6 +194,8 @@ At runtime, the terminology server URL is also configurable via the `TX_SERVER_U
 - `lib/smart_health_checks_test_kit/`: Main test kit code
   - `generated/`: Generated test files based on the implementation guide
   - `igs/`: Implementation Guide packages and related files used by the validator
+- `bin/build-ig`: Builds an IG package from a GitHub commit
+- `ig_sources/`: Sources and builds for bin/build-ig
 
 ## Docker Services
 
@@ -204,6 +223,8 @@ This project is licensed under the Apache License, Version 2.0 - see the [LICENS
 ### Download the IG .tgz 
  
 In this example, lets say we have the IG as `0.4.1.tgz` and downloaded to `lib\smart_health_checks_test_kit\igs`.
+
+Alternatively, build the package from a commit with bin/build-ig.
 
 ### Create a new config file 
 
