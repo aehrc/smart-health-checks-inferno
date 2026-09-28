@@ -75,7 +75,7 @@ module SmartHealthChecksTestKit
 
         message_overrides VALIDATION_MESSAGE_OVERRIDES
 
-        igs '/home/igs/0.4.0-3f0c.tgz'
+        igs '/home/igs/0.4.0-845469b.tgz'
         message_filters = [
           "The value provided ('xml') was not found in the value set 'MimeType'",
           "The value provided ('json') was not found in the value set 'MimeType'",

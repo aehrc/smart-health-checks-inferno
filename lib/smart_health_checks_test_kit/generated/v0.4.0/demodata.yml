@@ -1493,7 +1493,7 @@
                 valueExpression:
                   language: text/fhirpath
                   expression: iif(%height.exists() and %CVDHeightNewResultDate.toDate()
-                    > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)
+                    > (%patient.birthDate + 18 years), (%height/100).round(2), %bmiHeightDecimalPrepop)
               - url: http://hl7.org/fhir/StructureDefinition/questionnaire-unit
                 valueCoding:
                   system: http://unitsofmeasure.org
@@ -1575,6 +1575,9 @@
     contained:
     - resourceType: AllergyIntolerance
       id: AllergyIntoleranceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
       clinicalStatus:
         coding:
         - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
@@ -1619,6 +1622,9 @@
               valueString: "$this"
     - resourceType: Parameters
       id: AllergyIntolerancePatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance
       parameter:
       - name: operation
         part:
@@ -1911,6 +1917,8 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: autocomplete
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             linkId: allergysummary-substance
             text: Substance
             type: open-choice
@@ -1955,6 +1963,8 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: autocomplete
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             linkId: allergysummary-manifestation
             text: Manifestation
             type: open-choice
@@ -5064,6 +5074,9 @@
           display: Irregular heart rhythm
     - resourceType: Observation
       id: BodyHeightTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
       status: final
       category:
       - coding:
@@ -5095,6 +5108,9 @@
         code: cm
     - resourceType: Observation
       id: BodyHeightLengthTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
       status: final
       category:
       - coding:
@@ -5126,6 +5142,9 @@
         code: cm
     - resourceType: Observation
       id: BodyWeightTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
       status: final
       category:
       - coding:
@@ -5157,6 +5176,9 @@
         code: kg
     - resourceType: Observation
       id: WaistCircumferenceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
       status: final
       category:
       - coding:
@@ -5188,6 +5210,9 @@
         code: cm
     - resourceType: Observation
       id: HeadCircumferenceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
       status: final
       category:
       - coding:
@@ -5219,6 +5244,9 @@
         code: cm
     - resourceType: Observation
       id: HeartRateTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
       status: final
       category:
       - coding:
@@ -5250,6 +5278,9 @@
         code: "/min"
     - resourceType: Observation
       id: HeartRhythmTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
       status: final
       category:
       - coding:
@@ -5278,6 +5309,9 @@
             valueString: "$this.answer.value"
     - resourceType: Observation
       id: BloodPressureTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
       status: final
       category:
       - coding:
@@ -6066,7 +6100,8 @@
               valueExpression:
                 description: BMI calculation
                 language: text/fhirpath
-                expression: "(%weight/((%height/100).power(2))).round(1)"
+                expression: "(%weight/((iif(%height.exists(), %height, %ObsBodyHeightValue.where(%ObsBodyHeightDateString.toDate()
+                  > (%patient.birthDate + 18 years)))/100).power(2))).round(1)"
             - url: http://hl7.org/fhir/StructureDefinition/questionnaire-unit
               valueCoding:
                 system: http://unitsofmeasure.org
@@ -9774,6 +9809,9 @@
             value: '1156291000168106'
     - resourceType: Immunization
       id: ImmunizationTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization
       status: completed
       vaccineCode:
         extension:
@@ -10032,6 +10070,8 @@
               coding:
               - system: http://hl7.org/fhir/questionnaire-item-control
                 code: autocomplete
+          - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+            valueCode: optionsOrType
           - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
             valueExpression:
               language: text/fhirpath
@@ -11304,6 +11344,9 @@
             value: '32570581000036105'
     - resourceType: Condition
       id: ConditionTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
       clinicalStatus:
         coding:
         - system: http://terminology.hl7.org/CodeSystem/condition-clinical
@@ -11340,6 +11383,9 @@
             valueString: item.where(linkId='newdiagnosis-comment').answer.value
     - resourceType: Parameters
       id: ConditionPatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition
       parameter:
       - name: operation
         part:
@@ -11618,6 +11664,8 @@
                 value: 40
                 system: http://unitsofmeasure.org
                 code: "%"
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
               valueExpression:
                 language: text/fhirpath
@@ -15600,6 +15648,9 @@
               OR 169443000|Preventive procedure|"
     - resourceType: MedicationStatement
       id: MedicationStatementTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
       status: active
       medicationCodeableConcept:
         extension:
@@ -15652,6 +15703,9 @@
             valueString: "$this"
     - resourceType: Parameters
       id: MedicationStatementPatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement
       parameter:
       - name: operation
         part:
@@ -16007,6 +16061,8 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: autocomplete
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
               valueExpression:
                 language: text/fhirpath
@@ -16074,6 +16130,8 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: autocomplete
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
               valueExpression:
                 language: text/fhirpath
@@ -18206,6 +18264,9 @@
     contained:
     - resourceType: Observation
       id: SmokingStatusTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
       status: final
       category:
       - coding:
@@ -19440,6 +19501,9 @@
             value: '32570581000036105'
     - resourceType: Condition
       id: ConditionTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCCondition
       clinicalStatus:
         coding:
         - system: http://terminology.hl7.org/CodeSystem/condition-clinical
@@ -19476,6 +19540,9 @@
             valueString: item.where(linkId='newdiagnosis-comment').answer.value
     - resourceType: Parameters
       id: ConditionPatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchCondition
       parameter:
       - name: operation
         part:
@@ -19577,6 +19644,9 @@
               OR 169443000|Preventive procedure|"
     - resourceType: MedicationStatement
       id: MedicationStatementTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCMedicationStatement
       status: active
       medicationCodeableConcept:
         extension:
@@ -19629,6 +19699,9 @@
             valueString: "$this"
     - resourceType: Parameters
       id: MedicationStatementPatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchMedicationStatement
       parameter:
       - name: operation
         part:
@@ -19770,6 +19843,9 @@
           display: On Hold
     - resourceType: AllergyIntolerance
       id: AllergyIntoleranceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCAllergyIntolerance
       clinicalStatus:
         coding:
         - system: http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
@@ -19814,6 +19890,9 @@
               valueString: "$this"
     - resourceType: Parameters
       id: AllergyIntolerancePatchTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCPatchAllergyIntolerance
       parameter:
       - name: operation
         part:
@@ -19910,6 +19989,9 @@
           display: Inactive
     - resourceType: Observation
       id: SmokingStatusTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCSmokingStatus
       status: final
       category:
       - coding:
@@ -20203,6 +20285,9 @@
             value: '1156291000168106'
     - resourceType: Immunization
       id: ImmunizationTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCImmunization
       status: completed
       vaccineCode:
         extension:
@@ -20269,6 +20354,9 @@
           display: Irregular heart rhythm
     - resourceType: Observation
       id: BodyHeightTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
       status: final
       category:
       - coding:
@@ -20300,6 +20388,9 @@
         code: cm
     - resourceType: Observation
       id: BodyHeightLengthTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyHeight
       status: final
       category:
       - coding:
@@ -20331,6 +20422,9 @@
         code: cm
     - resourceType: Observation
       id: BodyWeightTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBodyWeight
       status: final
       category:
       - coding:
@@ -20362,6 +20456,9 @@
         code: kg
     - resourceType: Observation
       id: WaistCircumferenceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCWaistCircumference
       status: final
       category:
       - coding:
@@ -20393,6 +20490,9 @@
         code: cm
     - resourceType: Observation
       id: HeadCircumferenceTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeadCircumference
       status: final
       category:
       - coding:
@@ -20424,6 +20524,9 @@
         code: cm
     - resourceType: Observation
       id: HeartRateTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRate
       status: final
       category:
       - coding:
@@ -20455,6 +20558,9 @@
         code: "/min"
     - resourceType: Observation
       id: HeartRhythmTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCHeartRhythm
       status: final
       category:
       - coding:
@@ -20483,6 +20589,9 @@
             valueString: "$this.answer.value"
     - resourceType: Observation
       id: BloodPressureTemplate
+      meta:
+        profile:
+        - https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure
       status: final
       category:
       - coding:
@@ -23393,6 +23502,8 @@
                   value: 40
                   system: http://unitsofmeasure.org
                   code: "%"
+              - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+                valueCode: optionsOrType
               - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
                 valueExpression:
                   language: text/fhirpath
@@ -23675,6 +23786,8 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: autocomplete
+              - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+                valueCode: optionsOrType
               - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
                 valueExpression:
                   language: text/fhirpath
@@ -23744,6 +23857,8 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: autocomplete
+              - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+                valueCode: optionsOrType
               - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
                 valueExpression:
                   language: text/fhirpath
@@ -24053,6 +24168,8 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: autocomplete
+              - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+                valueCode: optionsOrType
               linkId: allergysummary-substance
               text: Substance
               type: open-choice
@@ -24097,6 +24214,8 @@
                   coding:
                   - system: http://hl7.org/fhir/questionnaire-item-control
                     code: autocomplete
+              - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+                valueCode: optionsOrType
               linkId: allergysummary-manifestation
               text: Manifestation
               type: open-choice
@@ -29833,6 +29952,8 @@
                 coding:
                 - system: http://hl7.org/fhir/questionnaire-item-control
                   code: autocomplete
+            - url: http://hl7.org/fhir/5.0/StructureDefinition/extension-Questionnaire.item.answerConstraint
+              valueCode: optionsOrType
             - url: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
               valueExpression:
                 language: text/fhirpath
@@ -30479,7 +30600,8 @@
                 valueExpression:
                   description: BMI calculation
                   language: text/fhirpath
-                  expression: "(%weight/((%height/100).power(2))).round(1)"
+                  expression: "(%weight/((iif(%height.exists(), %height, %ObsBodyHeightValue.where(%ObsBodyHeightDateString.toDate()
+                    > (%patient.birthDate + 18 years)))/100).power(2))).round(1)"
               - url: http://hl7.org/fhir/StructureDefinition/questionnaire-unit
                 valueCoding:
                   system: http://unitsofmeasure.org
@@ -31826,7 +31948,7 @@
                   valueExpression:
                     language: text/fhirpath
                     expression: iif(%height.exists() and %CVDHeightNewResultDate.toDate()
-                      > (%patient.birthDate + 18 years), %height/100.round(2), %bmiHeightDecimalPrepop)
+                      > (%patient.birthDate + 18 years), (%height/100).round(2), %bmiHeightDecimalPrepop)
                 - url: http://hl7.org/fhir/StructureDefinition/questionnaire-unit
                   valueCoding:
                     system: http://unitsofmeasure.org

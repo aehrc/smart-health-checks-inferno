@@ -19,6 +19,8 @@
   :expectation: SHALL
 - :code: update
   :expectation: SHALL
+:update_create: true
+:update_create_expectation: MAY
 :operations: []
 :searches:
 - :names:
@@ -232,7 +234,7 @@
 - :id: smart_health_checks_v040_questionnaire_response_update_update_test
   :file_name: questionnaire_response_update_update_test.rb
 - :id: smart_health_checks_v040_questionnaire_response_update_new_update_test
-  :file_name: questionnaire_response_new_update_update_test.rb
+  :file_name: questionnaire_response_update_create_update_test.rb
 :id: smart_health_checks_v040_questionnaire_response
 :file_name: questionnaire_response_group.rb
 :delayed_references: []
