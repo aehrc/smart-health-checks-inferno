@@ -30,10 +30,28 @@ module InfernoSuitePlugins
         assert_equal ['birthDate'], entries.first['elements_read']
       end
 
-      def test_a_group_without_a_trace_gets_no_plugins_yml
-        run_plugin_with(questionnaire)
+      def test_a_traced_group_gets_the_section_in_its_description
+        descriptions = run_plugin_with(patient_form)
+
+        assert_equal 1, descriptions.for(@group).size
+        assert descriptions.for(@group).first.start_with?('## Used in questionnaires')
+      end
+
+      def test_a_group_without_a_trace_gets_no_plugins_yml_and_no_section
+        descriptions = run_plugin_with(questionnaire)
 
         refute_path_exists File.join(group_dir, 'plugins.yml')
+        assert_empty descriptions.for(@group)
+      end
+
+      def test_the_generated_group_file_has_the_section
+        descriptions = run_plugin_with(patient_form)
+        ig_metadata = build_ig_metadata(groups: [@group])
+        with_config_keeper do
+          InfernoSuiteGenerator::Generator::GroupGenerator.generate(ig_metadata, @dir, descriptions)
+        end
+
+        assert_includes File.read(File.join(@dir, 'patient_group.rb')), '## Used in questionnaires'
       end
 
       private
