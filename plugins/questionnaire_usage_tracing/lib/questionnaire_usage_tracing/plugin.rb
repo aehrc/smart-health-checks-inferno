@@ -2,18 +2,15 @@
 
 module InfernoSuitePlugins
   module QuestionnaireUsageTracing
-    # Entry point the host calls once it has generated its built-in tests.
+    # Traces every Questionnaire in the IG over the suite's groups and writes each traced group's entries
+    # under "questionnaire_usage_tracing" in <group dir>/plugins.yml.
     class Plugin < InfernoSuiteGenerator::Plugins::Base
-      # Plugins are stateless: everything comes in through context.
-      # :reek:UtilityFunction
       def generate(context)
-        data_by_group = Extractor.extract(context)
-        # Writes each group's data under "questionnaire_usage_tracing" in <group dir>/plugins.yml.
-        context.metadata.groups(data_by_group)
-
-        # To generate tests, add an ERB template to templates/ and a subclass of
-        # InfernoSuiteGenerator::Plugins::TestGenerator, then call:
-        #   MyTestGenerator.generate(context, data_by_group)
+        traces = Tracer.new(context.ig_resources, context.groups).trace
+        context.groups.each do |group|
+          entries = traces[group.profile_url]
+          context.metadata.group(group, entries:) if entries
+        end
       end
     end
   end
