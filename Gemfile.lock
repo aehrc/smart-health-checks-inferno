@@ -464,7 +464,6 @@ DEPENDENCIES
   debug
   factory_bot (~> 6.1)
   inferno_suite_generator!
-  minitest
   pg (~> 1.5)
   rspec (~> 3.10)
   rubocop (~> 1.63.2)

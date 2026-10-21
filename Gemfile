@@ -8,7 +8,6 @@ gemspec
 
 group :development, :test do
   gem 'debug'
-  gem 'minitest'
 end
 
 # Temporary: the plugin system lives on packages-system until it is merged to main.

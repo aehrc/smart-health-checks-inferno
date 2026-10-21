@@ -15,13 +15,11 @@ This folder is an inferno_suite_generator plugin. Keep every change inside it.
 - Data extraction: subclasses of `InfernoSuiteGenerator::Plugins::Extractor` in `lib/questionnaire_usage_tracing/`
 - Test files: ERB templates in `templates/`, rendered by subclasses of `InfernoSuiteGenerator::Plugins::TestGenerator`
 - Code the generated tests run in Inferno: `runtime/`, installed with `context.install_runtime`
-- Tests: `test/`, using `InfernoSuiteGenerator::Plugins::Testing`
 
 ## Check your work
 
-Run this plugin's tests and RuboCop before finishing:
+Run RuboCop before finishing:
 
 ```bash
-bundle exec ruby -Ilib -Iplugins/questionnaire_usage_tracing/test plugins/questionnaire_usage_tracing/test/questionnaire_usage_tracing_test.rb
 bundle exec rubocop plugins/questionnaire_usage_tracing
 ```

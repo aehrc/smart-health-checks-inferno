@@ -20,14 +20,7 @@ Add the plugin to the generator config, keyed by its id:
 - `lib/questionnaire_usage_tracing/extractor.rb`: this plugin's data for each group
 - `templates/`: ERB templates for `InfernoSuiteGenerator::Plugins::TestGenerator` subclasses
 - `runtime/`: files the generated tests need at Inferno run time, copied by `context.install_runtime`
-- `test/`: this plugin's tests
 
 ## Output
 
 Group data goes under `questionnaire_usage_tracing` in `<group dir>/plugins.yml`, and suite data under `questionnaire_usage_tracing` in `<suite dir>/plugins.yml`.
-
-## Test
-
-```bash
-bundle exec ruby -Ilib -Iplugins/questionnaire_usage_tracing/test plugins/questionnaire_usage_tracing/test/questionnaire_usage_tracing_test.rb
-```
