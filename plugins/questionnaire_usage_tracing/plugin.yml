@@ -1,0 +1,7 @@
+id: questionnaire_usage_tracing
+name: Questionnaire usage tracing
+version: 0.1.0
+description: Traces which SDC questionnaire queries, launch contexts and templates use each profile, and adds a Used in questionnaires section to the group description
+entrypoint: lib/questionnaire_usage_tracing.rb
+class: InfernoSuitePlugins::QuestionnaireUsageTracing::Plugin
+host_version: ">= 0.1.0"

@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+require_relative 'questionnaire_usage_tracing/log'
+require_relative 'questionnaire_usage_tracing/ast'
+require_relative 'questionnaire_usage_tracing/query_search'
+require_relative 'questionnaire_usage_tracing/profile_matcher'
+require_relative 'questionnaire_usage_tracing/tracer'
+require_relative 'questionnaire_usage_tracing/usage_section'
+require_relative 'questionnaire_usage_tracing/plugin'
