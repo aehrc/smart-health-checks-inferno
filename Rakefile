@@ -10,6 +10,15 @@ begin
 rescue LoadError # rubocop:disable Lint/SuppressedException
 end
 
+require 'rake/testtask'
+
+namespace :plugins do
+  Rake::TestTask.new(:test) do |t|
+    t.libs << 'lib'
+    t.test_files = FileList['plugins/*/test/**/*_test.rb']
+  end
+end
+
 namespace :db do
   desc 'Apply changes to the database'
   task :migrate do
