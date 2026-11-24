@@ -66,6 +66,14 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks MedicationStatement resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**: see the search by patient + status, patch and create tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + status, patch and create tests
+
+
       )
 
       id :smart_health_checks_v040_medication_statement
@@ -77,12 +85,58 @@ read succeeds.
 
       test from: :smart_health_checks_v040_medication_statement_patient_search_test
       test from: :smart_health_checks_v040_medication_statement_status_search_test
-      test from: :smart_health_checks_v040_medication_statement_patient_status_search_test
+      test from: :smart_health_checks_v040_medication_statement_patient_status_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
+  - **Query MedicationStatement**: searches MedicationStatement resources
+    - Request: MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication
+    - **Recorded medications**: sets the population context
+    - **Medication**: pre-fills the answer
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query MedicationStatement**: searches MedicationStatement resources
+    - Request: MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication
+    - **Recorded medications**: sets the population context
+    - **Medication**: pre-fills the answer
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_medication_statement_validation_test
       test from: :smart_health_checks_v040_medication_statement_must_support_test
       test from: :smart_health_checks_v040_medication_statement_reference_resolution_test
-      test from: :smart_health_checks_v040_medication_statement_create_test
-      test from: :smart_health_checks_v040_medication_statement_fhirpath_json_patch_test
+      test from: :smart_health_checks_v040_medication_statement_create_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG create MedicationStatement resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
+  - **Extraction template MedicationStatementTemplate**: creates a new MedicationStatement from the answers
+    - **New medications**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template MedicationStatementTemplate**: creates a new MedicationStatement from the answers
+    - **New medications**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
+      test from: :smart_health_checks_v040_medication_statement_fhirpath_json_patch_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG update existing MedicationStatement resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
+  - **Extraction template MedicationStatementPatchTemplate**: updates an existing MedicationStatement with a FHIRPath Patch
+    - **Recorded medications**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template MedicationStatementPatchTemplate**: updates an existing MedicationStatement with a FHIRPath Patch
+    - **Recorded medications**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
     end
   end
 end

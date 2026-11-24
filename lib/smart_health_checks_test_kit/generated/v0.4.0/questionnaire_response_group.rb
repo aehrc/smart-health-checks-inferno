@@ -71,6 +71,29 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks Questionnaire Response resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - About The Health Check**: see the search by patient + questionnaire and Must Support tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + questionnaire and Must Support tests
+
+**Not tested by this group**
+
+No test in this group makes these requests or writes these resources, so nothing checks what these forms get from them.
+
+- **Aboriginal and Torres Strait Islander Health Check - About The Health Check**
+  - **Query QuestionnaireResponseLatestCompleted**: searches QuestionnaireResponse resources
+    - Request: QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&status=completed&_count=1&_sort=-authored&patient={{%patient.id}}
+    - A search by questionnaire + status + patient; this group tests patient, questionnaire, status, patient + questionnaire, patient + status
+    - **Date of last completed health check**: pre-fills the answer; reads authored
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query QuestionnaireResponseLatestCompleted**: searches QuestionnaireResponse resources
+    - Request: QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&status=completed&_count=1&_sort=-authored&patient={{%patient.id}}
+    - A search by questionnaire + status + patient; this group tests patient, questionnaire, status, patient + questionnaire, patient + status
+    - **Date of last completed health check**: pre-fills the answer; reads authored
+
+
       )
 
       id :smart_health_checks_v040_questionnaire_response
@@ -83,11 +106,41 @@ read succeeds.
       test from: :smart_health_checks_v040_questionnaire_response_patient_search_test
       test from: :smart_health_checks_v040_questionnaire_response_questionnaire_search_test
       test from: :smart_health_checks_v040_questionnaire_response_status_search_test
-      test from: :smart_health_checks_v040_questionnaire_response_patient_questionnaire_search_test
+      test from: :smart_health_checks_v040_questionnaire_response_patient_questionnaire_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check - About The Health Check**
+  - **Query QuestionnaireResponseLatest**: searches QuestionnaireResponse resources
+    - Request: QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&_count=1&_sort=-authored&patient={{%patient.id}}
+    - **Health check already in progress?**: pre-fills the answer; reads status
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query QuestionnaireResponseLatest**: searches QuestionnaireResponse resources
+    - Request: QuestionnaireResponse?questionnaire=http://www.health.gov.au/assessments/mbs/715&_count=1&_sort=-authored&patient={{%patient.id}}
+    - **Health check already in progress?**: pre-fills the answer; reads status
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_questionnaire_response_patient_status_search_test
       test from: :smart_health_checks_v040_questionnaire_response_read_test
       test from: :smart_health_checks_v040_questionnaire_response_validation_test
-      test from: :smart_health_checks_v040_questionnaire_response_must_support_test
+      test from: :smart_health_checks_v040_questionnaire_response_must_support_test do
+        description [description, %(
+**Used in questionnaires**
+
+Items in these questionnaires read elements of QuestionnaireResponse that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
+
+- **Aboriginal and Torres Strait Islander Health Check - About The Health Check**
+  - **authored**: Date of last completed health check
+  - **status**: Health check already in progress?
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **authored**: Date of last completed health check
+  - **status**: Health check already in progress?
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_questionnaire_response_reference_resolution_test
       test from: :smart_health_checks_v040_questionnaire_response_create_test
       test from: :smart_health_checks_v040_questionnaire_response_update_update_test

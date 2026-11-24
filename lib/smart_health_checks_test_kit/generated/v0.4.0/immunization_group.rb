@@ -65,6 +65,14 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks Immunization resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Immunisation**: see the search by patient + status and create tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + status and create tests
+
+
       )
 
       id :smart_health_checks_v040_immunization
@@ -76,11 +84,41 @@ read succeeds.
 
       test from: :smart_health_checks_v040_immunization_patient_search_test
       test from: :smart_health_checks_v040_immunization_status_search_test
-      test from: :smart_health_checks_v040_immunization_patient_status_search_test
+      test from: :smart_health_checks_v040_immunization_patient_status_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Immunisation**
+  - **Query Immunization**: searches Immunization resources
+    - Request: Immunization?patient={{%patient.id}}&status=completed
+    - **Vaccines previously given**: sets the population context
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query Immunization**: searches Immunization resources
+    - Request: Immunization?patient={{%patient.id}}&status=completed
+    - **Vaccines previously given**: sets the population context
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_immunization_validation_test
       test from: :smart_health_checks_v040_immunization_must_support_test
       test from: :smart_health_checks_v040_immunization_reference_resolution_test
-      test from: :smart_health_checks_v040_immunization_create_test
+      test from: :smart_health_checks_v040_immunization_create_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG create Immunization resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Immunisation**
+  - **Extraction template ImmunizationTemplate**: creates a new Immunization from the answers
+    - **Vaccines given today**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template ImmunizationTemplate**: creates a new Immunization from the answers
+    - **Vaccines given today**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
     end
   end
 end

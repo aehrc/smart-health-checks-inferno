@@ -33,7 +33,7 @@ require_relative 'practitioner_group'
 
 module SmartHealthChecksTestKit
   module SmartHealthChecksV040
-    class SmartHealthChecksTestSuite < Inferno::TestSuite # rubocop:disable Metrics/ClassLength
+    class SmartHealthChecksTestSuite < Inferno::TestSuite
       title 'Smart Health Checks v0.4.0'
       description %(
         The Smart Health Checks Test Kit tests systems for their conformance to the [Smart Health Checks Implementation Guide](https://smartforms.csiro.au/ig/0.4.0/index.html).
