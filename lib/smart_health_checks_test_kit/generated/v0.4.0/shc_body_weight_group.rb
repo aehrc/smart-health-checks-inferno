@@ -93,10 +93,10 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query ObsBodyWeight**: searches Observation resources
     - Request: Observation?code=29463-7&_sort=-date&patient={{%patient.id}}
-    - **Last result value**: pre-fills the answer; reads value.value
-    - **Last result date**: pre-fills the answer; reads effective
-    - **Last result value**: pre-fills the answer; reads value.value
-    - **Weight**: calculates the answer; reads value.value
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Weight**: calculates the answer; reads value.value, status, effective
 
         )].compact.map(&:strip).join("\n\n")
       end
@@ -109,7 +109,10 @@ Items in these questionnaires read elements of Observation that this group's tes
 
 - **Aboriginal and Torres Strait Islander Health Check**
   - **value.value**: Last result value, Weight
-  - **effective**: Last result date
+  - **status**: Last result value, Last result date, Weight
+  - **value.system**: Last result value
+  - **value.code**: Last result value
+  - **effective**: Last result date, Weight
 
         )].compact.map(&:strip).join("\n\n")
       end

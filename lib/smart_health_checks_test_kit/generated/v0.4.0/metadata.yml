@@ -23,8 +23,6 @@
     :expectation: SHALL
   - :code: patch
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -162,8 +160,6 @@
     :expectation: SHALL
   - :code: patch
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :expectation: SHALL
@@ -341,8 +337,6 @@
   :interactions:
   - :code: read
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches: []
   :search_definitions: {}
@@ -503,8 +497,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -684,8 +676,6 @@
     :expectation: SHALL
   - :code: patch
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -873,8 +863,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -1165,8 +1153,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -1420,8 +1406,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -1675,8 +1659,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -1937,8 +1919,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -2189,8 +2169,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -2399,8 +2377,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -2663,8 +2639,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -2864,8 +2838,6 @@
     :expectation: SHALL
   - :code: create
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches:
   - :names:
@@ -3117,8 +3089,6 @@
   :interactions:
   - :code: read
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches: []
   :search_definitions: {}
@@ -3262,8 +3232,6 @@
   :interactions:
   - :code: read
     :expectation: SHALL
-  :update_create: false
-  :update_create_expectation: MAY
   :operations: []
   :searches: []
   :search_definitions: {}

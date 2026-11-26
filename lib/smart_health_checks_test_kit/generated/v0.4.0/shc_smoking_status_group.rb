@@ -77,8 +77,8 @@ These questionnaires in the IG read or create Smart Health Checks Smoking Status
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
 - **Aboriginal and Torres Strait Islander Health Check**
+  - **value.coding.system**: Last status value, Quit status, How many?, How long as a smoker?, Smoking status
   - **value.coding.code**: Quit status, How many?, How long as a smoker?
-  - **value.coding.system**: Smoking status
 
 
       )
@@ -101,12 +101,12 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query ObsTobaccoSmokingStatus**: searches Observation resources
     - Request: Observation?code=1747861000168109&_sort=-date&patient={{%patient.id}}
-    - **Last status value**: pre-fills the answer; reads value.coding
-    - **Last status date**: pre-fills the answer; reads effective
-    - **Quit status**: shows or hides the item; reads value.coding, value.coding.code \(not checked\)
-    - **How many?**: shows or hides the item; reads value.coding, value.coding.code \(not checked\)
-    - **How long as a smoker?**: shows or hides the item; reads value.coding, value.coding.code \(not checked\)
-    - **Smoking status**: calculates the answer; reads value.coding, value.coding.system \(not checked\)
+    - **Last status value**: pre-fills the answer; reads value.coding, status, value.coding.system \(not checked\)
+    - **Last status date**: pre-fills the answer; reads effective, status
+    - **Quit status**: shows or hides the item; reads value.coding, status, value.coding.system \(not checked\), value.coding.code \(not checked\)
+    - **How many?**: shows or hides the item; reads value.coding, status, value.coding.system \(not checked\), value.coding.code \(not checked\)
+    - **How long as a smoker?**: shows or hides the item; reads value.coding, status, value.coding.system \(not checked\), value.coding.code \(not checked\)
+    - **Smoking status**: calculates the answer; reads value.coding, status, value.coding.system \(not checked\)
 
         )].compact.map(&:strip).join("\n\n")
       end
@@ -119,6 +119,7 @@ Items in these questionnaires read elements of Observation that this group's tes
 
 - **Aboriginal and Torres Strait Islander Health Check**
   - **value.coding**: Last status value, Quit status, How many?, How long as a smoker?, Smoking status
+  - **status**: Last status value, Last status date, Quit status, How many?, How long as a smoker?, Smoking status
   - **effective**: Last status date
 
         )].compact.map(&:strip).join("\n\n")

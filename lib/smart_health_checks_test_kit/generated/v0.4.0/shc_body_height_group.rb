@@ -93,13 +93,13 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query ObsBodyHeight**: searches Observation resources
     - Request: Observation?code=8302-2&_sort=-date&patient={{%patient.id}}
-    - **Last result value**: pre-fills the answer; reads value.value
-    - **Last result date**: pre-fills the answer; reads effective
-    - **Last result value**: pre-fills the answer; reads value.value
-    - **Last result date**: pre-fills the answer; reads effective
-    - **Last result value**: pre-fills the answer; reads value.value
-    - **New result**: calculates the answer; reads value.value, effective
-    - **Height**: calculates the answer; reads value.value
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **New result**: calculates the answer; reads value.value, status, value.system, value.code, effective
+    - **Height**: calculates the answer; reads value.value, status, effective
 
         )].compact.map(&:strip).join("\n\n")
       end
@@ -112,7 +112,10 @@ Items in these questionnaires read elements of Observation that this group's tes
 
 - **Aboriginal and Torres Strait Islander Health Check**
   - **value.value**: Last result value, New result, Height
-  - **effective**: Last result date, New result
+  - **status**: Last result value, Last result date, New result, Height
+  - **value.system**: Last result value, New result
+  - **value.code**: Last result value, New result
+  - **effective**: Last result date, New result, Height
 
         )].compact.map(&:strip).join("\n\n")
       end

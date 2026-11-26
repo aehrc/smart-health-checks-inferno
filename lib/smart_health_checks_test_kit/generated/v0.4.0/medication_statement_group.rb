@@ -70,8 +70,19 @@ read succeeds.
 
 These questionnaires in the IG read or create Smart Health Checks MedicationStatement resources. The tests that make the same requests list the form items that depend on them.
 
-- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**: see the search by patient + status, patch and create tests
-- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + status, patch and create tests
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**: see the search by patient + status, patch, create and Must Support tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + status, patch, create and Must Support tests
+
+**Elements not checked**
+
+The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
+  - **contained**: Medication
+  - **medication.reference**: Medication
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **contained**: Medication
+  - **medication.reference**: Medication
 
 
       )
@@ -95,17 +106,29 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
   - **Query MedicationStatement**: searches MedicationStatement resources
     - Request: MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication
     - **Recorded medications**: sets the population context
-    - **Medication**: pre-fills the answer
+    - **Medication**: pre-fills the answer; reads contained \(not checked\), medication, medication.reference \(not checked\)
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query MedicationStatement**: searches MedicationStatement resources
     - Request: MedicationStatement?patient={{%patient.id}}&status=active&_include=MedicationStatement:medication
     - **Recorded medications**: sets the population context
-    - **Medication**: pre-fills the answer
+    - **Medication**: pre-fills the answer; reads contained \(not checked\), medication, medication.reference \(not checked\)
 
         )].compact.map(&:strip).join("\n\n")
       end
       test from: :smart_health_checks_v040_medication_statement_validation_test
-      test from: :smart_health_checks_v040_medication_statement_must_support_test
+      test from: :smart_health_checks_v040_medication_statement_must_support_test do
+        description [description, %(
+**Used in questionnaires**
+
+Items in these questionnaires read elements of MedicationStatement that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
+
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
+  - **medication**: Medication
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **medication**: Medication
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_medication_statement_reference_resolution_test
       test from: :smart_health_checks_v040_medication_statement_create_test do
         description [description, %(

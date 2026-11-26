@@ -4,7 +4,7 @@ require 'base64'
 require 'inferno/dsl/oauth_credentials'
 require 'inferno_suite_generator/utils/helpers'
 require 'inferno_suite_generator/utils/fhirpath_lab_message_linker'
-require 'inferno_suite_generator/utils/resource_keeper_endpoints'
+require 'inferno_suite_generator/utils/session_resource_endpoint'
 require 'inferno_suite_generator/utils/validation_message_overrides'
 require_relative '../../version'
 require_relative '../../outer_groups/teardown'
@@ -59,10 +59,11 @@ module SmartHealthChecksTestKit
 
       FHIRPATHLAB_URL = 'https://fhirpath-lab.com/FhirPath'
 
-      suite_endpoint :get, '/resources/:session_id/:resource_type/:resource_id',
-                     InfernoSuiteGenerator::FetchResourceEndpoint
-      suite_endpoint :delete, '/resources/:session_id',
-                     InfernoSuiteGenerator::DeleteSessionResourcesEndpoint
+      session_resource_handler = InfernoSuiteGenerator::FhirpathLabCors.new(
+        InfernoSuiteGenerator::FetchResourceEndpoint, lab_url: FHIRPATHLAB_URL
+      )
+      suite_endpoint :get, '/resources/:session_id/:resource_type/:resource_id', session_resource_handler
+      suite_endpoint :options, '/resources/:session_id/:resource_type/:resource_id', session_resource_handler
 
       def self.metadata
         @metadata ||= YAML.load_file(File.join(__dir__, 'metadata.yml'), aliases: true)[:groups].map do |raw_metadata|

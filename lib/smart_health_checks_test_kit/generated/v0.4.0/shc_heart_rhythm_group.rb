@@ -72,6 +72,15 @@ These questionnaires in the IG read or create Smart Health Checks Heart Rhythm r
 - **Aboriginal and Torres Strait Islander Health Check - Examination**: see the search by patient + code, create and Must Support tests
 - **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + code, create and Must Support tests
 
+**Elements not checked**
+
+The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Examination**
+  - **value.coding.system**: Last result value
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **value.coding.system**: Last result value
+
 
       )
 
@@ -93,13 +102,13 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 - **Aboriginal and Torres Strait Islander Health Check - Examination**
   - **Query ObsHeartRhythm**: searches Observation resources
     - Request: Observation?code=364074009&_sort=-date&patient={{%patient.id}}
-    - **Last result value**: pre-fills the answer; reads value.coding
-    - **Last result date**: pre-fills the answer; reads effective
+    - **Last result value**: pre-fills the answer; reads value.coding, status, value.coding.system \(not checked\)
+    - **Last result date**: pre-fills the answer; reads effective, status
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query ObsHeartRhythm**: searches Observation resources
     - Request: Observation?code=364074009&_sort=-date&patient={{%patient.id}}
-    - **Last result value**: pre-fills the answer; reads value.coding
-    - **Last result date**: pre-fills the answer; reads effective
+    - **Last result value**: pre-fills the answer; reads value.coding, status, value.coding.system \(not checked\)
+    - **Last result date**: pre-fills the answer; reads effective, status
 
         )].compact.map(&:strip).join("\n\n")
       end
@@ -112,9 +121,11 @@ Items in these questionnaires read elements of Observation that this group's tes
 
 - **Aboriginal and Torres Strait Islander Health Check - Examination**
   - **value.coding**: Last result value
+  - **status**: Last result value, Last result date
   - **effective**: Last result date
 - **Aboriginal and Torres Strait Islander Health Check**
   - **value.coding**: Last result value
+  - **status**: Last result value, Last result date
   - **effective**: Last result date
 
         )].compact.map(&:strip).join("\n\n")

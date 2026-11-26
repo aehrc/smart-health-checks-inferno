@@ -93,10 +93,10 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 - **Aboriginal and Torres Strait Islander Health Check**
   - **Query ObsBloodPressure**: searches Observation resources
     - Request: Observation?code=85354-9&_sort=-date&patient={{%patient.id}}
-    - **Last result value systolic**: pre-fills the answer; reads component.value.value, component.code.coding, component.code.coding.code
-    - **Last result value diastolic**: pre-fills the answer; reads component.value.value, component.code.coding, component.code.coding.code
-    - **Last result date**: pre-fills the answer; reads effective
-    - **Systolic blood pressure**: calculates the answer; reads component.value.value, effective, component.code.coding, component.code.coding.code
+    - **Last result value systolic**: pre-fills the answer; reads component.value.value, status, component.code.coding, component.code.coding.code
+    - **Last result value diastolic**: pre-fills the answer; reads component.value.value, status, component.code.coding, component.code.coding.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Systolic blood pressure**: calculates the answer; reads component.value.value, status, effective, component.code.coding, component.code.coding.code
 
         )].compact.map(&:strip).join("\n\n")
       end
@@ -109,6 +109,7 @@ Items in these questionnaires read elements of Observation that this group's tes
 
 - **Aboriginal and Torres Strait Islander Health Check**
   - **component.value.value**: Last result value systolic, Last result value diastolic, Systolic blood pressure
+  - **status**: Last result value systolic, Last result value diastolic, Last result date, Systolic blood pressure
   - **component.code.coding**: Last result value systolic, Last result value diastolic, Systolic blood pressure
   - **component.code.coding.code**: Last result value systolic, Last result value diastolic, Systolic blood pressure
   - **effective**: Last result date, Systolic blood pressure

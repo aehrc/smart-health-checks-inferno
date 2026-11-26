@@ -58,7 +58,9 @@ The profile neither marks these elements Must Support nor requires them, so no t
 
 - **Aboriginal and Torres Strait Islander Health Check - Patient Details**
   - **extension:individualPronouns.extension[value].value.coding**: Preferred pronouns
+  - **extension:individualPronouns.extension[period].value.end**: Preferred pronouns
   - **extension:genderIdentity.extension[value].value.coding**: Gender identity
+  - **extension:genderIdentity.extension[period].value.end**: Gender identity
   - **contact.relationship.coding**: Emergency contact
   - **contact.relationship.coding.code**: Emergency contact
   - **identifier.type.coding**: Medicare number, Pensioner Card Number, Health Care Card Number
@@ -67,8 +69,13 @@ The profile neither marks these elements Must Support nor requires them, so no t
   - **identifier.value**: Pensioner Card Number, Health Care Card Number
 - **Aboriginal and Torres Strait Islander Health Check**
   - **extension:individualPronouns.extension[value].value.coding**: Preferred pronouns
+  - **extension:individualPronouns.extension[period].value.end**: Preferred pronouns
   - **extension:genderIdentity.extension[value].value.coding**: Gender identity
+  - **extension:genderIdentity.extension[period].value.end**: Gender identity
   - **extension:recordedSexOrGender.extension[value].value.coding**: Sex assigned at birth
+  - **extension:recordedSexOrGender.extension[type]**: Sex assigned at birth
+  - **extension:recordedSexOrGender.extension[type].value.coding.code**: Sex assigned at birth
+  - **extension:recordedSexOrGender.extension[effectivePeriod].value.end**: Sex assigned at birth
   - **contact.relationship.coding**: Emergency contact
   - **contact.relationship.coding.code**: Emergency contact
   - **identifier.type.coding**: Medicare number, Pensioner Card Number, Health Care Card Number
@@ -102,8 +109,8 @@ These questionnaires in the IG read Patient resources as this test does: by id, 
   - **Launch context patient**: the Patient the form is opened for
     - **Name**: pre-fills the answer; reads name, name.use, name.family, name.given, name.prefix, name.text
     - **Preferred name**: pre-fills the answer; reads name, name.use, name.family, name.given, name.prefix, name.text
-    - **Preferred pronouns**: pre-fills the answer; reads extension:individualPronouns.extension[value].value.coding \(not checked\)
-    - **Gender identity**: pre-fills the answer; reads extension:genderIdentity.extension[value].value.coding \(not checked\)
+    - **Preferred pronouns**: pre-fills the answer; reads extension:individualPronouns.extension[value].value.coding \(not checked\), extension:individualPronouns.extension[period].value.end \(not checked\)
+    - **Gender identity**: pre-fills the answer; reads extension:genderIdentity.extension[value].value.coding \(not checked\), extension:genderIdentity.extension[period].value.end \(not checked\)
     - **Administrative gender**: pre-fills the answer; reads gender
     - **Date of birth**: pre-fills the answer; reads birthDate
     - **Age**: pre-fills the answer; reads birthDate
@@ -121,10 +128,10 @@ These questionnaires in the IG read Patient resources as this test does: by id, 
   - **Launch context patient**: the Patient the form is opened for
     - **Name**: pre-fills the answer; reads name, name.use, name.family, name.given, name.prefix, name.text
     - **Preferred name**: pre-fills the answer; reads name, name.use, name.family, name.given, name.prefix, name.text
-    - **Preferred pronouns**: pre-fills the answer; reads extension:individualPronouns.extension[value].value.coding \(not checked\)
-    - **Gender identity**: pre-fills the answer; reads extension:genderIdentity.extension[value].value.coding \(not checked\)
+    - **Preferred pronouns**: pre-fills the answer; reads extension:individualPronouns.extension[value].value.coding \(not checked\), extension:individualPronouns.extension[period].value.end \(not checked\)
+    - **Gender identity**: pre-fills the answer; reads extension:genderIdentity.extension[value].value.coding \(not checked\), extension:genderIdentity.extension[period].value.end \(not checked\)
     - **Administrative gender**: pre-fills the answer; reads gender
-    - **Sex assigned at birth**: pre-fills the answer; reads extension:recordedSexOrGender.extension[value].value.coding \(not checked\)
+    - **Sex assigned at birth**: pre-fills the answer; reads extension:recordedSexOrGender.extension[value].value.coding \(not checked\), extension:recordedSexOrGender.extension[type] \(not checked\), extension:recordedSexOrGender.extension[type].value.coding.code \(not checked\), extension:recordedSexOrGender.extension[effectivePeriod].value.end \(not checked\)
     - **Date of birth**: pre-fills the answer; reads birthDate
     - **Age**: pre-fills the answer; reads birthDate
     - **Aboriginal and/or Torres Strait Islander status**: pre-fills the answer; reads extension:indigenousStatus.value
