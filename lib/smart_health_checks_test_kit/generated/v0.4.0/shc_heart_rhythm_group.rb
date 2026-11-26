@@ -76,10 +76,8 @@ These questionnaires in the IG read or create Smart Health Checks Heart Rhythm r
 
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
-- **Aboriginal and Torres Strait Islander Health Check - Examination**
-  - **value.coding.system**: Last result value
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **value.coding.system**: Last result value
+- **Aboriginal and Torres Strait Islander Health Check - Examination** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Last result value**: value.coding.system
 
 
       )
@@ -119,14 +117,9 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 
 Items in these questionnaires read elements of Observation that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
-- **Aboriginal and Torres Strait Islander Health Check - Examination**
-  - **value.coding**: Last result value
-  - **status**: Last result value, Last result date
-  - **effective**: Last result date
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **value.coding**: Last result value
-  - **status**: Last result value, Last result date
-  - **effective**: Last result date
+- **Aboriginal and Torres Strait Islander Health Check - Examination** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Last result value**: value.coding, status
+  - **Last result date**: effective, status
 
         )].compact.map(&:strip).join("\n\n")
       end

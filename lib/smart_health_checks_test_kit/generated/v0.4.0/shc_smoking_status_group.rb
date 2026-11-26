@@ -77,8 +77,8 @@ These questionnaires in the IG read or create Smart Health Checks Smoking Status
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **value.coding.system**: Last status value, Quit status, How many?, How long as a smoker?, Smoking status
-  - **value.coding.code**: Quit status, How many?, How long as a smoker?
+  - **Last status value**, **Smoking status**: value.coding.system
+  - **Quit status**, **How many?**, **How long as a smoker?**: value.coding: system, code
 
 
       )
@@ -118,9 +118,8 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 Items in these questionnaires read elements of Observation that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **value.coding**: Last status value, Quit status, How many?, How long as a smoker?, Smoking status
-  - **status**: Last status value, Last status date, Quit status, How many?, How long as a smoker?, Smoking status
-  - **effective**: Last status date
+  - **Last status value**, **Quit status**, **How many?**, **How long as a smoker?**, **Smoking status**: value.coding, status
+  - **Last status date**: effective, status
 
         )].compact.map(&:strip).join("\n\n")
       end

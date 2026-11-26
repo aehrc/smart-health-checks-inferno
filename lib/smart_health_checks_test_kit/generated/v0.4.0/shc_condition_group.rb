@@ -78,10 +78,8 @@ These questionnaires in the IG read or create Smart Health Checks Condition reso
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **verificationStatus.coding**: Recorded problems/diagnoses, History of atrial fibrillation, Diabetes, Years since diabetes diagnosis
-  - **verificationStatus.coding.code**: Recorded problems/diagnoses, History of atrial fibrillation, Diabetes, Years since diabetes diagnosis
-  - **clinicalStatus.coding**: History of atrial fibrillation, Diabetes, Years since diabetes diagnosis
-  - **clinicalStatus.coding.code**: History of atrial fibrillation, Diabetes, Years since diabetes diagnosis
+  - **Recorded problems/diagnoses**: verificationStatus.coding.code
+  - **History of atrial fibrillation**, **Diabetes**, **Years since diabetes diagnosis**: clinicalStatus.coding.code, verificationStatus.coding.code
 
 
       )
@@ -119,8 +117,8 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 Items in these questionnaires read elements of Condition that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **code**: History of atrial fibrillation, Diabetes, Years since diabetes diagnosis
-  - **onset**: Years since diabetes diagnosis
+  - **History of atrial fibrillation**, **Diabetes**: code
+  - **Years since diabetes diagnosis**: onset, code
 
         )].compact.map(&:strip).join("\n\n")
       end

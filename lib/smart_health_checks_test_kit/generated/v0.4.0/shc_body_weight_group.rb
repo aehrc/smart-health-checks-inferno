@@ -108,11 +108,9 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 Items in these questionnaires read elements of Observation that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **value.value**: Last result value, Weight
-  - **status**: Last result value, Last result date, Weight
-  - **value.system**: Last result value
-  - **value.code**: Last result value
-  - **effective**: Last result date, Weight
+  - **Last result value**: value: value, system, code; status
+  - **Last result date**: effective, status
+  - **Weight**: value.value, status, effective
 
         )].compact.map(&:strip).join("\n\n")
       end

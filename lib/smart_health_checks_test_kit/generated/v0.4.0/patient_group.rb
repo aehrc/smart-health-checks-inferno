@@ -56,32 +56,14 @@ These questionnaires in the IG read or create Smart Health Checks Patient resour
 
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
-- **Aboriginal and Torres Strait Islander Health Check - Patient Details**
-  - **extension:individualPronouns.extension[value].value.coding**: Preferred pronouns
-  - **extension:individualPronouns.extension[period].value.end**: Preferred pronouns
-  - **extension:genderIdentity.extension[value].value.coding**: Gender identity
-  - **extension:genderIdentity.extension[period].value.end**: Gender identity
-  - **contact.relationship.coding**: Emergency contact
-  - **contact.relationship.coding.code**: Emergency contact
-  - **identifier.type.coding**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.type.coding.system**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.type.coding.code**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.value**: Pensioner Card Number, Health Care Card Number
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **extension:individualPronouns.extension[value].value.coding**: Preferred pronouns
-  - **extension:individualPronouns.extension[period].value.end**: Preferred pronouns
-  - **extension:genderIdentity.extension[value].value.coding**: Gender identity
-  - **extension:genderIdentity.extension[period].value.end**: Gender identity
-  - **extension:recordedSexOrGender.extension[value].value.coding**: Sex assigned at birth
-  - **extension:recordedSexOrGender.extension[type]**: Sex assigned at birth
-  - **extension:recordedSexOrGender.extension[type].value.coding.code**: Sex assigned at birth
-  - **extension:recordedSexOrGender.extension[effectivePeriod].value.end**: Sex assigned at birth
-  - **contact.relationship.coding**: Emergency contact
-  - **contact.relationship.coding.code**: Emergency contact
-  - **identifier.type.coding**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.type.coding.system**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.type.coding.code**: Medicare number, Pensioner Card Number, Health Care Card Number
-  - **identifier.value**: Pensioner Card Number, Health Care Card Number
+- **Aboriginal and Torres Strait Islander Health Check - Patient Details** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Preferred pronouns**: individualPronouns extension: value.coding, period.end
+  - **Gender identity**: genderIdentity extension: value.coding, period.end
+  - **Emergency contact**: contact.relationship.coding.code
+  - **Medicare number**: identifier.type.coding: system, code
+  - **Pensioner Card Number**, **Health Care Card Number**: identifier: value, type.coding.system, type.coding.code
+- Only in **Aboriginal and Torres Strait Islander Health Check**
+  - **Sex assigned at birth**: recordedSexOrGender extension: value.coding, type.coding.code, effectivePeriod.end
 
 
       )
@@ -156,48 +138,21 @@ These questionnaires in the IG read Patient resources as this test does: by id, 
 
 Items in these questionnaires read elements of Patient that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
-- **Aboriginal and Torres Strait Islander Health Check - Absolute Cardiovascular Disease Risk Calculation**
-  - **birthDate**: Height
-- **Aboriginal and Torres Strait Islander Health Check - Examination**
-  - **birthDate**: New result
-- **Aboriginal and Torres Strait Islander Health Check - Patient Details**
-  - **name**: Name, Preferred name
-  - **name.use**: Name, Preferred name
-  - **name.family**: Name, Preferred name
-  - **name.given**: Name, Preferred name
-  - **name.prefix**: Name, Preferred name
-  - **name.text**: Name, Preferred name
-  - **gender**: Administrative gender
-  - **birthDate**: Date of birth, Age
-  - **extension:indigenousStatus.value**: Aboriginal and/or Torres Strait Islander status
-  - **address**: Home address, Postal address
-  - **address.use**: Home address
-  - **address.type**: Home address, Postal address
-  - **telecom.value**: Home phone, Mobile phone
-  - **telecom.system**: Home phone, Mobile phone
-  - **telecom.use**: Home phone, Mobile phone
-  - **contact**: Emergency contact
-  - **identifier**: Medicare number
-  - **extension:closingTheGapRegistration.value**: Registered for Closing the Gap PBS Co-payment Measure \(CTG\)
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **name**: Name, Preferred name
-  - **name.use**: Name, Preferred name
-  - **name.family**: Name, Preferred name
-  - **name.given**: Name, Preferred name
-  - **name.prefix**: Name, Preferred name
-  - **name.text**: Name, Preferred name
-  - **gender**: Administrative gender
-  - **birthDate**: Date of birth, Age, New result, Height
-  - **extension:indigenousStatus.value**: Aboriginal and/or Torres Strait Islander status
-  - **address**: Home address, Postal address
-  - **address.use**: Home address
-  - **address.type**: Home address, Postal address
-  - **telecom.value**: Home phone, Mobile phone
-  - **telecom.system**: Home phone, Mobile phone
-  - **telecom.use**: Home phone, Mobile phone
-  - **contact**: Emergency contact
-  - **identifier**: Medicare number
-  - **extension:closingTheGapRegistration.value**: Registered for Closing the Gap PBS Co-payment Measure \(CTG\)
+- **Aboriginal and Torres Strait Islander Health Check - Absolute Cardiovascular Disease Risk Calculation** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Height**: birthDate
+- **Aboriginal and Torres Strait Islander Health Check - Examination** and **Aboriginal and Torres Strait Islander Health Check**
+  - **New result**: birthDate
+- **Aboriginal and Torres Strait Islander Health Check - Patient Details** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Name**, **Preferred name**: name: use, family, given, prefix, text
+  - **Administrative gender**: gender
+  - **Date of birth**, **Age**: birthDate
+  - **Aboriginal and/or Torres Strait Islander status**: indigenousStatus extension
+  - **Home address**: address: use, type
+  - **Postal address**: address.type
+  - **Home phone**, **Mobile phone**: telecom: value, system, use
+  - **Emergency contact**: contact
+  - **Medicare number**: identifier
+  - **Registered for Closing the Gap PBS Co-payment Measure \(CTG\)**: closingTheGapRegistration extension
 
         )].compact.map(&:strip).join("\n\n")
       end

@@ -75,16 +75,8 @@ These questionnaires in the IG read or create Smart Health Checks AllergyIntoler
 
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
-- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions**
-  - **clinicalStatus.coding**: Recorded adverse reaction risks
-  - **clinicalStatus.coding.code**: Recorded adverse reaction risks
-  - **verificationStatus.coding**: Recorded adverse reaction risks
-  - **verificationStatus.coding.code**: Recorded adverse reaction risks
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **clinicalStatus.coding**: Recorded adverse reaction risks
-  - **clinicalStatus.coding.code**: Recorded adverse reaction risks
-  - **verificationStatus.coding**: Recorded adverse reaction risks
-  - **verificationStatus.coding.code**: Recorded adverse reaction risks
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Recorded adverse reaction risks**: clinicalStatus.coding.code, verificationStatus.coding.code
 
 
       )

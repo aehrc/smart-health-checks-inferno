@@ -77,12 +77,8 @@ These questionnaires in the IG read or create Smart Health Checks MedicationStat
 
 The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
 
-- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
-  - **contained**: Medication
-  - **medication.reference**: Medication
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **contained**: Medication
-  - **medication.reference**: Medication
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Medication**: contained, medication.reference
 
 
       )
@@ -122,10 +118,8 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 
 Items in these questionnaires read elements of MedicationStatement that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
-- **Aboriginal and Torres Strait Islander Health Check - Regular Medications**
-  - **medication**: Medication
-- **Aboriginal and Torres Strait Islander Health Check**
-  - **medication**: Medication
+- **Aboriginal and Torres Strait Islander Health Check - Regular Medications** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Medication**: medication
 
         )].compact.map(&:strip).join("\n\n")
       end

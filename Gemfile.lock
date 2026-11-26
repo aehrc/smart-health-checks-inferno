@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hl7au/inferno_suite_generator.git
-  revision: bbfdfb1d28fee2b75cbcd025a17503eb37313088
+  revision: f7c392f8ac391dbf333da518b5da5eb4ec4c6b7f
   branch: 56-questionnaire-usage-tracing-core
   specs:
     inferno_suite_generator (0.1.0)

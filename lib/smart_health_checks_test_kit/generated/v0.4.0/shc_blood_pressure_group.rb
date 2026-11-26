@@ -108,11 +108,9 @@ These questionnaires in the IG make this search. A form can pre-fill an item onl
 Items in these questionnaires read elements of Observation that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
 
 - **Aboriginal and Torres Strait Islander Health Check**
-  - **component.value.value**: Last result value systolic, Last result value diastolic, Systolic blood pressure
-  - **status**: Last result value systolic, Last result value diastolic, Last result date, Systolic blood pressure
-  - **component.code.coding**: Last result value systolic, Last result value diastolic, Systolic blood pressure
-  - **component.code.coding.code**: Last result value systolic, Last result value diastolic, Systolic blood pressure
-  - **effective**: Last result date, Systolic blood pressure
+  - **Last result value systolic**, **Last result value diastolic**: component: value.value, code.coding.code; status
+  - **Last result date**: effective, status
+  - **Systolic blood pressure**: component: value.value, code.coding.code; status; effective
 
         )].compact.map(&:strip).join("\n\n")
       end
