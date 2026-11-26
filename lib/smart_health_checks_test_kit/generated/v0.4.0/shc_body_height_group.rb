@@ -65,6 +65,14 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks Body Height resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Examination**: see the create test
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + code, create and Must Support tests
+
+
       )
 
       id :smart_health_checks_v040_shc_body_height
@@ -76,11 +84,60 @@ read succeeds.
 
       test from: :smart_health_checks_v040_shc_body_height_patient_search_test
       test from: :smart_health_checks_v040_shc_body_height_code_search_test
-      test from: :smart_health_checks_v040_shc_body_height_patient_code_search_test
+      test from: :smart_health_checks_v040_shc_body_height_patient_code_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query ObsBodyHeight**: searches Observation resources
+    - Request: Observation?code=8302-2&_sort=-date&patient={{%patient.id}}
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **Last result date**: pre-fills the answer; reads effective, status
+    - **Last result value**: pre-fills the answer; reads value.value, status, value.system, value.code
+    - **New result**: calculates the answer; reads value.value, status, value.system, value.code, effective
+    - **Height**: calculates the answer; reads value.value, status, effective
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_shc_body_height_validation_test
-      test from: :smart_health_checks_v040_shc_body_height_must_support_test
+      test from: :smart_health_checks_v040_shc_body_height_must_support_test do
+        description [description, %(
+**Used in questionnaires**
+
+Items in these questionnaires read elements of Observation that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
+
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Last result value**: value: value, system, code; status
+  - **Last result date**: effective, status
+  - **New result**: value: value, system, code; status; effective
+  - **Height**: value.value, status, effective
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_shc_body_height_reference_resolution_test
-      test from: :smart_health_checks_v040_shc_body_height_create_test
+      test from: :smart_health_checks_v040_shc_body_height_create_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG create Observation resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Examination**
+  - **Extraction template BodyHeightLengthTemplate**: creates a new Observation with code http://loinc.org|8302-2, http://snomed.info/sct|50373000 from the answers
+    - **New result**: its answers fill the template
+  - **Extraction template BodyHeightTemplate**: creates a new Observation with code http://loinc.org|8302-2, http://snomed.info/sct|50373000 from the answers
+    - **New result**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template BodyHeightLengthTemplate**: creates a new Observation with code http://loinc.org|8302-2, http://snomed.info/sct|50373000 from the answers
+    - **New result**: its answers fill the template
+  - **Extraction template BodyHeightTemplate**: creates a new Observation with code http://loinc.org|8302-2, http://snomed.info/sct|50373000 from the answers
+    - **New result**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
     end
   end
 end

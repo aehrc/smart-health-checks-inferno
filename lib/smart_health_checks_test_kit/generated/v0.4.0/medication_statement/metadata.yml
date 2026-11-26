@@ -17,8 +17,6 @@
   :expectation: SHALL
 - :code: patch
   :expectation: SHALL
-:update_create: false
-:update_create_expectation: MAY
 :operations: []
 :searches:
 - :names:

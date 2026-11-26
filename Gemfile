@@ -10,7 +10,7 @@ group :development, :test do
   gem 'debug'
 end
 
-gem 'inferno_suite_generator', github: 'hl7au/inferno_suite_generator', branch: 'main'
+gem 'inferno_suite_generator', github: 'hl7au/inferno_suite_generator', branch: '56-questionnaire-usage-tracing-core'
 gem 'pg', '~> 1.5'
 gem 'rubocop', '~> 1.63.2'
 gem 'rubocop-erb', '~> 0.3.0'

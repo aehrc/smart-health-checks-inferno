@@ -66,6 +66,22 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks Condition resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Medical History**: see the patch and create tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient + category, patch, create and Must Support tests
+
+**Elements not checked**
+
+The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
+
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Recorded problems/diagnoses**: verificationStatus.coding.code
+  - **History of atrial fibrillation**, **Diabetes**, **Years since diabetes diagnosis**: clinicalStatus.coding.code, verificationStatus.coding.code
+
+
       )
 
       id :smart_health_checks_v040_shc_condition
@@ -75,14 +91,68 @@ read succeeds.
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'shc_condition', 'metadata.yml'), aliases: true))
       end
 
-      test from: :smart_health_checks_v040_shc_condition_patient_category_search_test
+      test from: :smart_health_checks_v040_shc_condition_patient_category_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query Condition**: searches Condition resources
+    - Request: Condition?patient={{%patient.id}}&category=http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item
+    - **Recorded problems/diagnoses**: sets the population context; reads verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\)
+    - **History of atrial fibrillation**: calculates the answer; reads clinicalStatus.coding \(not checked\), clinicalStatus.coding.code \(not checked\), verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\), code
+    - **Diabetes**: calculates the answer; reads clinicalStatus.coding \(not checked\), clinicalStatus.coding.code \(not checked\), verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\), code
+    - **Years since diabetes diagnosis**: calculates the answer; reads onset, clinicalStatus.coding \(not checked\), clinicalStatus.coding.code \(not checked\), verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\), code
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_shc_condition_patient_search_test
       test from: :smart_health_checks_v040_shc_condition_category_search_test
       test from: :smart_health_checks_v040_shc_condition_validation_test
-      test from: :smart_health_checks_v040_shc_condition_must_support_test
+      test from: :smart_health_checks_v040_shc_condition_must_support_test do
+        description [description, %(
+**Used in questionnaires**
+
+Items in these questionnaires read elements of Condition that this group's tests check. A form can pre-fill an item only if the server returns the elements the item reads.
+
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **History of atrial fibrillation**, **Diabetes**: code
+  - **Years since diabetes diagnosis**: onset, code
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_shc_condition_reference_resolution_test
-      test from: :smart_health_checks_v040_shc_condition_create_test
-      test from: :smart_health_checks_v040_shc_condition_fhirpath_json_patch_test
+      test from: :smart_health_checks_v040_shc_condition_create_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG create Condition resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Medical History**
+  - **Extraction template ConditionTemplate**: creates a new Condition from the answers
+    - **New problems/diagnoses**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template ConditionTemplate**: creates a new Condition from the answers
+    - **New problems/diagnoses**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
+      test from: :smart_health_checks_v040_shc_condition_fhirpath_json_patch_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG update existing Condition resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Medical History**
+  - **Extraction template ConditionPatchTemplate**: updates an existing Condition with a FHIRPath Patch
+    - **Recorded problems/diagnoses**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template ConditionPatchTemplate**: updates an existing Condition with a FHIRPath Patch
+    - **Recorded problems/diagnoses**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
     end
   end
 end

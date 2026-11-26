@@ -69,7 +69,8 @@
   "configs": {
     "generic": {
       "expectation": ["SHALL", "SHOULD", "MAY"],
-      "search_params_to_ignore": ["_count", "_sort", "_include"]
+      "search_params_to_ignore": ["_count", "_sort", "_include"],
+      "questionnaire_usage_tracing": true
     },
     "profiles": {
       "https://smartforms.csiro.au/ig/StructureDefinition/SHCBloodPressure": {

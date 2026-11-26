@@ -64,6 +64,21 @@ At least one instance of each external reference in elements marked as
 The test will attempt to read each reference found and will fail if no
 read succeeds.
 
+**Used in questionnaires**
+
+These questionnaires in the IG read or create Smart Health Checks AllergyIntolerance resources. The tests that make the same requests list the form items that depend on them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions**: see the search by patient, patch and create tests
+- **Aboriginal and Torres Strait Islander Health Check**: see the search by patient, patch and create tests
+
+**Elements not checked**
+
+The profile neither marks these elements Must Support nor requires them, so no test checks that the server returns them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions** and **Aboriginal and Torres Strait Islander Health Check**
+  - **Recorded adverse reaction risks**: clinicalStatus.coding.code, verificationStatus.coding.code
+
+
       )
 
       id :smart_health_checks_v040_allergy_intolerance
@@ -73,12 +88,56 @@ read succeeds.
         @metadata ||= InfernoSuiteGenerator::Generator::GroupMetadata.new(YAML.load_file(File.join(__dir__, 'allergy_intolerance', 'metadata.yml'), aliases: true))
       end
 
-      test from: :smart_health_checks_v040_allergy_intolerance_patient_search_test
+      test from: :smart_health_checks_v040_allergy_intolerance_patient_search_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG make this search. A form can pre-fill an item only if the server returns the elements the item reads. Elements marked \(not checked\) are neither Must Support nor required by the profile, so this group's tests do not check them.
+
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions**
+  - **Query AllergyIntolerance**: searches AllergyIntolerance resources
+    - Request: AllergyIntolerance?patient={{%patient.id}}
+    - **Recorded adverse reaction risks**: sets the population context; reads clinicalStatus.coding \(not checked\), clinicalStatus.coding.code \(not checked\), verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\)
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Query AllergyIntolerance**: searches AllergyIntolerance resources
+    - Request: AllergyIntolerance?patient={{%patient.id}}
+    - **Recorded adverse reaction risks**: sets the population context; reads clinicalStatus.coding \(not checked\), clinicalStatus.coding.code \(not checked\), verificationStatus.coding \(not checked\), verificationStatus.coding.code \(not checked\)
+
+        )].compact.map(&:strip).join("\n\n")
+      end
       test from: :smart_health_checks_v040_allergy_intolerance_validation_test
       test from: :smart_health_checks_v040_allergy_intolerance_must_support_test
       test from: :smart_health_checks_v040_allergy_intolerance_reference_resolution_test
-      test from: :smart_health_checks_v040_allergy_intolerance_create_test
-      test from: :smart_health_checks_v040_allergy_intolerance_fhirpath_json_patch_test
+      test from: :smart_health_checks_v040_allergy_intolerance_create_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG create AllergyIntolerance resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions**
+  - **Extraction template AllergyIntoleranceTemplate**: creates a new AllergyIntolerance from the answers
+    - **New adverse reaction risks**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template AllergyIntoleranceTemplate**: creates a new AllergyIntolerance from the answers
+    - **New adverse reaction risks**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
+      test from: :smart_health_checks_v040_allergy_intolerance_fhirpath_json_patch_test do
+        description [description, %(
+**Used in questionnaires**
+
+These questionnaires in the IG update existing AllergyIntolerance resources from their answers.
+
+- **Aboriginal and Torres Strait Islander Health Check - Allergies/Adverse Reactions**
+  - **Extraction template AllergyIntolerancePatchTemplate**: updates an existing AllergyIntolerance with a FHIRPath Patch
+    - **Recorded adverse reaction risks**: its answers fill the template
+- **Aboriginal and Torres Strait Islander Health Check**
+  - **Extraction template AllergyIntolerancePatchTemplate**: updates an existing AllergyIntolerance with a FHIRPath Patch
+    - **Recorded adverse reaction risks**: its answers fill the template
+
+        )].compact.map(&:strip).join("\n\n")
+      end
     end
   end
 end
